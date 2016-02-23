@@ -22,6 +22,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.2.2] - 2016-02-23
+
+### Fixed
+- Valid composer.json file to satisfy Packagist.
+
 ## [0.2.1] - 2016-02-23
 
 ### Fixed
