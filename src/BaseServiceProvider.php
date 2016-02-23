@@ -12,6 +12,7 @@ class BaseServiceProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = false;
+
     /**
      * Perform post-registration booting of services.
      *
@@ -19,35 +20,38 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // use this if your package has views
-        // $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'base');
-
-        // use this if your package has routes
-        // $this->setupRoutes($this->app->router);
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
+        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
+        $this->setupRoutes($this->app->router);
 
         // use this if your package needs a config file
-        // $this->publishes([
-        //         __DIR__.'/config/config.php' => config_path('base.php'),
-        // ]);
+        $this->publishes([
+                __DIR__.'/config/config.php' => config_path('backpack/base.php'),
+        ]);
+        $this->publishes([
+            __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'),
+        ]);
 
         // use the vendor configuration file as fallback
-        // $this->mergeConfigFrom(
-        //     __DIR__.'/config/config.php', 'base'
-        // );
+        $this->mergeConfigFrom(
+            __DIR__.'/config/config.php', 'base'
+        );
     }
+
     /**
      * Define the routes for the application.
      *
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    // public function setupRoutes(Router $router)
-    // {
-    //     $router->group(['namespace' => 'Backpack\Base\Http\Controllers'], function($router)
-    //     {
-    //         require __DIR__.'/Http/routes.php';
-    //     });
-    // }
+    public function setupRoutes(Router $router)
+    {
+        $router->group(['namespace' => 'Backpack\Base\Http\Controllers'], function($router)
+        {
+            require __DIR__.'/Http/routes.php';
+        });
+    }
+
     /**
      * Register any package services.
      *

@@ -23,17 +23,27 @@ Via Composer
 $ composer require backpack/base
 ```
 
+If the post-package-install hook hasn't worked, also run:
+``` bash
+$ rm -rf app/Http/Controllers/Auth
+$ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"
+$ php artisan migrate
+```
+
 ## Usage 
 
-// TODO
-
-``` php
-// TODO
-```
+1. In your browser, go to yourappname/admin
+2. Register an admin user
+3. If you're using this for an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
 
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Todos
+
+// TODO - enable developers to replace auth views by just placing a view with the right name in the vendor folder
+// TODO - instruct developer on how to modify/extend the AuthController and PasswordController and/or provide example
 
 ## Testing
 

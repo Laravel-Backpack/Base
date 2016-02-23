@@ -36,7 +36,12 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "post-package-install": [
+            "rm -rf app/Http/Controllers/Auth",
+            "php artisan vendor:publish --provider='Backpack\Base\BaseServiceProvider'",
+            "php artisan migrate"
+        ],
     },
     "extra": {
         "branch-alias": {
