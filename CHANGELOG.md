@@ -21,6 +21,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## [0.2.4] - 2016-02-24
+
+### Fixed
+- Correct installation instructions in Readme file.
+
 ## [0.2.3] - 2016-02-24
 
 ### Fixed

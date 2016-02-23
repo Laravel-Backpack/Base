@@ -23,18 +23,23 @@ Via Composer
 $ composer require backpack/base
 ```
 
-If the post-package-install hook hasn't worked, also run:
+Then add the service provider to your config/app.php file:
+``` php
+Backpack\Base\BaseServiceProvider::class,
+```
+
+Then run a few commands in the terminal:
 ``` bash
-$ rm -rf app/Http/Controllers/Auth
+$ rm -rf app/Http/Controllers/Auth #deletes laravel's demo auth controllers
 $ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"
-$ php artisan migrate
+$ php artisan migrate #should generate users table
 ```
 
 ## Usage 
 
-1. In your browser, go to yourappname/admin
-2. Register an admin user
-3. If you're using this for an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
+1. Register a new user at yourappname/register
+2. Your admin panel will be available at yourappname/admin or yourappname/login
+3. If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
 
 ## Change log
 
