@@ -59,18 +59,18 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->registerBase();
+        $this->registerBase();
 
         // use this if your package has a config file
-        // config([
-        //         'config/skeleton.php',
-        // ]);
+        config([
+                'config/config.php',
+        ]);
     }
 
-    // private function registerBase()
-    // {
-    //     $this->app->bind('base',function($app){
-    //         return new Base($app);
-    //     });
-    // }
+    private function registerBase()
+    {
+        $this->app->bind('base',function($app){
+            return new Base($app);
+        });
+    }
 }

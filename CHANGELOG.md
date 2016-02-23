@@ -21,6 +21,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## [0.2.3] - 2016-02-24
+
+### Fixed
+- BaseServiceProvider also registers the Base.
 
 ## [0.2.2] - 2016-02-23
 

@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "backpack\\base\\": "src"
+            "Backpack\\Base\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "backpack\\base\\Test\\": "tests"
+            "Backpack\\Base\\Test\\": "tests"
         }
     },
     "scripts": {
