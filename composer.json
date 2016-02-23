@@ -1,0 +1,46 @@
+{
+    "name": "backpack/base",
+    "type": "library",
+    "description": "Laravel Backpack's base package, which offers admin authentication and a blank admin panel using AdminLTE",
+    "keywords": [
+        "backpack",
+        "base"
+    ],
+    "homepage": "https://github.com/laravel-backpack/base",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian Tabacitu",
+            "email": "hello@tabacitu.ro",
+            "homepage": "www.tabacitu.ro",
+            "role": "Chief Architect & Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.5|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "backpack\\base\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "backpack\\base\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
