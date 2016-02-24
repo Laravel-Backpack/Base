@@ -18,7 +18,8 @@
     ],
     "require": {
         "illuminate/support": "~5.1",
-        "php" : "~5.5|~7.0"
+        "php" : "~5.5|~7.0",
+        "almasaeed2010/AdminLTE" : "2.3.*"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",

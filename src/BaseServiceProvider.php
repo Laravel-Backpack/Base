@@ -24,13 +24,12 @@ class BaseServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
         $this->setupRoutes($this->app->router);
 
-        // use this if your package needs a config file
-        $this->publishes([
-                __DIR__.'/config/config.php' => config_path('backpack/base.php'),
-        ]);
-        $this->publishes([
-            __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'),
-        ]);
+        // publish config file
+        $this->publishes([ __DIR__.'/config/config.php' => config_path('backpack/base.php'), ], 'config');
+        // publish lang files
+        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
+        // publish public AdminLTE assets
+        $this->publishes([ base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte'), ], 'adminlte');
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
@@ -72,5 +71,10 @@ class BaseServiceProvider extends ServiceProvider
         $this->app->bind('base',function($app){
             return new Base($app);
         });
+    }
+
+    private function packagePath($path)
+    {
+        return __DIR__ . "/../$path";
     }
 }
