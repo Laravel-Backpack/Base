@@ -21,6 +21,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## [0.2.6] - 2016-02-24
+
+### Added
+- AdminLTE usage in all auth views. BackPack is pretty now.
+
+### Removed
+- Install scripts from composer.json since they weren't working anyway.
+
 ## [0.2.5] - 2016-02-24
 
 ### Added

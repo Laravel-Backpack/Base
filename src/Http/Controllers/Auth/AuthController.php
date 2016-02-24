@@ -5,9 +5,10 @@ namespace Backpack\Base\Http\Controllers\Auth;
 use App\User;
 use Validator;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Backpack\Base\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -131,6 +132,16 @@ class AuthController extends Controller
             abort(403, trans('backpack::base.registration_closed'));
         }
 
-        return parent::register($request);
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        Auth::guard($this->getGuard())->login($this->create($request->all()));
+
+        return redirect($this->redirectPath());
     }
 }

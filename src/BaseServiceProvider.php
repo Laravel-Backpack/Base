@@ -72,9 +72,4 @@ class BaseServiceProvider extends ServiceProvider
             return new Base($app);
         });
     }
-
-    private function packagePath($path)
-    {
-        return __DIR__ . "/../$path";
-    }
 }
