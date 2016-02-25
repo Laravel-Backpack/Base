@@ -2,9 +2,14 @@
 
 return [
 
-	// --------------------------
-	// Look & feel customizations
-	// --------------------------
+	/*
+	|--------------------------------------------------------------------------
+	| Look & feel customizations
+	|--------------------------------------------------------------------------
+	|
+	| Make it yours.
+	|
+	*/
 
 	// Project name. Shown in the breadcrumbs and a few other places.
 	'project_name' => 'Backpack',
@@ -20,7 +25,7 @@ return [
 	// Developer website. Link in footer.
 	'developer_link' => 'http://tabacitu.ro',
 
-	// Show powered by Laravel Backpack in the footer.
+	// Show powered by Laravel Backpack in the footer?
 	'show_powered_by' => true,
 
 	// The AdminLTE skin. Affects menu color and primary/secondary colors used throughout the application.

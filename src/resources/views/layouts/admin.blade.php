@@ -7,7 +7,7 @@
 
     <title>Laravel</title>
 
-    @yield('before_css')
+    @yield('before_styles')
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -42,9 +42,19 @@
         .has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
             color: #dd4b39;
         }
+
+        /*  AdminLTE Overwrites  */
+        .box {
+          border-radius: 0;
+          border-top: 1px solid #d2d6de;
+        }
+
+        body[class^='skin-'] .sidebar-menu>li>a {
+          border-left: 1px solid transparent;
+        }
     </style>
 
-    @yield('css')
+    @yield('after_styles')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,17 +89,17 @@
             <ul class="nav navbar-nav">
               <!-- Laravel User Account -->
               @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('admin/login') }}">Login</a></li>
+                    <li><a href="{{ url('admin/register') }}">Register</a></li>
                 @else
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
+                    <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                     <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li> -->
                 @endif
@@ -132,7 +142,7 @@
             <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
             <li class="header">USER</li>
-            <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -175,7 +185,7 @@
     <!-- ./wrapper -->
 
 
-    @yield('before_js')
+    @yield('before_scripts')
 
     <!-- jQuery 2.1.4 -->
     <script src="{{ asset('vendor/adminlte') }}/plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -195,7 +205,7 @@
         $(document).ajaxStart(function() { Pace.restart(); });
     </script>
 
-    @yield('js')
+    @yield('after_scripts')
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

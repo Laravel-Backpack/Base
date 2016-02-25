@@ -21,6 +21,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## [0.2.7] - 2016-02-25
+
+### Fixed
+- Renamed the sections in admin layout to be friendlier to use and more extensible.
+- All routes now use the /admin/ prefix, even the admin authentication. This separates BackPack completely from the main application and allows it to have a different auth for users, if needed.
+- Better comments in configs and routes.
+- Extra style to overwrite AdminLTE's bulkiness and make it more slick.
+
 ## [0.2.6] - 2016-02-24
 
 ### Added
