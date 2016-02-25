@@ -52,6 +52,74 @@
         body[class^='skin-'] .sidebar-menu>li>a {
           border-left: 1px solid transparent;
         }
+
+
+        .btn-primary {
+          color: #fff;
+          background-color: #605ca8;
+          border-color: #57549C;
+        }
+        .btn-primary:focus,
+        .btn-primary.focus {
+          color: #fff;
+          background-color: #7673BD;
+          border-color: #122b40;
+        }
+        .btn-primary:hover {
+          color: #fff;
+          background-color: #7673BD;
+          border-color: #57549C;
+        }
+        .btn-primary:active,
+        .btn-primary.active,
+        .open > .dropdown-toggle.btn-primary {
+          color: #fff;
+          background-color: #7673BD;
+          border-color: #57549C;
+        }
+        .btn-primary:active:hover,
+        .btn-primary.active:hover,
+        .open > .dropdown-toggle.btn-primary:hover,
+        .btn-primary:active:focus,
+        .btn-primary.active:focus,
+        .open > .dropdown-toggle.btn-primary:focus,
+        .btn-primary:active.focus,
+        .btn-primary.active.focus,
+        .open > .dropdown-toggle.btn-primary.focus {
+          color: #fff;
+          background-color: #57549C;
+          border-color: #122b40;
+        }
+        .btn-primary:active,
+        .btn-primary.active,
+        .open > .dropdown-toggle.btn-primary {
+          background-image: none;
+        }
+        .btn-primary.disabled,
+        .btn-primary[disabled],
+        fieldset[disabled] .btn-primary,
+        .btn-primary.disabled:hover,
+        .btn-primary[disabled]:hover,
+        fieldset[disabled] .btn-primary:hover,
+        .btn-primary.disabled:focus,
+        .btn-primary[disabled]:focus,
+        fieldset[disabled] .btn-primary:focus,
+        .btn-primary.disabled.focus,
+        .btn-primary[disabled].focus,
+        fieldset[disabled] .btn-primary.focus,
+        .btn-primary.disabled:active,
+        .btn-primary[disabled]:active,
+        fieldset[disabled] .btn-primary:active,
+        .btn-primary.disabled.active,
+        .btn-primary[disabled].active,
+        fieldset[disabled] .btn-primary.active {
+          background-color: #605ca8;
+          border-color: #57549C;
+        }
+        .btn-primary .badge {
+          color: #605ca8;
+          background-color: #fff;
+        }
     </style>
 
     @yield('after_styles')

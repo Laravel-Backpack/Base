@@ -8,9 +8,9 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Laravel BackPack's central package, which includes:
-- a customized version of Laravel's authentication interface, using AdminLTE; // TODO
-- basic user management page (edit password, name, email);
-- basic admin dashboard page (using AdminLTE); // TODO
+- admin login interface, using AdminLTE;
+- basic user management page (edit password, name, email); // TODO
+- basic admin dashboard page (using AdminLTE);
 - pretty error pages; // TODO
 - admin-wide alerts system (notification bubbles); // TODO
 - roles / permissions; // TODO
