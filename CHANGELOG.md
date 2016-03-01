@@ -21,6 +21,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## [0.2.8] - 2016-03-01
+
+### Fixed
+- Reset password links didn't work because the views weren't using the /admin/ prefix.
+
+
 ## [0.2.7] - 2016-02-25
 
 ### Fixed
