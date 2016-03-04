@@ -1,4 +1,4 @@
-@extends('backpack::layouts.admin')
+@extends('backpack::layout')
 
 @section('page_title')
     Dashboard<small>The first page you see after login.</small>

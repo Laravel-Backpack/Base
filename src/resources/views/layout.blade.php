@@ -153,69 +153,13 @@
             <span class="icon-bar"></span>
           </a>
 
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- Laravel User Account -->
-              @if (Auth::guest())
-                    <li><a href="{{ url('admin/login') }}">Login</a></li>
-                    <li><a href="{{ url('admin/register') }}">Register</a></li>
-                @else
-                    <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li> -->
-                @endif
-            </ul>
-          </div>
+          @include('backpack::inc.menu')
         </nav>
       </header>
 
       <!-- =============================================== -->
 
-      @if (Auth::check())
-      <!-- Left side column. contains the sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="http://placehold.it/160x160/00a65a/ffffff/&text={{ Auth::user()->name[0] }}" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-              <p>{{ Auth::user()->name }}</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          <!-- search form -->
-              <!-- <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="Search...">
-                      <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                </div>
-              </form> -->
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="header">ADMINISTRATION</li>
-            <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-
-            <li class="header">USER</li>
-            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
-      @endif
+      @include('backpack::inc.sidebar')
 
       <!-- =============================================== -->
 

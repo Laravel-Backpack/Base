@@ -22,6 +22,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.4.0] - 2016-03-04
+
+### Added
+- All base views are now published at installation, and can be easily overwritten.
+- Separate views for vertical menu (menu.blade.php) and horizontal menu (sidebar.blade.php), which can be easily customized.
+
+### Fixed
+- Changed the view folder structure - moved the layout view on the root view directory.
+
+
 ## [0.3.0] - 2016-03-04
 
 ### Fixed

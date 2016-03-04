@@ -20,14 +20,23 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // LOAD THE VIEWS
+        // - first the published views (in case they have any changes)
+        $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
+        // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
+
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
+
         $this->setupRoutes($this->app->router);
 
+        // PUBLISH FILES
         // publish config file
         $this->publishes([ __DIR__.'/config/config.php' => config_path('backpack/base.php'), ], 'config');
         // publish lang files
         $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
+        // publish views
+        $this->publishes([ __DIR__.'/resources/views' => resource_path('views/vendor/backpack/base'), ], 'views');
         // publish public AdminLTE assets
         $this->publishes([ base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte'), ], 'adminlte');
 

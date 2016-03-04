@@ -1,4 +1,4 @@
-# base
+# Backpack\Base
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -10,7 +10,7 @@
 Laravel BackPack's central package, which includes:
 - admin login interface, using AdminLTE;
 - basic user management page (edit password, name, email); // TODO
-- basic admin dashboard page (using AdminLTE);
+- basic menu;
 - pretty error pages; // TODO
 - admin-wide alerts system (notification bubbles); // TODO
 - roles / permissions; // TODO
@@ -31,15 +31,15 @@ Backpack\Base\BaseServiceProvider::class,
 Then run a few commands in the terminal:
 ``` bash
 $ rm -rf app/Http/Controllers/Auth #deletes laravel's demo auth controllers
-$ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"
-$ php artisan migrate #should generate users table
+$ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" #publishes configs, langs, views and AdminLTE files
+$ php artisan migrate #generates users table (using Laravel's default migrations)
 ```
 
 ## Usage 
 
 1. Register a new user at yourappname/register
 2. Your admin panel will be available at yourappname/admin or yourappname/login
-3. If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
+3. [optional] If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
 
 ## Change log
 
@@ -47,7 +47,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Todos
 
-// TODO - enable developers to replace auth views by just placing a view with the right name in the vendor folder
 // TODO - instruct developer on how to modify/extend the AuthController and PasswordController and/or provide example
 
 ## Testing
@@ -87,5 +86,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/backpack/base/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/backpack/base
 [link-downloads]: https://packagist.org/packages/backpack/base
-[link-author]: https://github.com/tabacitu
+[link-author]: http://tabacitu.ro
 [link-contributors]: ../../contributors
