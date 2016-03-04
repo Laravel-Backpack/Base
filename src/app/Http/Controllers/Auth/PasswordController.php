@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\Base\Http\Controllers\Auth;
+namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;

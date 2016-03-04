@@ -21,6 +21,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+
+## [0.3.0] - 2016-03-04
+
+### Fixed
+- Changed folder structure to resemble Laravel's folder structure: Http folder is now inside an /app/ folder.
+
+
 ## [0.2.8] - 2016-03-01
 
 ### Fixed

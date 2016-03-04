@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\Base\Http\Controllers\Auth;
+namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
 use Illuminate\Http\Request;
-use Backpack\Base\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;

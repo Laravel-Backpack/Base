@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\Base\Http\Controllers;
+namespace Backpack\Base\app\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;

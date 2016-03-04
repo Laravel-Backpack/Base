@@ -45,9 +45,9 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\Base\Http\Controllers'], function($router)
+        $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function($router)
         {
-            require __DIR__.'/Http/routes.php';
+            require __DIR__.'/app/Http/routes.php';
         });
     }
 
