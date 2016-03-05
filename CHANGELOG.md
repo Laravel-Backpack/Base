@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.4.1] - 2016-03-05
+
+### Fixed
+- Auth views did not use the correct layout blade file.
+
+
 ## [0.4.0] - 2016-03-04
 
 ### Added

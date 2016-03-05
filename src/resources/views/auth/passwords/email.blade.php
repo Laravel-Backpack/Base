@@ -1,4 +1,4 @@
-@extends('backpack::layouts.admin')
+@extends('backpack::layout')
 
 <!-- Main Content -->
 @section('content')
