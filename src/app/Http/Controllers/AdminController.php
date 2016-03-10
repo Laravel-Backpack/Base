@@ -4,6 +4,7 @@ namespace Backpack\Base\app\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Prologue\Alerts\Facades\Alert as Alert;
 
 class AdminController extends Controller
 {

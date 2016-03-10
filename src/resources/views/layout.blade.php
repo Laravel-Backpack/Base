@@ -35,92 +35,10 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Pace style -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/plugins/pace/pace.min.css">
-
-    <style>
-        /*   // TODO: move this in a separate file, that gets published   */
-        /* Bootstrap Overwrites */
-        .has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
-            color: #dd4b39;
-        }
-
-        /*  AdminLTE Overwrites  */
-        .box {
-          border-radius: 0;
-          border-top: 1px solid #d2d6de;
-        }
-
-        body[class^='skin-'] .sidebar-menu>li>a {
-          border-left: 1px solid transparent;
-        }
-
-
-        .btn-primary {
-          color: #fff;
-          background-color: #605ca8;
-          border-color: #57549C;
-        }
-        .btn-primary:focus,
-        .btn-primary.focus {
-          color: #fff;
-          background-color: #7673BD;
-          border-color: #122b40;
-        }
-        .btn-primary:hover {
-          color: #fff;
-          background-color: #7673BD;
-          border-color: #57549C;
-        }
-        .btn-primary:active,
-        .btn-primary.active,
-        .open > .dropdown-toggle.btn-primary {
-          color: #fff;
-          background-color: #7673BD;
-          border-color: #57549C;
-        }
-        .btn-primary:active:hover,
-        .btn-primary.active:hover,
-        .open > .dropdown-toggle.btn-primary:hover,
-        .btn-primary:active:focus,
-        .btn-primary.active:focus,
-        .open > .dropdown-toggle.btn-primary:focus,
-        .btn-primary:active.focus,
-        .btn-primary.active.focus,
-        .open > .dropdown-toggle.btn-primary.focus {
-          color: #fff;
-          background-color: #57549C;
-          border-color: #122b40;
-        }
-        .btn-primary:active,
-        .btn-primary.active,
-        .open > .dropdown-toggle.btn-primary {
-          background-image: none;
-        }
-        .btn-primary.disabled,
-        .btn-primary[disabled],
-        fieldset[disabled] .btn-primary,
-        .btn-primary.disabled:hover,
-        .btn-primary[disabled]:hover,
-        fieldset[disabled] .btn-primary:hover,
-        .btn-primary.disabled:focus,
-        .btn-primary[disabled]:focus,
-        fieldset[disabled] .btn-primary:focus,
-        .btn-primary.disabled.focus,
-        .btn-primary[disabled].focus,
-        fieldset[disabled] .btn-primary.focus,
-        .btn-primary.disabled:active,
-        .btn-primary[disabled]:active,
-        fieldset[disabled] .btn-primary:active,
-        .btn-primary.disabled.active,
-        .btn-primary[disabled].active,
-        fieldset[disabled] .btn-primary.active {
-          background-color: #605ca8;
-          border-color: #57549C;
-        }
-        .btn-primary .badge {
-          color: #605ca8;
-          background-color: #fff;
-        }
-    </style>
+    <!-- Pines Notify -->
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
+    <!-- BackPack Base CSS -->
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}">
 
     @yield('after_styles')
 
@@ -216,6 +134,8 @@
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
     </script>
+
+    @include('backpack::inc.alerts')
 
     @yield('after_scripts')
 

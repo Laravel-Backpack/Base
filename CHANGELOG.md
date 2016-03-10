@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.1] - 2016-03-10
+
+### Added
+- Notification bubbles using prologue/alerts on the backend and PNotify in the front-end.
+
+
 ## [0.4.1] - 2016-03-05
 
 ### Fixed

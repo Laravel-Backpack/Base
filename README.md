@@ -9,7 +9,7 @@ Laravel BackPack's central package, which includes:
 - basic user management page (edit password, name, email); // TODO
 - basic menu;
 - pretty error pages; // TODO
-- admin-wide alerts system (notification bubbles); // TODO
+- alerts system (notification bubbles);
 - roles / permissions; // TODO
 
 ## Install
@@ -20,15 +20,22 @@ Via Composer
 $ composer require backpack/base
 ```
 
-Then add the service provider to your config/app.php file:
+Then add the service providers in config/app.php:
 ``` php
 Backpack\Base\BaseServiceProvider::class,
+'Prologue\Alerts\AlertsServiceProvider',
+```
+
+Add the alias to the list of aliases in config/app.php:
+```php
+'Alert' => 'Prologue\Alerts\Facades\Alert',
 ```
 
 Then run a few commands in the terminal:
 ``` bash
 $ rm -rf app/Http/Controllers/Auth #deletes laravel's demo auth controllers
 $ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" #publishes configs, langs, views and AdminLTE files
+$ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider" # publish config for notifications - prologue/alerts
 $ php artisan migrate #generates users table (using Laravel's default migrations)
 ```
 
