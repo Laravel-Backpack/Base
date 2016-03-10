@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.2] - 2016-03-10
+
+### Fixed
+- Changed header layout - it's now a single section, 'header', instead of separate sections for page title and breadcrumbs.
+
+
+
 ## [0.5.1] - 2016-03-10
 
 ### Added

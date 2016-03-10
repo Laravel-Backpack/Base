@@ -84,14 +84,7 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            @yield('page_title')
-          </h1>
-          <ol class="breadcrumb">
-            @yield('breadcrumbs')
-          </ol>
-        </section>
+         @yield('header')
 
         <!-- Main content -->
         <section class="content">
