@@ -19,7 +19,9 @@
     "require": {
         "illuminate/support": "~5.1",
         "php" : "~5.5|~7.0",
-        "almasaeed2010/AdminLTE" : "2.3.*"
+        "almasaeed2010/AdminLTE" : "2.3.*",
+        "laravel/framework": "5.2.*",
+        "prologue/alerts": "0.4.*"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",
