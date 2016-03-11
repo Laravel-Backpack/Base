@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <title>Laravel</title>
 
     @yield('before_styles')
@@ -126,6 +129,13 @@
     <script type="text/javascript">
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
+
+        // Ajax calls should always have the CSRF token attached to them, otherwise they won't work
+        $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
     </script>
 
     @include('backpack::inc.alerts')

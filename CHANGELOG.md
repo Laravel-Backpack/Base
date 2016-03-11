@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+
+## [0.5.3] - 2016-03-11
+
+### Fixed
+- Added CSRF request to all Ajax calls, for them to work properly in Laravel.
+
+
 ## [0.5.2] - 2016-03-10
 
 ### Fixed
