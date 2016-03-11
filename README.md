@@ -12,26 +12,30 @@ Laravel BackPack's central package, which includes:
 - alerts system (notification bubbles);
 - roles / permissions; // TODO
 
+
+![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
+
+
 ## Install
 
-Via Composer
+1) Run in your terminal:
 
 ``` bash
 $ composer require backpack/base
 ```
 
-Then add the service providers in config/app.php:
+2) Add the service providers in config/app.php:
 ``` php
 Backpack\Base\BaseServiceProvider::class,
 'Prologue\Alerts\AlertsServiceProvider',
 ```
 
-Add the alias to the list of aliases in config/app.php:
+3) Add the alias to the list of aliases in config/app.php:
 ```php
 'Alert' => 'Prologue\Alerts\Facades\Alert',
 ```
 
-Then run a few commands in the terminal:
+4) Then run a few commands in the terminal:
 ``` bash
 $ rm -rf app/Http/Controllers/Auth #deletes laravel's demo auth controllers
 $ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" #publishes configs, langs, views and AdminLTE files
@@ -39,11 +43,15 @@ $ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider" 
 $ php artisan migrate #generates users table (using Laravel's default migrations)
 ```
 
+5) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
+
 ## Usage 
 
-1. Register a new user at yourappname/register
+1. Register a new user at yourappname/admin/register
 2. Your admin panel will be available at yourappname/admin or yourappname/login
 3. [optional] If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
+
+![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_dashboard.png)
 
 ## Change log
 
