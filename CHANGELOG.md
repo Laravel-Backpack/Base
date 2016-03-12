@@ -22,6 +22,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.5] - 2016-03-12
+
+### Fixed
+- Lang files are pushed in the correct folder now. For realsies.
+
 ## [0.5.4] - 2016-03-12
 
 ### Fixed

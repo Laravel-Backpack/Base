@@ -34,7 +34,7 @@ class BaseServiceProvider extends ServiceProvider
         // publish config file
         $this->publishes([ __DIR__.'/config/config.php' => config_path('backpack/base.php'), ], 'config');
         // publish lang files
-        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang'), ], 'lang');
+        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
         // publish views
         $this->publishes([ __DIR__.'/resources/views' => resource_path('views/vendor/backpack/base'), ], 'views');
         // publish public Backpack assets
