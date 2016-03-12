@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.4] - 2016-03-12
+
+### Fixed
+- Lang files are pushed in the correct folder now.
+- Removed some redundant comments in layout.blade.php
+
 
 ## [0.5.3] - 2016-03-11
 
