@@ -37,6 +37,8 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
         // publish views
         $this->publishes([ __DIR__.'/resources/views' => resource_path('views/vendor/backpack/base'), ], 'views');
+        // publish error views
+        $this->publishes([ __DIR__.'/resources/error_views' => resource_path('views/errors'), ], 'errors');
         // publish public Backpack assets
         $this->publishes([ __DIR__.'/public' => public_path('vendor/backpack'), ], 'public');
         // publish public AdminLTE assets
