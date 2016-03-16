@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.6] - 2016-03-16
+
+### Fixed
+- Added custom title, set from the controller.
+
+
 ## [0.5.5] - 2016-03-12
 
 ### Fixed

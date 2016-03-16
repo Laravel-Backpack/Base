@@ -8,7 +8,9 @@
     {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <title>Laravel</title>
+    <title>
+      {{ isset($title) ? $title.' :: '.config('base.project_name').' Admin' : config('base.project_name').' Admin' }}
+    </title>
 
     @yield('before_styles')
 
@@ -93,7 +95,7 @@
       <footer class="main-footer">
         @if (config('base.show_powered_by'))
             <div class="pull-right hidden-xs">
-              Powered by <a target="_blank" href="http://github.com/laravel-backpack">Laravel BackPack</a>
+              Powered by <a target="_blank" href="http://laravelbackpack.com">Laravel BackPack</a>
             </div>
         @endif
         Handcrafted by <a target="_blank" href="{{ config('base.developer_link') }}">{{ config('base.developer_name') }}</a>.

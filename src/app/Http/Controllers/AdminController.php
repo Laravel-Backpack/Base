@@ -25,6 +25,8 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        return view('backpack::dashboard');
+        $this->data['title'] = "Dashboard";
+
+        return view('backpack::dashboard', $this->data);
     }
 }
