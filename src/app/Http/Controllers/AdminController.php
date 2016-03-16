@@ -8,10 +8,10 @@ use Prologue\Alerts\Facades\Alert as Alert;
 
 class AdminController extends Controller
 {
+    protected $data = [];
+
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
