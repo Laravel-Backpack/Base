@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.8] - 2016-03-16
+
+### Fixed
+- Fixed a few scrutinizer issues.
+
+
 ## [0.5.7] - 2016-03-16
 
 ### Fixed
