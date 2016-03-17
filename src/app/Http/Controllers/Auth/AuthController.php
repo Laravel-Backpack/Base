@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    protected $data = []; // the information we send to the view
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller

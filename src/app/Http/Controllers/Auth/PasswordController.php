@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Password;
 
 class PasswordController extends Controller
 {
+    protected $data = []; // the information we send to the view
+
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -51,15 +53,17 @@ class PasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
+        $this->data['title'] = "Reset password"; // set the page title
+
         if (property_exists($this, 'linkRequestView')) {
             return view($this->linkRequestView);
         }
 
         if (view()->exists('backpack::auth.passwords.email')) {
-            return view('backpack::auth.passwords.email');
+            return view('backpack::auth.passwords.email', $this->data);
         }
 
-        return view('backpack::auth.password');
+        return view('backpack::auth.password', $this->data);
     }
 
     /**
@@ -73,6 +77,8 @@ class PasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
+        $this->data['title'] = "Reset password"; // set the page title
+
         if (is_null($token)) {
             return $this->getEmail();
         }
@@ -84,9 +90,9 @@ class PasswordController extends Controller
         }
 
         if (view()->exists('backpack::auth.passwords.reset')) {
-            return view('backpack::auth.passwords.reset')->with(compact('token', 'email'));
+            return view('backpack::auth.passwords.reset', $this->data)->with(compact('token', 'email'));
         }
 
-        return view('backpack::auth.reset')->with(compact('token', 'email'));
+        return view('backpack::auth.reset', $this->data)->with(compact('token', 'email'));
     }
 }

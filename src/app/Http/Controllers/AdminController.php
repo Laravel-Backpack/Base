@@ -8,7 +8,7 @@ use Prologue\Alerts\Facades\Alert as Alert;
 
 class AdminController extends Controller
 {
-    protected $data = [];
+    protected $data = []; // the information we send to the view
 
     /**
      * Create a new controller instance.

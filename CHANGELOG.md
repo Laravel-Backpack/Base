@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.10] - 2016-03-17
+
+### Fixed
+- Added page titles for reset password pages.
+- Fixed one scrutinizer issue.
+
+
 ## [0.5.9] - 2016-03-17
 
 ### Fixed
