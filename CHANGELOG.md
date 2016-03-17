@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.9] - 2016-03-17
+
+### Fixed
+- Added page titles for login and register pages.
+
+
 ## [0.5.8] - 2016-03-16
 
 ### Fixed

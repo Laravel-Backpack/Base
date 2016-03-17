@@ -95,7 +95,9 @@ class AuthController extends Controller
             return view($view);
         }
 
-        return view('backpack::auth.login');
+        $this->data['title'] = "Login"; // set the page title
+
+        return view('backpack::auth.login', $this->data);
     }
 
     /**
@@ -115,7 +117,9 @@ class AuthController extends Controller
             return view($this->registerView);
         }
 
-        return view('backpack::auth.register');
+        $this->data['title'] = "Register"; // set the page title
+
+        return view('backpack::auth.register', $this->data);
     }
 
     /**
