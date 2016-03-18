@@ -16,7 +16,7 @@ Laravel BackPack's central package, which includes:
 - roles / permissions; // TODO
 
 
-**Breaking changes coming up. Final version will launch at the end of March. Subscribe to the [Mailchimp list](http://eepurl.com/bUEGjf) to be announced when the API is stable (late March - early April 2016).** 
+**Final version will launch at the end of March. Subscribe to the [Mailchimp list](http://eepurl.com/bUEGjf) to be announced when the API is stable (late March - early April 2016).** 
 
 ![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
 
