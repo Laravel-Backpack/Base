@@ -3,12 +3,12 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use App\User;
-use Validator;
-use Illuminate\Http\Request;
 use Backpack\Base\app\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -47,14 +47,15 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -62,26 +63,22 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
 
-
-
-
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------
-
-
 
     /**
      * Show the application login form.
@@ -97,7 +94,7 @@ class AuthController extends Controller
             return view($view);
         }
 
-        $this->data['title'] = "Login"; // set the page title
+        $this->data['title'] = 'Login'; // set the page title
 
         return view('backpack::auth.login', $this->data);
     }
@@ -110,8 +107,7 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         // if registration is closed, deny access
-        if (!config('base.registration_open'))
-        {
+        if (!config('base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
         }
 
@@ -119,7 +115,7 @@ class AuthController extends Controller
             return view($this->registerView);
         }
 
-        $this->data['title'] = "Register"; // set the page title
+        $this->data['title'] = 'Register'; // set the page title
 
         return view('backpack::auth.register', $this->data);
     }
@@ -127,14 +123,14 @@ class AuthController extends Controller
     /**
      * Handle a registration request for the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function register(Request $request)
     {
         // if registration is closed, deny access
-        if (!config('base.registration_open'))
-        {
+        if (!config('base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
         }
 
