@@ -10,14 +10,12 @@
 
 Laravel BackPack's central package, which includes:
 - admin login interface, using AdminLTE;
-- basic user management page (edit password, name, email); // TODO
 - basic menu;
 - pretty error pages;
 - alerts system (notification bubbles);
-- roles / permissions; // TODO
 
 
-**Final version will launch at the end of March. Subscribe to the [Mailchimp list](http://eepurl.com/bUEGjf) to be announced when the API is stable (late March - early April 2016).** 
+**[Subscribe to the newsletter](http://eepurl.com/bUEGjf) to be announced of any major updates or breaking changes.** 
 
 ![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
 
