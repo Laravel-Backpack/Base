@@ -9,9 +9,9 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@dashboard');
 });
 
+
+
 // REDIRECT "login" URL TO "admin/login"
 //
 // The login url is hardcoded in Laravel in a few places, most importantly in the auth middleware. If your application has a different login for users (non-admins), you should consider overwriting this.
-Route::get('login', function () {
-    return redirect('admin/login');
-});
+Route::get('login', 'Controller@redirectToLogin');

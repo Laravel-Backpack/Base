@@ -10,4 +10,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+	/**
+	 * Redirect the user to the login screen.
+	 */
+	public function redirectToLogin()
+	{
+	    return redirect('admin/login');
+	}
+
 }
+
