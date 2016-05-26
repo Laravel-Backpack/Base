@@ -5,7 +5,7 @@ namespace backpack\base;
 class SkeletonClass
 {
     /**
-     * Create a new Skeleton Instance
+     * Create a new Skeleton Instance.
      */
     public function __construct()
     {
@@ -13,7 +13,7 @@ class SkeletonClass
     }
 
     /**
-     * Friendly welcome
+     * Friendly welcome.
      *
      * @param string $phrase Phrase to return
      *

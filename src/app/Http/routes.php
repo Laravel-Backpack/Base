@@ -2,7 +2,7 @@
 
 // All BackPack routes are placed under the 'admin' prefix, to minimize possible conflicts with your application. This means your login/logout/register urls are also under the 'admin' prefix, so you can have separate logins for users and admins.
 Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
-	// Admin authentication routes
+    // Admin authentication routes
     Route::auth();
 
     // Other Backpack\Base routes

@@ -5,7 +5,6 @@ namespace Backpack\Base\app\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
-use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 
@@ -36,15 +35,9 @@ class PasswordController extends Controller
         $this->middleware('guest');
     }
 
-
-
-
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------
-
-
-
 
     /**
      * Display the form to request a password reset link.
@@ -53,7 +46,7 @@ class PasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        $this->data['title'] = "Reset password"; // set the page title
+        $this->data['title'] = 'Reset password'; // set the page title
 
         if (property_exists($this, 'linkRequestView')) {
             return view($this->linkRequestView);
@@ -71,13 +64,14 @@ class PasswordController extends Controller
      *
      * If no token is present, display the link request form.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string|null  $token
+     * @param \Illuminate\Http\Request $request
+     * @param string|null              $token
+     *
      * @return \Illuminate\Http\Response
      */
     public function showResetForm(Request $request, $token = null)
     {
-        $this->data['title'] = "Reset password"; // set the page title
+        $this->data['title'] = 'Reset password'; // set the page title
 
         if (is_null($token)) {
             return $this->getEmail();
