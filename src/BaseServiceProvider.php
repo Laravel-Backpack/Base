@@ -60,7 +60,7 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function($router) {
+        $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
             require __DIR__.'/app/Http/routes.php';
         });
     }
@@ -82,7 +82,7 @@ class BaseServiceProvider extends ServiceProvider
 
     private function registerBase()
     {
-        $this->app->bind('base', function($app) {
+        $this->app->bind('base', function ($app) {
             return new Base($app);
         });
     }
