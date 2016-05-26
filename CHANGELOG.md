@@ -22,6 +22,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.5.11] - 2016-05-26
+
+### Fixed
+- #14 - Using closures in routes breaks route caching
+- Updated jQuery to 2.2.0 as AdminLTE did;
+- Loading jQuery from CDN first, then local, to prevent AdminLTE updates triggering bugs;
+
+
 ## [0.5.10] - 2016-03-17
 
 ### Fixed
