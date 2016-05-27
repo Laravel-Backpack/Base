@@ -3,7 +3,7 @@
 @section('header')
     <section class="content-header">
       <ol class="breadcrumb">
-        <li><a href="{{ 'admin' }}">{{ config('base.project_name') }}</a></li>
+        <li><a href="{{ 'admin' }}">{{ config('backpack.base.project_name') }}</a></li>
         <li class="active">429 error</li>
       </ol>
     </section>

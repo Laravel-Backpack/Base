@@ -107,7 +107,7 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         // if registration is closed, deny access
-        if (!config('base.registration_open')) {
+        if (!config('backpack.base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
         }
 
@@ -130,7 +130,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // if registration is closed, deny access
-        if (!config('base.registration_open')) {
+        if (!config('backpack.base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
         }
 
