@@ -25,4 +25,15 @@ class AdminController extends Controller
 
         return view('backpack::dashboard', $this->data);
     }
+
+    /**
+     * Redirect the admin dashboard.
+     * The '/admin' route is not to be used, because it breaks the menu's active state.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToDashboard()
+    {
+        return redirect('admin/dashboard');
+    }
 }
