@@ -3,7 +3,7 @@
 @section('header')
     <section class="content-header">
       <ol class="breadcrumb">
-        <li><a href="{{ 'admin' }}">{{ config('base.project_name') }}</a></li>
+        <li><a href="{{ 'admin' }}">{{ config('backpack.base.project_name') }}</a></li>
         <li class="active">405 error</li>
       </ol>
     </section>
@@ -19,7 +19,7 @@
 
           <p>
             <?php
-              $default_error_message = "Meanwhile, you may <a href='".url('admin')."'>return to dashboard</a>";
+                $default_error_message = "Meanwhile, you may <a href='".url('admin')."'>return to dashboard</a>";
             ?>
             {!! isset($exception)? ($exception->getMessage()?$exception->getMessage():$default_error_message): $default_error_message !!}
           </p>

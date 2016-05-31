@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>
-      {{ isset($title) ? $title.' :: '.config('base.project_name').' Admin' : config('base.project_name').' Admin' }}
+      {{ isset($title) ? $title.' :: '.config('backpack.base.project_name').' Admin' : config('backpack.base.project_name').' Admin' }}
     </title>
 
     @yield('before_styles')
@@ -45,7 +45,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition {{ config('base.skin') }} sidebar-mini">
+<body class="hold-transition {{ config('backpack.base.skin') }} sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -53,9 +53,9 @@
         <!-- Logo -->
         <a href="{{ url('') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">{!! config('base.logo_mini') !!}</span>
+          <span class="logo-mini">{!! config('backpack.base.logo_mini') !!}</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">{!! config('base.logo_lg') !!}</span>
+          <span class="logo-lg">{!! config('backpack.base.logo_lg') !!}</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -93,12 +93,12 @@
       <!-- /.content-wrapper -->
 
       <footer class="main-footer">
-        @if (config('base.show_powered_by'))
+        @if (config('backpack.base.show_powered_by'))
             <div class="pull-right hidden-xs">
               Powered by <a target="_blank" href="http://laravelbackpack.com">Laravel BackPack</a>
             </div>
         @endif
-        Handcrafted by <a target="_blank" href="{{ config('base.developer_link') }}">{{ config('base.developer_name') }}</a>.
+        Handcrafted by <a target="_blank" href="{{ config('backpack.base.developer_link') }}">{{ config('backpack.base.developer_name') }}</a>.
       </footer>
     </div>
     <!-- ./wrapper -->

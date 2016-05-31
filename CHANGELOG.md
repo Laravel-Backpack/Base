@@ -22,10 +22,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.5.12] - 2016-05-31
+## [0.5.13] - 2016-05-31
 
 ### Added
 - Added active state on left-side menu items;
+
+
+## [0.5.12] - 2016-05-27
+
+### Fixed
+- Publishing a config file did not allow developers to change configs.
 
 
 ## [0.5.11] - 2016-05-26

@@ -6,7 +6,7 @@
         Dashboard<small>The first page you see after login.</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ 'admin' }}">{{ config('base.project_name') }}</a></li>
+        <li><a href="{{ 'admin' }}">{{ config('backpack.base.project_name') }}</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>

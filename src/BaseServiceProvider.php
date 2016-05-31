@@ -33,7 +33,7 @@ class BaseServiceProvider extends ServiceProvider
 
         // PUBLISH FILES
         // publish config file
-        $this->publishes([__DIR__.'/config/config.php' => config_path('backpack/base.php')], 'config');
+        $this->publishes([__DIR__.'/config' => config_path()], 'config');
         // publish lang files
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
         // publish views
@@ -47,7 +47,7 @@ class BaseServiceProvider extends ServiceProvider
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/config.php', 'base'
+            __DIR__.'/config/backpack/base.php', 'base'
         );
     }
 
@@ -75,9 +75,9 @@ class BaseServiceProvider extends ServiceProvider
         $this->registerBase();
 
         // use this if your package has a config file
-        config([
-                'config/config.php',
-        ]);
+        // config([
+        //         'config/config.php',
+        // ]);
     }
 
     private function registerBase()

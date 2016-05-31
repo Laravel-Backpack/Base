@@ -3,7 +3,7 @@
 @section('header')
     <section class="content-header">
       <ol class="breadcrumb">
-        <li><a href="{{ 'admin' }}">{{ config('base.project_name') }}</a></li>
+        <li><a href="{{ 'admin' }}">{{ config('backpack.base.project_name') }}</a></li>
         <li class="active">500 error</li>
       </ol>
     </section>
@@ -19,7 +19,7 @@
 
           <p>
             <?php
-              $default_error_message = "An internal server error has occurred. If the error persists please contact the development team.";
+                $default_error_message = "An internal server error has occurred. If the error persists please contact the development team.";
             ?>
             {!! isset($exception)? ($exception->getMessage()?$exception->getMessage():$default_error_message): $default_error_message !!}
           </p>
