@@ -127,6 +127,15 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
+        // Set active state on menu element
+        var current_url = "{{ url(Route::current()->getUri()) }}";
+        $("ul.sidebar-menu li a").each(function() {
+          if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
+          {
+            $(this).parents('li').addClass('active');
+          }
+        });
     </script>
 
     @include('backpack::inc.alerts')
