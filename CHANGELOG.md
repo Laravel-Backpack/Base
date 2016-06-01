@@ -22,7 +22,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.5.13] - 2016-06-01
+## [0.5.14] - 2016-06-01
 
 ### Fixed
 - fixes #18 - purple buttons in adminlte only when using purple skins
