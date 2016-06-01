@@ -6,7 +6,8 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
     Route::auth();
 
     // Other Backpack\Base routes
-    Route::get('/', 'AdminController@dashboard');
+    Route::get('/', 'AdminController@redirectToDashboard');
+    Route::get('dashboard', 'AdminController@dashboard');
 });
 
 // REDIRECT "login" URL TO "admin/login"
