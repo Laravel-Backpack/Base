@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Password;
 class PasswordController extends Controller
 {
     protected $data = []; // the information we send to the view
+    protected $redirectTo = 'admin/dashboard';
 
     /*
     |--------------------------------------------------------------------------

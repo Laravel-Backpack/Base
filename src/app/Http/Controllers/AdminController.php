@@ -11,7 +11,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -24,16 +24,5 @@ class AdminController extends Controller
         $this->data['title'] = 'Dashboard'; // set the page title
 
         return view('backpack::dashboard', $this->data);
-    }
-
-    /**
-     * Redirect the admin dashboard.
-     * The '/admin' route is not to be used, because it breaks the menu's active state.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function redirectToDashboard()
-    {
-        return redirect('admin/dashboard');
     }
 }

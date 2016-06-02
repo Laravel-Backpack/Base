@@ -22,6 +22,21 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.0] - 2016-06-02
+
+### Added
+- BREAKING CHANGE: added new Admin middleware used instead of Auth middleware, for redirects to work properly; All other packages will need to use this middleware from now on;
+- How to use Password Reset functionality in README.md
+
+### Fixed
+- Error views used AdminLTE and had menus, but were also used as the main application error pages. This could become a security issue if the admin isn't careful to shut down registration.
+- /login is no longer redirected to /admin/login
+- Backpack/Base no longer uses any routes outside the /admin/ prefix in order not to conflict with any catch-all routes (as developers will probably use with PageManager).
+
+### Removed
+- routes.php file - routes are now defined in the BaseServiceProvider, so the package can be easily dropped on top of a Laravel application folder;
+
+
 ## [0.5.14] - 2016-06-01
 
 ### Fixed

@@ -49,6 +49,18 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
 
 5) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
 
+6) [optional] If you want to be able to use the Reset Password functionality, you need to specify to Laravel to use the Backpack email for this. At the end of your \config\auth.php file, change:
+``` php
+'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'email' => 'backpack::auth.emails.password', // <--- change is here
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+    ],
+```
+
 ## Usage 
 
 1. Register a new user at yourappname/admin/register

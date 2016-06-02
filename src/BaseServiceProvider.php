@@ -4,6 +4,7 @@ namespace Backpack\Base;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,7 @@ class BaseServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(\Illuminate\Routing\Router $router)
     {
         // LOAD THE VIEWS
         // - first the published views (in case they have any changes)
@@ -60,8 +61,22 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
+        // register the 'admin' middleware
+        $router->middleware('admin', app\Http\Middleware\Admin::class);
+
         $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
-            require __DIR__.'/app/Http/routes.php';
+            // All BackPack routes are placed under the 'admin' prefix, to minimize possible conflicts with your application. This means your login/logout/register urls are also under the 'admin' prefix, so you can have separate logins for users and admins.
+            Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
+                // Admin authentication routes
+                Route::auth();
+
+                // Other Backpack\Base routes
+                Route::get('dashboard', 'AdminController@dashboard');
+                Route::get('/', function () {
+                    // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
+                    return redirect('admin/dashboard');
+                });
+            });
         });
     }
 
@@ -71,16 +86,6 @@ class BaseServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        $this->registerBase();
-
-        // use this if your package has a config file
-        // config([
-        //         'config/config.php',
-        // ]);
-    }
-
-    private function registerBase()
     {
         $this->app->bind('base', function ($app) {
             return new Base($app);
