@@ -20,10 +20,10 @@
       <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
 
         @if (Auth::guest())
-            <li><a href="{{ url('admin/login') }}">Login</a></li>
-            <li><a href="{{ url('admin/register') }}">Register</a></li>
+            <li><a href="{{ url('admin/login') }}">{{ trans('backpack::base.login') }}</a></li>
+            <li><a href="{{ url('admin/register') }}">{{ trans('backpack::base.register') }}</a></li>
         @else
-            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
+            <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
         @endif
 
        <!-- ========== End of top menu right items ========== -->

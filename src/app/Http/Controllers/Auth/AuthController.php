@@ -95,7 +95,7 @@ class AuthController extends Controller
             return view($view);
         }
 
-        $this->data['title'] = 'Login'; // set the page title
+        $this->data['title'] = trans('backpack::base.login'); // set the page title
 
         return view('backpack::auth.login', $this->data);
     }
@@ -116,7 +116,7 @@ class AuthController extends Controller
             return view($this->registerView);
         }
 
-        $this->data['title'] = 'Register'; // set the page title
+        $this->data['title'] = trans('backpack::base.register'); // set the page title
 
         return view('backpack::auth.register', $this->data);
     }
