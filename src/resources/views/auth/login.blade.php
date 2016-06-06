@@ -5,7 +5,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <di class="box-title">{{ trans('backpack::base.login') }}</di>
+                    <div class="box-title">{{ trans('backpack::base.login') }}</div>
                 </div>
                 <div class="box-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/login') }}">
