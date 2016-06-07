@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.1] - 2016-06-03
+
+### Added
+- Italian translation, thanks to Federico Liva.
+
+
 ## [0.6.0] - 2016-06-02
 
 ### Added
