@@ -47,7 +47,7 @@ class PasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        $this->data['title'] = 'Reset password'; // set the page title
+        $this->data['title'] = trans('backpack::base.reset_password'); // set the page title
 
         if (property_exists($this, 'linkRequestView')) {
             return view($this->linkRequestView);
@@ -72,7 +72,7 @@ class PasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
-        $this->data['title'] = 'Reset password'; // set the page title
+        $this->data['title'] = trans('backpack::base.reset_password'); // set the page title
 
         if (is_null($token)) {
             return $this->getEmail();
