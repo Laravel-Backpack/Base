@@ -29,4 +29,6 @@ return [
     'click_here_to_reset'  => 'Click here to reset your password',
     'unauthorized'         => 'Unauthorized.',
     'dashboard'            => 'Dashboard',
+    'handcrafted_by'       => 'Handcrafted by',
+    'powered_by'           => 'Powered by',
 ];

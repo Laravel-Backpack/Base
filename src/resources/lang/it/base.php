@@ -29,4 +29,6 @@ return [
     'click_here_to_reset'  => 'Clicca qui per reimpostare la tua password',
     'unauthorized'         => 'Non autorizzato.',
     'dashboard'            => 'Dashboard',
+    'handcrafted_by'       => 'Realizzato da',
+    'powered_by'           => 'Creato con',
 ];
