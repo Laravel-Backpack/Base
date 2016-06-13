@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.2] - 2016-06-13
+
+### Fixed
+- Dashboard menu item always stayed active, thanks to Francis Derequito for reporting.
+
+
 ## [0.6.1] - 2016-06-03
 
 ### Added
