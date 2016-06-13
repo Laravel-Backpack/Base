@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.3] - 2016-06-13
+
+### Fixed
+- Hide registration menu button if registration closed.
+
+
+
 ## [0.6.2] - 2016-06-13
 
 ### Fixed
