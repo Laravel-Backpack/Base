@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.4] - 2016-06-21
+
+### Fixed
+- Fix registration button not showing.
+
+
 ## [0.6.3] - 2016-06-13
 
 ### Fixed
