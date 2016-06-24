@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.5] - 2016-06-24
+
+### Added
+- Romanian translation, thanks to Aurel Dragut.
+
+
 ## [0.6.4] - 2016-06-21
 
 ### Fixed
