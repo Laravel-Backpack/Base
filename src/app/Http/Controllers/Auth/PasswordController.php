@@ -2,7 +2,7 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
