@@ -48,7 +48,7 @@ class BaseServiceProvider extends ServiceProvider
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'base'
+            __DIR__.'/config/backpack/base.php', 'backpack.base'
         );
     }
 
@@ -87,8 +87,18 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // register the current package
         $this->app->bind('base', function ($app) {
             return new Base($app);
         });
+
+        // register its dependencies
+        $this->app->register(\Jenssegers\Date\DateServiceProvider::class);
+        $this->app->register(\Prologue\Alerts\AlertsServiceProvider::class);
+
+        // register their aliases
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('Alert', \Prologue\Alerts\Facades\Alert::class);
+        $loader->alias('Date', \Jenssegers\Date\Date::class);
     }
 }

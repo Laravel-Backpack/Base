@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.7] - 2016-06-28
+
+### Added
+- jenssegers/date library to handle localized dates by default;
+- registered dependencies in order to simplify installation steps;
+
+
 ## [0.6.6] - 2016-06-28
 
 ### Fixed
