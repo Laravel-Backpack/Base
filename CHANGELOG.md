@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.8] - 2016-08-03
+
+### Added
+- French translation, thanks to [Aurelle Meless](https://github.com/aurellemeless);
+- Small dashboard url fix, thanks to [Viktor Ivanov](https://github.com/viktorivanov); 
+
+
 ## [0.6.7] - 2016-06-28
 
 ### Added
