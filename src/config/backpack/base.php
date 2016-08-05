@@ -49,4 +49,17 @@ return [
 
     'registration_open' => true,
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Routing
+    |--------------------------------------------------------------------------
+    */
+
+    // The prefix used in all base routes (ex: admin/dashboard)
+    'route_prefix' => 'admin',
+
+    // Set this to false if you would like to skip adding the Base routes (dashboard, auth)
+    'setup_base_routes' => true,
+
 ];

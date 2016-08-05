@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.9] - 2016-08-06
+
+### Added
+- added config option to rename the route prefix;
+- added config option to disable the base routes setup;
+
+
 ## [0.6.8] - 2016-08-03
 
 ### Added

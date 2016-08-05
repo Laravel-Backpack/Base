@@ -30,9 +30,16 @@ class BaseServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
+        // use the vendor configuration file as fallback
+        $this->mergeConfigFrom(
+            __DIR__.'/config/backpack/base.php', 'backpack.base'
+        );
+
         $this->setupRoutes($this->app->router);
 
+        // -------------
         // PUBLISH FILES
+        // -------------
         // publish config file
         $this->publishes([__DIR__.'/config' => config_path()], 'config');
         // publish lang files
@@ -45,11 +52,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
         // publish public AdminLTE assets
         $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
-
-        // use the vendor configuration file as fallback
-        $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'backpack.base'
-        );
     }
 
     /**
@@ -64,20 +66,23 @@ class BaseServiceProvider extends ServiceProvider
         // register the 'admin' middleware
         $router->middleware('admin', app\Http\Middleware\Admin::class);
 
-        $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
-            // All BackPack routes are placed under the 'admin' prefix, to minimize possible conflicts with your application. This means your login/logout/register urls are also under the 'admin' prefix, so you can have separate logins for users and admins.
-            Route::group(['middleware' => 'web', 'prefix' => 'admin'], function () {
-                // Admin authentication routes
-                Route::auth();
+        // if not otherwise configured, setup the base routes
+        if (config('backpack.base.setup_base_routes')) {
+            $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
+                // All BackPack routes are placed under the 'admin' prefix, to minimize possible conflicts with your application. This means your login/logout/register urls are also under the 'admin' prefix, so you can have separate logins for users and admins.
+                Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
+                    // Admin authentication routes
+                    Route::auth();
 
-                // Other Backpack\Base routes
-                Route::get('dashboard', 'AdminController@dashboard');
-                Route::get('/', function () {
-                    // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
-                    return redirect('admin/dashboard');
+                    // Other Backpack\Base routes
+                    Route::get('dashboard', 'AdminController@dashboard');
+                    Route::get('/', function () {
+                        // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
+                        return redirect(config('backpack.base.route_prefix').'/dashboard');
+                    });
                 });
             });
-        });
+        }
     }
 
     /**
