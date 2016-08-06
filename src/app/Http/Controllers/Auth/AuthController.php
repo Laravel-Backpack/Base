@@ -39,7 +39,6 @@ class AuthController extends Controller
     // after you've logged out redirect to
     protected $redirectAfterLogout = 'admin';
 
-
     /**
      * Create a new authentication controller instance.
      *
@@ -76,7 +75,7 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $user_model_fqn = config('backpack.base.user_model_fqn');
-        $user = new $user_model_fqn;
+        $user = new $user_model_fqn();
 
         return $user->create([
             'name'     => $data['name'],
