@@ -22,7 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.6.9] - 2016-08-06
+## [0.6.10] - 2016-08-06
+
+### Fixed
+- renaming the route prefix also taken into account in the admin middleware;
+
+
+## [0.6.9] - 2016-08-05
 
 ### Added
 - added config option to rename the route prefix;

@@ -22,7 +22,7 @@ class Admin
             if ($request->ajax() || $request->wantsJson()) {
                 return response(trans('backpack::base.unauthorized'), 401);
             } else {
-                return redirect()->guest('admin/login');
+                return redirect()->guest(config('backpack.base.route_prefix').'/login');
             }
         }
 
