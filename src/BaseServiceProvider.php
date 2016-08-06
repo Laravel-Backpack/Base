@@ -66,15 +66,22 @@ class BaseServiceProvider extends ServiceProvider
         // register the 'admin' middleware
         $router->middleware('admin', app\Http\Middleware\Admin::class);
 
-        // if not otherwise configured, setup the base routes
-        if (config('backpack.base.setup_base_routes')) {
+        // if not otherwise configured, setup the auth routes
+        if (config('backpack.base.setup_auth_routes')) {
             $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
-                // All BackPack routes are placed under the 'admin' prefix, to minimize possible conflicts with your application. This means your login/logout/register urls are also under the 'admin' prefix, so you can have separate logins for users and admins.
                 Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
                     // Admin authentication routes
                     Route::auth();
+                });
+            });
+        }
 
-                    // Other Backpack\Base routes
+        // if not otherwise configured, setup the base routes
+        if (config('backpack.base.setup_base_routes')) {
+            $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
+                Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
+
+                    // Admin dashboard routes
                     Route::get('dashboard', 'AdminController@dashboard');
                     Route::get('/', function () {
                         // The '/admin' route is not to be used as a page, because it breaks the menu's active state.

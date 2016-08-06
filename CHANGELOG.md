@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.11] - 2016-08-06
+
+### Added
+- config option to disable the auth routes setup;
+- config option to change the User model;
+
 ## [0.6.10] - 2016-08-06
 
 ### Fixed

@@ -62,4 +62,16 @@ return [
     // Set this to false if you would like to skip adding the Base routes (dashboard, auth)
     'setup_base_routes' => true,
 
+    // Set this to false if you would like to skip adding the Auth routes and use your own AuthController and PasswordController
+    'setup_auth_routes' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | User Model
+    |--------------------------------------------------------------------------
+    */
+
+    // Fully qualified namespace of the User model
+    'user_model_fqn' => '\App\User',
+
 ];

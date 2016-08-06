@@ -2,7 +2,6 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use App\User;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -28,12 +27,18 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect users after auth operations.
      *
      * @var string
      */
-    protected $redirectTo = 'admin/dashboard';
+
+    // if not logged in redirect to
     protected $loginPath = 'admin/login';
+    // after you've logged in redirect to
+    protected $redirectTo = 'admin/dashboard';
+    // after you've logged out redirect to
+    protected $redirectAfterLogout = 'admin';
+
 
     /**
      * Create a new authentication controller instance.
@@ -70,7 +75,10 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user_model_fqn = config('backpack.base.user_model_fqn');
+        $user = new $user_model_fqn;
+
+        return $user->create([
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
