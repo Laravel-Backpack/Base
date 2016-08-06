@@ -67,12 +67,11 @@ class BaseServiceProvider extends ServiceProvider
         $router->middleware('admin', app\Http\Middleware\Admin::class);
 
         $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
-
             Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
 
                 // if not otherwise configured, setup the auth routes
                 if (config('backpack.base.setup_auth_routes')) {
-                        Route::auth();
+                    Route::auth();
                 }
 
                 // if not otherwise configured, setup the dashboard routes
@@ -83,7 +82,6 @@ class BaseServiceProvider extends ServiceProvider
                         return redirect(config('backpack.base.route_prefix').'/dashboard');
                     });
                 }
-
             });
         });
     }
