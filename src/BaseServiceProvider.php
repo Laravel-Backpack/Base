@@ -66,30 +66,26 @@ class BaseServiceProvider extends ServiceProvider
         // register the 'admin' middleware
         $router->middleware('admin', app\Http\Middleware\Admin::class);
 
-        // if not otherwise configured, setup the auth routes
-        if (config('backpack.base.setup_auth_routes')) {
-            $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
+        $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
+
+            // if not otherwise configured, setup the auth routes
+            if (config('backpack.base.setup_auth_routes')) {
                 Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
                     // Admin authentication routes
                     Route::auth();
                 });
-            });
-        }
+            }
 
-        // if not otherwise configured, setup the base routes
-        if (config('backpack.base.setup_base_routes')) {
-            $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
-                Route::group(['middleware' => 'web', 'prefix' => config('backpack.base.route_prefix')], function () {
-
-                    // Admin dashboard routes
-                    Route::get('dashboard', 'AdminController@dashboard');
-                    Route::get('/', function () {
-                        // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
-                        return redirect(config('backpack.base.route_prefix').'/dashboard');
-                    });
+            // if not otherwise configured, setup the dashboard routes
+            if (config('backpack.base.setup_dashboard_routes')) {
+                // Admin dashboard routes
+                Route::get('dashboard', 'AdminController@dashboard');
+                Route::get('/', function () {
+                    // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
+                    return redirect(config('backpack.base.route_prefix').'/dashboard');
                 });
-            });
-        }
+            }
+        });
     }
 
     /**

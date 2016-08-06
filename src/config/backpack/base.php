@@ -56,14 +56,16 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    // The prefix used in all base routes (ex: admin/dashboard)
+    // The prefix used in all base routes (the 'admin' in admin/dashboard)
     'route_prefix' => 'admin',
 
-    // Set this to false if you would like to skip adding the Base routes (dashboard, auth)
-    'setup_base_routes' => true,
-
-    // Set this to false if you would like to skip adding the Auth routes and use your own AuthController and PasswordController
+    // Set this to false if you would like to use your own AuthController and PasswordController
+    // (you then need to setup your auth routes manually in your routes.php file)
     'setup_auth_routes' => true,
+
+    // Set this to false if you would like to skip adding the dashboard routes
+    // (you then need to overwrite the login route on your AuthController)
+    'setup_dashboard_routes' => true,
 
     /*
     |--------------------------------------------------------------------------

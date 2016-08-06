@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.12] - 2016-08-06
+
+### Fixed
+- better naming and order for the latest config options;
+
+
 ## [0.6.11] - 2016-08-06
 
 ### Added
