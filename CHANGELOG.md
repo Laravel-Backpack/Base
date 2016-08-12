@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.6.13] - 2016-08-12
+
+### Added
+- Spanish translation, thanks to [Rafael Ernesto Ferro González](https://github.com/rafix);
+
+
 ## [0.6.12] - 2016-08-06
 
 ### Fixed
