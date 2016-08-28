@@ -28,6 +28,7 @@ class AdminController extends Controller
 
     /**
      * Redirect to the dashboard
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function redirect()
     {
