@@ -77,10 +77,7 @@ class BaseServiceProvider extends ServiceProvider
                 // if not otherwise configured, setup the dashboard routes
                 if (config('backpack.base.setup_dashboard_routes')) {
                     Route::get('dashboard', 'AdminController@dashboard');
-                    Route::get('/', function () {
-                        // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
-                        return redirect(config('backpack.base.route_prefix').'/dashboard');
-                    });
+                    Route::get('/', 'AdminController@redirect');
                 }
             });
         });
