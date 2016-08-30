@@ -32,7 +32,6 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
     }
 
-
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------

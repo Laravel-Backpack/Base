@@ -43,7 +43,6 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------

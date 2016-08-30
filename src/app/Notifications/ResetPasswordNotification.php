@@ -1,10 +1,10 @@
-<?
+<?php
 
 namespace Backpack\Base\app\Notifications;
 
+use Illuminate\Auth\Notifications\ResetPassword as ResetPassword;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Auth\Notifications\ResetPassword as ResetPassword;
 
 class ResetPasswordNotification extends ResetPassword
 {
@@ -15,7 +15,7 @@ class ResetPasswordNotification extends ResetPassword
      */
     public function toMail()
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->line([
                 'You are receiving this email because we received a password reset request for your account.',
                 'Click the button below to reset your password:',
