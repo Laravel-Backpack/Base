@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.0] - 2016-08-30
+
+### Added
+- Laravel 5.3 support; please note that in order for PasswordResetNotifications to have correct links, the User models needs to me modified a bit.
+
+
+
 ## [0.6.16] - 2016-08-30
 
 ### Removed

@@ -72,6 +72,7 @@ class BaseServiceProvider extends ServiceProvider
                 // if not otherwise configured, setup the auth routes
                 if (config('backpack.base.setup_auth_routes')) {
                     Route::auth();
+                    Route::get('logout', 'Auth\LoginController@logout');
                 }
 
                 // if not otherwise configured, setup the dashboard routes
