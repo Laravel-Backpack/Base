@@ -20,7 +20,7 @@ Laravel BackPack's central package, which includes:
 ![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
 
 
-## Install
+## Install on Laravel 5.3
 
 1) Run in your terminal:
 
@@ -35,15 +35,50 @@ Backpack\Base\BaseServiceProvider::class,
 
 3) Then run a few commands in the terminal:
 ``` bash
-$ rm -rf app/Http/Controllers/Auth #deletes laravel's demo auth controllers
 $ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" #publishes configs, langs, views and AdminLTE files
 $ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider" # publish config for notifications - prologue/alerts
 $ php artisan migrate #generates users table (using Laravel's default migrations)
 ```
 
-4) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
+4) Make sure the reset password emails have the correct reset link by editing the adding these to your ```User``` model:
+- before class name ```use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;```
+- as a method inside the User class:
+``` php
+  /**
+   * Send the password reset notification.
+   *
+   * @param  string  $token
+   * @return void
+   */
+  public function sendPasswordResetNotification($token)
+  {
+      $this->notify(new ResetPasswordNotification($token));
+  }
+```
 
-5) [optional] If you want to be able to use the Reset Password functionality, you need to specify to Laravel to use the Backpack email for this. At the end of your \config\auth.php file, change:
+5) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
+
+## Install on Laravel 5.2
+
+1) Run in your terminal:
+
+``` bash
+$ composer require backpack/base
+```
+
+2) Add the service providers in config/app.php:
+``` php
+Backpack\Base\BaseServiceProvider::class,
+```
+
+3) Then run a few commands in the terminal:
+``` bash
+$ php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" #publishes configs, langs, views and AdminLTE files
+$ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider" # publish config for notifications - prologue/alerts
+$ php artisan migrate #generates users table (using Laravel's default migrations)
+```
+
+4) If you want to be able to use the Reset Password functionality, you need to specify to Laravel to use the Backpack email for this. At the end of your \config\auth.php file, change:
 ``` php
 'passwords' => [
         'users' => [
@@ -54,6 +89,8 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
         ],
     ],
 ```
+
+5) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
 
 ## Usage 
 
