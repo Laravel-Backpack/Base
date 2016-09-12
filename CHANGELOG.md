@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.1] - 2016-09-12
+
+### Fixed
+- Removed some plugins CSS from the layout.blade.php file, since they aren't used on all pages;
+
+
 ## [0.7.0] - 2016-08-30
 
 ### Added
