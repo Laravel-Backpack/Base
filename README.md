@@ -63,7 +63,7 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
 1) Run in your terminal:
 
 ``` bash
-$ composer require backpack/base
+$ composer require backpack/base 0.6.x
 ```
 
 2) Add the service providers in config/app.php:
