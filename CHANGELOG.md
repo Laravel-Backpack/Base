@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.2] - 2016-09-25
+
+### Fixed
+- Views now follow the route_prefix set in config;
+
+
 ## [0.7.1] - 2016-09-12
 
 ### Fixed
