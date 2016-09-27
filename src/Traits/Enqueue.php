@@ -5,11 +5,11 @@ namespace Backpack\Base\Traits;
 trait Enqueue
 {
     public static $enqueuedScripts = [];
-    public static $enqueuedStyles  = [];
+    public static $enqueuedStyles = [];
 
     public static function enqueueAsset($type, $id, $source, $dependencies = [])
     {
-        switch($type){
+        switch ($type) {
             case 'css':
             case 'style':
                 return self::enqueueStyle($id, $source, $dependencies);
@@ -24,19 +24,18 @@ trait Enqueue
 
     public static function enqueueScript($id, $source, $dependencies)
     {
-        if(!str_contains($source, "//")){
+        if (!str_contains($source, '//')) {
             $path = '/'.ltrim($source, '/');
-            $v = filemtime(realpath(ltrim($path, "/")));
+            $v = filemtime(realpath(ltrim($path, '/')));
             $sourceComputed = asset($path.'?v='.$v);
-        }
-        else {
+        } else {
             $sourceComputed = $source;
         }
 
         $sourceObj = (object) [
             'id'     => $id,
             'source' => $sourceComputed,
-            'deps'   => $dependencies
+            'deps'   => $dependencies,
         ];
 
         self::$enqueuedScripts[$id] = $sourceObj;
@@ -46,26 +45,24 @@ trait Enqueue
 
     public static function enqueueStyle($id, $source, $dependencies)
     {
-        if(!str_contains($source, "//")){
+        if (!str_contains($source, '//')) {
             $path = '/'.ltrim($source, '/');
-            $v = filemtime(realpath(ltrim($path, "/")));
+            $v = filemtime(realpath(ltrim($path, '/')));
             $sourceComputed = asset($path.'?v='.$v);
-        }
-        else {
+        } else {
             $sourceComputed = $source;
         }
 
         $sourceObj = (object) [
             'id'     => $id,
             'source' => $sourceComputed,
-            'deps'   => $dependencies
+            'deps'   => $dependencies,
         ];
 
         self::$enqueuedStyles[$id] = $sourceObj;
 
         return $sourceObj;
     }
-
 
     private static function handleDependencies($items)
     {
@@ -74,13 +71,13 @@ trait Enqueue
         $dependenciesFound = [];
         $circularDependencyCounter = 0;
 
-        while(count($items) > count($resolutions) && $circularDependencyCounter < 20) {
+        while (count($items) > count($resolutions) && $circularDependencyCounter < 20) {
             $circularDependencyCounter++;
 
-            foreach($items as $itemIndex => $item) {
+            foreach ($items as $itemIndex => $item) {
 
                 //If I'm an existing depdendency - skip me!
-                if(isset($dependenciesFound[$item->id])) {
+                if (isset($dependenciesFound[$item->id])) {
                     continue;
                 }
 
@@ -88,16 +85,16 @@ trait Enqueue
                 $resolved = true;
 
                 //Check through each depdendency to see if its alrady desolved
-                if(isset($item->deps) && !empty($item->deps)) {
-                    foreach($item->deps as $dep) {
-                        if(!isset($dependenciesFound[$dep])) {
+                if (isset($item->deps) && !empty($item->deps)) {
+                    foreach ($item->deps as $dep) {
+                        if (!isset($dependenciesFound[$dep])) {
                             $resolved = false;
                             break;
                         }
                     }
                 }
 
-                if($resolved) {
+                if ($resolved) {
                     $dependenciesFound[$item->id] = true;
                     $resolutions[] = $item;
                 }
