@@ -5,9 +5,12 @@ namespace Backpack\Base;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Route;
+use Backpack\Base\Traits\Enqueue;
 
 class BaseServiceProvider extends ServiceProvider
 {
+    use Enqueue;
+    
     /**
      * Indicates if loading of the provider is deferred.
      *

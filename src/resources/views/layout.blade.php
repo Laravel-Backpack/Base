@@ -30,6 +30,11 @@
     <!-- BackPack Base CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}">
 
+    <!-- Enqueued CSS -->
+    @foreach( \Backpack\Base\BaseServiceProvider::getStyles() as $style )
+    <link rel="stylesheet" href="{{ $style->source }}" data-source-id="{{$style->id}}" data-deps="{{implode(',', $style->deps)}}">
+    @endforeach
+
     @yield('after_styles')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -117,20 +122,24 @@
 
         // Ajax calls should always have the CSRF token attached to them, otherwise they won't work
         $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
         // Set active state on menu element
         var current_url = "{{ url(Route::current()->getUri()) }}";
         $("ul.sidebar-menu li a").each(function() {
-          if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
-          {
-            $(this).parents('li').addClass('active');
-          }
+            if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href'))) {
+                $(this).parents('li').addClass('active');
+            }
         });
     </script>
+
+    <!-- Enqueued Scripts -->
+    @foreach( \Backpack\Base\BaseServiceProvider::getScripts() as $script )
+    <script src="{{ $script->source }}" data-source-id="{{$script->id}}" data-deps="{{implode(',', $script->deps)}}"></script>
+    @endforeach
 
     @include('backpack::inc.alerts')
 
