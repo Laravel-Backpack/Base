@@ -13,7 +13,7 @@ class ResetPasswordNotification extends ResetPassword
      *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail()
+    public function toMail($notifiable)
     {
         return (new MailMessage())
             ->line([
