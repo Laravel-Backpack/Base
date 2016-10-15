@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.3] - 2016-10-15
+
+### Fixed
+- ResetPasswordNotification was not being sent;
+
+
 ## [0.7.2] - 2016-09-25
 
 ### Fixed
