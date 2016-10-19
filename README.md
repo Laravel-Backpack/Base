@@ -40,7 +40,7 @@ $ php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider" 
 $ php artisan migrate #generates users table (using Laravel's default migrations)
 ```
 
-4) Make sure the reset password emails have the correct reset link by editing the adding these to your ```User``` model:
+4) Make sure the reset password emails have the correct reset link by adding these to your ```User``` model:
 - before class name ```use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;```
 - as a method inside the User class:
 ``` php
