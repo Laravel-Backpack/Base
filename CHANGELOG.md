@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.4] - 2016-11-01
+
+### Fixed
+- added ladda buttons css and js in the public folder, so that BackupManager would have it;
+
+
+
 ## [0.7.3] - 2016-10-15
 
 ### Fixed
