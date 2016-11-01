@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'registration_open' => (env('APP_ENV')=='local')?true:false,
+    'registration_open' => (env('APP_ENV') == 'local') ? true : false,
 
 
     /*
