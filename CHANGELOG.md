@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.5] - 2016-11-01
+
+### Added
+- by default, admin registration is open only if the environment is local, so that developers don't accidentally allow admin registration in production;
+
+
 ## [0.7.4] - 2016-11-01
 
 ### Fixed
