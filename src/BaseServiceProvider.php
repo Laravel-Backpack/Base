@@ -70,7 +70,7 @@ class BaseServiceProvider extends ServiceProvider
             Route::group(
                 [
                     'middleware' => 'web',
-                    'prefix' => config('backpack.base.route_prefix')
+                    'prefix'     => config('backpack.base.route_prefix'),
                 ],
                 function () {
                     // if not otherwise configured, setup the auth routes
@@ -84,7 +84,7 @@ class BaseServiceProvider extends ServiceProvider
                         Route::get('dashboard', 'AdminController@dashboard');
                         Route::get('/', 'AdminController@redirect');
                     }
-            });
+                });
         });
     }
 
