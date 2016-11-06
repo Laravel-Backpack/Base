@@ -34,6 +34,8 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
+        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
     }
 
     // -------------------------------------------------------

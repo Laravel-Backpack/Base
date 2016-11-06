@@ -41,6 +41,10 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+
+        $this->loginPath = config('backpack.base.route_prefix', 'admin').'/login';
+        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
+        $this->redirectAfterLogout = config('backpack.base.route_prefix', 'admin');
     }
 
     // -------------------------------------------------------

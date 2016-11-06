@@ -55,7 +55,7 @@
                                     {{ trans('backpack::base.login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url(config('backpack.base.route_prefix').'/password/reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
+                                <a class="btn btn-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/password/reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
                             </div>
                         </div>
                     </form>

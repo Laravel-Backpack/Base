@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.6] - 2016-11-06
+
+### Fixed
+- replaced all mentions of the default 'admin' prefix with the config value; fixes #45;
+
+
 ## [0.7.5] - 2016-11-01
 
 ### Added
