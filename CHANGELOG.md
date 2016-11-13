@@ -22,6 +22,74 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.6] - 2016-11-06
+
+### Fixed
+- replaced all mentions of the default 'admin' prefix with the config value; fixes #45;
+
+
+## [0.7.5] - 2016-11-01
+
+### Added
+- by default, admin registration is open only if the environment is local, so that developers don't accidentally allow admin registration in production;
+
+
+## [0.7.4] - 2016-11-01
+
+### Fixed
+- added ladda buttons css and js in the public folder, so that BackupManager would have it;
+
+
+
+## [0.7.3] - 2016-10-15
+
+### Fixed
+- ResetPasswordNotification was not being sent;
+
+
+## [0.7.2] - 2016-09-25
+
+### Fixed
+- Views now follow the route_prefix set in config;
+
+
+## [0.7.1] - 2016-09-12
+
+### Fixed
+- Removed some plugins CSS from the layout.blade.php file, since they aren't used on all pages;
+
+
+## [0.7.0] - 2016-08-30
+
+### Added
+- Laravel 5.3 support; please note that in order for PasswordResetNotifications to have correct links, the User models needs to me modified a bit.
+
+
+
+## [0.6.16] - 2016-08-30
+
+### Removed
+- Backpack/Base DOES NOT automatically include backpack/generators and laracasts/generators on --dev; composer does not permit installing require-dev dependencies of dependencies;
+
+
+## [0.6.15] - 2016-08-30
+
+### Added
+- Backpack/Base automatically includes backpack/generators and laracasts/generators on --dev.
+
+
+## [0.6.14] - 2016-08-29
+
+### Fixed
+- Made the admin routes serializable, thanks to [Sabatino Masala](https://github.com/SabatinoMasala)
+
+
+## [0.6.13] - 2016-08-12
+
+### Added
+- Spanish translation, thanks to [Rafael Ernesto Ferro González](https://github.com/rafix);
+
+
 ## [0.6.12] - 2016-08-06
 
 ### Fixed

@@ -5,13 +5,10 @@ namespace Backpack\Base\app\Http\Controllers\Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 
-class PasswordController extends Controller
+class ResetPasswordController extends Controller
 {
     protected $data = []; // the information we send to the view
-    protected $redirectTo = 'admin/dashboard';
 
     /*
     |--------------------------------------------------------------------------
@@ -26,39 +23,24 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    // where to redirect after password was reset
+    protected $redirectTo = 'admin/dashboard';
+
     /**
-     * Create a new password controller instance.
+     * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
         $this->middleware('guest');
+
+        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
     }
 
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------
-
-    /**
-     * Display the form to request a password reset link.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLinkRequestForm()
-    {
-        $this->data['title'] = trans('backpack::base.reset_password'); // set the page title
-
-        if (property_exists($this, 'linkRequestView')) {
-            return view($this->linkRequestView);
-        }
-
-        if (view()->exists('backpack::auth.passwords.email')) {
-            return view('backpack::auth.passwords.email', $this->data);
-        }
-
-        return view('backpack::auth.password', $this->data);
-    }
 
     /**
      * Display the password reset view for the given token.
@@ -74,20 +56,8 @@ class PasswordController extends Controller
     {
         $this->data['title'] = trans('backpack::base.reset_password'); // set the page title
 
-        if (is_null($token)) {
-            return $this->getEmail();
-        }
-
-        $email = $request->input('email');
-
-        if (property_exists($this, 'resetView')) {
-            return view($this->resetView)->with(compact('token', 'email'));
-        }
-
-        if (view()->exists('backpack::auth.passwords.reset')) {
-            return view('backpack::auth.passwords.reset', $this->data)->with(compact('token', 'email'));
-        }
-
-        return view('backpack::auth.reset', $this->data)->with(compact('token', 'email'));
+        return view('backpack::auth.passwords.reset', $this->data)->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

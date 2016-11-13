@@ -3,50 +3,43 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Backpack\Base\app\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 
-class AuthController extends Controller
+class RegisterController extends Controller
 {
     protected $data = []; // the information we send to the view
 
     /*
     |--------------------------------------------------------------------------
-    | Registration & Login Controller
+    | Register Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
+    | This controller handles the registration of new users as well as their
+    | validation and creation. By default this controller uses a trait to
+    | provide this functionality without requiring any additional code.
     |
     */
-
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use RegistersUsers;
 
     /**
-     * Where to redirect users after auth operations.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
-
-    // if not logged in redirect to
-    protected $loginPath = 'admin/login';
-    // after you've logged in redirect to
     protected $redirectTo = 'admin/dashboard';
-    // after you've logged out redirect to
-    protected $redirectAfterLogout = 'admin';
 
     /**
-     * Create a new authentication controller instance.
+     * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest');
+
+        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
     }
 
     /**
@@ -61,7 +54,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name'     => 'required|max:255',
             'email'    => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -84,29 +77,6 @@ class AuthController extends Controller
         ]);
     }
 
-    // -------------------------------------------------------
-    // Laravel overwrites for loading backpack views
-    // -------------------------------------------------------
-
-    /**
-     * Show the application login form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLoginForm()
-    {
-        $view = property_exists($this, 'loginView')
-                    ? $this->loginView : 'auth.authenticate';
-
-        if (view()->exists($view)) {
-            return view($view);
-        }
-
-        $this->data['title'] = trans('backpack::base.login'); // set the page title
-
-        return view('backpack::auth.login', $this->data);
-    }
-
     /**
      * Show the application registration form.
      *
@@ -117,10 +87,6 @@ class AuthController extends Controller
         // if registration is closed, deny access
         if (!config('backpack.base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
-        }
-
-        if (property_exists($this, 'registerView')) {
-            return view($this->registerView);
         }
 
         $this->data['title'] = trans('backpack::base.register'); // set the page title
@@ -142,15 +108,9 @@ class AuthController extends Controller
             abort(403, trans('backpack::base.registration_closed'));
         }
 
-        $validator = $this->validator($request->all());
+        $this->validator($request->all())->validate();
 
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
-        Auth::guard($this->getGuard())->login($this->create($request->all()));
+        $this->guard()->login($this->create($request->all()));
 
         return redirect($this->redirectPath());
     }
