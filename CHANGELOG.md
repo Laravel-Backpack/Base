@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.7] - 2016-12-02
+
+### Fixed
+- new version of font awesome;
+
+
+
 ## [0.7.6] - 2016-11-06
 
 ### Fixed
