@@ -19,7 +19,7 @@ return [
     'login'                => 'Login',
     'register'             => 'Registrieren',
     'name'                 => 'Name',
-    'email_address'        => 'E-Mail-Addresse',
+    'email_address'        => 'E-Mail-Adresse',
     'password'             => 'Passwort',
     'confirm_password'     => 'Passwort bestätigen',
     'remember_me'          => 'Automatisch einloggen',
