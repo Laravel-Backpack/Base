@@ -26,7 +26,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Greek translation file, thanks to [Stamatis Katsaounis](https://github.com/skatsaounis);
-- 
+- German translation file, thanks to [Thomas aka tricki](https://github.com/tricki);
 
 
 ## [0.7.7] - 2016-12-02
