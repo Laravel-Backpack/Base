@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.11] - 2016-12-21
+
+### Fixed
+- only load the generators if the classes exist;
+
+
 ## [0.7.10] - 2016-12-21
 
 ### Added
