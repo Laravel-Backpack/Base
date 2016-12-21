@@ -27,7 +27,8 @@
         "phpunit/phpunit" : "4.*",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3",
-        "backpack/generators": "^1.1"
+        "backpack/generators": "^1.1",
+        "laracasts/generators": "^1.1"
     },
     "autoload": {
         "psr-4": {
