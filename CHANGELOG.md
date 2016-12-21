@@ -22,6 +22,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.9] - 2016-12-21
+
+### Added
+- backpack/generators require-dev dependency;
+
 ## [0.7.8] - 2016-12-13
 
 ### Added

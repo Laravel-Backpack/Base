@@ -108,5 +108,11 @@ class BaseServiceProvider extends ServiceProvider
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
         $loader->alias('Alert', \Prologue\Alerts\Facades\Alert::class);
         $loader->alias('Date', \Jenssegers\Date\Date::class);
+
+        // register the services that are only used for development
+        if ($this->app->environment() == 'local') {
+            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+            $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
+        }
     }
 }
