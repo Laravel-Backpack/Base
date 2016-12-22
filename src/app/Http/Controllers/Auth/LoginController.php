@@ -26,21 +26,21 @@ class LoginController extends Controller
 
     
     /**
-     * If not logged in redirect here
+     * If not logged in redirect here.
      * 
      * @var string
      */
     protected $loginPath = 'admin/login';
     
     /**
-     * Redirect here after successful login
+     * Redirect here after successful login.
      * 
      * @var string
      */
     protected $redirectTo = 'admin/dashboard';
 
     /**
-     * Redirect here after logout
+     * Redirect here after logout.
      * 
      * @var string
      */
@@ -57,10 +57,10 @@ class LoginController extends Controller
 
         // Set up redirect paths if not specified
         $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath 
-            : config('backpack.base.route_prefix', 'admin') . '/login';
+            : config('backpack.base.route_prefix', 'admin').'/login';
 
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
-            : config('backpack.base.route_prefix', 'admin') . '/dashboard';
+            : config('backpack.base.route_prefix', 'admin').'/dashboard';
 
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
             : config('backpack.base.route_prefix', 'admin');
@@ -83,7 +83,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Log the user out and redirect him to specific location
+     * Log the user out and redirect him to specific location.
      *
      * @param \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
