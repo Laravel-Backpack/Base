@@ -24,24 +24,23 @@ class LoginController extends Controller
         logout as defaultLogout;
     }
 
-    
     /**
      * If not logged in redirect here.
-     * 
+     *
      * @var string
      */
     protected $loginPath = 'admin/login';
     
     /**
      * Redirect here after successful login.
-     * 
+     *
      * @var string
      */
     protected $redirectTo = 'admin/dashboard';
 
     /**
      * Redirect here after logout.
-     * 
+     *
      * @var string
      */
     protected $redirectAfterLogout = 'admin';
@@ -56,7 +55,7 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
 
         // Set up redirect paths if not specified
-        $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath 
+        $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath
             : config('backpack.base.route_prefix', 'admin').'/login';
 
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
@@ -85,7 +84,8 @@ class LoginController extends Controller
     /**
      * Log the user out and redirect him to specific location.
      *
-     * @param \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
