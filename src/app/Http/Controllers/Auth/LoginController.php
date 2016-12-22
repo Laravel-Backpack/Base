@@ -30,7 +30,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $loginPath = 'admin/login';
-    
+
     /**
      * Redirect here after successful login.
      *
