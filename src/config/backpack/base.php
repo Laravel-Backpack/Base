@@ -41,7 +41,7 @@ return [
     | Registration Open
     |--------------------------------------------------------------------------
     |
-    | Choose wether new users are allowed to register.
+    | Choose whether new users are allowed to register.
     | This will show up the Register button in the menu and allow access to the
     | Register functions in AuthController.
     |
