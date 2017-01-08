@@ -2,10 +2,10 @@
 
 namespace Backpack\Base;
 
+use Config;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Route;
-use Config;
 
 class BaseServiceProvider extends ServiceProvider
 {
@@ -68,7 +68,7 @@ class BaseServiceProvider extends ServiceProvider
         // -------------
         // HELPERS
         // -------------
-        require_once(__DIR__.'/helpers.php');
+        require_once __DIR__.'/helpers.php';
     }
 
     /**

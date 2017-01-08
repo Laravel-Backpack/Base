@@ -18,7 +18,7 @@ if (!function_exists('backpack_admin')) {
     }
 }
 
-/**
+/*
  * Returns back a user instance without
  * the admin guard, however allows you
  * to pass in a custom guard if you like.

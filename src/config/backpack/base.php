@@ -78,8 +78,8 @@ return [
     'separate_admin_session' => false,
 
     'admin_guard' => [
-        'name' => 'admin',
-        'driver' => 'session',
+        'name'     => 'admin',
+        'driver'   => 'session',
         'provider' => 'users',
     ],
 
