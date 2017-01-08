@@ -64,7 +64,7 @@ class BaseServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         // register the 'admin' middleware
-        $router->middleware('admin', app\Http\Middleware\Admin::class);
+        $router->middleware('backpackadmin', app\Http\Middleware\BackpackAdmin::class);
 
         $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
             Route::group(
