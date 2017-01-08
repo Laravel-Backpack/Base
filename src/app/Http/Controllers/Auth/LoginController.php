@@ -4,6 +4,7 @@ namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -19,18 +20,29 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as defaultLogout;
+    }
 
     /**
-     * Where to redirect users after login / registration.
+     * If not logged in redirect here.
      *
      * @var string
      */
-    // if not logged in redirect to
     protected $loginPath = 'admin/login';
-    // after you've logged in redirect to
+
+    /**
+     * Redirect here after successful login.
+     *
+     * @var string
+     */
     protected $redirectTo = 'admin/dashboard';
-    // after you've logged out redirect to
+
+    /**
+     * Redirect here after logout.
+     *
+     * @var string
+     */
     protected $redirectAfterLogout = 'admin';
 
     /**
@@ -42,9 +54,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
 
-        $this->loginPath = config('backpack.base.route_prefix', 'admin').'/login';
-        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
-        $this->redirectAfterLogout = config('backpack.base.route_prefix', 'admin');
+        // Set up redirect paths if not specified
+        $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath
+            : config('backpack.base.route_prefix', 'admin').'/login';
+
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
+            : config('backpack.base.route_prefix', 'admin').'/dashboard';
+
+        $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
+            : config('backpack.base.route_prefix', 'admin');
     }
 
     // -------------------------------------------------------
@@ -61,5 +79,21 @@ class LoginController extends Controller
         $this->data['title'] = trans('backpack::base.login'); // set the page title
 
         return view('backpack::auth.login', $this->data);
+    }
+
+    /**
+     * Log the user out and redirect him to specific location.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        // Do the default logout procedure
+        $this->defaultLogout($request);
+
+        // And redirect to custom location
+        return redirect($this->redirectAfterLogout);
     }
 }
