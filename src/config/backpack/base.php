@@ -66,6 +66,10 @@ return [
     // (you then need to overwrite the login route on your AuthController)
     'setup_dashboard_routes' => true,
 
+    // Set this to false if you would like to skip adding the edit profile routes
+    // (you then need to define the edit profile route in your web.php)
+    'setup_profile_routes' => true,
+
     /*
     |--------------------------------------------------------------------------
     | User Model

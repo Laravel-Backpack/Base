@@ -84,6 +84,15 @@ class BaseServiceProvider extends ServiceProvider
                         Route::get('dashboard', 'AdminController@dashboard');
                         Route::get('/', 'AdminController@redirect');
                     }
+
+                    // if not otherwise configured, setup the edit profile routes
+                    if (config('backpack.base.setup_profile_routes')) {
+                        Route::post('edit-profile', 'Auth\AccountController@update');
+                        Route::get('edit-profile', 'Auth\AccountController@showEditForm')
+                        ->name('backpack.profile.edit');
+                        Route::post('edit-profile/password', 'Auth\AccountController@updatePassword')
+                        ->name('backpack.profile.password');
+                    }
                 });
         });
     }

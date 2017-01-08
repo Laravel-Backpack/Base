@@ -27,8 +27,12 @@ return [
     'reset_password'       => 'Reset Password',
     'send_reset_link'      => 'Send Password Reset Link',
     'click_here_to_reset'  => 'Click here to reset your password',
+    'change_password'      => 'Change Password',
     'unauthorized'         => 'Unauthorized.',
     'dashboard'            => 'Dashboard',
     'handcrafted_by'       => 'Handcrafted by',
     'powered_by'           => 'Powered by',
+    'edit_account'         => 'Edit Account',
+    'save'                 => 'Save',
+    'cancel'               => 'Cancel',
 ];
