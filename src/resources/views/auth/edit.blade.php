@@ -9,6 +9,67 @@
 </style>
 @endsection
 
+@section('after_scripts')
+<script type="text/javascript">
+    jQuery(function($){
+
+        var submitPasswordForm = function (e) {
+            e.preventDefault();
+
+            var newPassword = $('#new_password'),
+                confirmPassword = $('#new_confirm_password');
+
+            if (!newPassword.val().length || !confirmPassword.val().length) {
+                return new PNotify({
+                    title: '{{ trans('backpack::base.error') }}',
+                    text: '{{ trans('backpack::base.password_empty') }}',
+                    type: 'error'
+                });
+            }
+
+            if (newPassword.val() !== confirmPassword.val()) {
+
+                return new PNotify({
+                    title: '{{ trans('backpack::base.error') }}',
+                    text: '{{ trans('backpack::base.password_dont_match') }}',
+                    type: 'error'
+                });
+            }
+
+            return $.post('{{ route('backpack.profile.password') }}', {
+                password: newPassword.val(),
+                confirm_password: confirmPassword.val()
+            })
+            .done(function (response) {
+
+                $('#change-password-modal').modal('hide');
+
+                return new PNotify({
+                    title: '{{ trans('backpack::base.success') }}',
+                    text: response.message,
+                    type: 'success'
+                });
+            })
+            .fail(function (http) {
+                return new PNotify({
+                    title: '{{ trans('backpack::base.error') }}',
+                    text: http.responseJSON.message || '{{ trans('backpack::base.error') }}',
+                    type: 'error'
+                });
+            });
+        }
+
+        $('#change-password-form').on('submit', submitPasswordForm);
+        $('#save-password-button').on('click', submitPasswordForm);
+
+        // Reset the form each time the form opens
+        $('#change-password-modal').on('hide.bs.modal show.bs.modal', function (e) {
+            document.getElementById('change-password-form').reset();
+        });
+    });
+</script>
+@endsection
+
 @section('header')
 <section class="content-header">
 
@@ -49,6 +110,22 @@
 
                 <div class="box-body backpack-profile-form">
 
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->count())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         @php
                             $label = trans('backpack::base.name');
@@ -64,7 +141,7 @@
                             $field = 'email';
                         @endphp
                         <label class="required">{{ $label }}</label>
-                        <input required class="form-control" type="text" name="{{ $field }}" value="{{ old($field) ? old($field) : $user[$field] }} ">
+                        <input required class="form-control" type="email" name="{{ $field }}" value="{{ old($field) ? old($field) : $user[$field] }} ">
                     </div>
 
                     <div class="form-group">
@@ -102,7 +179,7 @@
                                     $field = 'new_password';
                                 @endphp
                                 <label class="required">{{ $label }}</label>
-                                <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" value="" placeholder="{{ $label }}">
+                                <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" id="{{ $field }}" value="" placeholder="{{ $label }}">
                             </div>
 
                             <div class="form-group">
@@ -111,7 +188,7 @@
                                     $field = 'new_confirm_password';
                                 @endphp
                                 <label class="required">{{ $label }}</label>
-                                <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" value="" placeholder="{{ $label }}">
+                                <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" id="{{ $field }}" value="" placeholder="{{ $label }}">
                             </div>
 
                         </form>
@@ -120,7 +197,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('backpack::base.cancel') }}</button>
-                        <button type="button" class="btn btn-primary">{{ trans('backpack::base.change_password') }}</button>
+                        <button id="save-password-button" type="button" class="btn btn-primary">{{ trans('backpack::base.change_password') }}</button>
                     </div>
 
                 </div>

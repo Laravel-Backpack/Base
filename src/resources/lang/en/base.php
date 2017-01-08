@@ -35,4 +35,10 @@ return [
     'edit_account'         => 'Edit Account',
     'save'                 => 'Save',
     'cancel'               => 'Cancel',
+    'error'                => 'Error',
+    'success'              => 'Success',
+    'password_dont_match'  => 'Passwords do not match!',
+    'password_empty'       => 'Make sure both password fields are filled out.',
+    'password_updated'     => 'Password updated.',
+    'account_updated'      => 'Account updated successfully.',
 ];
