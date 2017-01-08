@@ -5,6 +5,7 @@ namespace Backpack\Base;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Route;
+use Config;
 
 class BaseServiceProvider extends ServiceProvider
 {
@@ -22,18 +23,29 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot(\Illuminate\Routing\Router $router)
     {
+        // -------------
         // LOAD THE VIEWS
-        // - first the published views (in case they have any changes)
+        // -------------
+        // first the published views (in case they have any changes)
         $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
-        // - then the stock views that come with the package, in case a published view might be missing
+        // then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'backpack.base'
+            __DIR__.'/config/backpack/base.php',
+            'backpack.base'
         );
+
+        // -------------
+        // AUTH GUARD CONFIGURATION
+        // -------------
+        $appAuthGuards = Config::get('auth.guards');
+        $backpackAuthGuard = Config::get('backpack.base.admin_guard');
+        $appAuthGuards[$backpackAuthGuard['name']] = $backpackAuthGuard;
+        Config::set('auth.guards', $appAuthGuards);
 
         $this->setupRoutes($this->app->router);
 
@@ -52,6 +64,11 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
         // publish public AdminLTE assets
         $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+
+        // -------------
+        // HELPERS
+        // -------------
+        require_once(__DIR__.'/helpers.php');
     }
 
     /**
@@ -64,7 +81,11 @@ class BaseServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         // register the 'admin' middleware
-        $router->middleware('admin', app\Http\Middleware\Admin::class);
+        $router->middleware('backpack.base.admin', app\Http\Middleware\BackpackBaseAdmin::class);
+
+        if (config('backpack.base.separate_admin_session')) {
+            $router->middleware('backpack.admin.guard', app\Http\Middleware\BackpackAdminGuard::class);
+        }
 
         $router->group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function ($router) {
             Route::group(

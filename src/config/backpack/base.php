@@ -75,4 +75,12 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
+    'separate_admin_session' => false,
+
+    'admin_guard' => [
+        'name' => 'admin',
+        'driver' => 'session',
+        'provider' => 'users',
+    ],
+
 ];
