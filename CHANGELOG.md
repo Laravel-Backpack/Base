@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.14] - 2017-01-08
+
+### Fixed
+- Collapsed sidebar alignment issue; Fixes #77;
+
+
+
 ## [0.7.13] - 2017-01-08
 
 ### Fixed

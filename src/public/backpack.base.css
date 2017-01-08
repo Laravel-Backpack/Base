@@ -20,6 +20,9 @@ body[class^='skin-'] .sidebar-menu>li>a {
   border-left: 1px solid transparent;
 }
 
+body.sidebar-collapse .sidebar-menu>li:hover>a>span {
+  margin-left: -1px!important;
+}
 
 body[class^='skin-purple'] .btn-primary {
   color: #fff;
