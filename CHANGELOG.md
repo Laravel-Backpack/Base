@@ -22,6 +22,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.12] - 2017-01-08
+
+### Added
+- Dutch translation, thanks to [Stan Daniëls](https://github.com/standaniels);
+
+### Fixed
+- Auth routes can now be easily overwritten, wether the admin prefix was specified or not, thanks to [Pavol Tanuška](https://github.com/pavoltanuska);
+- Sidebar user placeholder image now works for non-utf-8-character names too, thanks to [ozeranskiy](https://github.com/ozeranskiy);
+
+
 ## [0.7.11] - 2016-12-21
 
 ### Fixed
