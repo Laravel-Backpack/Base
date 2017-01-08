@@ -25,27 +25,6 @@ class LoginController extends Controller
     }
 
     /**
-     * If not logged in redirect here.
-     *
-     * @var string
-     */
-    protected $loginPath = 'admin/login';
-
-    /**
-     * Redirect here after successful login.
-     *
-     * @var string
-     */
-    protected $redirectTo = 'admin/dashboard';
-
-    /**
-     * Redirect here after logout.
-     *
-     * @var string
-     */
-    protected $redirectAfterLogout = 'admin';
-
-    /**
      * Create a new controller instance.
      *
      * @return void
@@ -54,15 +33,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
 
-        // Set up redirect paths if not specified
+        // ----------------------------------
+        // Use the admin prefix in all routes
+
+        // If not logged in redirect here.
         $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath
             : config('backpack.base.route_prefix', 'admin').'/login';
 
+        // Redirect here after successful login.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
             : config('backpack.base.route_prefix', 'admin').'/dashboard';
 
+        // Redirect here after logout.
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
             : config('backpack.base.route_prefix', 'admin');
+        // ----------------------------------
     }
 
     // -------------------------------------------------------

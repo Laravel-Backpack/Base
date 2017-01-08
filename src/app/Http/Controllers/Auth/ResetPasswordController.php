@@ -23,9 +23,6 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
-    // where to redirect after password was reset
-    protected $redirectTo = 'admin/dashboard';
-
     /**
      * Create a new controller instance.
      *
@@ -35,7 +32,8 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
 
-        $this->redirectTo = config('backpack.base.route_prefix', 'admin').'/dashboard';
+        // where to redirect after password was reset
+        $this->redirectTo = property_exists($this, 'redirectTo')? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
     }
 
     // -------------------------------------------------------
