@@ -33,7 +33,7 @@ class ResetPasswordController extends Controller
         $this->middleware('guest');
 
         // where to redirect after password was reset
-        $this->redirectTo = property_exists($this, 'redirectTo')? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
     }
 
     // -------------------------------------------------------
