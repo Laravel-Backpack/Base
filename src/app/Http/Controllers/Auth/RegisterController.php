@@ -46,9 +46,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $user_model_fqn = config('backpack.base.user_model_fqn');
+        $user = new $user_model_fqn();
+        $users_table = $user->getTable();
+
         return Validator::make($data, [
             'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:users',
+            'email'    => 'required|email|max:255|unique:'.$users_table,
             'password' => 'required|min:6|confirmed',
         ]);
     }
