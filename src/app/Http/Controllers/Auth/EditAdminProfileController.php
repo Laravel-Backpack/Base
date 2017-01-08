@@ -3,12 +3,11 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Auth;
-use Form;
-use Validator;
 use Backpack\Base\app\Http\Controllers\Controller;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+use Validator;
 
 class EditAdminProfileController extends Controller
 {
@@ -27,6 +26,7 @@ class EditAdminProfileController extends Controller
     {
         $this->data['title'] = trans('backpack::base.edit_account');
         $this->data['user'] = Auth::guard(config('backpack.base.admin_guard.name'))->user();
+
         return view('backpack::auth.edit', $this->data);
     }
 
@@ -38,7 +38,7 @@ class EditAdminProfileController extends Controller
             'email' => [
                 'required',
                 'email',
-                Rule::unique($user->getTable())->ignore($user->getKey())
+                Rule::unique($user->getTable())->ignore($user->getKey()),
             ],
             'name' => 'required',
         ]);
@@ -61,14 +61,14 @@ class EditAdminProfileController extends Controller
     public function updatePassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'password' => 'required|min:6',
+            'password'         => 'required|min:6',
             'confirm_password' => 'required|same:password|min:6',
         ]);
 
         if ($validator->fails()) {
             return response([
                 'success' => false,
-                'message' => $validator->errors()->first()
+                'message' => $validator->errors()->first(),
             ], 422);
         } else {
             $user = Auth::guard(config('backpack.base.admin_guard.name'))->user();
@@ -77,7 +77,7 @@ class EditAdminProfileController extends Controller
 
             return response([
                 'success' => true,
-                'message' => trans('backpack::base.password_updated')
+                'message' => trans('backpack::base.password_updated'),
             ]);
         }
     }
