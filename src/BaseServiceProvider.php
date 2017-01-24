@@ -68,7 +68,7 @@ class BaseServiceProvider extends ServiceProvider
 
         Route::group(
             [
-                'namespace' => 'Backpack\Base\app\Http\Controllers',
+                'namespace'  => 'Backpack\Base\app\Http\Controllers',
                 'middleware' => 'web',
                 'prefix'     => config('backpack.base.route_prefix'),
             ],
