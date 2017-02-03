@@ -64,7 +64,16 @@ class BaseServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         // register the 'admin' middleware
-        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
+        // in Laravel 5.3 and below
+        if (method_exists(new Route, 'aliasMiddleware'))
+        {
+            Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
+        }
+        // in Laravel 5.4
+        else
+        {
+            Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
+        }
 
         Route::group(
             [
