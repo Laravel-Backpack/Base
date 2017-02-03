@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.15] - 2017-02-03
+
+### Added
+- Laravel 5.4 compatibility;
+
+
+
 ## [0.7.14] - 2017-01-08
 
 ### Fixed
