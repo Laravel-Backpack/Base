@@ -65,13 +65,11 @@ class BaseServiceProvider extends ServiceProvider
     {
         // register the 'admin' middleware
         // in Laravel 5.3 and below
-        if (method_exists(new Route, 'aliasMiddleware'))
-        {
+        if (method_exists(new Route(), 'aliasMiddleware')) {
             Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
         }
         // in Laravel 5.4
-        else
-        {
+        else {
             Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
         }
 
