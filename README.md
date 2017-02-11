@@ -21,7 +21,7 @@ Laravel BackPack's central package, which includes:
 ![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
 
 
-## Install on Laravel 5.3
+## Install on Laravel 5.4 / 5.3
 
 1) Run in your terminal:
 
