@@ -4,7 +4,7 @@
  * defined by the application config
  * if a param is passed in, it will chain
  * the backpack middelware to it.
- * e.g guest:backpack.admin
+ * e.g guest:backpack.admin.
  */
 if (!function_exists('backpack_middleware')) {
     function backpack_middleware($chainedWith = null)
@@ -16,8 +16,8 @@ if (!function_exists('backpack_middleware')) {
         }
 
         if ($chainedWith && config('backpack.base.separate_admin_session')) {
-            $middlware = $chainedWith . ':' . $middlware;
-        } elseif($chainedWith) {
+            $middlware = $chainedWith.':'.$middlware;
+        } elseif ($chainedWith) {
             $middleware = $chainedWith;
         }
 
@@ -25,7 +25,7 @@ if (!function_exists('backpack_middleware')) {
     }
 }
 
-/**
+/*
  * Returns the name of the guard defined
  * by the application config
  */
@@ -42,7 +42,7 @@ if (!function_exists('backpack_guard')) {
     }
 }
 
-/**
+/*
  * Returns the user instance if it exists
  * of the currently authenticated admin
  * based off the defined guard.
