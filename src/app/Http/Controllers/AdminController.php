@@ -11,11 +11,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            $this->middleware('backpack.admin.guard');
-        } else {
-            $this->middleware('backpack.base.admin');
-        }
+        $this->middleware(backpack_middleware());
     }
 
     /**

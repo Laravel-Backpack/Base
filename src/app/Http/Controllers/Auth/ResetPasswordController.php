@@ -30,11 +30,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            $this->middleware('guest:'.config('backpack.base.admin_guard.name'), ['except' => 'logout']);
-        } else {
-            $this->middleware('guest');
-        }
+        $this->middleware(backpack_middleware('guest'), ['except' => 'logout']);
 
         // where to redirect after password was reset
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
@@ -42,11 +38,7 @@ class ResetPasswordController extends Controller
 
     public function guard()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            return \Auth::guard(config('backpack.base.admin_guard.name'));
-        } else {
-            return \Auth::guard();
-        }
+        return \Auth::guard(backpack_guard());
     }
 
     // -------------------------------------------------------
