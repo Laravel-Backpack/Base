@@ -19,6 +19,6 @@ return [
     'reset'    => 'Twoje hasło zostało zresetowane!',
     'sent'     => 'Wysłaliśmy maila z linkiem do zresetowania hasła!',
     'token'    => 'Nieprawidłowy token dla tego linku resetującego hasło.',
-    'user'     => "Nie można odnaleźć użytkownika z podanym adresem e-mail.",
+    'user'     => 'Nie można odnaleźć użytkownika z podanym adresem e-mail.',
 
 ];
