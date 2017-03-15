@@ -40,6 +40,15 @@
     <![endif]-->
 </head>
 <body class="hold-transition {{ config('backpack.base.skin') }} sidebar-mini">
+	<script type="text/javascript">
+		/* Recover sidebar state */
+		(function () {
+			if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+				var body = document.getElementsByTagName('body')[0];
+				body.className = body.className + ' sidebar-collapse';
+			}
+		})();
+	</script>
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -112,6 +121,15 @@
 
     <!-- page script -->
     <script type="text/javascript">
+        /* Store sidebar state */
+        $('.sidebar-toggle').click(function(event) {
+          event.preventDefault();
+          if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '');
+          } else {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+          }
+        });
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
 
@@ -125,10 +143,12 @@
         // Set active state on menu element
         var current_url = "{{ Request::url() }}";
         $("ul.sidebar-menu li a").each(function() {
-          if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
-          {
-            $(this).parents('li').addClass('active');
-          }
+			if (
+			   ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
+			   && (current_url[$(this).attr('href').length] == '/' || current_url.length == $(this).attr('href').length)
+			) {
+			   $(this).parents('li').addClass('active');
+			}
         });
     </script>
 
