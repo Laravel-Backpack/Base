@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.17] - 2017-04-06
+
+### Added
+- Indonesian translation, thanks to [Nakamura Agatha](https://github.com/nakamuraagatha);
+
+
 ## [0.7.16] - 2017-02-11
 
 ### Added
