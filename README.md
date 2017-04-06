@@ -18,10 +18,10 @@ Laravel BackPack's central package, which includes:
 > ### Security updates and breaking changes
 > Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
-![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
+![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
 
-## Install on Laravel 5.3
+## Install on Laravel 5.4 / 5.3
 
 1) Run in your terminal:
 
@@ -99,7 +99,7 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
 2. Your admin panel will be available at yourappname/admin or yourappname/login
 3. [optional] If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
 
-![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_dashboard.png)
+![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_dashboard.png)
 
 ## Change log
 
