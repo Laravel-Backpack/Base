@@ -130,6 +130,12 @@
             $(this).parents('li').addClass('active');
           }
         });
+        {{-- Enable deep link to tab --}}
+        var activeTab = $('[href="' + location.hash.replace("#", "#tab_") + '"]');
+        activeTab && activeTab.tab('show');
+        $('.nav-tabs a').on('shown.bs.tab', function (e) {
+            location.hash = e.target.hash.replace("#tab_", "#");
+        });
     </script>
 
     @include('backpack::inc.alerts')
