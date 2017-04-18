@@ -26,6 +26,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Indonesian translation, thanks to [Nakamura Agatha](https://github.com/nakamuraagatha);
+- deep links to tabs, thanks to [MarcosBL](https://github.com/MarcosBL);
 
 
 ## [0.7.16] - 2017-02-11
