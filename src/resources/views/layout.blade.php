@@ -141,7 +141,7 @@
             });
 
         // Set active state on menu element
-        var current_url = "{{ Request::url() }}";
+        var current_url = "{{ Request::fullUrl() }}";
         $("ul.sidebar-menu li a").each(function() {
 			if (
 			   ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
