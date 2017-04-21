@@ -1,0 +1,1 @@
+../../../../../logmanager/src/resources/lang/en/logmanager.php

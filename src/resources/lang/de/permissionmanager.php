@@ -1,0 +1,1 @@
+../../../../../permissionmanager/src/resources/lang/de/permissionmanager.php

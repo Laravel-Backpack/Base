@@ -1,0 +1,1 @@
+../../../../../backupmanager/src/resources/lang/es/backup.php

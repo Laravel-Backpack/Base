@@ -1,0 +1,1 @@
+../../../../../settings/src/resources/lang/en/settings.php
