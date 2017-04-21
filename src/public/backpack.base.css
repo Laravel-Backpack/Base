@@ -873,3 +873,11 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     background: none;
   }
 
+  /* select2 overwrites */
+  .select2-container .select2-selection--single,
+  .select2-container .select2-selection--multiple,
+  .select2-container--bootstrap.select2-container--focus .select2-selection,
+  .select2-container--bootstrap.select2-container--open .select2-selection {
+    box-shadow: none!important;
+    border-radius: 0!important;
+  }
