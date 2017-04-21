@@ -120,7 +120,7 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/config' => config_path()], 'config');
 
         // publish lang files
-        $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
+        // $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
 
         // publish views
         $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')], 'views');
