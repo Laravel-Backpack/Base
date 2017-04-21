@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.18] - 2017-04-21
+
+### Fixed
+- language files for all Backpack packages are now loaded by Backpack\Base, using pointer files; this fixes the language fallback system;
+- Backpack\Base language files no longer need publishing;
+
+
 ## [0.7.17] - 2017-04-21
 
 ### Added
