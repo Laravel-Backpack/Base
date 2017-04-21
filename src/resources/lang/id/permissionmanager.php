@@ -1,4 +1,5 @@
 <?php
+
 // --------------------------------------------------------
 // This is only a pointer file, not an actual language file
 // --------------------------------------------------------
@@ -12,8 +13,8 @@
 // folder, please delete it, it's no use there. You need to copy/publish the
 // actual language file, from the package.
 
-if (file_exists(__DIR__ . '/../../../../../permissionmanager/src/resources/lang/'.basename(__DIR__).'/permissionmanager.php')) {
-    return include(__DIR__ . '/../../../../../permissionmanager/src/resources/lang/'.basename(__DIR__).'/permissionmanager.php');
+if (file_exists(__DIR__.'/../../../../../permissionmanager/src/resources/lang/'.basename(__DIR__).'/permissionmanager.php')) {
+    return include __DIR__.'/../../../../../permissionmanager/src/resources/lang/'.basename(__DIR__).'/permissionmanager.php';
 }
 
 return [];
