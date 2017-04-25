@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.19] - 2017-04-25
+
+### Added
+- Latvian translation files (thanks to [Erik Bonder](https://github.com/erik-ropez));
+- Russian translation files (thanks to [Aleksei Budaev](https://a-budaev.ru/));
+
+
 ## [0.7.18] - 2017-04-21
 
 ### Fixed
