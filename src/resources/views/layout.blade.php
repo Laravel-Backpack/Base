@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
 
     <!-- BackPack Base CSS -->
-    <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/overlays/backpack.bold.css') }}">
 
     @yield('after_styles')
 
