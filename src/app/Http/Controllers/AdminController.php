@@ -11,7 +11,10 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        $this->middleware("admin:$guard");
     }
 
     /**
