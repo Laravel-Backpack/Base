@@ -2,11 +2,11 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
+use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-use Auth;
 
 class ResetPasswordController extends Controller
 {
