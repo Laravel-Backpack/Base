@@ -105,6 +105,48 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
+## Custom Routing
+
+By default, every component registers its routes automatically. 
+If you want to disable this, in config/backpack/base.php
+set to true: 
+
+```'skip_all_backpack_routes' => true,```
+
+Then add to app/Providers/RouteServiceProvider.php
+
+```
+public function map()
+{
+    ...
+    
+    $this->mapBackpackRoutes(); // <<--THIS LINE
+    
+}
+
+protected function mapBackpackRoutes() <<--THIS FUNCTION
+{
+   Route::middleware('web')
+        ->prefix(config('backpack.base.route_prefix', 'admin'))
+        ->namespace('Backpack\PermissionManager\app\Http\Controllers')
+        ->group(base_path('routes/backpack.php'));
+}
+```
+
+## Permissions
+
+When you have custom routing, you can easily restrict access with **PermissionManager** module
+
+Example: restrict access to manage users
+
+- Create a "manage-users" permission
+- Add roles or users to that permission
+- Add can:manage-users to the routes/backpack.php file like this
+
+```CRUD::resource('user', 'UserCrudController')->middleware('can:manage-users');```
+
+
+
 ## Todos
 
 // TODO - instruct developer on how to modify/extend the AuthController and PasswordController and/or provide example
