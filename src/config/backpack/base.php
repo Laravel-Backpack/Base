@@ -54,6 +54,8 @@ return [
     | Routing
     |--------------------------------------------------------------------------
     */
+    // Set to true to disable registering routes in ALL backpack packages
+    'skip_all_backpack_routes' => false,
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
     'route_prefix' => 'admin',
