@@ -36,17 +36,6 @@ Route::group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function () 
     Route::get('/', 'AdminController@redirect');
 });
 
-//crud routes
-Route::group(['namespace' => 'Barryvdh\Elfinder', 'middleware' => 'admin'], function () {
-    Route::get('elfinder', ['as' => 'elfinder.index', 'uses' => 'ElfinderController@showIndex']);
-    Route::any('connector', ['as' => 'elfinder.connector', 'uses' => 'ElfinderController@showConnector']);
-    Route::get('popup/{input_id}', ['as' => 'elfinder.popup', 'uses' => 'ElfinderController@showPopup']);
-    Route::get('filepicker/{input_id}', ['as' => 'elfinder.filepicker', 'uses' => 'ElfinderController@showFilePicker']);
-    Route::get('tinymce', ['as' => 'elfinder.tinymce', 'uses' => 'ElfinderController@showTinyMCE']);
-    Route::get('tinymce4', ['as' => 'elfinder.tinymce4', 'uses' => 'ElfinderController@showTinyMCE4']);
-    Route::get('ckeditor', ['as' => 'elfinder.ckeditor', 'uses' => 'ElfinderController@showCKeditor4']);
-});
-
 //backupmanager
 Route::group(['namespace' => 'Backpack\BackupManager\app\Http\Controllers', 'middleware' => 'admin'], function () {
     Route::get('backup', 'BackupController@index');
