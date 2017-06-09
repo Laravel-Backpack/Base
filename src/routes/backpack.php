@@ -36,8 +36,19 @@ Route::group(['namespace' => 'Backpack\Base\app\Http\Controllers'], function () 
     Route::get('/', 'AdminController@redirect');
 });
 
+//crud routes
+Route::group(['namespace' => 'Barryvdh\Elfinder', 'middleware' => 'admin'], function () {
+    Route::get('elfinder', ['as' => 'elfinder.index', 'uses' => 'ElfinderController@showIndex']);
+    Route::any('connector', ['as' => 'elfinder.connector', 'uses' => 'ElfinderController@showConnector']);
+    Route::get('popup/{input_id}', ['as' => 'elfinder.popup', 'uses' => 'ElfinderController@showPopup']);
+    Route::get('filepicker/{input_id}', ['as' => 'elfinder.filepicker', 'uses' => 'ElfinderController@showFilePicker']);
+    Route::get('tinymce', ['as' => 'elfinder.tinymce', 'uses' => 'ElfinderController@showTinyMCE']);
+    Route::get('tinymce4', ['as' => 'elfinder.tinymce4', 'uses' => 'ElfinderController@showTinyMCE4']);
+    Route::get('ckeditor', ['as' => 'elfinder.ckeditor', 'uses' => 'ElfinderController@showCKeditor4']);
+});
+
 //backupmanager
-Route::group(['namespace' => 'Backpack\BackupManager\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\BackupManager\app\Http\Controllers', 'middleware' => 'admin'], function () {
     Route::get('backup', 'BackupController@index');
     Route::put('backup/create', 'BackupController@create');
     Route::get('backup/download/{file_name?}', 'BackupController@download');
@@ -45,21 +56,21 @@ Route::group(['namespace' => 'Backpack\BackupManager\app\Http\Controllers', 'mid
 });
 
 //LangFileManager
-Route::group(['namespace' => 'Backpack\LangFileManager\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\LangFileManager\app\Http\Controllers', 'middleware' => 'admin'], function () {
     Route::get('language/texts/{lang?}/{file?}', 'LanguageCrudController@showTexts');
     Route::post('language/texts/{lang}/{file}', 'LanguageCrudController@updateTexts');
     Route::resource('language', 'LanguageCrudController');
 });
 
 //permissionmanager
-Route::group(['namespace' => 'Backpack\PermissionManager\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\PermissionManager\app\Http\Controllers', 'middleware' => 'admin'], function () {
     CRUD::resource('permission', 'PermissionCrudController');
     CRUD::resource('role', 'RoleCrudController');
     CRUD::resource('user', 'UserCrudController');
 });
 
 //logmanager
-Route::group(['namespace' => 'Backpack\LogManager\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\LogManager\app\Http\Controllers', 'middleware' => 'admin'], function () {
     Route::get('log', 'LogController@index');
     Route::get('log/preview/{file_name}', 'LogController@preview');
     Route::get('log/download/{file_name}', 'LogController@download');
@@ -67,19 +78,19 @@ Route::group(['namespace' => 'Backpack\LogManager\app\Http\Controllers', 'middle
 });
 
 //menucrud
-Route::group(['namespace' => 'Backpack\MenuCRUD\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\MenuCRUD\app\Http\Controllers', 'middleware' => 'admin'], function () {
     CRUD::resource('menu-item', 'MenuItemCrudController');
 });
 
 //newscrud
-Route::group(['namespace' => 'Backpack\NewsCRUD\app\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\NewsCRUD\app\Http\Controllers', 'middleware' => 'admin'], function () {
     CRUD::resource('article', 'ArticleCrudController');
     CRUD::resource('category', 'CategoryCrudController');
     CRUD::resource('tag', 'TagCrudController');
 });
 
 //pagemanager
-Route::group(['namespace' => 'Backpack\PageManager\app\Http\Controllers\Admin', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backpack\PageManager\app\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
     Route::get('page/create/{template}', 'PageCrudController@create');
     Route::get('page/{id}/edit/{template}', 'PageCrudController@edit');
     Route::get('page/reorder', 'PageCrudController@reorder');
