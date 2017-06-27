@@ -75,4 +75,12 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Permission protection
+    |--------------------------------------------------------------------------
+    */
+    'permission_protection' => true,
+    'permission_name' => 'login'
+
 ];

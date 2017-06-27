@@ -20,11 +20,24 @@ class Admin
     {
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
-                return response(trans('backpack::base.unauthorized'), 401);
+                abort(403);
             } else {
-                return redirect()->guest(config('backpack.base.route_prefix', 'admin').'/login');
+                if (!config('backpack.base.permission_protection')) 
+                {
+                    return redirect()->guest(config('backpack.base.route_prefix', 'admin').'/login');
+                }
+                return redirect()->guest('/login');
             }
         }
+
+        else if (config('backpack.base.permission_protection')) 
+        {
+            if (! $request->user()->can(config('backpack.base.permission_name'))) {
+                abort(403);          
+            }
+        }
+
+            
 
         return $next($request);
     }

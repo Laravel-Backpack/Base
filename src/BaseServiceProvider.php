@@ -32,7 +32,8 @@ class BaseServiceProvider extends ServiceProvider
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'backpack.base'
+            __DIR__.'/config/backpack/base.php',
+            'backpack.base'
         );
 
         $this->registerAdminMiddleware($this->app->router);
@@ -50,24 +51,37 @@ class BaseServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         Route::group(
-        [
+            [
             'namespace'  => 'Backpack\Base\app\Http\Controllers',
             'middleware' => 'web',
             'prefix'     => config('backpack.base.route_prefix'),
-        ],
-        function () {
+            ],
+            function () {
             // if not otherwise configured, setup the auth routes
-            if (config('backpack.base.setup_auth_routes')) {
-                Route::auth();
-                Route::get('logout', 'Auth\LoginController@logout');
+                if (config('backpack.base.setup_auth_routes')) {
+                    // if permission restriction is on disable backpack auth routes
+                    if (!config('backpack.base.permission_protection')) {
+                        Route::auth();
+                    }
+                    Route::get('logout', 'Auth\LoginController@logout');
+                }
             }
+        );
 
+        Route::group(
+            [
+            'namespace'  => 'Backpack\Base\app\Http\Controllers',
+            'middleware' => ['web', 'admin'],
+            'prefix'     => config('backpack.base.route_prefix'),
+            ],
+            function () {
             // if not otherwise configured, setup the dashboard routes
-            if (config('backpack.base.setup_dashboard_routes')) {
-                Route::get('dashboard', 'AdminController@dashboard');
-                Route::get('/', 'AdminController@redirect');
+                if (config('backpack.base.setup_dashboard_routes')) {
+                    Route::get('dashboard', 'AdminController@dashboard');
+                    Route::get('/', 'AdminController@redirect');
+                }
             }
-        });
+        );
     }
 
     /**
@@ -107,8 +121,7 @@ class BaseServiceProvider extends ServiceProvider
         // in Laravel 5.4
         if (method_exists($router, 'aliasMiddleware')) {
             Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
-        // in Laravel 5.3 and below
+        } // in Laravel 5.3 and below
         else {
             Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
         }
