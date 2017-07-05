@@ -16,6 +16,13 @@ class BaseServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     * Where the route file lives, both inside the package and in the app (if overwritten).
+     *
+     * @var bool
+     */
+    public $routeFilePath = '/routes/backpack/newscrud.php';
+
+    /**
      * Perform post-registration booting of services.
      *
      * @return void
@@ -43,31 +50,20 @@ class BaseServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      *
-     * @param \Illuminate\Routing\Router $router
-     *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
     public function setupRoutes(Router $router)
     {
-        Route::group(
-        [
-            'namespace'  => 'Backpack\Base\app\Http\Controllers',
-            'middleware' => 'web',
-            'prefix'     => config('backpack.base.route_prefix'),
-        ],
-        function () {
-            // if not otherwise configured, setup the auth routes
-            if (config('backpack.base.setup_auth_routes')) {
-                Route::auth();
-                Route::get('logout', 'Auth\LoginController@logout');
-            }
+        // by default, use the routes file provided in vendor
+        $routeFilePathInUse = __DIR__.$this->routeFilePath;
 
-            // if not otherwise configured, setup the dashboard routes
-            if (config('backpack.base.setup_dashboard_routes')) {
-                Route::get('dashboard', 'AdminController@dashboard');
-                Route::get('/', 'AdminController@redirect');
-            }
-        });
+        // but if there's a file with the same name in routes/backpack, use that one
+        if (file_exists(base_path().$this->routeFilePath)) {
+            $routeFilePathInUse = base_path().$this->routeFilePath;
+        }
+
+        $this->loadRoutesFrom($routeFilePathInUse);
     }
 
     /**
