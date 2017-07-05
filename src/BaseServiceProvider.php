@@ -20,7 +20,7 @@ class BaseServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    public $routeFilePath = '/routes/backpack/newscrud.php';
+    public $routeFilePath = '/routes/backpack/base.php';
 
     /**
      * Perform post-registration booting of services.
