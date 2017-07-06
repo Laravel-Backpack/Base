@@ -27,6 +27,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Added
 - overwritable routes file;
 - Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
+- Remember collapsed/open sidebar state, when loading the page (thanks to [MarcosBL](https://github.com/MarcosBL));
 
 ### Fixed
 - Support query string when setting active menu item;
