@@ -30,8 +30,7 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
-        $guard = config('backpack.base.guard')
-            ?: config('auth.defaults.guard');
+        $guard = config('backpack.base.guard') ? config('backpack.base.guard') : config('auth.defaults.guard');
 
         $this->middleware("guest:$guard");
     }
@@ -52,10 +51,14 @@ class ForgotPasswordController extends Controller
         return view('backpack::auth.passwords.email', $this->data);
     }
 
+    /**
+     * Get the broker to be used during password reset.
+     *
+     * @return \Illuminate\Contracts\Auth\PasswordBroker
+     */
     public function broker()
     {
-        $passwords = config('backpack.base.passwords')
-            ?: config('auth.defaults.passwords');
+        $passwords = config('backpack.base.passwords') ? config('backpack.base.passwords') : config('auth.defaults.passwords');
 
         return Password::broker($passwords);
     }

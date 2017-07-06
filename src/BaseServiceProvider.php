@@ -36,8 +36,6 @@ class BaseServiceProvider extends ServiceProvider
         // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
 
-        View::composer('backpack::*', \Backpack\Base\app\Http\ViewComposers\AuthComposer::class);
-
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // use the vendor configuration file as fallback
@@ -45,6 +43,7 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/config/backpack/base.php', 'backpack.base'
         );
 
+        $this->registerCustomAuthGuard();
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
@@ -112,6 +111,11 @@ class BaseServiceProvider extends ServiceProvider
         else {
             Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
         }
+    }
+
+    public function registerCustomAuthGuard()
+    {
+        View::composer('backpack::*', \Backpack\Base\app\Http\ViewComposers\AuthComposer::class);
     }
 
     public function publishFiles()

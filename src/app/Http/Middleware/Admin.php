@@ -17,8 +17,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        $guard = config('backpack.base.guard')
-            ?: config('auth.defaults.guard');
+        $guard = config('backpack.base.guard') ? config('backpack.base.guard') : config('auth.defaults.guard');
 
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
