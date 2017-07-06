@@ -2,9 +2,11 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
+use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
 class ResetPasswordController extends Controller
 {
@@ -30,7 +32,10 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        $this->middleware("guest:$guard");
 
         // where to redirect after password was reset
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
@@ -57,5 +62,21 @@ class ResetPasswordController extends Controller
         return view('backpack::auth.passwords.reset', $this->data)->with(
             ['token' => $token, 'email' => $request->email]
         );
+    }
+
+    public function broker()
+    {
+        $passwords = config('backpack.base.passwords')
+            ?: config('auth.defaults.passwords');
+
+        return Password::broker($passwords);
+    }
+
+    protected function guard()
+    {
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        return Auth::guard($guard);
     }
 }

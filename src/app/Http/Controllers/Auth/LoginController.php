@@ -2,6 +2,7 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
+use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -31,7 +32,10 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        $this->middleware("guest:$guard", ['except' => 'logout']);
 
         // ----------------------------------
         // Use the admin prefix in all routes
@@ -80,5 +84,13 @@ class LoginController extends Controller
 
         // And redirect to custom location
         return redirect($this->redirectAfterLogout);
+    }
+
+    protected function guard()
+    {
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        return Auth::guard($guard);
     }
 }

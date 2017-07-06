@@ -3,6 +3,7 @@
 namespace Backpack\Base;
 
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Route;
 
@@ -34,6 +35,8 @@ class BaseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
         // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
+
+        View::composer('backpack::*', \Backpack\Base\app\Http\ViewComposers\AuthComposer::class);
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 

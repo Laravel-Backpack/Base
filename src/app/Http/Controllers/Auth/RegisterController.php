@@ -2,6 +2,7 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
+use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -30,7 +31,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        $this->middleware("guest:$guard");
 
         // Where to redirect users after login / registration.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
@@ -112,5 +116,13 @@ class RegisterController extends Controller
         $this->guard()->login($this->create($request->all()));
 
         return redirect($this->redirectPath());
+    }
+
+    protected function guard()
+    {
+        $guard = config('backpack.base.guard')
+            ?: config('auth.defaults.guard');
+
+        return Auth::guard($guard);
     }
 }
