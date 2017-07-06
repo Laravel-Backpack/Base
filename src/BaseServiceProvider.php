@@ -43,7 +43,9 @@ class BaseServiceProvider extends ServiceProvider
         );
 
         $this->registerAdminMiddleware($this->app->router);
-        $this->setupRoutes($this->app->router);
+        if(!config('backpack.base.skip_all_backpack_routes',false)){
+            $this->setupRoutes($this->app->router);            
+        }
         $this->publishFiles();
     }
 
@@ -130,5 +132,8 @@ class BaseServiceProvider extends ServiceProvider
 
         // publish public AdminLTE assets
         $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+
+        // publish routes file
+        $this->publishes([__DIR__.'/routes' => base_path('routes')]);
     }
 }
