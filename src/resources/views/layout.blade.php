@@ -41,6 +41,15 @@
     <![endif]-->
 </head>
 <body class="hold-transition {{ config('backpack.base.skin') }} sidebar-mini">
+	<script type="text/javascript">
+		/* Recover sidebar state */
+		(function () {
+			if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+				var body = document.getElementsByTagName('body')[0];
+				body.className = body.className + ' sidebar-collapse';
+			}
+		})();
+	</script>
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -113,6 +122,15 @@
 
     <!-- page script -->
     <script type="text/javascript">
+        /* Store sidebar state */
+        $('.sidebar-toggle').click(function(event) {
+          event.preventDefault();
+          if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '');
+          } else {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+          }
+        });
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
 
@@ -122,15 +140,23 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-
+            
         // Set active state on menu element
-        var current_url = "{{ Request::url() }}";
-        $("ul.sidebar-menu li a").each(function() {
-          if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
-          {
-            $(this).parents('li').addClass('active');
-          }
-        });
+        var current_url = "{{ Request::fullUrl() }}";
+        var full_url = current_url+location.search;
+        var $navLinks = $("ul.sidebar-menu li a");
+        // First look for an exact match including the search string
+        var $curentPageLink = $navLinks.filter(
+            function() { return $(this).attr('href') === full_url; }
+        );
+        // If not found, look for the link that starts with the url
+        if(!$curentPageLink.length > 0){
+            $curentPageLink = $navLinks.filter(
+                function() { return $(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')); }
+            );
+        }
+        
+        $curentPageLink.parents('li').addClass('active');
         {{-- Enable deep link to tab --}}
         var activeTab = $('[href="' + location.hash.replace("#", "#tab_") + '"]');
         activeTab && activeTab.tab('show');
