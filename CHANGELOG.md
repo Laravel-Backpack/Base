@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.20] - 2017-07-06
+
+## Added
+- overwritable routes file;
+- Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
+
 ## [0.7.19] - 2017-04-25
 
 ### Added
