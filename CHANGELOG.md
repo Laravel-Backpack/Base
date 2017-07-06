@@ -28,6 +28,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - overwritable routes file;
 - Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
 
+### Fixed
+- Support query string when setting active menu item;
+
+
 ## [0.7.19] - 2017-04-25
 
 ### Added
