@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.21] - 2017-07-18
+
+## Added
+- language pointer files for pagemanager;
+
+
 ## [0.7.20] - 2017-07-06
 
 ## Added
