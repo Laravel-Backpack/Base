@@ -22,6 +22,15 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.23] - 2017-08-22
+
+## Fixed
+- active tab not working in some use cases;
+
+## Added
+- license code in the base config file;
+
+
 ## [0.7.22] - 2017-08-11
 
 ## Added
