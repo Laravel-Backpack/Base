@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.x.x] - 2017-08-30
+
+## Added
+- Package Autodiscovery support - no longer needed to register service provider in Laravel 5.5;
+
+
 ## [0.7.24] - 2017-08-30
 
 ## Added
