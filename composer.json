@@ -19,7 +19,7 @@
     "require": {
         "illuminate/support": "~5.1",
         "almasaeed2010/AdminLTE" : "2.3.*",
-        "laravel/framework": "5.3.*|5.4.*",
+        "laravel/framework": "5.3.*|5.4.*|5.5.*",
         "prologue/alerts": "^0.4.1",
         "jenssegers/date": "^3.2"
     },

@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.7.24] - 2017-08-30
+
+## Added
+- Laravel 5.5 support;
+
+
 ## [0.7.23] - 2017-08-22
 
 ## Fixed
