@@ -82,7 +82,7 @@ return [
     |
     | If you, your employer or your client make money by using Backpack, you need
     | to purchase a license code. A license code will be provided after purchse,
-    | which you can put here on in your ENV file.
+    | which you can put here or in your ENV file.
     |
     | More info and payment form on:
     | https://www.backpackforlaravel.com
