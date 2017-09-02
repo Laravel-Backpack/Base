@@ -81,7 +81,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you, your employer or your client make money by using Backpack, you need
-    | to purchase a license code. A license code will be provided after purchse,
+    | to purchase a license code. A license code will be provided after purchase,
     | which you can put here or in your ENV file.
     |
     | More info and payment form on:
