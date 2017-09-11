@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.0] - 2017-09-xx
+
+## Removed
+- Laravel 5.4 and 5.3 support;
+- PHP 5.x support (Laravel constraint);
+
+
 ## [0.7.25] - 2017-08-30
 
 ## Added
