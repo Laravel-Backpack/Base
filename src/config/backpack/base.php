@@ -76,6 +76,13 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
+    // What kind of avatar will you like to show to the user?
+    // Default: gravatar (automatically use the gravatar for his email)
+    // Other options:
+    // - placehold (generic image with his first letter)
+    // - example_method_name (specify the method on the User model that returns the URL)
+    'avatar_type' => 'gravatar',
+
     /*
     |--------------------------------------------------------------------------
     | License Code
