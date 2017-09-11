@@ -101,7 +101,9 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #57549C;
 }
 
-
+.table-hover>tbody>tr:hover {
+  background-color: #eaf3ff;
+}
 
 
 

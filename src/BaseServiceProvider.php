@@ -91,11 +91,13 @@ class BaseServiceProvider extends ServiceProvider
         // register its dependencies
         $this->app->register(\Jenssegers\Date\DateServiceProvider::class);
         $this->app->register(\Prologue\Alerts\AlertsServiceProvider::class);
+        $this->app->register(\Creativeorange\Gravatar\GravatarServiceProvider::class);
 
         // register their aliases
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
         $loader->alias('Alert', \Prologue\Alerts\Facades\Alert::class);
         $loader->alias('Date', \Jenssegers\Date\Date::class);
+        $loader->alias('Gravatar', \Creativeorange\Gravatar\Facades\Gravatar::class);
 
         // register the services that are only used for development
         if ($this->app->environment() == 'local') {
@@ -132,5 +134,8 @@ class BaseServiceProvider extends ServiceProvider
 
         // publish public AdminLTE assets
         $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+
+        // publish public Gravatar assets
+        $this->publishes([base_path('vendor/creativeorange/gravatar/config') => config_path()], 'gravatar');
     }
 }
