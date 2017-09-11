@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
 
     <!-- BackPack Base CSS -->
-    <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/overlays/backpack.bold.css') }}">
 
     @yield('after_styles')
 
@@ -40,6 +41,15 @@
     <![endif]-->
 </head>
 <body class="hold-transition {{ config('backpack.base.skin') }} sidebar-mini">
+	<script type="text/javascript">
+		/* Recover sidebar state */
+		(function () {
+			if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+				var body = document.getElementsByTagName('body')[0];
+				body.className = body.className + ' sidebar-collapse';
+			}
+		})();
+	</script>
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -89,7 +99,7 @@
       <footer class="main-footer">
         @if (config('backpack.base.show_powered_by'))
             <div class="pull-right hidden-xs">
-              {{ trans('backpack::base.powered_by') }} <a target="_blank" href="http://laravelbackpack.com">Laravel BackPack</a>
+              {{ trans('backpack::base.powered_by') }} <a target="_blank" href="http://backpackforlaravel.com?ref=panel_footer_link">Backpack for Laravel</a>
             </div>
         @endif
         {{ trans('backpack::base.handcrafted_by') }} <a target="_blank" href="{{ config('backpack.base.developer_link') }}">{{ config('backpack.base.developer_name') }}</a>.
@@ -112,6 +122,15 @@
 
     <!-- page script -->
     <script type="text/javascript">
+        /* Store sidebar state */
+        $('.sidebar-toggle').click(function(event) {
+          event.preventDefault();
+          if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '');
+          } else {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+          }
+        });
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
 
@@ -121,14 +140,28 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-
+            
         // Set active state on menu element
-        var current_url = "{{ url(Route::current()->getUri()) }}";
-        $("ul.sidebar-menu li a").each(function() {
-          if ($(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')))
-          {
-            $(this).parents('li').addClass('active');
-          }
+        var current_url = "{{ Request::fullUrl() }}";
+        var full_url = current_url+location.search;
+        var $navLinks = $("ul.sidebar-menu li a");
+        // First look for an exact match including the search string
+        var $curentPageLink = $navLinks.filter(
+            function() { return $(this).attr('href') === full_url; }
+        );
+        // If not found, look for the link that starts with the url
+        if(!$curentPageLink.length > 0){
+            $curentPageLink = $navLinks.filter(
+                function() { return $(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')); }
+            );
+        }
+        
+        $curentPageLink.parents('li').addClass('active');
+        {{-- Enable deep link to tab --}}
+        var activeTab = $('[href="' + location.hash.replace("#", "#tab_") + '"]');
+        location.hash && activeTab && activeTab.tab('show');
+        $('.nav-tabs a').on('shown.bs.tab', function (e) {
+            location.hash = e.target.hash.replace("#tab_", "#");
         });
     </script>
 
@@ -137,6 +170,6 @@
     @yield('after_scripts')
 
     <!-- JavaScripts -->
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 </body>
 </html>

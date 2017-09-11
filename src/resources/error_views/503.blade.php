@@ -43,7 +43,7 @@
   <body>
     <div class="container">
       <div class="content">
-        <div class="title">500</div>
+        <div class="title">503</div>
         <div class="quote">It's not you, it's me.</div>
         <div class="explanation">
           <br>

@@ -22,7 +22,7 @@ return [
     'email_address'        => 'Διεύθυνση E-Mail',
     'password'             => 'Κωδικός',
     'confirm_password'     => 'Επιβεβαίωση Κωδικού',
-    'remember_me'          => 'Θυμήσου με',
+    'remember_me'          => 'Να με θυμάσαι',
     'forgot_your_password' => 'Ξεχάσατε τον κωδικό σας?',
     'reset_password'       => 'Επαναφορά Κωδικού',
     'send_reset_link'      => 'Αποστολή Συνδέσμου Επαναφοράς Κωδικού',
