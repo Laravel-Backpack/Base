@@ -48,7 +48,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->loadHelpers();
     }
 
-
     /**
      * Load the Backpack helper methods, for convenience.
      */
