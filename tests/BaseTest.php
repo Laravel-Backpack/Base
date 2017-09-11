@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class BaseTest extends BaseTestCase
 {
