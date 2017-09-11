@@ -22,6 +22,52 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.0] - 2017-09-xx
+
+## Added
+- backpack_url() helper that returns the URL prefixed by the configured string;
+
+## Fixed
+- using Mix instead of Elixir, since we only support L5.5 now;
+
+## Removed
+- Laravel 5.4 and 5.3 support;
+- PHP 5.x support (Laravel constraint);
+
+
+## [0.7.25] - 2017-08-30
+
+## Added
+- Package Autodiscovery support - no longer needed to register service provider in Laravel 5.5;
+
+
+## [0.7.24] - 2017-08-30
+
+## Added
+- Laravel 5.5 support;
+
+
+## [0.7.23] - 2017-08-22
+
+## Fixed
+- active tab not working in some use cases;
+
+## Added
+- license code in the base config file;
+
+
+## [0.7.22] - 2017-08-11
+
+## Added
+- Danish (da_DK) language files, thanks to [Frederik Rabøl](https://github.com/Xayer);
+
+
+## [0.7.21] - 2017-07-18
+
+## Added
+- language pointer files for pagemanager;
+
+
 ## [0.7.20] - 2017-07-06
 
 ## Added

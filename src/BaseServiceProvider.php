@@ -45,6 +45,15 @@ class BaseServiceProvider extends ServiceProvider
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
+        $this->loadHelpers();
+    }
+
+    /**
+     * Load the Backpack helper methods, for convenience.
+     */
+    public function loadHelpers()
+    {
+        require_once __DIR__.'/helpers.php';
     }
 
     /**
@@ -103,14 +112,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function registerAdminMiddleware(Router $router)
     {
-        // in Laravel 5.4
-        if (method_exists($router, 'aliasMiddleware')) {
-            Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
-        // in Laravel 5.3 and below
-        else {
-            Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
+        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
     }
 
     public function publishFiles()
