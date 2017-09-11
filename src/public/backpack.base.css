@@ -101,6 +101,10 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #57549C;
 }
 
+body[class^='skin-purple'] .nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
+  border-left-color: #605ca8;
+}
+
 .table-hover>tbody>tr:hover {
   background-color: #eaf3ff;
 }

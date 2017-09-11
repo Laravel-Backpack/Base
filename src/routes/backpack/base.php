@@ -29,12 +29,11 @@ function () {
         Route::get('/', 'AdminController@redirect');
     }
 
-    // if not otherwise configured, setup the edit profile routes
-    if (config('backpack.base.setup_profile_routes')) {
-        Route::post('edit-profile', 'Auth\EditAdminProfileController@update');
-        Route::get('edit-profile', 'Auth\EditAdminProfileController@showEditForm')
-        ->name('backpack.profile.edit');
-        Route::post('edit-profile/password', 'Auth\EditAdminProfileController@updatePassword')
-        ->name('backpack.profile.password');
+    // if not otherwise configured, setup the "my account" routes
+    if (config('backpack.base.setup_my_account_routes')) {
+        Route::post('edit-account-info', 'Auth\MyAccountController@update');
+        Route::get('edit-account-info', 'Auth\MyAccountController@showAccountInfoForm')->name('backpack.account.info');
+        Route::get('change-password', 'Auth\MyAccountController@showChangePasswordForm')->name('backpack.account.password');
+        Route::post('change-password', 'Auth\MyAccountController@updatePassword')->name('backpack.account.password');
     }
 });
