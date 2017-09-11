@@ -23,6 +23,7 @@
         "jenssegers/date": "^3.2"
     },
     "require-dev": {
+        "phpunit/phpunit": "~6.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3",
         "backpack/generators": "^1.1",
