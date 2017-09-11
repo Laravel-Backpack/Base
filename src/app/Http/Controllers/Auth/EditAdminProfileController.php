@@ -15,24 +15,20 @@ class EditAdminProfileController extends Controller
 
     public function __construct()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            $this->middleware('backpack.admin.guard');
-        } else {
-            $this->middleware('admin');
-        }
+        $this->middleware('admin');
     }
 
     public function showEditForm()
     {
-        $this->data['title'] = trans('backpack::base.edit_account');
-        $this->data['user'] = Auth::guard(config('backpack.base.admin_guard.name'))->user();
+        $this->data['title'] = trans('backpack::base.account_settings');
+        $this->data['user'] = Auth::user();
 
         return view('backpack::auth.edit', $this->data);
     }
 
     public function update(Request $request)
     {
-        $user = Auth::guard(config('backpack.base.admin_guard.name'))->user();
+        $user = Auth::user();
 
         $validator = Validator::make($request->all(), [
             'email' => [
@@ -45,16 +41,16 @@ class EditAdminProfileController extends Controller
 
         if ($validator->fails()) {
             return redirect()
-            ->route('backpack.profile.edit')
-            ->withErrors($validator)
-            ->withInput($request->all());
+                ->route('backpack.profile.edit')
+                ->withErrors($validator)
+                ->withInput($request->all());
         } else {
             $data = $request->except(['_token']);
             $user->update($data);
 
             return redirect()
-            ->route('backpack.profile.edit')
-            ->with('success', trans('backpack::base.account_updated'));
+                ->route('backpack.profile.edit')
+                ->with('success', trans('backpack::base.account_updated'));
         }
     }
 
@@ -71,7 +67,7 @@ class EditAdminProfileController extends Controller
                 'message' => $validator->errors()->first(),
             ], 422);
         } else {
-            $user = Auth::guard(config('backpack.base.admin_guard.name'))->user();
+            $user = Auth::user();
             $user->password = Hash::make($request->password);
             $user->save();
 

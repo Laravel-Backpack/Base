@@ -32,7 +32,7 @@ return [
     'dashboard'            => 'Dashboard',
     'handcrafted_by'       => 'Handcrafted by',
     'powered_by'           => 'Powered by',
-    'edit_account'         => 'Edit Account',
+    'account_settings'     => 'Account Settings',
     'save'                 => 'Save',
     'cancel'               => 'Cancel',
     'error'                => 'Error',

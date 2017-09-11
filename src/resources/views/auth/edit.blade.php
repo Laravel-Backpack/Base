@@ -74,17 +74,17 @@
 <section class="content-header">
 
     <h1>
-        {{ trans('backpack::base.edit_account') }}
+        {{ trans('backpack::base.account_settings') }}
     </h1>
 
     <ol class="breadcrumb">
 
         <li>
-            <a href="{{ url(config('backpack.base.route_prefix', 'admin')) }}">{{ config('backpack.base.project_name') }}</a>
+            <a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a>
         </li>
 
         <li class="active">
-            {{ trans('backpack::base.edit_account') }}
+            {{ trans('backpack::base.account_settings') }}
         </li>
 
     </ol>
@@ -96,7 +96,7 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
 
-        <a href="{{ url(config('backpack.base.route_prefix'), 'dashboard') }}"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::base.dashboard') }}</a><br><br>
+        <a href="{{ backpack_url('dashboard') }}"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::base.dashboard') }}</a><br><br>
 
         <form class="form" action="{{ route('backpack.profile.edit') }}" method="post">
 
@@ -105,7 +105,7 @@
             <div class="box">
 
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{ trans('backpack::base.edit_account') }}</h3>
+                    <h3 class="box-title">{{ trans('backpack::base.account_settings') }}</h3>
                 </div>
 
                 <div class="box-body backpack-profile-form">

@@ -10,7 +10,7 @@
           </div>
           <div class="pull-left info">
             <p>{{ Auth::user()->name }}</p>
-            <a href="{{ backpack_url('logout') }}"><i class="fa fa-sign-out"></i> <span>{{ trans('backpack::base.logout') }}</span></a>
+            <small><small><a href="{{ backpack_url('edit-profile') }}"><span><i class="fa fa-user"></i> {{ trans('backpack::base.edit_account') }}</span></a> &nbsp;  &nbsp; <a href="{{ backpack_url('logout') }}"><i class="fa fa-sign-out"></i> <span>{{ trans('backpack::base.logout') }}</span></a></small></small>
           </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
