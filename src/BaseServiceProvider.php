@@ -101,14 +101,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function registerAdminMiddleware(Router $router)
     {
-        // in Laravel 5.4
-        if (method_exists($router, 'aliasMiddleware')) {
-            Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
-        // in Laravel 5.3 and below
-        else {
-            Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
+        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
     }
 
     public function publishFiles()
