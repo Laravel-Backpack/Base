@@ -27,6 +27,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Added
 - backpack_url() helper that returns the URL prefixed by the configured string;
 
+## Fixed
+- using Mix instead of Elixir, since we only support L5.5 now;
+
 ## Removed
 - Laravel 5.4 and 5.3 support;
 - PHP 5.x support (Laravel constraint);
