@@ -56,6 +56,7 @@ return [
     */
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
+    // You make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
     'route_prefix' => 'admin',
 
     // Set this to false if you would like to use your own AuthController and PasswordController

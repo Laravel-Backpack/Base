@@ -24,6 +24,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [0.8.0] - 2017-09-xx
 
+## Added
+- backpack_url() helper that returns the URL prefixed by the configured string;
+
 ## Removed
 - Laravel 5.4 and 5.3 support;
 - PHP 5.x support (Laravel constraint);

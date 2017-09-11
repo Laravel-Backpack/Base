@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="box-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url(config('backpack.base.route_prefix', 'admin').'/password/reset') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ backpack_url('password/reset') }}">
                         {!! csrf_field() !!}
 
                         <input type="hidden" name="token" value="{{ $token }}">
