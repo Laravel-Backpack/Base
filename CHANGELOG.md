@@ -29,6 +29,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - by default, gravatar instead of placehold image;
 - design facelift (introducing overlays that make the admin panel customizable and designs shareable; first overlay is called "Bold");
 - backpack_avatar_url() helper;
+- views and logic for logged in user to change his account info;
+- views and logic for logged in user to change his password;
 
 ## Fixed
 - using Mix instead of Elixir, since we only support L5.5 now;
