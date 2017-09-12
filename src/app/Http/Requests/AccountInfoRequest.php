@@ -3,7 +3,6 @@
 namespace Backpack\Base\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class AccountInfoRequest extends FormRequest

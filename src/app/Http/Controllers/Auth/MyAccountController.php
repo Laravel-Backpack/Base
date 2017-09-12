@@ -2,15 +2,12 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use Auth;
 use Alert;
+use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Backpack\Base\app\Http\Requests\AccountInfoRequest;
 use Backpack\Base\app\Http\Requests\ChangePasswordRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
-use Validator;
 
 class MyAccountController extends Controller
 {
@@ -45,7 +42,6 @@ class MyAccountController extends Controller
 
         return view('backpack::auth.account.change_password', $this->data);
     }
-
 
     public function postChangePasswordForm(ChangePasswordRequest $request)
     {
