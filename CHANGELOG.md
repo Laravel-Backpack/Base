@@ -35,6 +35,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Fixed
 - using Mix instead of Elixir, since we only support L5.5 now;
 - select2 clear button;
+- prefixed auth route names;
 
 ## Removed
 - Laravel 5.4 and 5.3 support;

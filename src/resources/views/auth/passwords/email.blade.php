@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ backpack_url('password/email') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.password.email') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

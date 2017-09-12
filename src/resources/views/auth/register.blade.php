@@ -8,7 +8,7 @@
                     <div class="box-title">{{ trans('backpack::base.register') }}</div>
                 </div>
                 <div class="box-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ backpack_url('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

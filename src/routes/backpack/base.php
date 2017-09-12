@@ -19,29 +19,21 @@ Route::group(
 function () {
     // if not otherwise configured, setup the auth routes
     if (config('backpack.base.setup_auth_routes')) {
-        
-        //same routes as when calling Route::auth() but without route names
-        //why? 
-        //If you want front-end users, you can use Auth::routes(); without conflict in route names 
-        //check: vendor/laravel/framework/src/Illuminate/Routing/Router.php
-        //
         // Authentication Routes...
-        Route::get('login', 'Auth\LoginController@showLoginForm');
+        Route::get('login', 'Auth\LoginController@showLoginForm')->name('backpack.auth.login');
         Route::post('login', 'Auth\LoginController@login');
+        Route::get('logout', 'Auth\LoginController@logout')->name('backpack.auth.logout');
         Route::post('logout', 'Auth\LoginController@logout');
 
         // Registration Routes...
-        Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('backpack.auth.register');
         Route::post('register', 'Auth\RegisterController@register');
 
         // Password Reset Routes...
-        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('backpack.auth.password.reset');
         Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-        //end Route::auth();
-        
-        Route::get('logout', 'Auth\LoginController@logout');
+        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
+        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('backpack.auth.password.email');
     }
 
     // if not otherwise configured, setup the dashboard routes
