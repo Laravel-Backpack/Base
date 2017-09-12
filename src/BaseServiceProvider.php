@@ -126,7 +126,7 @@ class BaseServiceProvider extends ServiceProvider
         Route::aliasMiddleware('backpack.auth', \Backpack\Base\app\Http\Middleware\BackpackAuth::class);
 
         if (config('backpack.base.separate_admin_session')) {
-         Route::aliasMiddleware('backpack.admin.guard', app\Http\Middleware\BackpackAdminGuard::class);
+            Route::aliasMiddleware('backpack.admin.guard', app\Http\Middleware\BackpackAdminGuard::class);
         }
     }
 
