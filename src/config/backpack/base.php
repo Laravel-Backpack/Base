@@ -56,6 +56,7 @@ return [
     */
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
+    // You make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
     'route_prefix' => 'admin',
 
     // Set this to false if you would like to use your own AuthController and PasswordController
@@ -65,6 +66,10 @@ return [
     // Set this to false if you would like to skip adding the dashboard routes
     // (you then need to overwrite the login route on your AuthController)
     'setup_dashboard_routes' => true,
+
+    // Set this to false if you would like to skip adding "my account" routes
+    // (you then need to define the edit account route in your web.php)
+    'setup_my_account_routes' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,4 +88,26 @@ return [
         'provider' => 'users',
     ],
 
+    // What kind of avatar will you like to show to the user?
+    // Default: gravatar (automatically use the gravatar for his email)
+    // Other options:
+    // - placehold (generic image with his first letter)
+    // - example_method_name (specify the method on the User model that returns the URL)
+    'avatar_type' => 'gravatar',
+
+    /*
+    |--------------------------------------------------------------------------
+    | License Code
+    |--------------------------------------------------------------------------
+    |
+    | If you, your employer or your client make money by using Backpack, you need
+    | to purchase a license code. A license code will be provided after purchase,
+    | which you can put here or in your ENV file.
+    |
+    | More info and payment form on:
+    | https://www.backpackforlaravel.com
+    |
+    */
+
+    'license_code' => env('BACKPACK_LICENSE', false),
 ];

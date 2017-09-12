@@ -22,6 +22,105 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.0] - 2017-09-xx
+
+## Added
+- backpack_url() helper that returns the URL prefixed by the configured string;
+- by default, gravatar instead of placehold image;
+- design facelift (introducing overlays that make the admin panel customizable and designs shareable; first overlay is called "Bold");
+- backpack_avatar_url() helper;
+- views and logic for logged in user to change his account info;
+- views and logic for logged in user to change his password;
+
+## Fixed
+- using Mix instead of Elixir, since we only support L5.5 now;
+- select2 clear button;
+- prefixed auth route names;
+
+## Removed
+- Laravel 5.4 and 5.3 support;
+- PHP 5.x support (Laravel constraint);
+
+
+## [0.7.25] - 2017-08-30
+
+## Added
+- Package Autodiscovery support - no longer needed to register service provider in Laravel 5.5;
+
+
+## [0.7.24] - 2017-08-30
+
+## Added
+- Laravel 5.5 support;
+
+
+## [0.7.23] - 2017-08-22
+
+## Fixed
+- active tab not working in some use cases;
+
+## Added
+- license code in the base config file;
+
+
+## [0.7.22] - 2017-08-11
+
+## Added
+- Danish (da_DK) language files, thanks to [Frederik Rabøl](https://github.com/Xayer);
+
+
+## [0.7.21] - 2017-07-18
+
+## Added
+- language pointer files for pagemanager;
+
+
+## [0.7.20] - 2017-07-06
+
+## Added
+- overwritable routes file;
+- Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
+- Remember collapsed/open sidebar state, when loading the page (thanks to [MarcosBL](https://github.com/MarcosBL));
+
+### Fixed
+- Support query string when setting active menu item;
+
+
+## [0.7.19] - 2017-04-25
+
+### Added
+- Latvian translation files (thanks to [Erik Bonder](https://github.com/erik-ropez));
+- Russian translation files (thanks to [Aleksei Budaev](https://a-budaev.ru/));
+
+
+## [0.7.18] - 2017-04-21
+
+### Fixed
+- language files for all Backpack packages are now loaded by Backpack\Base, using pointer files; this fixes the language fallback system;
+- Backpack\Base language files no longer need publishing;
+
+
+## [0.7.17] - 2017-04-21
+
+### Added
+- Indonesian translation, thanks to [Nakamura Agatha](https://github.com/nakamuraagatha);
+- deep links to tabs, thanks to [MarcosBL](https://github.com/MarcosBL);
+
+
+## [0.7.16] - 2017-02-11
+
+### Added
+- Bulgarian translation, thanks to [Petyo Tsonev](https://github.com/petyots);
+- Greek translation fixes;
+
+
+## [0.7.15] - 2017-02-03
+
+### Added
+- Laravel 5.4 compatibility;
+
+
+
 ## [0.7.14] - 2017-01-08
 
 ### Fixed

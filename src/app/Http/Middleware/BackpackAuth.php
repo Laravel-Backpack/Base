@@ -5,7 +5,7 @@ namespace Backpack\Base\app\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class BackpackBaseAdmin
+class BackpackAuth
 {
     /**
      * Handle an incoming request.

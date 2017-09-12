@@ -18,10 +18,10 @@ Laravel BackPack's central package, which includes:
 > ### Security updates and breaking changes
 > Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
-![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_login.png)
+![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
 
-## Install on Laravel 5.3
+## Install on Laravel 5.4 / 5.3
 
 1) Run in your terminal:
 
@@ -99,7 +99,15 @@ $ php artisan migrate #generates users table (using Laravel's default migrations
 2. Your admin panel will be available at yourappname/admin or yourappname/login
 3. [optional] If you're building an admin panel, you should close the registration. In config/backpack/base.php look for "registration_open" and change it to false.
 
-![Example generated CRUD interface](https://dl.dropboxusercontent.com/u/2431352/backpack_base_dashboard.png)
+![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_dashboard.png)
+
+
+## Overwriting Functionality
+
+If you need to modify how this works in a project: 
+- create a ```routes/backpack/base.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
+- create controllers/models that extend the ones in the package, and use those in your new routes file;
+- modify anything you'd like in the new controllers/models;
 
 ## Change log
 
@@ -134,7 +142,7 @@ Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so y
 
 ## License
 
-Backpack is free for non-commercial use and $19/project for commercial use. Please see [License File](LICENSE.md) and [backpackforlaravel.com](https://backpackforlaravel.com/#pricing) for more information.
+Backpack is free for non-commercial use and 39 EUR/project for commercial use. Please see [License File](LICENSE.md) and [backpackforlaravel.com](https://backpackforlaravel.com/#pricing) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/backpack/base.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
