@@ -1,4 +1,4 @@
-@if (backpack_admin())
+@if (backpack_auth())
     <!-- Left side column. contains the sidebar -->
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
@@ -9,7 +9,7 @@
             <img src="{{ backpack_avatar_url(Auth::user()) }}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>{{ backpack_admin()->name }}</p>
+            <p>{{ backpack_auth()->name }}</p>
             <small><small><a href="{{ route('backpack.account.info') }}"><span><i class="fa fa-user-circle-o"></i> {{ trans('backpack::base.my_account') }}</span></a> &nbsp;  &nbsp; <a href="{{ backpack_url('logout') }}"><i class="fa fa-sign-out"></i> <span>{{ trans('backpack::base.logout') }}</span></a></small></small>
           </div>
         </div>

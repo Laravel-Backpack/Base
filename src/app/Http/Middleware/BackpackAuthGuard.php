@@ -4,7 +4,7 @@ namespace Backpack\Base\app\Http\Middleware;
 
 use Closure;
 
-class BackpackAdminGuard
+class BackpackAuthGuard
 {
     /**
      * Handle an incoming request.

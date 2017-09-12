@@ -91,8 +91,8 @@ if (!function_exists('backpack_guard')) {
  * of the currently authenticated admin
  * based off the defined guard.
  */
-if (!function_exists('backpack_admin')) {
-    function backpack_admin()
+if (!function_exists('backpack_auth')) {
+    function backpack_auth()
     {
         return \Auth::guard(backpack_guard())->user();
     }
