@@ -43,7 +43,7 @@ if (!function_exists('backpack_avatar')) {
     }
 }
 
-/**
+/*
  * Returns the name of the middleware
  * defined by the application config
  * if a param is passed in, it will chain
