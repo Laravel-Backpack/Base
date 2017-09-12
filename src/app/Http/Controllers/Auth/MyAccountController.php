@@ -3,7 +3,10 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Auth;
+use Alert;
 use Backpack\Base\app\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Requests\AccountInfoRequest;
+use Backpack\Base\app\Http\Requests\ChangePasswordRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -18,7 +21,7 @@ class MyAccountController extends Controller
         $this->middleware('admin');
     }
 
-    public function showAccountInfoForm()
+    public function getAccountInfoForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = Auth::user();
@@ -26,7 +29,16 @@ class MyAccountController extends Controller
         return view('backpack::auth.account.update_info', $this->data);
     }
 
-    public function showChangePasswordForm()
+    public function postAccountInfoForm(AccountInfoRequest $request)
+    {
+        Auth::user()->update($request->except(['_token']));
+
+        Alert::success(trans('backpack::base.account_updated'))->flash();
+
+        return redirect()->back();
+    }
+
+    public function getChangePasswordForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = Auth::user();
@@ -34,55 +46,15 @@ class MyAccountController extends Controller
         return view('backpack::auth.account.change_password', $this->data);
     }
 
-    public function update(Request $request)
+
+    public function postChangePasswordForm(ChangePasswordRequest $request)
     {
         $user = Auth::user();
+        $user->password = Hash::make($request->new_password);
+        $user->save();
 
-        $validator = Validator::make($request->all(), [
-            'email' => [
-                'required',
-                'email',
-                Rule::unique($user->getTable())->ignore($user->getKey()),
-            ],
-            'name' => 'required',
-        ]);
+        Alert::success(trans('backpack::base.account_updated'))->flash();
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput($request->all());
-        } else {
-            $data = $request->except(['_token']);
-            $user->update($data);
-
-            \Alert::success(trans('backpack::base.account_updated'))->flash();
-
-            return redirect()->back();
-        }
-    }
-
-    public function updatePassword(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'old_password'         => 'required|min:6',
-            'new_password'         => 'required|min:6',
-            'confirm_password'     => 'required|same:new_password|min:6',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        } else {
-            $user = Auth::user();
-
-            // check old password matches
-            if (!Hash::check($request->old_password, $user->password)) {
-                return redirect()->back()->withErrors(trans('backpack::base.old_password_wrong'));
-            }
-
-            $user->password = Hash::make($request->new_password);
-            $user->save();
-
-            \Alert::success(trans('backpack::base.account_updated'))->flash();
-
-            return redirect()->back();
-        }
+        return redirect()->back();
     }
 }
