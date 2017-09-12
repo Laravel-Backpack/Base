@@ -887,3 +887,17 @@ body[class^='skin-purple'] .nav-stacked>li.active>a, .nav-stacked>li.active>a:ho
     box-shadow: none!important;
     border-radius: 0!important;
   }
+
+  /*clear button on nullable fields*/
+.select2-selection__clear {
+    background: #a2a2a2;
+    padding: 0 5px;
+    border-radius: 6px;
+    line-height: 150%;
+    margin: 4px;        
+    color: #fff !important;
+}
+.select2-selection__clear:hover {
+    background: #333;
+    color: #ccc !important;    
+}
