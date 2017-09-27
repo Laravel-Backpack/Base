@@ -39,7 +39,7 @@ class Install extends Command
      */
     public function handle()
     {
-        $this->info("Backpack\Base installation started. Please wait...");
+        $this->info("### Backpack\Base installation started. Please wait...");
 
         $this->executeProcess("composer require backpack/generators --dev");
         $this->executeProcess("composer require laracasts/generators:dev-master --dev");
@@ -47,26 +47,29 @@ class Install extends Command
         $this->executeProcess("php artisan vendor:publish --provider='Prologue\Alerts\AlertsServiceProvider'", "publishing config for notifications - prologue/alerts");
         $this->executeProcess("php artisan migrate", "generating users table (using Laravel's default migrations)");
 
-        $this->info("Backpack\Base installation finished.");
+        $this->info("### Backpack\Base installation finished.");
     }
 
     public function executeProcess($command, $beforeNotice = false, $afterNotice = false) {
         if ($beforeNotice) {
             $this->info("### ".$beforeNotice);
         } else {
-            $this->info("### running: ".$command);
+            $this->info("### Running: ".$command);
         }
 
-
         $process = new Process($command);
-        $process->run();
+        $process->run(function ($type, $buffer) {
+            if (Process::ERR === $type) {
+                echo '... > '.$buffer;
+            } else {
+                echo 'OUT > '.$buffer;
+            }
+        });
 
         // executes after the command finishes
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
-
-        echo $process->getOutput();
 
         if ($afterNotice) {
             $this->info("### ".$afterNotice);
