@@ -8,6 +8,10 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
+    protected $commands = [
+        'Backpack\Base\app\Console\Commands\Install',
+    ];
+
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -97,6 +101,9 @@ class BaseServiceProvider extends ServiceProvider
                 $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
             }
         }
+
+        // register the artisan commands
+        $this->commands($this->commands);
     }
 
     public function registerAdminMiddleware(Router $router)
