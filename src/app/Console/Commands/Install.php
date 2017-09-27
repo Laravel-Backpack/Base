@@ -53,12 +53,14 @@ class Install extends Command
     /**
      * Run a SSH command.
      *
-     * @param  string  $command      The SSH command that needs to be run
-     * @param  boolean $beforeNotice Information for the user before the command is run
-     * @param  boolean $afterNotice  Information for the user after the command is run
-     * @return mixed                 Command-line output
+     * @param string $command      The SSH command that needs to be run
+     * @param bool   $beforeNotice Information for the user before the command is run
+     * @param bool   $afterNotice  Information for the user after the command is run
+     *
+     * @return mixed Command-line output
      */
-    public function executeProcess($command, $beforeNotice = false, $afterNotice = false) {
+    public function executeProcess($command, $beforeNotice = false, $afterNotice = false)
+    {
         if ($beforeNotice) {
             $this->info('### '.$beforeNotice);
         } else {
