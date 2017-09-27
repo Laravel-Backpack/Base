@@ -3,8 +3,8 @@
 namespace Backpack\Base\app\Console\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class Install extends Command
 {
@@ -41,22 +41,22 @@ class Install extends Command
     {
         $this->info("Backpack\Base installation started. Please wait...");
 
-        $this->executeProcess("composer require backpack/generators --dev");
-        $this->executeProcess("composer require laracasts/generators:dev-master --dev");
-        $this->executeProcess("php artisan vendor:publish --provider='Backpack\Base\BaseServiceProvider'", "publishing configs, langs, views and AdminLTE files");
-        $this->executeProcess("php artisan vendor:publish --provider='Prologue\Alerts\AlertsServiceProvider'", "publishing config for notifications - prologue/alerts");
-        $this->executeProcess("php artisan migrate", "generating users table (using Laravel's default migrations)");
+        $this->executeProcess('composer require backpack/generators --dev');
+        $this->executeProcess('composer require laracasts/generators:dev-master --dev');
+        $this->executeProcess("php artisan vendor:publish --provider='Backpack\Base\BaseServiceProvider'", 'publishing configs, langs, views and AdminLTE files');
+        $this->executeProcess("php artisan vendor:publish --provider='Prologue\Alerts\AlertsServiceProvider'", 'publishing config for notifications - prologue/alerts');
+        $this->executeProcess('php artisan migrate', "generating users table (using Laravel's default migrations)");
 
         $this->info("Backpack\Base installation finished.");
     }
 
-    public function executeProcess($command, $beforeNotice = false, $afterNotice = false) {
+    public function executeProcess($command, $beforeNotice = false, $afterNotice = false)
+    {
         if ($beforeNotice) {
-            $this->info("### ".$beforeNotice);
+            $this->info('### '.$beforeNotice);
         } else {
-            $this->info("### running: ".$command);
+            $this->info('### running: '.$command);
         }
-
 
         $process = new Process($command);
         $process->run();
@@ -69,7 +69,7 @@ class Install extends Command
         echo $process->getOutput();
 
         if ($afterNotice) {
-            $this->info("### ".$afterNotice);
+            $this->info('### '.$afterNotice);
         }
     }
 }
