@@ -30,7 +30,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(backpack_middleware('guest'));
+        $this->middleware('guest:'.backpack_guard());
 
         // Where to redirect users after login / registration.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo

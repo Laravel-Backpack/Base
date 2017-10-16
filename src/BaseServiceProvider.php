@@ -46,7 +46,6 @@ class BaseServiceProvider extends ServiceProvider
             'backpack.base'
         );
 
-        $this->registerGuards();
         $this->registerMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
@@ -79,18 +78,6 @@ class BaseServiceProvider extends ServiceProvider
         }
 
         $this->loadRoutesFrom($routeFilePathInUse);
-    }
-
-    /**
-     * Register custom backpack authentication guard.
-     */
-    public function registerGuards()
-    {
-        $backpackAuthGuard = Config::get('backpack.base.admin_guard');
-        $existingGuards = Config::get('auth.guards');
-        $existingGuards[$backpackAuthGuard['name']] = $backpackAuthGuard;
-
-        Config::set('auth.guards', $existingGuards);
     }
 
     /**
@@ -129,11 +116,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function registerMiddleware(Router $router)
     {
-        Route::aliasMiddleware('backpack.auth', \Backpack\Base\app\Http\Middleware\BackpackAuth::class);
-
-        if (config('backpack.base.separate_admin_session')) {
-            Route::aliasMiddleware('backpack.auth.guard', \Backpack\Base\app\Http\Middleware\BackpackAuthGuard::class);
-        }
+        Route::aliasMiddleware(Config::get('backpack.base.middleware_name'), \Backpack\Base\app\Http\Middleware\BackpackAuth::class);
     }
 
     public function publishFiles()

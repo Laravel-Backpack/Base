@@ -29,7 +29,7 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(backpack_middleware('guest'));
+        $this->middleware('guest:'.backpack_guard());
     }
 
     public function guard()

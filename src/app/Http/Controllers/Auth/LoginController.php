@@ -31,7 +31,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(backpack_middleware('guest'), ['except' => 'logout']);
+        $this->middleware('guest:'.backpack_guard(), ['except' => 'logout']);
 
         // ----------------------------------
         // Use the admin prefix in all routes

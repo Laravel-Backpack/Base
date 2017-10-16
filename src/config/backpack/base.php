@@ -80,13 +80,17 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
-    'separate_admin_session' => false,
+    // Name for the middleware used across backpack
+    // Can be fetched using the backpack_middleware() helper
+    'middleware_name' => 'backpack.auth',
 
-    'admin_guard' => [
-        'name'     => 'admin',
-        'driver'   => 'session',
-        'provider' => 'users',
-    ],
+    // The guard that protects the Backpack admin panel.
+    // Can be fetched using the backpack_guard() helper
+    'guard' => 'admin',
+
+    // The password reset configuration for Backpack.
+    // If null, the config.auth.defaults.passwords value will be used.
+    'passwords' => null,
 
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)

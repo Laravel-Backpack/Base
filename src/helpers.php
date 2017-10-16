@@ -47,25 +47,13 @@ if (!function_exists('backpack_avatar')) {
  * Returns the name of the middleware
  * defined by the application config
  * if a param is passed in, it will chain
- * the backpack middelware to it.
+ * the backpack middleware to it.
  * e.g guest:backpack.admin.
  */
 if (!function_exists('backpack_middleware')) {
-    function backpack_middleware($chainedWith = null)
+    function backpack_middleware()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            $middleware = config('backpack.base.admin_guard.name');
-        } else {
-            $middleware = 'backpack.auth';
-        }
-
-        if ($chainedWith && config('backpack.base.separate_admin_session')) {
-            $middleware = $chainedWith.':'.$middleware;
-        } elseif ($chainedWith) {
-            $middleware = $chainedWith;
-        }
-
-        return $middleware;
+        return config('backpack.base.middleware_name');
     }
 }
 
@@ -76,13 +64,7 @@ if (!function_exists('backpack_middleware')) {
 if (!function_exists('backpack_guard')) {
     function backpack_guard()
     {
-        if (config('backpack.base.separate_admin_session')) {
-            $guard = config('backpack.base.admin_guard.name');
-        } else {
-            $guard = null;
-        }
-
-        return $guard;
+        return config('backpack.base.guard');
     }
 }
 
@@ -95,17 +77,5 @@ if (!function_exists('backpack_auth')) {
     function backpack_auth()
     {
         return \Auth::guard(backpack_guard())->user();
-    }
-}
-
-/*
- * Returns back a user instance without
- * the admin guard, however allows you
- * to pass in a custom guard if you like.
- */
-if (!function_exists('backpack_user')) {
-    function backpack_user($guard = null)
-    {
-        return \Auth::guard($guard)->user();
     }
 }

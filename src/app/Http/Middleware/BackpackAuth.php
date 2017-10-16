@@ -18,6 +18,10 @@ class BackpackAuth
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        if (is_null($guard)) {
+            $guard = backpack_guard();
+        }
+
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response(trans('backpack::base.unauthorized'), 401);
