@@ -18,6 +18,9 @@ class MyAccountController extends Controller
         $this->middleware('admin');
     }
 
+    /**
+     * Show the user a form to change his personal information.
+     */
     public function getAccountInfoForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
@@ -26,15 +29,25 @@ class MyAccountController extends Controller
         return view('backpack::auth.account.update_info', $this->data);
     }
 
+    /**
+     * Save the modified personal information for a user.
+     */
     public function postAccountInfoForm(AccountInfoRequest $request)
     {
-        Auth::user()->update($request->except(['_token']));
+        $result = Auth::user()->update($request->except(['_token']));
 
-        Alert::success(trans('backpack::base.account_updated'))->flash();
+        if ($result) {
+            Alert::success(trans('backpack::base.account_updated'))->flash();
+        } else {
+            Alert::error(trans('backpack::base.error_saving'))->flash();
+        }
 
         return redirect()->back();
     }
 
+    /**
+     * Show the user a form to change his login password.
+     */
     public function getChangePasswordForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
@@ -43,13 +56,19 @@ class MyAccountController extends Controller
         return view('backpack::auth.account.change_password', $this->data);
     }
 
+    /**
+     * Save the new password for a user.
+     */
     public function postChangePasswordForm(ChangePasswordRequest $request)
     {
         $user = Auth::user();
         $user->password = Hash::make($request->new_password);
-        $user->save();
 
-        Alert::success(trans('backpack::base.account_updated'))->flash();
+        if ($user->save()) {
+            Alert::success(trans('backpack::base.account_updated'))->flash();
+        } else {
+            Alert::error(trans('backpack::base.error_saving'))->flash();
+        }
 
         return redirect()->back();
     }

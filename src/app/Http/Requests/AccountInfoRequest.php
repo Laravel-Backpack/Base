@@ -4,6 +4,7 @@ namespace Backpack\Base\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class AccountInfoRequest extends FormRequest
 {
@@ -15,7 +16,7 @@ class AccountInfoRequest extends FormRequest
     public function authorize()
     {
         // only allow updates if the user is logged in
-        return \Auth::check();
+        return Auth::check();
     }
 
     /**
@@ -25,7 +26,7 @@ class AccountInfoRequest extends FormRequest
      */
     public function rules()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
 
         return [
             'email' => [
