@@ -22,6 +22,26 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.0] - 2017-09-xx
+
+## Added
+- backpack_url() helper that returns the URL prefixed by the configured string;
+- by default, gravatar instead of placehold image;
+- design facelift (introducing overlays that make the admin panel customizable and designs shareable; first overlay is called "Bold");
+- backpack_avatar_url() helper;
+- views and logic for logged in user to change his account info;
+- views and logic for logged in user to change his password;
+
+## Fixed
+- using Mix instead of Elixir, since we only support L5.5 now;
+- select2 clear button;
+- prefixed auth route names;
+
+## Removed
+- Laravel 5.4 and 5.3 support;
+- PHP 5.x support (Laravel constraint);
+
+
 ## [0.7.25] - 2017-08-30
 
 ## Added

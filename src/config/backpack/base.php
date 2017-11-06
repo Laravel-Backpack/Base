@@ -56,6 +56,7 @@ return [
     */
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
+    // You can make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
     'route_prefix' => 'admin',
 
     // Set this to false if you would like to use your own AuthController and PasswordController
@@ -66,6 +67,10 @@ return [
     // (you then need to overwrite the login route on your AuthController)
     'setup_dashboard_routes' => true,
 
+    // Set this to false if you would like to skip adding "my account" routes
+    // (you then need to manually define the routes in your web.php)
+    'setup_my_account_routes' => true,
+
     /*
     |--------------------------------------------------------------------------
     | User Model
@@ -74,6 +79,13 @@ return [
 
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
+
+    // What kind of avatar will you like to show to the user?
+    // Default: gravatar (automatically use the gravatar for his email)
+    // Other options:
+    // - placehold (generic image with his first letter)
+    // - example_method_name (specify the method on the User model that returns the URL)
+    'avatar_type' => 'gravatar',
 
     /*
     |--------------------------------------------------------------------------
