@@ -22,7 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.8.0] - 2017-09-xx
+## [0.8.1] - 2017-11-06
+
+## Added
+- command-line installer: ```php artisan backpack:base:install```;
+
+
+## [0.8.0] - 2017-11-06
 
 ## Added
 - backpack_url() helper that returns the URL prefixed by the configured string;
