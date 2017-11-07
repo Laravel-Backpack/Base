@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.2] - 2017-11-07
+
+## Fixed
+- command-line installer namespace;
+
+
 ## [0.8.1] - 2017-11-06
 
 ## Added
