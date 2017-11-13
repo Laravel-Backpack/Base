@@ -48,4 +48,3 @@ return [
     'unknown_error'             => 'Ein unbekannter Fehler ist aufgetreten. Bitte erneut versuchen',
     'error_saving'              => 'Fehler beim Speichern. Bitte erneut probieren.',
 ];
-
