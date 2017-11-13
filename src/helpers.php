@@ -29,7 +29,7 @@ if (!function_exists('backpack_avatar')) {
     {
         switch (config('backpack.base.avatar_type')) {
             case 'gravatar':
-                return Gravatar::fallback('https://placehold.it/160x160/00a65a/ffffff/&text='.Auth::user()->name[0])->get($user->email);
+                return Gravatar::fallback('https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0])->get($user->email);
                 break;
 
             case 'placehold':
