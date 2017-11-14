@@ -52,7 +52,7 @@ php artisan backpack:base:install
 1) Run in your terminal:
 
 ``` bash
-$ composer require backpack/base
+$ composer require backpack/base 0.7.x
 ```
 
 2) Add the service providers in config/app.php:
