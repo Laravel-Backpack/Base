@@ -24,7 +24,7 @@ class MyAccountController extends Controller
     public function getAccountInfoForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
-        $this->data['user'] = Auth::user();
+        $this->data['user'] = $this->guard()->user();
 
         return view('backpack::auth.account.update_info', $this->data);
     }
@@ -34,7 +34,7 @@ class MyAccountController extends Controller
      */
     public function postAccountInfoForm(AccountInfoRequest $request)
     {
-        $result = Auth::user()->update($request->except(['_token']));
+        $result = $this->guard()->user()->update($request->except(['_token']));
 
         if ($result) {
             Alert::success(trans('backpack::base.account_updated'))->flash();
@@ -51,7 +51,7 @@ class MyAccountController extends Controller
     public function getChangePasswordForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
-        $this->data['user'] = Auth::user();
+        $this->data['user'] = $this->guard()->user();
 
         return view('backpack::auth.account.change_password', $this->data);
     }
@@ -61,7 +61,7 @@ class MyAccountController extends Controller
      */
     public function postChangePasswordForm(ChangePasswordRequest $request)
     {
-        $user = Auth::user();
+        $user = $this->guard()->user();
         $user->password = Hash::make($request->new_password);
 
         if ($user->save()) {
@@ -71,5 +71,15 @@ class MyAccountController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    /**
+     * Get the guard to be used for account manipulation.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard();
     }
 }
