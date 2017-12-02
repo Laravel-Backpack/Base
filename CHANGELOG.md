@@ -27,6 +27,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Fixed
 -  ensure the installer publishes files correctly on all OSs - refs #216;
 -  Using guard() method to access the current guard in MyAccountController - merged #215;
+-  updated LV translation;
+-  added zh-hant translation;
+-  updated German translation;
 
 
 ## [0.8.2] - 2017-11-07
