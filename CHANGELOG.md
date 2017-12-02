@@ -30,6 +30,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 -  updated LV translation;
 -  added zh-hant translation;
 -  updated German translation;
+-  updated Italian translation;
 
 
 ## [0.8.2] - 2017-11-07
