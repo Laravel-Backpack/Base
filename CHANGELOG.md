@@ -22,6 +22,19 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.3] - 2017-12-02
+
+## Fixed
+-  ensure the installer publishes files correctly on all OSs - refs #216;
+-  Using guard() method to access the current guard in MyAccountController - merged #215;
+
+
+## [0.8.2] - 2017-11-07
+
+## Fixed
+- command-line installer namespace;
+
+
 ## [0.8.1] - 2017-11-06
 
 ## Added

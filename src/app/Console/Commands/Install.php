@@ -43,8 +43,8 @@ class Install extends Command
 
         $this->executeProcess('composer require backpack/generators --dev');
         $this->executeProcess('composer require laracasts/generators:dev-master --dev');
-        $this->executeProcess("php artisan vendor:publish --provider='Backpack\Base\BaseServiceProvider'", 'publishing configs, langs, views and AdminLTE files');
-        $this->executeProcess("php artisan vendor:publish --provider='Prologue\Alerts\AlertsServiceProvider'", 'publishing config for notifications - prologue/alerts');
+        $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"', 'publishing configs, langs, views and AdminLTE files');
+        $this->executeProcess('php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"', 'publishing config for notifications - prologue/alerts');
         $this->executeProcess('php artisan migrate', "generating users table (using Laravel's default migrations)");
 
         $this->info("### Backpack\Base installation finished.");

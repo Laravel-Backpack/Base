@@ -20,13 +20,39 @@ Laravel BackPack's central package, which includes:
 
 ![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
+## Install on Laravel 5.5
+
+1) Run in your terminal:
+
+``` bash
+composer require backpack/base
+php artisan backpack:base:install
+```
+
+2) Make sure the reset password emails have the correct reset link by adding these to your ```User``` model:
+- before class name ```use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;```
+- as a method inside the User class:
+``` php
+  /**
+   * Send the password reset notification.
+   *
+   * @param  string  $token
+   * @return void
+   */
+  public function sendPasswordResetNotification($token)
+  {
+      $this->notify(new ResetPasswordNotification($token));
+  }
+```
+
+3) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
 
 ## Install on Laravel 5.4 / 5.3
 
 1) Run in your terminal:
 
 ``` bash
-$ composer require backpack/base
+$ composer require backpack/base 0.7.x
 ```
 
 2) Add the service providers in config/app.php:
