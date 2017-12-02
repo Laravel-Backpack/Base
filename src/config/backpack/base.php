@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'registration_open' => env('BACKPACK_REGISTRATION_OPEN', true),
+    'registration_open' => env('BACKPACK_REGISTRATION_OPEN', false),
 
     /*
     |--------------------------------------------------------------------------
