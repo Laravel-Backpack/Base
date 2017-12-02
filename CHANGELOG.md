@@ -31,6 +31,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 -  added zh-hant translation;
 -  updated German translation;
 -  updated Italian translation;
+-  user avatar uses customized guard;
 
 
 ## [0.8.2] - 2017-11-07
