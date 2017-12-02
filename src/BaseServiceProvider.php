@@ -9,7 +9,7 @@ use Route;
 class BaseServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        app\Console\Commands\Install::class,
+        \Backpack\Base\app\Console\Commands\Install::class,
     ];
 
     /**
