@@ -140,7 +140,7 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
 
         // calculate the path from current directory to get the vendor path
-        $vendorPath = __DIR__.'/../../..';
+        $vendorPath = dirname(__DIR__, 3);
 
         // publish public AdminLTE assets
         $this->publishes([$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')], 'adminlte');
