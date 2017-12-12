@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.4] - 2017-12-xx
+
+## Fixed
+- Chinese translation;
+
+
 ## [0.8.3] - 2017-12-02
 
 ## Fixed
