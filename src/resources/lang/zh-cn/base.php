@@ -31,4 +31,18 @@ return [
     'dashboard'            => '仪表盘',
     'handcrafted_by'       => 'Handcrafted by',
     'powered_by'           => 'Powered by',
+    'my_account'             => '我的账户',
+    'update_account_info'    => '更新账户信息',
+    'save'                   => '保存',
+    'cancel'                 => '取消',
+    'error'                  => '错误',
+    'success'                => '成功',
+    'old_password_incorrect' => '旧密码不正确.',
+    'password_dont_match'    => '两次输入的密码不一致.',
+    'password_empty'         => '请确认填写了所有的密码输入框',
+    'password_updated'       => '密码修改成功.',
+    'account_updated'        => '账户信息更新成功.',
+    'unknown_error'          => '未知错误，请重新试一次.',
+    'error_saving'           => '保存时出现错误. 请重新试一次.',
+
 ];
