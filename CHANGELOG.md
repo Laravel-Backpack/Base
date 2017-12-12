@@ -28,6 +28,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Chinese translation;
 - Upon installation, vendor path is calculated instead of relying on base_path() - merged #223, fixes #222;
 
+## Added
+- BACKPACK_REGISTRATION_OPEN environment variable;
+
 ## [0.8.3] - 2017-12-02
 
 ## Fixed
