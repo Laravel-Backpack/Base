@@ -139,10 +139,13 @@ class BaseServiceProvider extends ServiceProvider
         // publish public Backpack assets
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
 
+        // calculate the path from current directory to get the vendor path
+        $vendorPath = dirname(__DIR__, 3);
+
         // publish public AdminLTE assets
-        $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+        $this->publishes([$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')], 'adminlte');
 
         // publish public Gravatar assets
-        $this->publishes([base_path('vendor/creativeorange/gravatar/config') => config_path()], 'gravatar');
+        $this->publishes([$vendorPath.'/creativeorange/gravatar/config' => config_path()], 'gravatar');
     }
 }
