@@ -28,7 +28,7 @@ return [
     'forgot_your_password'   => 'Mot de passe oublié ?',
     'reset_password'         => 'Reinitialiser le mot de passe',
     'send_reset_link'        => 'Envoyer lien de réinitialisation de mot de passe',
-    'click_here_to_reset'    => 'Cliquez ici pour reinitialiser Votre mot de passe',
+    'click_here_to_reset'    => 'Cliquez ici pour reinitialiser votre mot de passe',
     'change_password'        => 'Modifier le mot de passe',
     'unauthorized'           => 'Non autorisé.',
     'dashboard'              => 'Tableau de bord',
