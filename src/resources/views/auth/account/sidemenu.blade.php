@@ -1,4 +1,10 @@
 <div class="box">
+    <div class="box-body box-profile">
+
+	    <img class="profile-user-img img-responsive img-circle" src="{{ backpack_avatar_url(Auth::user()) }}">
+	    <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+
+	</div>
 	<ul class="nav nav-pills nav-stacked">
 
 	  <li role="presentation"
