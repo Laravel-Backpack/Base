@@ -29,6 +29,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - link on general sidebar user image;
 - link on general sidebar user name;
 
+## Fixed
+- Greek translation;
+- French translation;
+
 
 ## [0.8.4] - 2017-12-12
 
