@@ -22,7 +22,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.8.5] - 2018-01-xx
+## [0.8.5] - 2018-01-03
 
 ## Added
 - user image to My Account side menu;
