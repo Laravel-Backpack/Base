@@ -887,6 +887,7 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     width: 100%;
     z-index: 999;
     border: none;
+    box-shadow: none;
   }
 
   #crudTable_wrapper .dataTables_processing > img {
