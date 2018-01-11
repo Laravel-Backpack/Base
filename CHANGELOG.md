@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.7] - 2018-01-xx
+
+## Fixed
+- hide secondary pace loader to avoid CRUD list page three-separate-loaders syndrome;
+
+
 ## [0.8.6] - 2018-01-10
 
 ## Fixed
