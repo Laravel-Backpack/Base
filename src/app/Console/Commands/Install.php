@@ -67,7 +67,7 @@ class Install extends Command
             $this->info('### Running: '.$command);
         }
 
-        $process = new Process($command);
+        $process = new Process($command, null, null, null, 0, null);
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
                 echo '... > '.$buffer;
