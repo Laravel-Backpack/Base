@@ -8,12 +8,16 @@ use Symfony\Component\Process\Process;
 
 class Install extends Command
 {
+    protected $progressBar;
+
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'backpack:base:install';
+    protected $signature = 'backpack:base:install
+                                {--timeout=300} : How many seconds to allow each process to run.
+                                {--debug} : Show process output or not. Useful for debugging.';
 
     /**
      * The console command description.
@@ -39,15 +43,28 @@ class Install extends Command
      */
     public function handle()
     {
-        $this->info("### Backpack\Base installation started. Please wait...");
+        $this->progressBar = $this->output->createProgressBar(6);
+        $this->progressBar->start();
+        $this->info(" Backpack\Base installation started. Please wait...");
+        $this->progressBar->advance();
 
+        $this->line(" Installing backpack/generators");
         $this->executeProcess('composer require backpack/generators --dev');
-        $this->executeProcess('composer require laracasts/generators:dev-master --dev');
-        $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"', 'publishing configs, langs, views and AdminLTE files');
-        $this->executeProcess('php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"', 'publishing config for notifications - prologue/alerts');
-        $this->executeProcess('php artisan migrate', "generating users table (using Laravel's default migrations)");
 
-        $this->info("### Backpack\Base installation finished.");
+        $this->line(" Installing laracasts/generators");
+        $this->executeProcess('composer require laracasts/generators:dev-master --dev');
+
+        $this->line(" Publishing configs, langs, views and AdminLTE files");
+        $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"');
+
+        $this->line(" Publishing config for notifications - prologue/alerts");
+        $this->executeProcess('php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"');
+
+        $this->line(" Generating users table (using Laravel's default migrations)");
+        $this->executeProcess('php artisan migrate');
+
+        $this->progressBar->finish();
+        $this->info(" Backpack\Base installation finished.");
     }
 
     /**
@@ -61,18 +78,14 @@ class Install extends Command
      */
     public function executeProcess($command, $beforeNotice = false, $afterNotice = false)
     {
-        if ($beforeNotice) {
-            $this->info('### '.$beforeNotice);
-        } else {
-            $this->info('### Running: '.$command);
-        }
+        $this->echo('info', $beforeNotice?' '.$beforeNotice:$command);
 
-        $process = new Process($command);
+        $process = new Process($command, null, null, null, $this->option('timeout'), null);
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
-                echo '... > '.$buffer;
+                $this->echo('comment', $buffer);
             } else {
-                echo 'OUT > '.$buffer;
+                $this->echo('line', $buffer);
             }
         });
 
@@ -81,8 +94,30 @@ class Install extends Command
             throw new ProcessFailedException($process);
         }
 
+        if ($this->progressBar) {
+            $this->progressBar->advance();
+        }
+
         if ($afterNotice) {
-            $this->info('### '.$afterNotice);
+            $this->echo('info', $afterNotice);
+        }
+    }
+
+    /**
+     * Write text to the screen for the user to see.
+     *
+     * @param  [string] $type    line, info, comment, question, error
+     * @param  [string] $content
+     */
+    public function echo($type, $content)
+    {
+        if ($this->option('debug') == false) {
+            return;
+        }
+
+        // skip empty lines
+        if (trim($content)) {
+            $this->{$type}($content);
         }
     }
 }
