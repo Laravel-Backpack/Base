@@ -48,16 +48,16 @@ class Install extends Command
         $this->info(" Backpack\Base installation started. Please wait...");
         $this->progressBar->advance();
 
-        $this->line(" Installing backpack/generators");
+        $this->line(' Installing backpack/generators');
         $this->executeProcess('composer require backpack/generators --dev');
 
-        $this->line(" Installing laracasts/generators");
+        $this->line(' Installing laracasts/generators');
         $this->executeProcess('composer require laracasts/generators:dev-master --dev');
 
-        $this->line(" Publishing configs, langs, views and AdminLTE files");
+        $this->line(' Publishing configs, langs, views and AdminLTE files');
         $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"');
 
-        $this->line(" Publishing config for notifications - prologue/alerts");
+        $this->line(' Publishing config for notifications - prologue/alerts');
         $this->executeProcess('php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"');
 
         $this->line(" Generating users table (using Laravel's default migrations)");
@@ -78,7 +78,7 @@ class Install extends Command
      */
     public function executeProcess($command, $beforeNotice = false, $afterNotice = false)
     {
-        $this->echo('info', $beforeNotice?' '.$beforeNotice:$command);
+        $this->echo('info', $beforeNotice ? ' '.$beforeNotice : $command);
 
         $process = new Process($command, null, null, null, $this->option('timeout'), null);
         $process->run(function ($type, $buffer) {
@@ -106,8 +106,8 @@ class Install extends Command
     /**
      * Write text to the screen for the user to see.
      *
-     * @param  [string] $type    line, info, comment, question, error
-     * @param  [string] $content
+     * @param [string] $type    line, info, comment, question, error
+     * @param [string] $content
      */
     public function echo($type, $content)
     {
