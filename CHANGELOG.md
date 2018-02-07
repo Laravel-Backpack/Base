@@ -27,6 +27,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Fixed
 - NL translation;
 - ES translation;
+- Security issue #240 - user insert new fields and change restricted info about him;
 
 
 ## [0.8.8] - 2018-02-08

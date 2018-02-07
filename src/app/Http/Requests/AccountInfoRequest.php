@@ -20,6 +20,16 @@ class AccountInfoRequest extends FormRequest
     }
 
     /**
+     * Restrict the fields that the user can change.
+     *
+     * @return array
+     */
+    protected function validationData()
+    {
+        return $this->only('email', 'name');
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
