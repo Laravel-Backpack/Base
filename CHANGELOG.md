@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.8] - 2018-02-08
+
+## Added
+- Laravel 5.6 support;
+
+
 ## [0.8.7] - 2018-01-18
 
 ## Added
