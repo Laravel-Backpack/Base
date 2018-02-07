@@ -22,6 +22,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.9] - 2018-02-08
+
+## Fixed
+- NL translation;
+- ES translation;
+
+
 ## [0.8.8] - 2018-02-08
 
 ## Added
