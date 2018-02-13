@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     protected $data = []; // the information we send to the view
+    protected $user_auth_key = 'email';
 
     /*
     |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
 
+        $this->user_auth_key = config('backpack.base.user_auth_key', 'email');
+
         // ----------------------------------
         // Use the admin prefix in all routes
 
@@ -48,6 +51,16 @@ class LoginController extends Controller
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
             : config('backpack.base.route_prefix', 'admin');
         // ----------------------------------
+    }
+
+    /**
+     * Return custom username for authentication.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return $this->user_auth_key;
     }
 
     // -------------------------------------------------------
