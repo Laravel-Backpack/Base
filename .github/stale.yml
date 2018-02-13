@@ -1,0 +1,35 @@
+#####################################
+# Github Stale Probot Configuration #
+# ###################################
+# https://probot.github.io/apps/stale/
+
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 60
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 14
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+  - feature
+  - urgent
+  - ready
+  - working on it
+  - bug
+
+# Label to use when marking an issue as stale
+staleLabel: stale
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Hi there!
+
+  **Is this still an issue?** No activity in 60 days. I'm going to mark it as stale for now, and close it in 14 days if no further activity occurs. I know you guys are all busy, but if this is important to you please reply or something, so I know not to close it.
+
+  Thank you!
+
+  --
+  Justin Case
+  The Backpack Robot
+
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: false
