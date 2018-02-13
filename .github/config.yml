@@ -6,19 +6,26 @@
 newIssueWelcomeComment: >
   Hello there! Thanks for opening your first issue on this repo!
 
+
   Just a heads-up: **Here at Backpack we use Github Issues only for tracking bugs**. Talk about new features is also acceptable. This helps _a lot_ in keeping our focus on improving Backpack. **If you issue is not a bug/feature, please help us out by closing the issue yourself and posting in the appropriate medium (see below)**. If you're not sure where it fits, it's ok, a community member will probably reply to help you with that.
+
 
   Backpack communication mediums:
    - Bug Reports, Feature Requests - Github Issues (here);
    - Quick help (_How do I do X_) - [Gitter Chatroom](gitter.im/BackpackForLaravel/Lobby);
    - Long questions (_I have done X and Y and it won't do Z wtf_) - [Stackoverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel), using the ```backpack-for-laravel``` tag;
 
+
   Please keep in mind Backpack offers no official / paid support. Whatever help you receive here, on Gitter, Slack or Stackoverflow is thanks to our awesome _awesome_ community members, who give up some of their time to help their peers. If you want to join our community, just start pitching in. We take pride in being a welcoming bunch.
+
 
   Thank you!
 
+
   --
+
   Justin Case
+
   The Backpack Robot
 
 # Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
@@ -27,16 +34,21 @@ newIssueWelcomeComment: >
 newPRWelcomeComment: >
   BOOM! Your first PR with us, thank you so much! Someone will take a look at it shortly.
 
+
   Please keep in mind that:
     - **if this constitutes a breaking change, it might take quite a while for this to get merged**; we try to emulate the Laravel release cycle as much as possible, so developers can upgrade both software once; this means a new big release every ~6 months;
     - **even if it's a non-breaking change, it might take a few days/weeks for the PR to get merged**; unless it's a no-brainer, **we like to have some community feedback on new features, before we merge them**; this leads to higher-quality code, in the end; we learnt this the hard way :-)
     - **not all PRs get merged**; sometimes we just have to hold out new features, to keep the packages lean; sometimes we don't include features that only apply to niche use cases;
     - **we're not perfect**; if you think we're wrong, call us out on it; but in a kind way :-) we all make mistakes, best we learn from them and build better software together;
 
+
   Thank you!
 
+
   --
+
   Justin Case
+
   The Backpack Robot
 
 # Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
@@ -45,19 +57,27 @@ newPRWelcomeComment: >
 firstPRMergeComment: >
   WHOOP-WHOOP! Congrats, your first PR on this repo has officialy been merged.
 
+
   ![party](https://media1.giphy.com/media/3KC2jD2QcBOSc/giphy.gif "Party!!!")
+
 
   If you want to help out the community in other ways, you can:
    - **give your opinion on other Github Issues & PRs**;
    - **chat with others** in the [Gitter Chatroom](gitter.im/BackpackForLaravel/Lobby) (usually for quick help: _How do I do X_);
    - **answer Backpack questions on [Stackoverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel)**; you get points, people get help; you can subscribe to the ```backpack-for-laravel``` tag by [adding a new filter](https://stackexchange.com/filters/256210/my-filter-3); that will send you emails when new questions come up with our tag;
 
+
   Again. Thank you for the PR. You are a wonderful person. Keep 'em coming :-)
+
   Cheers!
 
+
   --
+
   Justin Case
+
   The Backpack Robot
+
 
   P.S. **Help in the Backpack community is rewarded with free Backpack commercial licenses**. It's the least we can do. If you feel you've helped the community with PRs, help & other stuff, please [shoot Tabacitu an email](mailto:hello@tabacitu.ro) and ask him if you qualify for free licenses. You scratch my back, I scratch your back. Thank you!
 
@@ -72,12 +92,17 @@ firstPRMergeComment: >
 requestInfoReplyComment: >
   Hi there!
 
+
   Could you please provide us with more info about this? Looks like you skipped the title/body.
+
 
   Thank you!
 
+
   --
+
   Justin Case
+
   The Backpack Robot
 
 # Or an array:
