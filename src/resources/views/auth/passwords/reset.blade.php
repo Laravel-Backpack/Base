@@ -1,4 +1,4 @@
-@extends('backpack::layout')
+@extends('backpack::layout_guest')
 
 
 @section('after_styles')

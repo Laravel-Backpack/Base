@@ -48,3 +48,14 @@ body {
 .pace .pace-activity {
 	display: none;
 }
+
+.login-page, .register-page {
+	background: #ecf0f5;
+}
+
+.login-footer {
+	position: absolute;
+	text-align: center;
+	bottom: 5px;
+	width: 100%;
+}
