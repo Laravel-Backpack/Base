@@ -9,7 +9,7 @@
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['admin'],
-    'namespace'  => 'Admin',
+    'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
 
 }); // this should be the absolute last line of this file
