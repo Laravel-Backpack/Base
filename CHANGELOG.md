@@ -21,6 +21,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+-------
+
+### Added
+- flexbox css helper class;
+- support for HTML messages inside Alert bubbles, when triggered from PHP;
+
 
 ## [0.8.9] - 2018-02-08
 
