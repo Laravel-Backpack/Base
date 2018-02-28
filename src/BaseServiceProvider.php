@@ -10,7 +10,7 @@ class BaseServiceProvider extends ServiceProvider
 {
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
-        \Backpack\Base\app\Console\Commands\AddSidebarItem::class,
+        \Backpack\Base\app\Console\Commands\AddSidebarContent::class,
     ];
 
     /**

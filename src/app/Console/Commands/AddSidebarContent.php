@@ -5,14 +5,14 @@ namespace Backpack\Base\app\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
-class AddSidebarItem extends Command
+class AddSidebarContent extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'backpack:base:add-sidebar-item
+    protected $signature = 'backpack:base:add-sidebar-content
                                 {code : HTML/PHP code that shows the sidebar item. Use either single quotes or double quotes. Never both. }';
 
     /**
@@ -20,7 +20,7 @@ class AddSidebarItem extends Command
      *
      * @var string
      */
-    protected $description = 'Add an item to the Backpack sidebar';
+    protected $description = 'Add HTML/PHP code to the Backpack sidebar_content file';
 
     /**
      * Create a new command instance.
@@ -47,12 +47,12 @@ class AddSidebarItem extends Command
             $contents = Storage::disk('root')->get($path);
 
             if ($disk->put($path, $contents.PHP_EOL.$code)) {
-                $this->info("Successfully added sidebar item.");
+                $this->info("Successfully added code to sidebar_content file.");
             } else {
                 $this->error("Could not write to sidebar_content file.");
             }
         } else {
-            $this->error("The file sidebar_content.blade.php does not exist. Make sure Backpack\Base is properly installed.");
+            $this->error("The sidebar_content file does not exist. Make sure Backpack\Base is properly installed.");
         }
     }
 }
