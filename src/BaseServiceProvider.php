@@ -28,7 +28,6 @@ class BaseServiceProvider extends ServiceProvider
      */
     public $routeFilePath = '/routes/backpack/base.php';
 
-
     /**
      * Where custom routes can be written, and will be registered by Backpack.
      *

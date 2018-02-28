@@ -51,8 +51,8 @@ class AddCustomRouteContent extends Command
             // insert the given code before the file's last line
             $file_lines = explode(PHP_EOL, $old_file_content);
             $number_of_lines = count($file_lines);
-            $file_lines[$number_of_lines] = $file_lines[$number_of_lines-1];
-            $file_lines[$number_of_lines-1] = '    '.$code;
+            $file_lines[$number_of_lines] = $file_lines[$number_of_lines - 1];
+            $file_lines[$number_of_lines - 1] = '    '.$code;
             $new_file_content = implode(PHP_EOL, $file_lines);
 
             if ($disk->put($path, $new_file_content)) {
