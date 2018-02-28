@@ -10,6 +10,7 @@ class BaseServiceProvider extends ServiceProvider
 {
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
+        \Backpack\Base\app\Console\Commands\AddSidebarItem::class,
     ];
 
     /**
@@ -45,6 +46,12 @@ class BaseServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/config/backpack/base.php', 'backpack.base'
         );
+
+        // add the root disk to filesystem configuration
+        app()->config['filesystems.disks.root'] = [
+            'driver' => 'local',
+            'root'   => base_path(),
+        ];
 
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
