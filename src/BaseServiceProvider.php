@@ -124,28 +124,41 @@ class BaseServiceProvider extends ServiceProvider
 
     public function publishFiles()
     {
-        // publish config file
-        $this->publishes([__DIR__.'/config' => config_path()], 'config');
+        $error_views = [__DIR__.'/resources/error_views' => resource_path('views/errors')];
+        $backpack_base_views = [__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')];
+        $backpack_public_assets = [__DIR__.'/public' => public_path('vendor/backpack')];
+        $backpack_lang_files = [__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')];
+        $backpack_config_files = [__DIR__.'/config' => config_path()];
 
-        // publish lang files
-        // $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
-
-        // publish views
-        $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')], 'views');
-
-        // publish error views
-        $this->publishes([__DIR__.'/resources/error_views' => resource_path('views/errors')], 'errors');
-
-        // publish public Backpack assets
-        $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
+        // sidebar_content view, which is the only view most people need to overwrite
+        $backpack_sidebar_contents_view = [__DIR__.'/resources/views/inc/sidebar_content.blade.php' => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php')];
 
         // calculate the path from current directory to get the vendor path
         $vendorPath = dirname(__DIR__, 3);
+        $adminlte_assets = [$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')];
+        $gravatar_assets = [$vendorPath.'/creativeorange/gravatar/config' => config_path()];
 
-        // publish public AdminLTE assets
-        $this->publishes([$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')], 'adminlte');
+        // establish the minimum amount of files that need to be published, for Backpack to work; there are the files that will be published by the install command
+        $minimum = array_merge(
+            $error_views,
+            // $backpack_base_views,
+            $backpack_public_assets,
+            // $backpack_lang_files,
+            $backpack_config_files,
+            $backpack_sidebar_contents_view,
+            $adminlte_assets,
+            $gravatar_assets
+        );
 
-        // publish public Gravatar assets
-        $this->publishes([$vendorPath.'/creativeorange/gravatar/config' => config_path()], 'gravatar');
+        // register all possible publish commands and assign tags to each
+        $this->publishes($backpack_config_files, 'config');
+        $this->publishes($backpack_lang_files, 'lang');
+        $this->publishes($backpack_base_views, 'views');
+        $this->publishes($backpack_sidebar_contents_view, 'sidebar_content');
+        $this->publishes($error_views, 'errors');
+        $this->publishes($backpack_public_assets, 'public');
+        $this->publishes($adminlte_assets, 'adminlte');
+        $this->publishes($gravatar_assets, 'gravatar');
+        $this->publishes($minimum, 'minimum');
     }
 }

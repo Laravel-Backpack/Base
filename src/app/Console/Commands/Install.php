@@ -55,7 +55,7 @@ class Install extends Command
         $this->executeProcess('composer require laracasts/generators:dev-master --dev');
 
         $this->line(' Publishing configs, langs, views and AdminLTE files');
-        $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider"');
+        $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" --tag=minimum');
 
         $this->line(' Publishing config for notifications - prologue/alerts');
         $this->executeProcess('php artisan vendor:publish --provider="Prologue\Alerts\AlertsServiceProvider"');
