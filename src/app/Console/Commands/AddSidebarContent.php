@@ -47,9 +47,9 @@ class AddSidebarContent extends Command
             $contents = Storage::disk('root')->get($path);
 
             if ($disk->put($path, $contents.PHP_EOL.$code)) {
-                $this->info("Successfully added code to sidebar_content file.");
+                $this->info('Successfully added code to sidebar_content file.');
             } else {
-                $this->error("Could not write to sidebar_content file.");
+                $this->error('Could not write to sidebar_content file.');
             }
         } else {
             $this->error("The sidebar_content file does not exist. Make sure Backpack\Base is properly installed.");
