@@ -11,6 +11,7 @@ class BaseServiceProvider extends ServiceProvider
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
         \Backpack\Base\app\Console\Commands\AddSidebarContent::class,
+        \Backpack\Base\app\Console\Commands\AddCustomRouteContent::class,
     ];
 
     /**
@@ -26,6 +27,14 @@ class BaseServiceProvider extends ServiceProvider
      * @var string
      */
     public $routeFilePath = '/routes/backpack/base.php';
+
+
+    /**
+     * Where custom routes can be written, and will be registered by Backpack.
+     *
+     * @var string
+     */
+    public $customRoutesFilePath = '/routes/backpack/custom.php';
 
     /**
      * Perform post-registration booting of services.
@@ -55,6 +64,7 @@ class BaseServiceProvider extends ServiceProvider
 
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
+        $this->setupCustomRoutes($this->app->router);
         $this->publishFiles();
         $this->loadHelpers();
     }
@@ -85,6 +95,21 @@ class BaseServiceProvider extends ServiceProvider
         }
 
         $this->loadRoutesFrom($routeFilePathInUse);
+    }
+
+    /**
+     * Load custom routes file.
+     *
+     * @param \Illuminate\Routing\Router $router
+     *
+     * @return void
+     */
+    public function setupCustomRoutes(Router $router)
+    {
+        // if the custom routes file is published, register its routes
+        if (file_exists(base_path().$this->customRoutesFilePath)) {
+            $this->loadRoutesFrom(base_path().$this->customRoutesFilePath);
+        }
     }
 
     /**
@@ -139,6 +164,7 @@ class BaseServiceProvider extends ServiceProvider
 
         // sidebar_content view, which is the only view most people need to overwrite
         $backpack_sidebar_contents_view = [__DIR__.'/resources/views/inc/sidebar_content.blade.php' => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php')];
+        $backpack_custom_routes_file = [__DIR__.$this->customRoutesFilePath => base_path($this->customRoutesFilePath)];
 
         // calculate the path from current directory to get the vendor path
         $vendorPath = dirname(__DIR__, 3);
@@ -153,6 +179,7 @@ class BaseServiceProvider extends ServiceProvider
             // $backpack_lang_files,
             $backpack_config_files,
             $backpack_sidebar_contents_view,
+            $backpack_custom_routes_file,
             $adminlte_assets,
             $gravatar_assets
         );
@@ -164,6 +191,7 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes($backpack_sidebar_contents_view, 'sidebar_content');
         $this->publishes($error_views, 'errors');
         $this->publishes($backpack_public_assets, 'public');
+        $this->publishes($backpack_custom_routes_file, 'custom_routes');
         $this->publishes($adminlte_assets, 'adminlte');
         $this->publishes($gravatar_assets, 'gravatar');
         $this->publishes($minimum, 'minimum');
