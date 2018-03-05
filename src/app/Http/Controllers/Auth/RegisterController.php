@@ -2,7 +2,6 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;

@@ -3,7 +3,6 @@
 namespace Backpack\Base;
 
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Route;
 
