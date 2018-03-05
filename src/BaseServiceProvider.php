@@ -2,6 +2,7 @@
 
 namespace Backpack\Base;
 
+use Config;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Route;
@@ -33,20 +34,24 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot(\Illuminate\Routing\Router $router)
     {
+        // -------------
         // LOAD THE VIEWS
-        // - first the published views (in case they have any changes)
+        // -------------
+        // first the published views (in case they have any changes)
         $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
-        // - then the stock views that come with the package, in case a published view might be missing
+        // then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'backpack.base'
+            __DIR__.'/config/backpack/base.php',
+            'backpack.base'
         );
 
-        $this->registerAdminMiddleware($this->app->router);
+        $this->registerGuards();
+        $this->registerMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
         $this->loadHelpers();
@@ -78,6 +83,18 @@ class BaseServiceProvider extends ServiceProvider
         }
 
         $this->loadRoutesFrom($routeFilePathInUse);
+    }
+
+    /**
+     * Register custom backpack authentication guard.
+     */
+    public function registerGuards()
+    {
+        $backpackAuthGuard = Config::get('backpack.base.admin_guard');
+        $existingGuards = Config::get('auth.guards');
+        $existingGuards[$backpackAuthGuard['name']] = $backpackAuthGuard;
+
+        Config::set('auth.guards', $existingGuards);
     }
 
     /**
@@ -117,9 +134,13 @@ class BaseServiceProvider extends ServiceProvider
         $this->commands($this->commands);
     }
 
-    public function registerAdminMiddleware(Router $router)
+    public function registerMiddleware(Router $router)
     {
-        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
+        Route::aliasMiddleware('backpack.auth', \Backpack\Base\app\Http\Middleware\BackpackAuth::class);
+
+        if (config('backpack.base.separate_admin_session')) {
+            Route::aliasMiddleware('backpack.auth.guard', \Backpack\Base\app\Http\Middleware\BackpackAuthGuard::class);
+        }
     }
 
     public function publishFiles()

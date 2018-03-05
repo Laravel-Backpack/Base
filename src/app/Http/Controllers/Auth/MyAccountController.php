@@ -15,7 +15,7 @@ class MyAccountController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware(backpack_auth());
     }
 
     /**

@@ -31,7 +31,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware(backpack_middleware('guest'), ['except' => 'logout']);
 
         // ----------------------------------
         // Use the admin prefix in all routes
@@ -48,6 +48,11 @@ class LoginController extends Controller
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
             : config('backpack.base.route_prefix', 'admin');
         // ----------------------------------
+    }
+
+    public function guard()
+    {
+        return \Auth::guard(backpack_guard());
     }
 
     // -------------------------------------------------------
