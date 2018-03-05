@@ -41,13 +41,14 @@ return [
     | Registration Open
     |--------------------------------------------------------------------------
     |
-    | Choose whether new users are allowed to register.
+    | Choose whether new users/admins are allowed to register.
     | This will show up the Register button in the menu and allow access to the
     | Register functions in AuthController.
     |
+    | By default the registration is open only on localhost.
     */
 
-    'registration_open' => (env('APP_ENV') == 'local') ? true : false,
+    'registration_open' => env('BACKPACK_REGISTRATION_OPEN', env('APP_ENV') === 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ return [
     */
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
-    // You make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
+    // You can make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
     'route_prefix' => 'admin',
 
     // Set this to false if you would like to use your own AuthController and PasswordController
@@ -68,7 +69,7 @@ return [
     'setup_dashboard_routes' => true,
 
     // Set this to false if you would like to skip adding "my account" routes
-    // (you then need to define the edit account route in your web.php)
+    // (you then need to manually define the routes in your web.php)
     'setup_my_account_routes' => true,
 
     /*

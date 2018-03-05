@@ -22,7 +22,83 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
-## [0.8.0] - 2017-09-xx
+## [0.8.9] - 2018-02-08
+
+## Fixed
+- NL translation;
+- ES translation;
+- Security issue #240 - user insert new fields and change restricted info about him;
+
+
+## [0.8.8] - 2018-02-08
+
+## Added
+- Laravel 5.6 support;
+
+
+## [0.8.7] - 2018-01-18
+
+## Added
+- progress bar to installer;
+- debug option to installer;
+- configurable timeout option to installer;
+
+## Fixed
+- hide secondary pace loader to avoid CRUD list page three-separate-loaders syndrome;
+
+
+## [0.8.6] - 2018-01-10
+
+## Fixed
+- ajax datatable loading screen;
+
+
+## [0.8.5] - 2018-01-03
+
+## Added
+- user image to My Account side menu;
+- link on general sidebar user image;
+- link on general sidebar user name;
+
+## Fixed
+- Greek translation;
+- French translation;
+
+
+## [0.8.4] - 2017-12-12
+
+## Fixed
+- Chinese translation;
+- Upon installation, vendor path is calculated instead of relying on base_path() - merged #223, fixes #222;
+
+## Added
+- BACKPACK_REGISTRATION_OPEN environment variable;
+
+## [0.8.3] - 2017-12-02
+
+## Fixed
+-  ensure the installer publishes files correctly on all OSs - refs #216;
+-  Using guard() method to access the current guard in MyAccountController - merged #215;
+-  updated LV translation;
+-  added zh-hant translation;
+-  updated German translation;
+-  updated Italian translation;
+-  user avatar uses customized guard;
+
+
+## [0.8.2] - 2017-11-07
+
+## Fixed
+- command-line installer namespace;
+
+
+## [0.8.1] - 2017-11-06
+
+## Added
+- command-line installer: ```php artisan backpack:base:install```;
+
+
+## [0.8.0] - 2017-11-06
 
 ## Added
 - backpack_url() helper that returns the URL prefixed by the configured string;

@@ -9,6 +9,10 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
+    protected $commands = [
+        \Backpack\Base\app\Console\Commands\Install::class,
+    ];
+
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -125,6 +129,9 @@ class BaseServiceProvider extends ServiceProvider
                 $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
             }
         }
+
+        // register the artisan commands
+        $this->commands($this->commands);
     }
 
     public function registerMiddleware(Router $router)
@@ -153,10 +160,13 @@ class BaseServiceProvider extends ServiceProvider
         // publish public Backpack assets
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
 
+        // calculate the path from current directory to get the vendor path
+        $vendorPath = dirname(__DIR__, 3);
+
         // publish public AdminLTE assets
-        $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+        $this->publishes([$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')], 'adminlte');
 
         // publish public Gravatar assets
-        $this->publishes([base_path('vendor/creativeorange/gravatar/config') => config_path()], 'gravatar');
+        $this->publishes([$vendorPath.'/creativeorange/gravatar/config' => config_path()], 'gravatar');
     }
 }

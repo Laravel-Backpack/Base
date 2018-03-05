@@ -18,7 +18,7 @@
       <!-- ========================================================= -->
 
       <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
-
+      @if (config('backpack.base.setup_auth_routes'))
         @if (!backpack_auth())
             <li><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a></li>
             @if (config('backpack.base.registration_open'))
@@ -27,7 +27,7 @@
         @else
             <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
         @endif
-
+       @endif
        <!-- ========== End of top menu right items ========== -->
     </ul>
 </div>

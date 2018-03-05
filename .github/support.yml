@@ -1,0 +1,40 @@
+# Configuration for support-requests - https://github.com/dessant/support-requests
+
+# Label used to mark issues as support requests
+supportLabel: Ask-It-On-Stack-Overflow
+# Comment to post on issues marked as support requests. Add a link
+# to a support page, or set to `false` to disable
+supportComment: >
+  Oups!
+
+
+  Looks like this is a support request, not a bug/feature. **Could you please [repost on StackOverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel), using the ```backpack-for-laravel``` tag**?
+
+
+  Background: **Here at Backpack we use Github Issues only for tracking bugs and features**, not individual implementation issues. This helps _a lot_ in keeping our focus on improving Backpack. Thanks a lot for understanding!
+
+
+  Here are all the Backpack communication mediums:
+   - Long questions (_I have done X and Y and it won't do Z wtf_) - [Stackoverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel), using the ```backpack-for-laravel``` tag; this is recommended for most questions, since other developers can then find the answer on a simple Google search; also, people get points for answering - and who doesn't like StackOverflow points?!
+   - Quick help (_How do I do X_) - [Gitter Chatroom](gitter.im/BackpackForLaravel/Lobby);
+   - Bug Reports, Feature Requests - Github Issues (here);
+
+  Please keep in mind Backpack offers no official / paid support. Whatever help you receive here, on Gitter, Slack or StackOverflow is thanks to our awesome _awesome_ community members, who give up some of their time to help their peers. If you want to join our community, just start pitching in. We take pride in being a welcoming bunch.
+
+
+  Thank you!
+
+
+  --
+
+  Justin Case
+
+  The Backpack Robot
+
+
+  PS. In case I mistakenly closed your issue, yell :-) I'm a robot, I make mistakes.
+
+# Whether to close issues marked as support requests
+close: true
+# Whether to lock issues marked as support requests
+lock: false

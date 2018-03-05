@@ -16,17 +16,43 @@ Laravel BackPack's central package, which includes:
 
 
 > ### Security updates and breaking changes
-> Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
+> Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
 ![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
-
-## Install on Laravel 5.4 / 5.3
+## Install on Laravel 5.6 or 5.5
 
 1) Run in your terminal:
 
 ``` bash
-$ composer require backpack/base
+composer require backpack/base
+php artisan backpack:base:install
+```
+
+2) Make sure the reset password emails have the correct reset link by adding these to your ```User``` model:
+- before class name ```use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;```
+- as a method inside the User class:
+``` php
+  /**
+   * Send the password reset notification.
+   *
+   * @param  string  $token
+   * @return void
+   */
+  public function sendPasswordResetNotification($token)
+  {
+      $this->notify(new ResetPasswordNotification($token));
+  }
+```
+
+3) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
+
+## Install on Laravel 5.4 or 5.3
+
+1) Run in your terminal:
+
+``` bash
+$ composer require backpack/base 0.7.x
 ```
 
 2) Add the service providers in config/app.php:
@@ -133,7 +159,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 If you discover any security related issues, please email hello@tabacitu.ro instead of using the issue tracker.
 
-Please **[subscribe to the Backpack Newsletter](http://eepurl.com/bUEGjf)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
+Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
 ## Credits
 

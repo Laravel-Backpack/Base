@@ -6,11 +6,6 @@
 
 
 /*  AdminLTE Overwrites  */
-
-.pace .pace-activity {
-  display: none;
-}
-
 .box {
   border-radius: 0;
   border-top: 1px solid #d2d6de;
@@ -20,8 +15,8 @@ body[class^='skin-'] .sidebar-menu>li>a {
   border-left: 1px solid transparent;
 }
 
-body.sidebar-collapse .sidebar-menu>li:hover>a>span {
-  margin-left: -1px!important;
+body[class^='skin-purple'] .nav-tabs-custom>.nav-tabs>li.active {
+  border-top-color: #57549C;
 }
 
 body[class^='skin-purple'] .btn-primary {
@@ -101,13 +96,7 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #57549C;
 }
 
-body[class^='skin-purple'] .nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
-  border-left-color: #605ca8;
-}
 
-.table-hover>tbody>tr:hover {
-  background-color: #eaf3ff;
-}
 
 
 
@@ -888,16 +877,21 @@ body[class^='skin-purple'] .nav-stacked>li.active>a, .nav-stacked>li.active>a:ho
     border-radius: 0!important;
   }
 
-  /*clear button on nullable fields*/
-.select2-selection__clear {
-    background: #a2a2a2;
-    padding: 0 5px;
-    border-radius: 6px;
-    line-height: 150%;
-    margin: 4px;        
-    color: #fff !important;
-}
-.select2-selection__clear:hover {
-    background: #333;
-    color: #ccc !important;    
-}
+
+  /*  DataTables Loading State Visual Improvements  */
+
+  #crudTable_wrapper .dataTables_processing {
+    background: rgba(255,255,255,0.9);
+    top: 20px;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    border: none;
+    box-shadow: none;
+  }
+
+  #crudTable_wrapper .dataTables_processing > img {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }

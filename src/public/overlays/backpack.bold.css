@@ -44,3 +44,7 @@ body {
 .logo-lg b {
 	font-weight: 400;
 }
+
+.pace .pace-activity {
+	display: none;
+}
