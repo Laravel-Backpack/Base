@@ -17,13 +17,13 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        $guard = config('backpack.base.guard') ? config('backpack.base.guard') : config('auth.defaults.guard');
+        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
 
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response(trans('backpack::base.unauthorized'), 401);
             } else {
-                return redirect()->guest(config('backpack.base.route_prefix', 'admin').'/login');
+                return redirect()->guest(backpack_url('login'));
             }
         }
 
