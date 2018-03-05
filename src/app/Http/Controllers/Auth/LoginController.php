@@ -84,6 +84,11 @@ class LoginController extends Controller
         return redirect($this->redirectAfterLogout);
     }
 
+    /**
+     * Get the guard to be used during logout.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
     protected function guard()
     {
         return backpack_auth();
