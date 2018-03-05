@@ -47,7 +47,6 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/config/backpack/base.php', 'backpack.base'
         );
 
-        $this->registerCustomAuthGuard();
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
@@ -122,11 +121,6 @@ class BaseServiceProvider extends ServiceProvider
     public function registerAdminMiddleware(Router $router)
     {
         Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-    }
-
-    public function registerCustomAuthGuard()
-    {
-        View::composer('backpack::*', \Backpack\Base\app\Http\ViewComposers\AuthComposer::class);
     }
 
     public function publishFiles()

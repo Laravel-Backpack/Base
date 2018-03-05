@@ -32,7 +32,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
+        $guard = backpack_guard_name();
 
         $this->middleware("guest:$guard", ['except' => 'logout']);
 
@@ -42,15 +42,15 @@ class LoginController extends Controller
 
         // If not logged in redirect here.
         $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath
-            : config('backpack.base.route_prefix', 'admin').'/login';
+            : backpack_url('login');
 
         // Redirect here after successful login.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
-            : config('backpack.base.route_prefix', 'admin').'/dashboard';
+            : backpack_url('dashboard');
 
         // Redirect here after logout.
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
-            : config('backpack.base.route_prefix', 'admin');
+            : backpack_url();
     }
 
     // -------------------------------------------------------
@@ -87,8 +87,6 @@ class LoginController extends Controller
 
     protected function guard()
     {
-        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
-
-        return Auth::guard($guard);
+        return backpack_auth();
     }
 }

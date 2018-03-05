@@ -31,7 +31,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
+        $guard = backpack_guard_name();
 
         $this->middleware("guest:$guard");
 
@@ -124,8 +124,6 @@ class RegisterController extends Controller
      */
     protected function guard()
     {
-        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
-
-        return Auth::guard($guard);
+        return backpack_auth();
     }
 }
