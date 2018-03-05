@@ -40,11 +40,12 @@ class AddSidebarContent extends Command
     public function handle()
     {
         $path = 'resources/views/vendor/backpack/base/inc/sidebar_content.blade.php';
-        $disk = Storage::disk('root');
+        $disk_name = config('backpack.base.root_disk_name');
+        $disk = Storage::disk($disk_name);
         $code = $this->argument('code');
 
         if ($disk->exists($path)) {
-            $contents = Storage::disk('root')->get($path);
+            $contents = Storage::disk($disk_name)->get($path);
 
             if ($disk->put($path, $contents.PHP_EOL.$code)) {
                 $this->info('Successfully added code to sidebar_content file.');

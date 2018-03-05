@@ -42,11 +42,12 @@ class AddCustomRouteContent extends Command
     public function handle()
     {
         $path = 'routes/backpack/custom.php';
-        $disk = Storage::disk('root');
+        $disk_name = config('backpack.base.root_disk_name');
+        $disk = Storage::disk($disk_name);
         $code = $this->argument('code');
 
         if ($disk->exists($path)) {
-            $old_file_content = Storage::disk('root')->get($path);
+            $old_file_content = Storage::disk($disk_name)->get($path);
 
             // insert the given code before the file's last line
             $file_lines = explode(PHP_EOL, $old_file_content);

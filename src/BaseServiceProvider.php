@@ -56,7 +56,7 @@ class BaseServiceProvider extends ServiceProvider
         );
 
         // add the root disk to filesystem configuration
-        app()->config['filesystems.disks.root'] = [
+        app()->config['filesystems.disks.'.config('backpack.base.root_disk_name')] = [
             'driver' => 'local',
             'root'   => base_path(),
         ];

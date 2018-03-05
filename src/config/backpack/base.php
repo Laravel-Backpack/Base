@@ -112,6 +112,21 @@ return [
     // - example_method_name (specify the method on the User model that returns the URL)
     'avatar_type' => 'gravatar',
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | File System
+    |--------------------------------------------------------------------------
+    */
+
+    // Backpack\Base sets up its own filesystem disk, just like you would by
+    // adding an entry to your config/filesystems.php. It points to the root
+    // of your project and it's used throughout all Backpack packages.
+    //
+    // You can rename this disk here. Default: root
+    'root_disk_name' => 'root',
+
+
     /*
     |--------------------------------------------------------------------------
     | License Code
