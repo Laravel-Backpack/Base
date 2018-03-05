@@ -79,7 +79,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         // Do the default logout procedure
-        $this->defaultLogout($request);
+        $this->guard()->logout();
 
         // And redirect to custom location
         return redirect($this->redirectAfterLogout);
