@@ -9,6 +9,10 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
+    protected $commands = [
+        \Backpack\Base\app\Console\Commands\Install::class,
+    ];
+
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -47,6 +51,15 @@ class BaseServiceProvider extends ServiceProvider
         $this->registerAdminMiddleware($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
+        $this->loadHelpers();
+    }
+
+    /**
+     * Load the Backpack helper methods, for convenience.
+     */
+    public function loadHelpers()
+    {
+        require_once __DIR__.'/helpers.php';
     }
 
     /**
@@ -84,11 +97,13 @@ class BaseServiceProvider extends ServiceProvider
         // register its dependencies
         $this->app->register(\Jenssegers\Date\DateServiceProvider::class);
         $this->app->register(\Prologue\Alerts\AlertsServiceProvider::class);
+        $this->app->register(\Creativeorange\Gravatar\GravatarServiceProvider::class);
 
         // register their aliases
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
         $loader->alias('Alert', \Prologue\Alerts\Facades\Alert::class);
         $loader->alias('Date', \Jenssegers\Date\Date::class);
+        $loader->alias('Gravatar', \Creativeorange\Gravatar\Facades\Gravatar::class);
 
         // register the services that are only used for development
         if ($this->app->environment() == 'local') {
@@ -99,18 +114,14 @@ class BaseServiceProvider extends ServiceProvider
                 $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
             }
         }
+
+        // register the artisan commands
+        $this->commands($this->commands);
     }
 
     public function registerAdminMiddleware(Router $router)
     {
-        // in Laravel 5.4
-        if (method_exists($router, 'aliasMiddleware')) {
-            Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
-        // in Laravel 5.3 and below
-        else {
-            Route::middleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
-        }
+        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
     }
 
     public function registerCustomAuthGuard()
@@ -135,7 +146,13 @@ class BaseServiceProvider extends ServiceProvider
         // publish public Backpack assets
         $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
 
+        // calculate the path from current directory to get the vendor path
+        $vendorPath = dirname(__DIR__, 3);
+
         // publish public AdminLTE assets
-        $this->publishes([base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte')], 'adminlte');
+        $this->publishes([$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')], 'adminlte');
+
+        // publish public Gravatar assets
+        $this->publishes([$vendorPath.'/creativeorange/gravatar/config' => config_path()], 'gravatar');
     }
 }

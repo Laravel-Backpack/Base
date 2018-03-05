@@ -31,4 +31,5 @@ return [
     'dashboard'            => 'Dashboard',
     'handcrafted_by'       => 'Handgemaakt door',
     'powered_by'           => 'Mede mogelijk gemaakt door',
+    'my_account'           => 'Mijn account',
 ];
