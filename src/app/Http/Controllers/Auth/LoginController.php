@@ -32,7 +32,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $guard = config('backpack.base.guard') ? config('backpack.base.guard') : config('auth.defaults.guard');
+        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
 
         $this->middleware("guest:$guard", ['except' => 'logout']);
 
@@ -87,7 +87,7 @@ class LoginController extends Controller
 
     protected function guard()
     {
-        $guard = config('backpack.base.guard') ? config('backpack.base.guard') : config('auth.defaults.guard');
+        $guard = config('backpack.base.guard', config('auth.defaults.guard'));
 
         return Auth::guard($guard);
     }
