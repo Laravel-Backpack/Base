@@ -12,7 +12,7 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has($authentication_column) ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
+                            <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="{{ $authentication_column }}" value="{{ old($authentication_column) }}">
