@@ -42,3 +42,18 @@ if (!function_exists('backpack_avatar')) {
         }
     }
 }
+
+if (!function_exists('backpack_middleware')) {
+    /**
+     * Return the key of the middleware used across Backpack.
+     * That middleware checks if the visitor is an admin.
+     *
+     * @param $path
+     *
+     * @return string
+     */
+    function backpack_middleware()
+    {
+        return config('backpack.base.middleware_key', 'admin');
+    }
+}

@@ -81,6 +81,13 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
+    // The class for the middleware that checks if the visitor is an admin
+    'middleware_class' => \Backpack\Base\app\Http\Middleware\Admin::class,
+
+    // Alias for that middleware
+    'middleware_key' => 'admin',
+    // Note: It's recommended to use the backpack_middleware() helper everywhere, which pulls this key for you.
+
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)
     // Other options:

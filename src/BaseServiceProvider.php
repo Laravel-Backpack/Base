@@ -119,7 +119,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function registerAdminMiddleware(Router $router)
     {
-        Route::aliasMiddleware('admin', \Backpack\Base\app\Http\Middleware\Admin::class);
+        Route::aliasMiddleware(config('backpack.base.middleware_key'), config('backpack.base.middleware_class'));
     }
 
     public function publishFiles()
