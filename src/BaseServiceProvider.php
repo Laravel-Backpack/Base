@@ -122,14 +122,13 @@ class BaseServiceProvider extends ServiceProvider
         $middleware_key = config('backpack.base.middleware_key');
         $middleware_class = config('backpack.base.middleware_class');
 
-        if (!is_array($middleware_class))
-        {
+        if (!is_array($middleware_class)) {
             $router->pushMiddlewareToGroup($middleware_key, $middleware_class);
+
             return;
         }
 
-        foreach ($middleware_class as $middleware_class)
-        {
+        foreach ($middleware_class as $middleware_class) {
             $router->pushMiddlewareToGroup($middleware_key, $middleware_class);
         }
     }
