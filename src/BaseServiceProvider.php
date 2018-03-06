@@ -46,7 +46,7 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/config/backpack/base.php', 'backpack.base'
         );
 
-        $this->registerAdminMiddleware($this->app->router);
+        $this->registerMiddlewareGroup($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->publishFiles();
         $this->loadHelpers();
@@ -117,18 +117,20 @@ class BaseServiceProvider extends ServiceProvider
         $this->commands($this->commands);
     }
 
-    public function registerAdminMiddleware(Router $router)
+    public function registerMiddlewareGroup(Router $router)
     {
-        if (is_array(config('backpack.base.middleware_class')))
+        $middleware_key = config('backpack.base.middleware_key');
+        $middleware_class = config('backpack.base.middleware_class');
+
+        if (!is_array($middleware_class))
         {
-            foreach (config('backpack.base.middleware_class') as $class)
-            {
-                Route::pushMiddlewareToGroup(config('backpack.base.middleware_key'), $class);
-            }
+            $router->pushMiddlewareToGroup($middleware_key, $middleware_class);
+            return;
         }
-        else
+
+        foreach ($middleware_class as $middleware_class)
         {
-            Route::pushMiddlewareToGroup(config('backpack.base.middleware_key'), config('backpack.base.middleware_class'));
+            $router->pushMiddlewareToGroup($middleware_key, $middleware_class);
         }
     }
 
