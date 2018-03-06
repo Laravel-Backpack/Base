@@ -82,7 +82,7 @@ return [
     'user_model_fqn' => '\App\User',
 
     // The class for the middleware that checks if the visitor is an admin
-    'middleware_class' => \Backpack\Base\app\Http\Middleware\Admin::class,
+    'middleware_class' => \Backpack\Base\app\Http\Middleware\CheckIfAdmin::class,
 
     // Alias for that middleware
     'middleware_key' => 'admin',
