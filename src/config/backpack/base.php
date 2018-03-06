@@ -81,8 +81,10 @@ return [
     // Fully qualified namespace of the User model
     'user_model_fqn' => '\App\User',
 
-    // Username key for authentication
-    'user_auth_key' => 'email',
+    // Username column for authentication
+    // The Backpack default is the same as the Laravel default (email)
+    // If you need to switch to username, you also need to create that column in your db
+    'authentication_column' => 'username',
 
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)
