@@ -119,15 +119,11 @@ class BaseServiceProvider extends ServiceProvider
 
     public function registerAdminMiddleware(Router $router)
     {
-        if (is_array(config('backpack.base.middleware_class')))
-        {
-            foreach (config('backpack.base.middleware_class') as $class)
-            {
+        if (is_array(config('backpack.base.middleware_class'))) {
+            foreach (config('backpack.base.middleware_class') as $class) {
                 Route::pushMiddlewareToGroup(config('backpack.base.middleware_key'), $class);
             }
-        }
-        else
-        {
+        } else {
             Route::pushMiddlewareToGroup(config('backpack.base.middleware_key'), config('backpack.base.middleware_class'));
         }
     }
