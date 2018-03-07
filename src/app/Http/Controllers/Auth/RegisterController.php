@@ -32,9 +32,22 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
 
+        // pass the column we use for authentication (usually email or username)
+        $this->data['authentication_column'] = $this->username();
+
         // Where to redirect users after login / registration.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
             : config('backpack.base.route_prefix', 'dashboard');
+    }
+
+    /**
+     * Return custom username for authentication.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return config('backpack.base.authentication_column', 'email');
     }
 
     /**
@@ -49,11 +62,12 @@ class RegisterController extends Controller
         $user_model_fqn = config('backpack.base.user_model_fqn');
         $user = new $user_model_fqn();
         $users_table = $user->getTable();
+        $email_validation = $this->username()=='email'?'email|':'';
 
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:'.$users_table,
-            'password' => 'required|min:6|confirmed',
+            'name'              => 'required|max:255',
+            $this->username()   => 'required|'.$email_validation.'max:255|unique:'.$users_table,
+            'password'          => 'required|min:6|confirmed',
         ]);
     }
 
@@ -70,9 +84,9 @@ class RegisterController extends Controller
         $user = new $user_model_fqn();
 
         return $user->create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'              => $data['name'],
+            $this->username()   => $data[$this->username()],
+            'password'          => bcrypt($data['password']),
         ]);
     }
 

@@ -11,6 +11,10 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
+                        @php
+                            echo '<pre>'; var_dump($errors); echo '</pre>';
+                        @endphp
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">{{ trans('backpack::base.name') }}</label>
 
@@ -25,15 +29,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
+                        <div class="form-group{{ $errors->has($authentication_column) ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="{{ $authentication_column=='email'?'email':'text'}}" class="form-control" name="{{ $authentication_column }}" value="{{ old($authentication_column) }}">
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has($authentication_column))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first($authentication_column) }}</strong>
                                     </span>
                                 @endif
                             </div>
