@@ -26,7 +26,7 @@ class AccountInfoRequest extends FormRequest
      */
     protected function validationData()
     {
-        return $this->only('email', 'name');
+        return $this->only(backpack_authentication_column(), 'name');
     }
 
     /**
@@ -39,9 +39,9 @@ class AccountInfoRequest extends FormRequest
         $user = Auth::user();
 
         return [
-            'email' => [
+            backpack_authentication_column() => [
                 'required',
-                'email',
+                backpack_authentication_column()=='email'?'email':'',
                 Rule::unique($user->getTable())->ignore($user->getKey()),
             ],
             'name' => 'required',

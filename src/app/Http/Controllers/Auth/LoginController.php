@@ -48,9 +48,6 @@ class LoginController extends Controller
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
             : config('backpack.base.route_prefix', 'admin');
         // ----------------------------------
-
-        // pass the column we use for authentication (usually email or username)
-        $this->data['authentication_column'] = $this->username();
     }
 
     /**
@@ -60,7 +57,7 @@ class LoginController extends Controller
      */
     public function username()
     {
-        return config('backpack.base.authentication_column', 'email');
+        return backpack_authentication_column();
     }
 
     // -------------------------------------------------------

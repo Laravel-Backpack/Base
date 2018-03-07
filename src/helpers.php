@@ -17,6 +17,33 @@ if (!function_exists('backpack_url')) {
     }
 }
 
+if (!function_exists('backpack_authentication_column')) {
+    /**
+     * Return the username column name.
+     * The Laravel default (and Backpack default) is 'email'.
+     *
+     * @return string
+     */
+    function backpack_authentication_column()
+    {
+        return config('backpack.base.authentication_column', 'email');
+    }
+}
+
+if (!function_exists('backpack_users_have_email')) {
+    /**
+     * Check if the email column is present on the user table.
+     *
+     * @return string
+     */
+    function backpack_users_have_email()
+    {
+        $user_model_fqn = config('backpack.base.user_model_fqn');
+        $user = new $user_model_fqn();
+        return \Schema::hasColumn($user->getTable(), 'email');
+    }
+}
+
 if (!function_exists('backpack_avatar')) {
     /**
      * Returns the avatar URL of a user.

@@ -32,6 +32,10 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
 
+        if (!backpack_users_have_email()) {
+            abort(403, trans('backpack::base.no_email_column'));
+        }
+
         // where to redirect after password was reset
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
     }

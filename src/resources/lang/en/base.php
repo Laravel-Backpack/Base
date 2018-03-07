@@ -9,6 +9,7 @@ return [
     */
 
     'registration_closed'    => 'Registration is closed.',
+    'no_email_column'        => 'Users do not have an associated email address.',
     'first_page_you_see'     => 'The first page you see after login',
     'login_status'           => 'Login status',
     'logged_in'              => 'You are logged in!',
