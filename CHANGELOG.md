@@ -21,6 +21,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+------
+
+### Added
+- added publish lang command;
+- added command to publish only the minimum amount of files needed for Backpack to work;
+- ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
+- ```php artisan backpack:base:add-sidebar-content``` command;
+
+### Fixed
+- the installation command now only publishes the minimum amount of files, by default;
 
 ## [0.8.9] - 2018-02-08
 
