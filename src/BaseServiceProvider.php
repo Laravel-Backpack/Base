@@ -142,6 +142,8 @@ class BaseServiceProvider extends ServiceProvider
             if (class_exists('Backpack\Generators\GeneratorsServiceProvider')) {
                 $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
             }
+        } else {
+            $this->checkLicenseCodeExists();
         }
 
         // register the artisan commands
@@ -205,5 +207,18 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes($adminlte_assets, 'adminlte');
         $this->publishes($gravatar_assets, 'gravatar');
         $this->publishes($minimum, 'minimum');
+    }
+
+    /**
+     * Check to to see if a license code exists.
+     * If it does not, throw a notification bubble.
+     *
+     * @return void
+     */
+    private function checkLicenseCodeExists()
+    {
+        if (! env('BACKPACK_LICENSE')) {
+            \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
+        }
     }
 }
