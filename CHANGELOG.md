@@ -21,6 +21,22 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+-------
+
+### Added
+- flexbox css helper class;
+- support for HTML messages inside Alert bubbles, when triggered from PHP;
+- added publish lang command;
+- added command to publish only the minimum amount of files needed for Backpack to work;
+- ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
+- ```php artisan backpack:base:add-sidebar-content``` command;
+- ```php artisan backpack:base:add-custom-route``` command;
+- ability for developer to use a custom auth guard;
+- ability for developer to rename the ```admin``` middleware;
+- ```before_styles```, ```after_styles```, ```before_scripts```, ```after_scripts``` stacks, to which developers can ```@push```;
+
+### Fixed
+- the installation command now only publishes the minimum amount of files, by default;
 
 ## [0.8.9] - 2018-02-08
 

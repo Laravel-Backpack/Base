@@ -11,7 +11,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware(backpack_middleware());
     }
 
     /**
@@ -34,6 +34,6 @@ class AdminController extends Controller
     public function redirect()
     {
         // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
-        return redirect(config('backpack.base.route_prefix').'/dashboard');
+        return redirect(backpack_url('dashboard'));
     }
 }

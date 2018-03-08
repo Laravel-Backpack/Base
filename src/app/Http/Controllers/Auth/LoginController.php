@@ -31,23 +31,35 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $guard = backpack_guard_name();
+
+        $this->middleware("guest:$guard", ['except' => 'logout']);
 
         // ----------------------------------
         // Use the admin prefix in all routes
+        // ----------------------------------
 
         // If not logged in redirect here.
         $this->loginPath = property_exists($this, 'loginPath') ? $this->loginPath
-            : config('backpack.base.route_prefix', 'admin').'/login';
+            : backpack_url('login');
 
         // Redirect here after successful login.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
-            : config('backpack.base.route_prefix', 'admin').'/dashboard';
+            : backpack_url('dashboard');
 
         // Redirect here after logout.
         $this->redirectAfterLogout = property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout
-            : config('backpack.base.route_prefix', 'admin');
-        // ----------------------------------
+            : backpack_url();
+    }
+
+    /**
+     * Return custom username for authentication.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return backpack_authentication_column();
     }
 
     // -------------------------------------------------------
@@ -76,9 +88,19 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         // Do the default logout procedure
-        $this->defaultLogout($request);
+        $this->guard()->logout();
 
         // And redirect to custom location
         return redirect($this->redirectAfterLogout);
+    }
+
+    /**
+     * Get the guard to be used during logout.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return backpack_auth();
     }
 }

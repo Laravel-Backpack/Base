@@ -841,6 +841,13 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #f8d053;
   }
 
+  /*    FLEXBOX HELPERS */
+
+  .display-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   /*    BORDER RADIUS HELPERS */
 
   .b-rad-sm {

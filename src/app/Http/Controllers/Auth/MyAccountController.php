@@ -15,7 +15,7 @@ class MyAccountController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware(backpack_middleware());
     }
 
     /**
@@ -80,6 +80,6 @@ class MyAccountController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard();
+        return backpack_auth();
     }
 }
