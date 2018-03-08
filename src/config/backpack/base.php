@@ -97,13 +97,6 @@ return [
     'authentication_column'      => 'email',
     'authentication_column_name' => trans('backpack::base.email_address'),
 
-    // What kind of avatar will you like to show to the user?
-    // Default: gravatar (automatically use the gravatar for his email)
-    // Other options:
-    // - placehold (generic image with his first letter)
-    // - example_method_name (specify the method on the User model that returns the URL)
-    'avatar_type' => 'gravatar',
-
     // The guard that protects the Backpack admin panel.
     // If null, the config.auth.defaults.guard value will be used.
     'guard' => null,
@@ -111,6 +104,13 @@ return [
     // The password reset configuration for Backpack.
     // If null, the config.auth.defaults.passwords value will be used.
     'passwords' => null,
+
+    // What kind of avatar will you like to show to the user?
+    // Default: gravatar (automatically use the gravatar for his email)
+    // Other options:
+    // - placehold (generic image with his first letter)
+    // - example_method_name (specify the method on the User model that returns the URL)
+    'avatar_type' => 'gravatar',
 
     /*
     |--------------------------------------------------------------------------
