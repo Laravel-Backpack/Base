@@ -52,6 +52,16 @@ class LoginController extends Controller
             : backpack_url();
     }
 
+    /**
+     * Return custom username for authentication.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return backpack_authentication_column();
+    }
+
     // -------------------------------------------------------
     // Laravel overwrites for loading backpack views
     // -------------------------------------------------------

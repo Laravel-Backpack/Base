@@ -17,6 +17,34 @@ if (!function_exists('backpack_url')) {
     }
 }
 
+if (!function_exists('backpack_authentication_column')) {
+    /**
+     * Return the username column name.
+     * The Laravel default (and Backpack default) is 'email'.
+     *
+     * @return string
+     */
+    function backpack_authentication_column()
+    {
+        return config('backpack.base.authentication_column', 'email');
+    }
+}
+
+if (!function_exists('backpack_users_have_email')) {
+    /**
+     * Check if the email column is present on the user table.
+     *
+     * @return string
+     */
+    function backpack_users_have_email()
+    {
+        $user_model_fqn = config('backpack.base.user_model_fqn');
+        $user = new $user_model_fqn();
+
+        return \Schema::hasColumn($user->getTable(), 'email');
+    }
+}
+
 if (!function_exists('backpack_avatar')) {
     /**
      * Returns the avatar URL of a user.
@@ -27,13 +55,19 @@ if (!function_exists('backpack_avatar')) {
      */
     function backpack_avatar_url($user)
     {
+        $placeholder = 'https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0];
+
         switch (config('backpack.base.avatar_type')) {
             case 'gravatar':
-                return Gravatar::fallback('https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0])->get($user->email);
+                if (backpack_users_have_email()) {
+                    return Gravatar::fallback('https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0])->get($user->email);
+                } else {
+                    return $placeholder;
+                }
                 break;
 
             case 'placehold':
-                return 'https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0];
+                return $placeholder;
                 break;
 
             default:

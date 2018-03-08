@@ -25,15 +25,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
+                        <div class="form-group{{ $errors->has(backpack_authentication_column()) ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="{{ backpack_authentication_column()=='email'?'email':'text'}}" class="form-control" name="{{ backpack_authentication_column() }}" value="{{ old(backpack_authentication_column()) }}">
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has(backpack_authentication_column()))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first(backpack_authentication_column()) }}</strong>
                                     </span>
                                 @endif
                             </div>

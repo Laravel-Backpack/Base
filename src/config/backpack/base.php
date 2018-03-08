@@ -91,6 +91,12 @@ return [
     'middleware_key' => 'admin',
     // Note: It's recommended to use the backpack_middleware() helper everywhere, which pulls this key for you.
 
+    // Username column for authentication
+    // The Backpack default is the same as the Laravel default (email)
+    // If you need to switch to username, you also need to create that column in your db
+    'authentication_column'      => 'email',
+    'authentication_column_name' => trans('backpack::base.email_address'),
+
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)
     // Other options:
