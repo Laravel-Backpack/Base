@@ -28,6 +28,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - added command to publish only the minimum amount of files needed for Backpack to work;
 - ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
 - ```php artisan backpack:base:add-sidebar-content``` command;
+- ```php artisan backpack:base:add-custom-route``` command;
 
 ### Fixed
 - the installation command now only publishes the minimum amount of files, by default;
