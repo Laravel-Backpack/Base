@@ -57,3 +57,38 @@ if (!function_exists('backpack_middleware')) {
         return config('backpack.base.middleware_key', 'admin');
     }
 }
+
+if (!function_exists('backpack_guard_name')) {
+    /*
+     * Returns the name of the guard defined
+     * by the application config
+     */
+    function backpack_guard_name()
+    {
+        return config('backpack.base.guard', config('auth.defaults.guard'));
+    }
+}
+
+if (!function_exists('backpack_auth')) {
+    /*
+     * Returns the user instance if it exists
+     * of the currently authenticated admin
+     * based off the defined guard.
+     */
+    function backpack_auth()
+    {
+        return \Auth::guard(backpack_guard_name());
+    }
+}
+
+if (!function_exists('backpack_user')) {
+    /*
+     * Returns back a user instance without
+     * the admin guard, however allows you
+     * to pass in a custom guard if you like.
+     */
+    function backpack_user()
+    {
+        return backpack_auth()->user();
+    }
+}

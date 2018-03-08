@@ -3,7 +3,6 @@
 namespace Backpack\Base\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ChangePasswordRequest extends FormRequest
@@ -16,7 +15,7 @@ class ChangePasswordRequest extends FormRequest
     public function authorize()
     {
         // only allow updates if the user is logged in
-        return Auth::check();
+        return backpack_auth()->check();
     }
 
     /**
@@ -44,7 +43,7 @@ class ChangePasswordRequest extends FormRequest
     {
         $validator->after(function ($validator) {
             // check old password matches
-            if (!Hash::check($this->input('old_password'), Auth::user()->password)) {
+            if (!Hash::check($this->input('old_password'), backpack_auth()->user()->password)) {
                 $validator->errors()->add('old_password', trans('backpack::base.old_password_incorrect'));
             }
         });

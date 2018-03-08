@@ -80,6 +80,6 @@ class MyAccountController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard();
+        return backpack_auth();
     }
 }

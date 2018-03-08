@@ -74,12 +74,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Model
+    | Authentication
     |--------------------------------------------------------------------------
     */
 
     // Fully qualified namespace of the User model
-    'user_model_fqn' => '\App\User',
+    'user_model_fqn' => '\Backpack\Base\app\Models\BackpackUser',
 
     // The classes for the middleware to check if the visitor is an admin
     // Can be a single class or an array of clases
@@ -97,6 +97,14 @@ return [
     // - placehold (generic image with his first letter)
     // - example_method_name (specify the method on the User model that returns the URL)
     'avatar_type' => 'gravatar',
+
+    // The guard that protects the Backpack admin panel.
+    // If null, the config.auth.defaults.guard value will be used.
+    'guard' => null,
+
+    // The password reset configuration for Backpack.
+    // If null, the config.auth.defaults.passwords value will be used.
+    'passwords' => null,
 
     /*
     |--------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-@if (Auth::check())
+@if (backpack_auth()->check())
     <!-- Left side column. contains the sidebar -->
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->

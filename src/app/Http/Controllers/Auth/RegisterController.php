@@ -30,7 +30,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $guard = backpack_guard_name();
+
+        $this->middleware("guest:$guard");
 
         // Where to redirect users after login / registration.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
@@ -112,5 +114,15 @@ class RegisterController extends Controller
         $this->guard()->login($this->create($request->all()));
 
         return redirect($this->redirectPath());
+    }
+
+    /**
+     * Get the guard to be used during registration.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return backpack_auth();
     }
 }
