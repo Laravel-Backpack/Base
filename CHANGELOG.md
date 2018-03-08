@@ -30,7 +30,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - ```php artisan backpack:base:add-sidebar-content``` command;
 
 ### Fixed
-- the installation command now only published the minimum amount of files, by default;
+- the installation command now only publishes the minimum amount of files, by default;
 
 ## [0.8.9] - 2018-02-08
 
