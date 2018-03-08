@@ -33,6 +33,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - ```php artisan backpack:base:add-custom-route``` command;
 - ability for developer to use a custom auth guard;
 - ability for developer to rename the ```admin``` middleware;
+- ```before_styles```, ```after_styles```, ```before_scripts```, ```after_scripts``` stacks, to which developers can ```@push```;
 
 ### Fixed
 - the installation command now only publishes the minimum amount of files, by default;
