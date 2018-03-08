@@ -47,4 +47,11 @@ return [
     'account_updated'        => 'Account updated successfully.',
     'unknown_error'          => 'An unknown error has occured. Please try again.',
     'error_saving'           => 'Error while saving. Please try again.',
+
+    'password_reset' => [
+        'line_1' => 'You are receiving this email because we received a password reset request for your account.',
+        'line_2' => 'Click the button below to reset your password:',
+        'button' => 'Reset Password',
+        'notice' => 'If you did not request a password reset, no further action is required.',
+    ],
 ];
