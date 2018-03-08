@@ -55,19 +55,19 @@ if (!function_exists('backpack_avatar')) {
      */
     function backpack_avatar_url($user)
     {
-        $placehold = 'https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0];
+        $placeholder = 'https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0];
 
         switch (config('backpack.base.avatar_type')) {
             case 'gravatar':
                 if (backpack_users_have_email()) {
                     return Gravatar::fallback('https://placehold.it/160x160/00a65a/ffffff/&text='.$user->name[0])->get($user->email);
                 } else {
-                    return $placehold;
+                    return $placeholder;
                 }
                 break;
 
             case 'placehold':
-                return $placehold;
+                return $placeholder;
                 break;
 
             default:
