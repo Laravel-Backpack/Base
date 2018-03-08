@@ -31,6 +31,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
 - ```php artisan backpack:base:add-sidebar-content``` command;
 - ```php artisan backpack:base:add-custom-route``` command;
+- ability for developer to use a custom auth guard;
+- ability for developer to rename the ```admin``` middleware;
 
 ### Fixed
 - the installation command now only publishes the minimum amount of files, by default;
