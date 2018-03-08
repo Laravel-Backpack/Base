@@ -79,7 +79,7 @@ return [
     */
 
     // Fully qualified namespace of the User model
-    'user_model_fqn' => '\Backpack\Base\app\Models\BackpackUser',
+    'user_model_fqn' => \Backpack\Base\app\Models\BackpackUser::class,
 
     // The classes for the middleware to check if the visitor is an admin
     // Can be a single class or an array of clases
@@ -112,8 +112,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you, your employer or your client make money by using Backpack, you need
-    | to purchase a license code. A license code will be provided after purchase,
-    | which you can put here or in your ENV file.
+    | to purchase a license. A license code will be provided after purchase,
+    | which you can put here or in your ENV file in staging & production.
     |
     | More info and payment form on:
     | https://www.backpackforlaravel.com
