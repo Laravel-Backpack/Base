@@ -13,6 +13,7 @@
     </title>
 
     @yield('before_styles')
+    @stack('before_styles')
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -32,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/backpack/overlays/backpack.bold.css') }}">
 
     @yield('after_styles')
+    @stack('after_styles')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -109,6 +111,7 @@
 
 
     @yield('before_scripts')
+    @stack('before_scripts')
 
     <!-- jQuery 2.2.3 -->
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -140,7 +143,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            
+
         // Set active state on menu element
         var current_url = "{{ Request::fullUrl() }}";
         var full_url = current_url+location.search;
@@ -155,7 +158,7 @@
                 function() { return $(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')); }
             );
         }
-        
+
         $curentPageLink.parents('li').addClass('active');
         {{-- Enable deep link to tab --}}
         var activeTab = $('[href="' + location.hash.replace("#", "#tab_") + '"]');
@@ -168,6 +171,7 @@
     @include('backpack::inc.alerts')
 
     @yield('after_scripts')
+    @stack('after_scripts')
 
     <!-- JavaScripts -->
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
