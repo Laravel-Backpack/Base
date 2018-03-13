@@ -112,7 +112,6 @@ return [
     // - example_method_name (specify the method on the User model that returns the URL)
     'avatar_type' => 'gravatar',
 
-
     /*
     |--------------------------------------------------------------------------
     | File System
@@ -125,7 +124,6 @@ return [
     //
     // You can rename this disk here. Default: root
     'root_disk_name' => 'root',
-
 
     /*
     |--------------------------------------------------------------------------
