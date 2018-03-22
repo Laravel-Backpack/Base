@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.1] - 2018-03-22
+
+### Fixed
+- config file was using a translation item, which is not possible;
+
+
 ## [0.9.0] - 2018-03-22
 
 ### Added
