@@ -23,6 +23,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.0] - 2018-03-22
+
 ### Added
 - flexbox css helper class;
 - support for HTML messages inside Alert bubbles, when triggered from PHP;
@@ -37,6 +39,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - the installation command now only publishes the minimum amount of files, by default;
+- AdminLTE now uses the latest version;
+
+-------
 
 ## [0.8.9] - 2018-02-08
 
