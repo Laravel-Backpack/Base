@@ -7,7 +7,7 @@
         @include('backpack::inc.sidebar_user_panel')
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" data-widget="tree">
           {{-- <li class="header">{{ trans('backpack::base.administration') }}</li> --}}
           <!-- ================================================ -->
           <!-- ==== Recommended place for admin menu items ==== -->

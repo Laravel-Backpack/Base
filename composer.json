@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "almasaeed2010/AdminLTE" : "2.3.*",
+        "almasaeed2010/AdminLTE" : "2.4.*",
         "laravel/framework": "5.5.*|5.6.*",
         "prologue/alerts": "^0.4.1",
         "jenssegers/date": "^3.2",

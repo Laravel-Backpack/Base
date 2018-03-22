@@ -62,10 +62,10 @@ class BaseServiceProvider extends ServiceProvider
         ];
 
         $this->registerMiddlewareGroup($this->app->router);
+        $this->loadHelpers();
         $this->setupRoutes($this->app->router);
         $this->setupCustomRoutes($this->app->router);
         $this->publishFiles();
-        $this->loadHelpers();
     }
 
     /**
