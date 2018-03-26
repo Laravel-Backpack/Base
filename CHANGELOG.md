@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.2] - 2018-03-29
+
+### Fixed
+- ```custom.php``` route now uses the ```web``` middleware by default; merges #268; fixes #271;
+
+
 ## [0.9.1] - 2018-03-22
 
 ### Fixed
