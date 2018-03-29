@@ -62,22 +62,6 @@ class LoginController extends Controller
         return backpack_authentication_column();
     }
 
-    // -------------------------------------------------------
-    // Laravel overwrites for loading backpack views
-    // -------------------------------------------------------
-
-    /**
-     * Show the application login form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLoginForm()
-    {
-        $this->data['title'] = trans('backpack::base.login'); // set the page title
-
-        return view('backpack::auth.login', $this->data);
-    }
-
     /**
      * Log the user out and redirect him to specific location.
      *
@@ -102,5 +86,22 @@ class LoginController extends Controller
     protected function guard()
     {
         return backpack_auth();
+    }
+
+    // -------------------------------------------------------
+    // Laravel overwrites for loading backpack views
+    // -------------------------------------------------------
+
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        $this->data['title'] = trans('backpack::base.login'); // set the page title
+        $this->data['username'] = $this->username();
+
+        return view('backpack::auth.login', $this->data);
     }
 }

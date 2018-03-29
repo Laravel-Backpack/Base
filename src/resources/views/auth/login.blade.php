@@ -11,15 +11,15 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
 
-                        <div class="form-group{{ $errors->has(backpack_authentication_column()) ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has($username) ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="{{ backpack_authentication_column() }}" value="{{ old(backpack_authentication_column()) }}">
+                                <input type="text" class="form-control" name="{{ $username }}" value="{{ old($username) }}">
 
-                                @if ($errors->has(backpack_authentication_column()))
+                                @if ($errors->has($username))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first(backpack_authentication_column()) }}</strong>
+                                        <strong>{{ $errors->first($username) }}</strong>
                                     </span>
                                 @endif
                             </div>

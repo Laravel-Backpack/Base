@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.3] - 2018-04-17
+
+### Fixed
+- ```login.php``` view now uses ```$username``` instead of helper, to allow developers to overwrite this in their LoginController; fixes #276;
+
+
 ## [0.9.2] - 2018-03-29
 
 ### Fixed
