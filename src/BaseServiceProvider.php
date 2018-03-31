@@ -46,7 +46,7 @@ class BaseServiceProvider extends ServiceProvider
         // - first the published views (in case they have any changes)
         $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
         // - then the stock views that come with the package, in case a published view might be missing
-        $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views/adminlte'), 'backpack');
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
