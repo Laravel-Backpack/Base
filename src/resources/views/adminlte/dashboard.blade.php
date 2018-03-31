@@ -1,4 +1,4 @@
-@extends('backpack::layout')
+@extends(backpack_theme('layout'))
 
 @section('header')
     <section class="content-header">
@@ -21,7 +21,7 @@
                     <div class="box-title">{{ trans('backpack::base.login_status') }}</div>
                 </div>
 
-                <div class="box-body">{{ trans('backpack::base.logged_in') }}</div>
+                <div class="box-body">{{ trans('backpack::base.logged_in') }} ADMINLTE</div>
             </div>
         </div>
     </div>
