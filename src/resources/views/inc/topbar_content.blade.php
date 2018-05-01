@@ -12,7 +12,7 @@
         </li>
         <li class="">
             <a href="{{ url(config('backpack.base.route_prefix', 'admin')) }}">
-                <i class="fa fa-list"></i> Dropdown Tiem
+                <i class="fa fa-list"></i> Dropdown Item
             </a>
         </li>
     </ul>
