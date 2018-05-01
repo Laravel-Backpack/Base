@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.4] - 2018-05-xx
+
+### Fixed
+- ```backpack_avatar_url()``` helper had a wrong function name existence declaration; merges #280;
+
+
 ## [0.9.3] - 2018-04-17
 
 ### Fixed
