@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.5] - 2018-05-02
+
+### Fixed
+- helpers are now loaded in the register function, to avoid undefined function errors in subsequent Backpack packages, where they're loaded before Base;
+
+
 ## [0.9.4] - 2018-05-02
 
 ### Fixed

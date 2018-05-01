@@ -62,7 +62,6 @@ class BaseServiceProvider extends ServiceProvider
         ];
 
         $this->registerMiddlewareGroup($this->app->router);
-        $this->loadHelpers();
         $this->setupRoutes($this->app->router);
         $this->setupCustomRoutes($this->app->router);
         $this->publishFiles();
@@ -122,6 +121,9 @@ class BaseServiceProvider extends ServiceProvider
         $this->app->bind('base', function ($app) {
             return new Base($app);
         });
+
+        // register the helper functions
+        $this->loadHelpers();
 
         // register its dependencies
         $this->app->register(\Jenssegers\Date\DateServiceProvider::class);
