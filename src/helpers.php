@@ -71,7 +71,7 @@ if (!function_exists('backpack_avatar_url')) {
                 break;
 
             default:
-                return $user->{config('backpack.base.avatar_type')}();
+                return method_exists($user, config('backpack.base.avatar_type')) ? $user->{config('backpack.base.avatar_type')}() : $user->{config('backpack.base.avatar_type')};
                 break;
         }
     }

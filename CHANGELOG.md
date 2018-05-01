@@ -27,7 +27,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - ```backpack_avatar_url()``` helper had a wrong function name existence declaration; merges #280;
-
+- ```backpack_avatar_url()``` helper now uses a custom function if it exists, otherwise an accessor; merges #281;
 
 ## [0.9.3] - 2018-04-17
 
