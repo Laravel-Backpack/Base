@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.6] - 2018-05-xx
+
+### Added
+- Arabic language, thanks to @allam2002;
+
+
 ## [0.9.5] - 2018-05-02
 
 ### Fixed
