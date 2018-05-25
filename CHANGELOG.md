@@ -23,10 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
-## [0.9.6] - 2018-05-xx
+## [0.9.6] - 2018-06-04
 
 ### Added
 - Arabic language, thanks to @allam2002;
+
+### Fixed
+- #288 and #284 - moved check license method to boot instead of register;
 
 
 ## [0.9.5] - 2018-05-02

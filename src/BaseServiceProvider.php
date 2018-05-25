@@ -65,6 +65,7 @@ class BaseServiceProvider extends ServiceProvider
         $this->setupRoutes($this->app->router);
         $this->setupCustomRoutes($this->app->router);
         $this->publishFiles();
+        $this->checkLicenseCodeExists();
     }
 
     /**
@@ -144,8 +145,6 @@ class BaseServiceProvider extends ServiceProvider
             if (class_exists('Backpack\Generators\GeneratorsServiceProvider')) {
                 $this->app->register('Backpack\Generators\GeneratorsServiceProvider');
             }
-        } else {
-            $this->checkLicenseCodeExists();
         }
 
         // register the artisan commands
@@ -219,7 +218,7 @@ class BaseServiceProvider extends ServiceProvider
      */
     private function checkLicenseCodeExists()
     {
-        if (!config('backpack.base.license_code')) {
+        if ($this->app->environment() != 'local' && !config('backpack.base.license_code')) {
             \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
         }
     }
