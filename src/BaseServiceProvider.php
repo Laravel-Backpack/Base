@@ -61,6 +61,22 @@ class BaseServiceProvider extends ServiceProvider
             'root'   => base_path(),
         ];
 
+        // add the backpack_users authentication provider to the default configuration
+        app()->config['auth.providers'] = array_merge(app()->config['auth.providers'], [
+            'backpack_users' => [
+                'driver' => 'eloquent',
+                'model'   => config('backpack.base.user_model_fqn'),
+            ]
+        ]);
+        // add the backpack_users password broker to the default configuration
+        app()->config['auth.passwords'] = array_merge(app()->config['auth.passwords'], [
+            'backpack_users' => [
+                'provider' => 'backpack_users',
+                'table' => 'password_resets',
+                'expire'    => 60,
+            ]
+        ]);
+
         $this->registerMiddlewareGroup($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->setupCustomRoutes($this->app->router);
