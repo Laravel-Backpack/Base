@@ -6,6 +6,11 @@
 
         <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
 
+        @if (backpack_auth()->check())
+            <!-- Topbar. Contains the top menu -->
+            @include('backpack::inc.topbar_content')
+        @endif
+
         <!-- ========== End of top menu left items ========== -->
     </ul>
 </div>
