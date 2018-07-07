@@ -129,7 +129,7 @@ if (!function_exists('backpack_user')) {
 
 if (!function_exists('backpack_view')) {
     /**
-     * Returns a new displayable view based on the current configured backpack
+     * Returns a new displayable view based on the current configured backpack.
      *
      * @param string (see config/backpack/base.php)
      *
@@ -139,12 +139,12 @@ if (!function_exists('backpack_view')) {
     {
         $theme = config('backpack.base.theme');
 
-        if(is_null($theme)) {
-          $theme = 'adminlte';
+        if (is_null($theme)) {
+            $theme = 'adminlte';
         }
 
         $returnView = "{$package}::{$theme}.{$view}";
-        if(!view()->exists($returnView)){
+        if (!view()->exists($returnView)) {
             $returnView = "{$package}::{$view}";
         }
 
@@ -154,7 +154,7 @@ if (!function_exists('backpack_view')) {
 
 if (!function_exists('backpack_theme')) {
     /**
-     * Set the path of an extended/included view based on the configured backpack
+     * Set the path of an extended/included view based on the configured backpack.
      *
      * @param string (see config/backpack/base.php)
      *
@@ -164,8 +164,8 @@ if (!function_exists('backpack_theme')) {
     {
         $theme = config('backpack.base.theme');
 
-        if(is_null($theme)) {
-          $theme = 'adminlte';
+        if (is_null($theme)) {
+            $theme = 'adminlte';
         }
 
         return "{$package}::{$theme}.{$view}";
