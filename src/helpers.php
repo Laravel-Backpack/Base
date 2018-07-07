@@ -158,6 +158,11 @@ if (!function_exists('backpack_theme')) {
     function backpack_theme($view, $package = 'backpack')
     {
         $theme = config('backpack.base.theme');
+        
+        if(is_null($theme)) {
+          $theme = 'adminlte';
+        }
+
         return "{$package}::{$theme}.{$view}";
     }
 }
