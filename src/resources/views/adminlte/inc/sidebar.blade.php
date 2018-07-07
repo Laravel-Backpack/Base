@@ -4,7 +4,7 @@
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
         <!-- Sidebar user panel -->
-        @include('backpack::inc.sidebar_user_panel')
+        @include(backpack_view('inc.sidebar_user_panel'))
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
@@ -13,7 +13,7 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
 
-          @include('backpack::inc.sidebar_content')
+          @include(backpack_view('inc.sidebar_content'))
 
           <!-- ======================================= -->
           {{-- <li class="header">Other menus</li> --}}

@@ -1,25 +1,28 @@
-@extends('backpack::layout')
+@extends(backpack_theme('layout'))
 
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <div class="box-title">{{ trans('backpack::base.login') }}</div>
+                    <div class="box-title">{{ trans('backpack::base.reset_password') }}</div>
                 </div>
+
                 <div class="box-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.password.reset') }}">
                         {!! csrf_field() !!}
 
-                        <div class="form-group{{ $errors->has($username) ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
+                        <input type="hidden" name="token" value="{{ $token }}">
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="{{ $username }}" value="{{ old($username) }}">
+                                <input type="email" class="form-control" name="email" value="{{ $email or old('email') }}">
 
-                                @if ($errors->has($username))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first($username) }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -39,25 +42,24 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> {{ trans('backpack::base.remember_me') }}
-                                    </label>
-                                </div>
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">{{ trans('backpack::base.confirm_password') }}</label>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password_confirmation">
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ trans('backpack::base.login') }}
+                                    <i class="fa fa-btn fa-refresh"></i> {{ trans('backpack::base.reset_password') }}
                                 </button>
-
-                                @if (backpack_users_have_email())
-                                <a class="btn btn-link" href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
-                                @endif
                             </div>
                         </div>
                     </form>

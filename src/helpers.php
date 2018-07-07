@@ -126,3 +126,38 @@ if (!function_exists('backpack_user')) {
         return backpack_auth()->user();
     }
 }
+
+if (!function_exists('backpack_view')) {
+    /**
+     * Returns a new displayable view based on the current configured backpack
+     *
+     * @param string (see config/backpack/base.php)
+     *
+     * @return string
+     */
+    function backpack_view($view, $package = 'backpack')
+    {
+        $theme = config('backpack.base.theme');
+        $returnView = "{$package}::{$theme}.{$view}";
+        if(!view()->exists($returnView)){
+            $returnView = "{$package}::{$view}";
+        }
+
+        return $returnView;
+    }
+}
+
+if (!function_exists('backpack_theme')) {
+    /**
+     * Set the path of an extended/included view based on the configured backpack
+     *
+     * @param string (see config/backpack/base.php)
+     *
+     * @return string
+     */
+    function backpack_theme($view, $package = 'backpack')
+    {
+        $theme = config('backpack.base.theme');
+        return "{$package}::{$theme}.{$view}";
+    }
+}

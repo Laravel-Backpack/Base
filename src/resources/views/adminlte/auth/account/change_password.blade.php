@@ -1,4 +1,4 @@
-@extends('backpack::layout')
+@extends(backpack_theme('layout'))
 
 @section('after_styles')
 <style media="screen">
@@ -27,7 +27,7 @@
         </li>
 
         <li class="active">
-            {{ trans('backpack::base.update_account_info') }}
+            {{ trans('backpack::base.change_password') }}
         </li>
 
     </ol>
@@ -42,7 +42,7 @@
     </div>
     <div class="col-md-6">
 
-        <form class="form" action="{{ route('backpack.account.info') }}" method="post">
+        <form class="form" action="{{ route('backpack.account.password') }}" method="post">
 
             {!! csrf_field() !!}
 
@@ -68,27 +68,36 @@
 
                     <div class="form-group">
                         @php
-                            $label = trans('backpack::base.name');
-                            $field = 'name';
+                            $label = trans('backpack::base.old_password');
+                            $field = 'old_password';
                         @endphp
                         <label class="required">{{ $label }}</label>
-                        <input required class="form-control" type="text" name="{{ $field }}" value="{{ old($field) ? old($field) : $user->$field }} ">
+                        <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" id="{{ $field }}" value="" placeholder="{{ $label }}">
                     </div>
 
                     <div class="form-group">
                         @php
-                            $label = config('backpack.base.authentication_column_name');
-                            $field = backpack_authentication_column();
+                            $label = trans('backpack::base.new_password');
+                            $field = 'new_password';
                         @endphp
                         <label class="required">{{ $label }}</label>
-                        <input required class="form-control" type="{{ backpack_authentication_column()=='email'?'email':'text' }}" name="{{ $field }}" value="{{ old($field) ? old($field) : $user->$field }} ">
+                        <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" id="{{ $field }}" value="" placeholder="{{ $label }}">
+                    </div>
+
+                    <div class="form-group">
+                        @php
+                            $label = trans('backpack::base.confirm_password');
+                            $field = 'confirm_password';
+                        @endphp
+                        <label class="required">{{ $label }}</label>
+                        <input autocomplete="new-password" required class="form-control" type="password" name="{{ $field }}" id="{{ $field }}" value="" placeholder="{{ $label }}">
                     </div>
 
                 </div>
 
                 <div class="box-footer">
 
-                    <button type="submit" class="btn btn-success"><span class="ladda-label"><i class="fa fa-save"></i> {{ trans('backpack::base.save') }}</span></button>
+                    <button type="submit" class="btn btn-success"><span class="ladda-label"><i class="fa fa-save"></i> {{ trans('backpack::base.change_password') }}</span></button>
                     <a href="{{ backpack_url() }}" class="btn btn-default"><span class="ladda-label">{{ trans('backpack::base.cancel') }}</span></a>
 
                 </div>

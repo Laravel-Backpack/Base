@@ -26,7 +26,7 @@ class MyAccountController extends Controller
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = $this->guard()->user();
 
-        return view('backpack::auth.account.update_info', $this->data);
+        return view(backpack_view('auth.account.update_info'), $this->data);
     }
 
     /**
@@ -53,7 +53,7 @@ class MyAccountController extends Controller
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = $this->guard()->user();
 
-        return view('backpack::auth.account.change_password', $this->data);
+        return view(backpack_view('auth.account.change_password'), $this->data);
     }
 
     /**

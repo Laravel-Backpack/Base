@@ -102,6 +102,6 @@ class LoginController extends Controller
         $this->data['title'] = trans('backpack::base.login'); // set the page title
         $this->data['username'] = $this->username();
 
-        return view('backpack::auth.login', $this->data);
+        return view(backpack_view('auth.login'), $this->data);
     }
 }
