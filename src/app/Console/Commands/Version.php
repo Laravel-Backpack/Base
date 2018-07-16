@@ -40,8 +40,15 @@ class Version extends Command
      */
     public function handle()
     {
-        // $this->line(' Installing backpack/generators');
-        $command = 'php -v && composer show | grep "backpack\|laravel/framework" && mysql --version';
+        $this->comment('### PHP VERSION:');
+        $this->runCommand('php -v');
+        $this->comment('### BACKPACK PACKAGES VERSION:');
+        $this->runCommand('composer show | grep "backpack\|laravel/framework"');
+        $this->comment('### MYSQL VERSION:');
+        $this->runCommand('mysql --version');
+    }
+
+    private function runCommand($command) {
         $process = new Process($command, null, null, null, 60, null);
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
