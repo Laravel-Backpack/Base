@@ -52,10 +52,12 @@ class Version extends Command
     /**
      * Run a shell command in a separate process.
      *
-     * @param  string $command Text to be executed.
+     * @param string $command Text to be executed.
+     *
      * @return void
      */
-    private function runCommand($command) {
+    private function runCommand($command)
+    {
         $process = new Process($command, null, null, null, 60, null);
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
