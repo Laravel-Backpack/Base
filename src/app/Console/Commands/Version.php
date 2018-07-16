@@ -42,12 +42,20 @@ class Version extends Command
     {
         $this->comment('### PHP VERSION:');
         $this->runCommand('php -v');
+
         $this->comment('### BACKPACK PACKAGES VERSION:');
         $this->runCommand('composer show | grep "backpack\|laravel/framework"');
+
         $this->comment('### MYSQL VERSION:');
         $this->runCommand('mysql --version');
     }
 
+    /**
+     * Run a shell command in a separate process.
+     *
+     * @param  string $command Text to be executed.
+     * @return void
+     */
     private function runCommand($command) {
         $process = new Process($command, null, null, null, 60, null);
         $process->run(function ($type, $buffer) {
