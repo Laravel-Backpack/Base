@@ -11,7 +11,7 @@
         @include('backpack::inc.topbar_left_content')
     @endif
 
-        <!-- ========== End of top menu left items ========== -->
+    <!-- ========== End of top menu left items ========== -->
     </ul>
 </div>
 
@@ -19,7 +19,7 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
         <!-- ========================================================= -->
-        <!-- ========== Top menu right items (ordered left) ========== -->
+        <!-- ========= Top menu right items (ordered right) ========== -->
         <!-- ========================================================= -->
 
     <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
@@ -32,7 +32,7 @@
                     <li><a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></li>
                 @endif
             @else
-                <!-- Topbar. Contains the right part -->
+            <!-- Topbar. Contains the right part -->
                 @include('backpack::inc.topbar_right_content')
                 <li><a href="{{ route('backpack.auth.logout') }}"><i
                             class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
