@@ -11,7 +11,7 @@ if (!function_exists('backpack_url')) {
      */
     function backpack_url($path = null)
     {
-        $path = !$path || (substr($path, 1, 1) == '/') ? $path : '/'.$path;
+        $path = !$path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
 
         return url(config('backpack.base.route_prefix', 'admin').$path);
     }
