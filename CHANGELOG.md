@@ -26,6 +26,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [0.9.7] - 2018-08-xx
 
+### Added
+- French Canadian language, thanks to @khoude24;
+
 ### Fixed
 - #303 - custom route command;
 
