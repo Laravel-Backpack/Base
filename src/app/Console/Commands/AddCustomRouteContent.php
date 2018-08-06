@@ -52,7 +52,7 @@ class AddCustomRouteContent extends Command
             // insert the given code before the file's last line
             $file_lines = explode(PHP_EOL, $old_file_content);
             $end_line_number = $this->customRoutesFileEndLine($file_lines);
-            $file_lines[$end_line_number+1] = $file_lines[$end_line_number];
+            $file_lines[$end_line_number + 1] = $file_lines[$end_line_number];
             $file_lines[$end_line_number] = '    '.$code;
             $new_file_content = implode(PHP_EOL, $file_lines);
 
@@ -86,7 +86,7 @@ class AddCustomRouteContent extends Command
     private function customRoutesFileEndLine($file_lines)
     {
         // in case the last line has not been modified at all
-        $end_line_number = array_search("}); // this should be the absolute last line of this file", $file_lines);
+        $end_line_number = array_search('}); // this should be the absolute last line of this file', $file_lines);
 
         if ($end_line_number) {
             return $end_line_number;
@@ -94,7 +94,7 @@ class AddCustomRouteContent extends Command
 
         // otherwise, in case the last line HAS been modified
         // return the last line that has an ending in it
-        $possible_end_lines = array_filter($file_lines, function($k) {
+        $possible_end_lines = array_filter($file_lines, function ($k) {
             return strpos($k, '});') === 0;
         });
 
