@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+
+## [0.9.7] - 2018-08-xx
+
+### Fixed
+- #303 - custom route command;
+
+
 ## [0.9.6] - 2018-06-04
 
 ### Added
