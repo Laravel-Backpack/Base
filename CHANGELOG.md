@@ -33,6 +33,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Fixed
 - #303 - custom route command;
 - #305 - ```backpack_url()``` helper did not work properly with a starting slash;
+- #295 - spaces added to My Account form inputs by accident;
 
 
 ## [0.9.6] - 2018-06-04
