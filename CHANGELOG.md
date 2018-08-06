@@ -24,11 +24,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 -------
 
 
-## [0.9.7] - 2018-08-xx
+## [0.9.7] - 2018-08-06
 
 ### Added
 - French Canadian language, thanks to @khoude24;
 - ```php artisan backpack:base:version``` command;
+- version constant on the BaseServiceProvider;
+- ```mb_ucfirst()``` helper;
 
 ### Fixed
 - #303 - custom route command;

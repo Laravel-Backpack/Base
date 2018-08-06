@@ -8,7 +8,7 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
-    const VERSION = '0.9.6';
+    const VERSION = '0.9.7';
 
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
