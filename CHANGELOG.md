@@ -28,6 +28,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - French Canadian language, thanks to @khoude24;
+- ```php artisan backpack:base:version``` command;
 
 ### Fixed
 - #303 - custom route command;
