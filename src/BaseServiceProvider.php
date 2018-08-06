@@ -12,6 +12,7 @@ class BaseServiceProvider extends ServiceProvider
         \Backpack\Base\app\Console\Commands\Install::class,
         \Backpack\Base\app\Console\Commands\AddSidebarContent::class,
         \Backpack\Base\app\Console\Commands\AddCustomRouteContent::class,
+        \Backpack\Base\app\Console\Commands\Version::class,
     ];
 
     /**
