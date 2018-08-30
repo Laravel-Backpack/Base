@@ -4,7 +4,7 @@ namespace Backpack\Base\app\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class UserCommand extends Command
+class CreateUser extends Command
 {
     /**
      * The name and signature of the console command.
@@ -12,9 +12,10 @@ class UserCommand extends Command
      * @var string
      */
     protected $signature = 'backpack:user
-                            {--name= : The name of the new user}
-                            {--email= : The user\'s email address}
-                            {--password= : User\'s password}';
+                            {--N|name= : The name of the new user}
+                            {--E|email= : The user\'s email address}
+                            {--P|password= : User\'s password}
+                            {--encrypt=true : Is the user\'s password already encrypted}';
 
     /**
      * The console command description.
@@ -45,11 +46,15 @@ class UserCommand extends Command
           $password = $this->secret('Password');
         }
 
+        if(! $this->option('encrypt')) {
+          $password = bcrypt($password);
+        }
+
         $auth = config('backpack.base.user_model_fqn', 'App\User');
         $user = new $auth();
         $user->name = $name;
         $user->email = $email;
-        $user->password = bcrypt($password);
+        $user->password = $password;
 
         if($user->save()) {
           $this->info('Successfully created new user');
