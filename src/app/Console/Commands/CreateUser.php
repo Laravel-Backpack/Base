@@ -31,19 +31,18 @@ class CreateUser extends Command
      */
     public function handle()
     {
-
         $this->info('Creating a new user');
 
-        if(! $name = $this->option('name')) {
-          $name = $this->ask('Name');
+        if (!$name = $this->option('name')) {
+            $name = $this->ask('Name');
         }
 
-        if(! $email = $this->option('email')) {
-          $email = $this->ask('Email');
+        if (!$email = $this->option('email')) {
+            $email = $this->ask('Email');
         }
 
-        if(! $password = $this->option('password')) {
-          $password = $this->secret('Password');
+        if (!$password = $this->option('password')) {
+            $password = $this->secret('Password');
         }
 
         if(! $this->option('encrypt')) {
@@ -56,10 +55,10 @@ class CreateUser extends Command
         $user->email = $email;
         $user->password = $password;
 
-        if($user->save()) {
-          $this->info('Successfully created new user');
+        if ($user->save()) {
+            $this->info('Successfully created new user');
         } else {
-          $this->error('Something went wrong trying to save your user');
+            $this->error('Something went wrong trying to save your user');
         }
     }
 }
