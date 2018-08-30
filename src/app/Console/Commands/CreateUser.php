@@ -45,8 +45,8 @@ class CreateUser extends Command
             $password = $this->secret('Password');
         }
 
-        if(! $this->option('encrypt')) {
-          $password = bcrypt($password);
+        if (!$this->option('encrypt')) {
+            $password = bcrypt($password);
         }
 
         $auth = config('backpack.base.user_model_fqn', 'App\User');
