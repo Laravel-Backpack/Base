@@ -24,6 +24,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 -------
 
 
+## [0.9.8] - 2018-09-05
+
+### Added
+- Laravel 5.7 compatiblity;
+
+### Removed
+- replaced ```or``` blade operator with ```??```;
+
 ## [0.9.7] - 2018-08-06
 
 ### Added
