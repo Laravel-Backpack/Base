@@ -36,6 +36,10 @@ return [
     'default_date_format'     => 'j F Y',
     'default_datetime_format' => 'j F Y H:i',
 
+    // Enable support "editable" columns.
+    // If you would't use this feature, set to false.
+    'enable_editable' => true,
+
     /*
     |--------------------------------------------------------------------------
     | Registration Open
