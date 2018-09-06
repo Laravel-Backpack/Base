@@ -130,6 +130,12 @@
         <!-- X-editable -->
         <link href="{{ asset('vendor/backpack/editable/css/bootstrap-editable.css') }}" rel="stylesheet">
         <script src="{{ asset('vendor/backpack/editable/js/bootstrap-editable.min.js') }}"></script>
+        <script>
+            // X-editable defaults
+            $(document).ready(function() {
+                $.fn.editable.defaults.mode = '{{ in_array(config('backpack.base.editable_mode', 'popup'), ['popup', 'inline']) ? config('backpack.base.editable_mode', 'popup') : 'popup' }}';
+            });
+        </script>
     @endif
 
     <!-- page script -->

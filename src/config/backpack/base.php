@@ -38,7 +38,8 @@ return [
 
     // Enable support "editable" columns.
     // If you would't use this feature, set to false.
-    'enable_editable' => true,
+    'enable_editable'   => true,
+    'editable_mode'     => 'popup', // popup or inline
 
     /*
     |--------------------------------------------------------------------------
