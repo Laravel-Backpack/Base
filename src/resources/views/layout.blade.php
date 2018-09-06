@@ -126,6 +126,18 @@
     {{-- <script src="{{ asset('vendor/adminlte') }}/bower_components/fastclick/lib/fastclick.js"></script> --}}
     <script src="{{ asset('vendor/adminlte') }}/dist/js/adminlte.min.js"></script>
 
+    @if(config('backpack.base.enable_editable'))
+        <!-- X-editable -->
+        <link href="{{ asset('vendor/backpack/editable/css/bootstrap-editable.css') }}" rel="stylesheet">
+        <script src="{{ asset('vendor/backpack/editable/js/bootstrap-editable.min.js') }}"></script>
+        <script>
+            // X-editable defaults
+            $(document).ready(function() {
+                $.fn.editable.defaults.mode = '{{ in_array(config('backpack.base.editable_mode', 'popup'), ['popup', 'inline']) ? config('backpack.base.editable_mode', 'popup') : 'popup' }}';
+            });
+        </script>
+    @endif
+
     <!-- page script -->
     <script type="text/javascript">
         /* Store sidebar state */
