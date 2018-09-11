@@ -36,6 +36,9 @@ return [
     'default_date_format'     => 'j F Y',
     'default_datetime_format' => 'j F Y H:i',
 
+    // Content of the HTML meta robots tag to prevent indexing and link following
+    'robots_content' => 'noindex, nofollow',
+
     /*
     |--------------------------------------------------------------------------
     | Registration Open
