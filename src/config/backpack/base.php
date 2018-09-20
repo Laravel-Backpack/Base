@@ -37,7 +37,7 @@ return [
     'default_datetime_format' => 'j F Y H:i',
 
     // Content of the HTML meta robots tag to prevent indexing and link following
-    'robots_content' => 'noindex, nofollow',
+    'meta_robots_content' => 'noindex, nofollow',
 
     /*
     |--------------------------------------------------------------------------
