@@ -28,6 +28,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Added
 - merged #315 - added robots meta and config for it;
 - merged #310 - added ```backpack:base:user``` command that creates a new user from the command line;
+- merged #317 - added customizable CSS overlays;
 
 ### Fixed
 - splitting files by new line using preg_split instead of explode; hopefully fixes #299;
