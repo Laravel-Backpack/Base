@@ -35,7 +35,12 @@
 
     <!-- BackPack Base CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}?v=2">
-    <link rel="stylesheet" href="{{ asset('vendor/backpack/overlays/backpack.bold.css') }}">
+    @if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
+        @foreach (config('backpack.base.overlays') as $overlay)
+        <link rel="stylesheet" href="{{ asset($overlay) }}">
+        @endforeach
+    @endif
+
 
     @yield('after_styles')
     @stack('after_styles')

@@ -39,6 +39,11 @@ return [
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
 
+    // Overlays - CSS files that change the look and feel of the admin panel
+    'overlays' => [
+        'vendor/backpack/overlays/backpack.bold.css',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Registration Open
