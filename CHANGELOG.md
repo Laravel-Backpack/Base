@@ -23,6 +23,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.9] - 2018-09-20
+
+### Fixed
+- splitting files by new line using preg_split instead of explode; hopefully fixes #299;
 
 ## [0.9.8] - 2018-09-05
 
