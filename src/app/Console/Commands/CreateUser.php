@@ -11,7 +11,7 @@ class CreateUser extends Command
      *
      * @var string
      */
-    protected $signature = 'backpack:user
+    protected $signature = 'backpack:base:user
                             {--N|name= : The name of the new user}
                             {--E|email= : The user\'s email address}
                             {--P|password= : User\'s password}
@@ -45,7 +45,7 @@ class CreateUser extends Command
             $password = $this->secret('Password');
         }
 
-        if (!$this->option('encrypt')) {
+        if ($this->option('encrypt')) {
             $password = bcrypt($password);
         }
 
