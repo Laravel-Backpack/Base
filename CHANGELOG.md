@@ -25,6 +25,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [0.9.9] - 2018-09-20
 
+### Added
+- merged #315 - added robots meta and config for it;
+
 ### Fixed
 - splitting files by new line using preg_split instead of explode; hopefully fixes #299;
 
