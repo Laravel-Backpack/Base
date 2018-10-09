@@ -156,9 +156,9 @@
             });
 
         // Set active state on menu element
+        var parser = new DOMParser;
         var current_url = "{{ Request::fullUrl() }}";
-        var full_url = current_url+location.search;
-        var $navLinks = $("ul.sidebar-menu li a");
+        var full_url = parser.parseFromString(current_url+location.search, 'text/html').URL;
         // First look for an exact match including the search string
         var $curentPageLink = $navLinks.filter(
             function() { return $(this).attr('href') === full_url; }
