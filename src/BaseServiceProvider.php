@@ -47,10 +47,14 @@ class BaseServiceProvider extends ServiceProvider
     public function boot(\Illuminate\Routing\Router $router)
     {
         $_SERVER['BACKPACK_BASE_VERSION'] = $this::VERSION;
+        $customViewsFolder = resource_path('views/vendor/backpack/base');
 
         // LOAD THE VIEWS
         // - first the published views (in case they have any changes)
-        $this->loadViewsFrom(resource_path('views/vendor/backpack/base'), 'backpack');
+        if (file_exists(resource_path('views/vendor/backpack/base')))
+        {
+            $this->loadViewsFrom($customViewsFolder, 'backpack');
+        }
         // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'backpack');
 

@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.10] - 2018-10-15
+
+### Fixed
+- loading the custom views folder is now done only if it exists, this way fixing conflicts with the ```php artisan view:cache``` command;
+
+
 ## [0.9.9] - 2018-09-20
 
 ### Added
