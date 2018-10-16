@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.10.0] - 2018-10-xx
+
+### Removed
+- Laravel 5.5 support;
+- PHP 7.0 support and Travis testing (Laravel 5.6 no longer supports it);
+
+
 ## [0.9.10] - 2018-10-15
 
 ### Fixed
