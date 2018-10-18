@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.11] - 2018-10-18
+
+### Fixed
+- missing translation on password reset emails;
+
+
 ## [0.9.10] - 2018-10-15
 
 ### Fixed
