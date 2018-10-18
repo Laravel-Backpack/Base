@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @if (config('backpack.base.meta_robots_content'))
+    <meta name="robots" content="{{ config('backpack.base.meta_robots_content', 'noindex, nofollow') }}">
+    @endif
 
     {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -32,7 +35,12 @@
 
     <!-- BackPack Base CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/backpack/backpack.base.css') }}?v=2">
-    <link rel="stylesheet" href="{{ asset('vendor/backpack/overlays/backpack.bold.css') }}">
+    @if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
+        @foreach (config('backpack.base.overlays') as $overlay)
+        <link rel="stylesheet" href="{{ asset($overlay) }}">
+        @endforeach
+    @endif
+
 
     @yield('after_styles')
     @stack('after_styles')

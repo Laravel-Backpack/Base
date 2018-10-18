@@ -36,6 +36,14 @@ return [
     'default_date_format'     => 'j F Y',
     'default_datetime_format' => 'j F Y H:i',
 
+    // Content of the HTML meta robots tag to prevent indexing and link following
+    'meta_robots_content' => 'noindex, nofollow',
+
+    // Overlays - CSS files that change the look and feel of the admin panel
+    'overlays' => [
+        'vendor/backpack/overlays/backpack.bold.css',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Registration Open
