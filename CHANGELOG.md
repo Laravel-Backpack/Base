@@ -27,6 +27,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - ```BackpackUser``` model now picks up relationships from its parent model, ```App\User``` - see [PR #323](https://github.com/Laravel-Backpack/Base/pull/323);
+- two separate files: ```inc/topbar_left_content.blade.php``` and ```inc/topbar_right_content.blade.php``` where the user can specify additional content for the top menu;
 
 ### Removed
 - Laravel 5.5 support;
