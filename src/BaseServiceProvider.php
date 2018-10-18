@@ -70,6 +70,7 @@ class BaseServiceProvider extends ServiceProvider
             'root'   => base_path(),
         ];
 
+        $this->addCustomAuthConfigurationValues();
         $this->registerMiddlewareGroup($this->app->router);
         $this->setupRoutes($this->app->router);
         $this->setupCustomRoutes($this->app->router);
@@ -83,6 +84,43 @@ class BaseServiceProvider extends ServiceProvider
     public function loadHelpers()
     {
         require_once __DIR__.'/helpers.php';
+    }
+
+    /**
+     * Backpack login differs from the standard Laravel login.
+     * As such, Backpack uses its own authentication provider, password broker and guard.
+     *
+     * This method adds those configuration values on top of whatever is in config/auth.php. Developers can overwrite the backpack provider, password broker or guard by adding a provider/broker/guard with the "backpack" name inside their config/auth.php file. Or they can use another provider/broker/guard entirely, by changing the corresponding value inside config/backpack/base.php
+     */
+    public function addCustomAuthConfigurationValues()
+    {
+        // add the backpack_users authentication provider to the configuration
+        app()->config['auth.providers'] = app()->config['auth.providers'] +
+        [
+            'backpack' => [
+                'driver'  => 'eloquent',
+                'model'   => config('backpack.base.user_model_fqn'),
+            ],
+        ];
+
+        // add the backpack_users password broker to the configuration
+        app()->config['auth.passwords'] = app()->config['auth.passwords'] +
+        [
+            'backpack' => [
+                'provider'  => 'backpack',
+                'table'     => 'password_resets',
+                'expire'    => 60,
+            ],
+        ];
+
+        // add the backpack_users guard to the configuration
+        app()->config['auth.guards'] = app()->config['auth.guards'] +
+        [
+            'backpack' => [
+                'driver'   => 'session',
+                'provider' => 'backpack',
+            ],
+        ];
     }
 
     /**
