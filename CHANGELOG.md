@@ -34,6 +34,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - PHP 7.0 support and Travis testing (Laravel 5.6 no longer supports it);
 
 
+## [0.9.11] - 2018-10-18
+
+### Fixed
+- missing translation on password reset emails;
+
+
 ## [0.9.10] - 2018-10-15
 
 ### Fixed
