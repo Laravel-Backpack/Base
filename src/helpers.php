@@ -11,7 +11,7 @@ if (!function_exists('backpack_url')) {
      */
     function backpack_url($path = null)
     {
-        $path = !$path || (substr($path, 1, 1) == '/') ? $path : '/'.$path;
+        $path = !$path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
 
         return url(config('backpack.base.route_prefix', 'admin').$path);
     }
@@ -124,5 +124,27 @@ if (!function_exists('backpack_user')) {
     function backpack_user()
     {
         return backpack_auth()->user();
+    }
+}
+
+if (!function_exists('mb_ucfirst')) {
+    /**
+     * Capitalize the first letter of a string,
+     * even if that string is multi-byte (non-latin alphabet).
+     *
+     * @param string   $string   String to have its first letter capitalized.
+     * @param encoding $encoding Character encoding
+     *
+     * @return string String with first letter capitalized.
+     */
+    function mb_ucfirst($string, $encoding = false)
+    {
+        $encoding = $encoding ? $encoding : mb_internal_encoding();
+
+        $strlen = mb_strlen($string, $encoding);
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, $strlen - 1, $encoding);
+
+        return mb_strtoupper($firstChar, $encoding).$then;
     }
 }

@@ -23,6 +23,44 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.10] - 2018-10-15
+
+### Fixed
+- loading the custom views folder is now done only if it exists, this way fixing conflicts with the ```php artisan view:cache``` command;
+
+
+## [0.9.9] - 2018-09-20
+
+### Added
+- merged #315 - added robots meta and config for it;
+- merged #310 - added ```backpack:base:user``` command that creates a new user from the command line;
+- merged #317 - added customizable CSS overlays;
+
+### Fixed
+- splitting files by new line using preg_split instead of explode; hopefully fixes #299;
+
+## [0.9.8] - 2018-09-05
+
+### Added
+- Laravel 5.7 compatiblity;
+
+### Removed
+- replaced ```or``` blade operator with ```??```;
+
+## [0.9.7] - 2018-08-06
+
+### Added
+- French Canadian language, thanks to @khoude24;
+- ```php artisan backpack:base:version``` command;
+- version constant on the BaseServiceProvider;
+- ```mb_ucfirst()``` helper;
+
+### Fixed
+- #303 - custom route command;
+- #305 - ```backpack_url()``` helper did not work properly with a starting slash;
+- #295 - spaces added to My Account form inputs by accident;
+
+
 ## [0.9.6] - 2018-06-04
 
 ### Added
