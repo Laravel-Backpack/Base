@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [0.9.12] - 2018-10-26
+
+### Fixed
+- merged #326 - using primary key instead of ID for updating account info;
+
+
 ## [0.9.11] - 2018-10-18
 
 ### Fixed
