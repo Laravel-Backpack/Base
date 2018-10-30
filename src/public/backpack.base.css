@@ -96,8 +96,10 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #57549C;
 }
 
-
-
+.main-footer {
+  background: #ecf0f5;
+  border: none;
+}
 
 
 

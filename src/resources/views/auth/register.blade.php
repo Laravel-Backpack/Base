@@ -1,7 +1,7 @@
-@extends('backpack::layout')
+@extends('backpack::layout_guest')
 
 @section('content')
-    <div class="row">
+    <div class="row m-t-90 m-b-90">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-default">
                 <div class="box-header with-border">
@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i> {{ trans('backpack::base.register') }}
+                                    {{ trans('backpack::base.register') }}
                                 </button>
                             </div>
                         </div>

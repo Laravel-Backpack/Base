@@ -1,8 +1,8 @@
-@extends('backpack::layout')
+@extends('backpack::layout_guest')
 
 <!-- Main Content -->
 @section('content')
-    <div class="row">
+    <div class="row m-t-90 m-b-90">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-default">
                 <div class="box-header with-border">

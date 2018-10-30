@@ -39,7 +39,9 @@
       </div>
       <!-- /.content-wrapper -->
 
-      @include('backpack::inc.footer')
+      <footer class="main-footer">
+        @include('backpack::inc.footer')
+      </footer>
     </div>
     <!-- ./wrapper -->
 
@@ -52,6 +54,35 @@
 
     @yield('after_scripts')
     @stack('after_scripts')
+
+    <script>
+        /* Store sidebar state */
+        $('.sidebar-toggle').click(function(event) {
+          event.preventDefault();
+          if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '');
+          } else {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+          }
+        });
+
+        // Set active state on menu element
+        var current_url = "{{ Request::fullUrl() }}";
+        var full_url = current_url+location.search;
+        var $navLinks = $("ul.sidebar-menu li a");
+        // First look for an exact match including the search string
+        var $curentPageLink = $navLinks.filter(
+            function() { return $(this).attr('href') === full_url; }
+        );
+        // If not found, look for the link that starts with the url
+        if(!$curentPageLink.length > 0){
+            $curentPageLink = $navLinks.filter(
+                function() { return $(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')); }
+            );
+        }
+
+        $curentPageLink.parents('li').addClass('active');
+    </script>
 
     <!-- JavaScripts -->
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
