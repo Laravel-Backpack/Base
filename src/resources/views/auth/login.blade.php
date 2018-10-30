@@ -2,19 +2,19 @@
 
 @section('content')
     <div class="row m-t-90 m-b-90">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-4">
             <div class="box box-default">
                 <div class="box-header with-border">
                     <div class="box-title">{{ trans('backpack::base.login') }}</div>
                 </div>
                 <div class="box-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
+                    <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has($username) ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ config('backpack.base.authentication_column_name') }}</label>
+                            <label class="control-label">{{ config('backpack.base.authentication_column_name') }}</label>
 
-                            <div class="col-md-6">
+                            <div>
                                 <input type="text" class="form-control" name="{{ $username }}" value="{{ old($username) }}">
 
                                 @if ($errors->has($username))
@@ -26,9 +26,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('backpack::base.password') }}</label>
+                            <label class="control-label">{{ trans('backpack::base.password') }}</label>
 
-                            <div class="col-md-6">
+                            <div>
                                 <input type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div>
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember"> {{ trans('backpack::base.remember_me') }}
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div>
                                 <button type="submit" class="btn btn-primary">
                                     {{ trans('backpack::base.login') }}
                                 </button>
