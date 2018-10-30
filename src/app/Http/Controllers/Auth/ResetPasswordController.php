@@ -6,7 +6,6 @@ use Backpack\Base\app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-use Alert;
 
 class ResetPasswordController extends Controller
 {
