@@ -58,9 +58,9 @@ return [
         'notice'   => 'If you did not request a password reset, no further action is required.',
     ],
 
-    'step' => 'Step',
-    'confirm_email' => 'Confirm Email',
-    'choose_new_password' => 'Choose New Password',
-    'new_password' => 'New password',
+    'step'                 => 'Step',
+    'confirm_email'        => 'Confirm Email',
+    'choose_new_password'  => 'Choose New Password',
+    'new_password'         => 'New password',
     'confirm_new_password' => 'Confirm new password',
 ];
