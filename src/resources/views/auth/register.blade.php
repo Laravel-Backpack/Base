@@ -1,14 +1,12 @@
 @extends('backpack::layout_guest')
 
 @section('content')
-    <div class="row m-t-90 m-b-90">
+    <div class="row m-t-40">
         <div class="col-md-4 col-md-offset-4">
+            <h3 class="text-center m-b-20">{{ trans('backpack::base.register') }}</h3>
             <div class="box box-default">
-                <div class="box-header with-border">
-                    <div class="box-title">{{ trans('backpack::base.register') }}</div>
-                </div>
                 <div class="box-body">
-                    <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
+                    <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -69,7 +67,7 @@
 
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-block btn-primary">
                                     {{ trans('backpack::base.register') }}
                                 </button>
                             </div>

@@ -9,11 +9,11 @@ if (!function_exists('backpack_url')) {
      *
      * @return string
      */
-    function backpack_url($path = null)
+    function backpack_url($path = null, $parameters = [], $secure = null)
     {
         $path = !$path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
 
-        return url(config('backpack.base.route_prefix', 'admin').$path);
+        return url(config('backpack.base.route_prefix', 'admin').$path, $parameters = [], $secure = null);
     }
 }
 

@@ -1,14 +1,12 @@
 @extends('backpack::layout_guest')
 
 @section('content')
-    <div class="row m-t-90 m-b-90">
+    <div class="row m-t-40">
         <div class="col-md-4 col-md-offset-4">
+            <h3 class="text-center m-b-20">{{ trans('backpack::base.login') }}</h3>
             <div class="box box-default">
-                <div class="box-header with-border">
-                    <div class="box-title">{{ trans('backpack::base.login') }}</div>
-                </div>
                 <div class="box-body">
-                    <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
+                    <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has($username) ? ' has-error' : '' }}">
@@ -51,18 +49,17 @@
 
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-block btn-primary">
                                     {{ trans('backpack::base.login') }}
                                 </button>
-
-                                @if (backpack_users_have_email())
-                                <a class="btn btn-link" href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
-                                @endif
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+            @if (backpack_users_have_email())
+            <div class="text-center m-t-10"><small><a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></small></div>
+            @endif
         </div>
     </div>
 @endsection
