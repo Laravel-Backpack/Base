@@ -32,6 +32,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Fixed
 - Error views now use a layout, so it's easier to customize the design for all error pages.
 - Error views have a background, font and color consistent with the default AdminLTE design.
+- When putting custom routes, we now use ```file()``` instead of ```preg_split()```.
 
 ### Removed
 - Laravel 5.5 support;
