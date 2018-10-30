@@ -27,7 +27,8 @@ class ResetPasswordController extends Controller
     /**
      * Get the path the user should be redirected to after password reset.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return string
      */
     public function redirectTo()
