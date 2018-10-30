@@ -29,9 +29,19 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - ```BackpackUser``` model now picks up relationships from its parent model, ```App\User``` - see [PR #323](https://github.com/Laravel-Backpack/Base/pull/323);
 - two separate files: ```inc/topbar_left_content.blade.php``` and ```inc/topbar_right_content.blade.php``` where the user can specify additional content for the top menu;
 
+### Fixed
+- Error views now use a layout, so it's easier to customize the design for all error pages.
+- Error views have a background, font and color consistent with the default AdminLTE design.
+
 ### Removed
 - Laravel 5.5 support;
 - PHP 7.0 support and Travis testing (Laravel 5.6 no longer supports it);
+
+
+## [0.9.12] - 2018-10-26
+
+### Fixed
+- merged #326 - using primary key instead of ID for updating account info;
 
 
 ## [0.9.11] - 2018-10-18
