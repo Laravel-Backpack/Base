@@ -47,10 +47,10 @@ class AddCustomRouteContent extends Command
         $code = $this->argument('code');
 
         if ($disk->exists($path)) {
-            $old_file_content = Storage::disk($disk_name)->get($path);
+            $old_file_path = $disk->path($path);
 
             // insert the given code before the file's last line
-            $file_lines = preg_split('/\r\n|\r|\n/', $old_file_content);
+            $file_lines = file($old_file_path, FILE_IGNORE_NEW_LINES);
             $end_line_number = $this->customRoutesFileEndLine($file_lines);
             $file_lines[$end_line_number + 1] = $file_lines[$end_line_number];
             $file_lines[$end_line_number] = '    '.$code;
