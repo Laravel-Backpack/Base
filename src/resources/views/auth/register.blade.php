@@ -75,6 +75,10 @@
                     </form>
                 </div>
             </div>
+            @if (backpack_users_have_email())
+                <div class="text-center m-t-10"><a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
+            @endif
+            <div class="text-center m-t-10"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a></div>
         </div>
     </div>
 @endsection

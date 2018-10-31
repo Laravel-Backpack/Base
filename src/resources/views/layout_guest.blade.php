@@ -9,12 +9,6 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper no-margin no-padding">
 
-        <div class="row">
-          <div class="col-md-12">
-            @include('backpack::inc.menu')
-          </div>
-        </div>
-
         <!-- Content Header (Page header) -->
          @yield('header')
 

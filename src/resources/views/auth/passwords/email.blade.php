@@ -51,6 +51,14 @@
                 </div>
                 <!-- /.tab-content -->
               </div>
+
+              <div class="text-center m-t-10">
+                <a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a>
+
+                @if (config('backpack.base.registration_open'))
+                / <a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a>
+                @endif
+              </div>
         </div>
     </div>
 @endsection
