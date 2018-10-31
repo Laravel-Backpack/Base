@@ -28,7 +28,7 @@
       </div>
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer m-l-0">
+      <footer class="main-footer m-l-0 text-sm">
         @include('backpack::inc.footer')
       </footer>
     </div>
