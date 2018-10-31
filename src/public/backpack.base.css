@@ -904,3 +904,62 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     left: 50%;
     position: absolute;
   }
+
+
+  /*  nav-steps - used for backpack password reset process  */
+
+.nav-steps-wrapper {
+  display: table;
+  margin: 0 auto;
+}
+
+.nav-steps {
+  background: #ecf0f5;
+  border-bottom: 1px solid #f4f4f4;
+ }
+
+.nav-steps>li>a,
+.nav-steps>li>a:hover,
+.nav-steps>li>a:focus
+.nav-steps>li.active>a:hover,
+.nav-steps>li.active>a:focus {
+   background: transparent!important;
+   border: none!important;
+   color: inherit;
+ }
+
+.nav-steps li a strong {
+    background: #f4f4f4;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    text-align: center;
+    line-height: 75px;
+    vertical-align: middle;
+    border-radius: 45px;
+ }
+
+.nav-steps li.active a strong {
+    background: #3c8dbc;
+    color: white;
+}
+
+body[class^='skin-purple'] .nav-steps li.active a strong {
+  background: #57549C;
+}
+
+.nav-steps li.active a {
+    background-color: #ecf0f5;
+    border: none;
+    box-shadow: none;
+}
+
+.nav-steps li {
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+}
