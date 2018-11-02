@@ -12,7 +12,7 @@
         height: 100%;
         color: #B0BEC5;
         display: table;
-        font-weight: 100;
+        font-weight: 400;
         font-family: 'Source Sans Pro', sans-serif;
         background-color: #ecf0f5;
       }
@@ -29,8 +29,7 @@
       }
 
       .error_number {
-        font-size: 156px;
-        font-weight: 400;
+        font-size: 196px;
       }
 
       .title {
@@ -38,7 +37,7 @@
       }
 
       .description {
-        font-size: 24px;
+        font-size: 22px;
       }
     </style>
   </head>
