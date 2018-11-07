@@ -1,16 +1,5 @@
 <?php
 
-// Please note it is recommended to use the subtag [fr-CA], not [fr_CA]
-// That is the one formalized by the W3C in the IANA Language Subtag Registry
-// - https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-// - https://www.w3.org/International/questions/qa-choosing-language-tags
-//
-// Also, that is the one used by the most popular Laravel translation package
-// - https://github.com/caouecs/Laravel-lang/tree/master/src
-//
-// Backpack provides translations for both subtags, for backwards compatibility.
-// But this will change at some point, and we will only support [fr-CA].
-
 return [
 
     /*
