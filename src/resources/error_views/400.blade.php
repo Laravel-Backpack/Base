@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  400
-@endsection
+@php
+  $error_number = 400;
+@endphp
 
 @section('title')
   Bad request.

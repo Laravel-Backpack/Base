@@ -1,63 +1,61 @@
-<html>
-  <head>
-    <title>{{ config('backpack.base.project_name') }} Error @yield('error_number')</title>
+@extends(backpack_user() && (starts_with(\Request::path(), config('backpack.base.route_prefix'))) ? 'backpack::layout' : 'backpack::layout_guest')
+{{-- show error using sidebar layout if looged in AND on an admin page; otherwise use a blank page --}}
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+@php
+  $title = 'Error '.$error_number;
+@endphp
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        color: #B0BEC5;
-        display: table;
-        font-weight: 100;
-        font-family: 'Source Sans Pro', sans-serif;
-        background-color: #ecf0f5;
-      }
+@section('after_styles')
+  <style>
+    .error_number {
+      font-size: 156px;
+      font-weight: 600;
+      color: #dd4b39;
+      line-height: 100px;
+    }
+    .error_number small {
+      font-size: 56px;
+      font-weight: 700;
+    }
 
-      .container {
-        text-align: center;
-        display: table-cell;
-        vertical-align: middle;
-      }
+    .error_number hr {
+      margin-top: 60px;
+      margin-bottom: 0;
+      border-top: 5px solid #dd4b39;
+      width: 50px;
+    }
 
-      .content {
-        text-align: center;
-        display: inline-block;
-      }
+    .error_title {
+      margin-top: 40px;
+      font-size: 36px;
+      color: #B0BEC5;
+      font-weight: 400;
+    }
 
-      .error_number {
-        font-size: 156px;
-        font-weight: 400;
-      }
+    .error_description {
+      font-size: 24px;
+      color: #B0BEC5;
+      font-weight: 400;
+    }
+  </style>
+@endsection
 
-      .title {
-        font-size: 36px;
-      }
-
-      .description {
-        font-size: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <div class="error_number">
-          @yield('error_number')
-        </div>
-        <div class="title">
-          @yield('title')
-        </div>
-        <div class="description">
-          <br>
-          <small>
-            @yield('description')
-         </small>
-       </div>
-      </div>
+@section('content')
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="error_number m-t-80">
+      <small>ERROR</small><br>
+      {{ $error_number }}
+      <hr>
     </div>
-  </body>
-</html>
+    <div class="error_title">
+      @yield('title')
+    </div>
+    <div class="error_description">
+      <small>
+        @yield('description')
+     </small>
+    </div>
+  </div>
+</div>
+@endsection

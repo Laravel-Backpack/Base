@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  404
-@endsection
+@php
+  $error_number = 404;
+@endphp
 
 @section('title')
   Page not found.

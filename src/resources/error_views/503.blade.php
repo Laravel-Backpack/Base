@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  503
-@endsection
+@php
+  $error_number = 503;
+@endphp
 
 @section('title')
   It's not you, it's me.

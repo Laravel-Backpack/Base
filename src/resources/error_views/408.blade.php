@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  408
-@endsection
+@php
+  $error_number = 408;
+@endphp
 
 @section('title')
   Request timeout.

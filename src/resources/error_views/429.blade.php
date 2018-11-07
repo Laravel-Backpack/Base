@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  429
-@endsection
+@php
+  $error_number = 429;
+@endphp
 
 @section('title')
   Too many requests.

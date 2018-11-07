@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  405
-@endsection
+@php
+  $error_number = 405;
+@endphp
 
 @section('title')
   Method not allowed.

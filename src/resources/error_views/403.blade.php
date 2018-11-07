@@ -1,8 +1,8 @@
 @extends('errors.layout')
 
-@section('error_number')
-  403
-@endsection
+@php
+  $error_number = 403;
+@endphp
 
 @section('title')
   Forbidden.
