@@ -11,7 +11,6 @@
 // Backpack provides translations for both subtags, for backwards compatibility.
 // But this will change at some point, and we will only support [pt-BR].
 
-
 return [
 
     /*
