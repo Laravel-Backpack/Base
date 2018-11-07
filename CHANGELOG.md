@@ -23,16 +23,26 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
-## [0.10.0] - 2018-10-xx
+## [1.0.0] - 2018-10-xx
 
 ### Added
 - ```BackpackUser``` model now picks up relationships from its parent model, ```App\User``` - see [PR #323](https://github.com/Laravel-Backpack/Base/pull/323);
 - two separate files: ```inc/topbar_left_content.blade.php``` and ```inc/topbar_right_content.blade.php``` where the user can specify additional content for the top menu;
+- added a layout_guest which has no sidebar and no top menu;
 
 ### Fixed
 - Error views now use a layout, so it's easier to customize the design for all error pages.
 - Error views have a background, font and color consistent with the default AdminLTE design.
 - When putting custom routes, we now use ```file()``` instead of ```preg_split()```.
+- default CSS file now uses body.skin-purple as a selector, to fix the paint glitch, where buttons and other things were shown blue, then changed to purple, when using the purple skin;
+- now using jquery and font-awesome from adminlte package instead of CDN;
+- language folders like da_DK, fr_CA and pt_br have been duplicated into their standardized form (da-DK, fr-CA and pt-BR); introduced notice that the old folders will be deprecated;
+- password reset page now pre-populates the email field;
+- the standard footer is now transparent, it is not a primary piece of content, it shouldn’t stand out;
+- auth views are now prettier (see #330);
+- backpack_url() can now take parameters, just like url();
+- auth view (login, register, reset password) use this new layout with no sidebar;
+- split layout into multiple views, so it’s easier to customize just one part of it;
 
 ### Removed
 - Laravel 5.5 support;
