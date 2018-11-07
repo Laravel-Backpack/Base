@@ -4,9 +4,12 @@ namespace Backpack\Base\app\Models;
 
 use App\User;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Tightenco\Parental\HasParentModel;
 
 class BackpackUser extends User
 {
+    use HasParentModel;
+
     protected $table = 'users';
 
     /**
@@ -22,18 +25,12 @@ class BackpackUser extends User
     }
 
     /**
-     * Build the mail representation of the notification.
+     * Get the e-mail address where password reset links are sent.
      *
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @return string
      */
-    public function toMail($notifiable)
+    public function getEmailForPasswordReset()
     {
-        return (new MailMessage())
-            ->line([
-                trans('backpack.base.password_reset.line_1'),
-                trans('backpack.base.password_reset.line_2'),
-            ])
-            ->action(trans('backpack.base.password_reset.button'), url(config('backpack.base.route_prefix').'/password/reset', $this->token))
-            ->line(trans('backpack.base.password_reset.notice'));
+        return $this->email;
     }
 }

@@ -22,7 +22,7 @@ class ResetPasswordNotification extends ResetPassword
                 trans('backpack::base.password_reset.line_1'),
                 trans('backpack::base.password_reset.line_2'),
             ])
-            ->action(trans('backpack::base.password_reset.button'), url(config('backpack.base.route_prefix').'/password/reset', $this->token))
+            ->action(trans('backpack::base.password_reset.button'), route('backpack.auth.password.reset.token', $this->token).'?email='.urlencode($notifiable->getEmailForPasswordReset()))
             ->line(trans('backpack::base.password_reset.notice'));
     }
 }
