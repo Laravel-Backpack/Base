@@ -87,12 +87,12 @@ return [
     */
 
     // Fully qualified namespace of the User model
-    'user_model_fqn' => \Backpack\Base\app\Models\BackpackUser::class,
+    'user_model_fqn' => App\Models\BackpackUser::class,
 
     // The classes for the middleware to check if the visitor is an admin
     // Can be a single class or an array of clases
     'middleware_class' => [
-        \Backpack\Base\app\Http\Middleware\CheckIfAdmin::class,
+        App\Http\Middleware\CheckIfAdmin::class,
     ],
 
     // Alias for that middleware
