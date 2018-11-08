@@ -43,7 +43,7 @@ class Install extends Command
      */
     public function handle()
     {
-        $this->progressBar = $this->output->createProgressBar(6);
+        $this->progressBar = $this->output->createProgressBar(8);
         $this->progressBar->start();
         $this->info(" Backpack\Base installation started. Please wait...");
         $this->progressBar->advance();
@@ -62,6 +62,12 @@ class Install extends Command
 
         $this->line(" Generating users table (using Laravel's default migrations)");
         $this->executeProcess('php artisan migrate');
+
+        $this->line(" Creating App\Models\BackpackUser.php");
+        $this->executeProcess('php artisan backpack:base:publish-user-model');
+
+        $this->line(" Creating App\Http\Middleware\CheckIfAdmin.php");
+        $this->executeProcess('php artisan backpack:base:publish-middleware');
 
         $this->progressBar->finish();
         $this->info(" Backpack\Base installation finished.");
