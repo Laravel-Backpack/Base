@@ -70,8 +70,9 @@ class PublishBackpackUserModel extends GeneratorCommand
      * Replace the namespace for the given stub.
      * Replace the User model, if it was moved to App\Models\User.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub
+     * @param string $name
+     *
      * @return $this
      */
     protected function makeReplacements(&$stub)

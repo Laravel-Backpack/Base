@@ -16,8 +16,9 @@ class CheckIfAdmin
      * change the contents of this method to check that the logged in user
      * is an admin, and not a regular user.
      *
-     * @param  [type]  $user [description]
-     * @return boolean       [description]
+     * @param [type] $user [description]
+     *
+     * @return bool [description]
      */
     private function checkIfUserIsAdmin($user)
     {
@@ -28,8 +29,9 @@ class CheckIfAdmin
     /**
      * Answer to unauthorized access request.
      *
-     * @param  [type] $request [description]
-     * @return [type]          [description]
+     * @param [type] $request [description]
+     *
+     * @return [type] [description]
      */
     private function respondToUnauthorizedRequest($request)
     {
