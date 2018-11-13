@@ -4,7 +4,7 @@
     <div class="row m-t-40">
         <div class="col-md-4 col-md-offset-4">
             <h3 class="text-center m-b-20">{{ trans('backpack::base.register') }}</h3>
-            <div class="panel">
+            <div class="box">
                 <div class="box-body">
                     <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}

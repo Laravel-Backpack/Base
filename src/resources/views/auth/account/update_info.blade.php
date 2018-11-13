@@ -46,7 +46,7 @@
 
             {!! csrf_field() !!}
 
-            <div class="panel padding-10">
+            <div class="box padding-10">
 
                 <div class="box-body backpack-profile-form">
 
