@@ -94,6 +94,7 @@ return [
     // Can be a single class or an array of clases
     'middleware_class' => [
         \Backpack\Base\app\Http\Middleware\CheckIfAdmin::class,
+        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ],
 
     // Alias for that middleware
