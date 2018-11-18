@@ -31,6 +31,10 @@ return [
     'skin' => 'skin-purple',
     // Options: skin-black, skin-blue, skin-purple, skin-red, skin-yellow, skin-green, skin-blue-light, skin-black-light, skin-purple-light, skin-green-light, skin-red-light, skin-yellow-light
 
+    // Sidebar/Navbar layout config
+    // Options: fixed
+    'layout' => '',
+
     // Date & Datetime Format Syntax: https://github.com/jenssegers/date#usage
     // (same as Carbon)
     'default_date_format'     => 'j F Y',
