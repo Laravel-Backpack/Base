@@ -15,7 +15,7 @@ class CreateUser extends Command
                             {--N|name= : The name of the new user}
                             {--E|email= : The user\'s email address}
                             {--P|password= : User\'s password}
-                            {--encrypt=true : Is the user\'s password already encrypted}';
+                            {--encrypt=true : Encrypt user\'s password if it\'s plain text ( true by default )}';
 
     /**
      * The console command description.
