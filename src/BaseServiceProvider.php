@@ -16,6 +16,8 @@ class BaseServiceProvider extends ServiceProvider
         \Backpack\Base\app\Console\Commands\AddCustomRouteContent::class,
         \Backpack\Base\app\Console\Commands\Version::class,
         \Backpack\Base\app\Console\Commands\CreateUser::class,
+        \Backpack\Base\app\Console\Commands\PublishBackpackUserModel::class,
+        \Backpack\Base\app\Console\Commands\PublishBackpackMiddleware::class,
     ];
 
     /**
