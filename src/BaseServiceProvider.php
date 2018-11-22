@@ -224,8 +224,8 @@ class BaseServiceProvider extends ServiceProvider
 
         // sidebar_content view, which is the only view most people need to overwrite
         $backpack_menu_contents_view = [
-            __DIR__.'/resources/views/inc/sidebar_content.blade.php' => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php'),
-            __DIR__.'/resources/views/inc/topbar_left_content.blade.php' => resource_path('views/vendor/backpack/base/inc/topbar_left_content.blade.php'),
+            __DIR__.'/resources/views/inc/sidebar_content.blade.php'      => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php'),
+            __DIR__.'/resources/views/inc/topbar_left_content.blade.php'  => resource_path('views/vendor/backpack/base/inc/topbar_left_content.blade.php'),
             __DIR__.'/resources/views/inc/topbar_right_content.blade.php' => resource_path('views/vendor/backpack/base/inc/topbar_right_content.blade.php'),
         ];
         $backpack_custom_routes_file = [__DIR__.$this->customRoutesFilePath => base_path($this->customRoutesFilePath)];
