@@ -48,3 +48,14 @@ body {
 .pace .pace-activity {
 	display: none;
 }
+
+.nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
+	background: #f7f7f7;
+	border: none;
+}
+
+
+.nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
+	background: #f7f7f7;
+	border: none;
+}

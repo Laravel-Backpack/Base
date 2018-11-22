@@ -41,7 +41,8 @@ return [
 
     // Overlays - CSS files that change the look and feel of the admin panel
     'overlays' => [
-        'vendor/backpack/overlays/backpack.bold.css',
+        'vendor/backpack/base/backpack.bold.css',
+        // 'vendor/backpack/base/backpack.content.is.king.css',
     ],
 
     /*
@@ -93,6 +94,7 @@ return [
     // Can be a single class or an array of clases
     'middleware_class' => [
         App\Http\Middleware\CheckIfAdmin::class,
+        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ],
 
     // Alias for that middleware

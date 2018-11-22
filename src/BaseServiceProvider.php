@@ -225,7 +225,11 @@ class BaseServiceProvider extends ServiceProvider
         $backpack_config_files = [__DIR__.'/config' => config_path()];
 
         // sidebar_content view, which is the only view most people need to overwrite
-        $backpack_sidebar_contents_view = [__DIR__.'/resources/views/inc/sidebar_content.blade.php' => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php')];
+        $backpack_menu_contents_view = [
+            __DIR__.'/resources/views/inc/sidebar_content.blade.php' => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php'),
+            __DIR__.'/resources/views/inc/topbar_left_content.blade.php' => resource_path('views/vendor/backpack/base/inc/topbar_left_content.blade.php'),
+            __DIR__.'/resources/views/inc/topbar_right_content.blade.php' => resource_path('views/vendor/backpack/base/inc/topbar_right_content.blade.php'),
+        ];
         $backpack_custom_routes_file = [__DIR__.$this->customRoutesFilePath => base_path($this->customRoutesFilePath)];
 
         // calculate the path from current directory to get the vendor path
@@ -240,7 +244,7 @@ class BaseServiceProvider extends ServiceProvider
             $backpack_public_assets,
             // $backpack_lang_files,
             $backpack_config_files,
-            $backpack_sidebar_contents_view,
+            $backpack_menu_contents_view,
             $backpack_custom_routes_file,
             $adminlte_assets,
             $gravatar_assets
@@ -250,7 +254,7 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes($backpack_config_files, 'config');
         $this->publishes($backpack_lang_files, 'lang');
         $this->publishes($backpack_base_views, 'views');
-        $this->publishes($backpack_sidebar_contents_view, 'sidebar_content');
+        $this->publishes($backpack_menu_contents_view, 'menu_contents');
         $this->publishes($error_views, 'errors');
         $this->publishes($backpack_public_assets, 'public');
         $this->publishes($backpack_custom_routes_file, 'custom_routes');

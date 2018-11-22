@@ -4,8 +4,6 @@
 	    <h3 class="profile-username text-center">{{ backpack_auth()->user()->name }}</h3>
 	</div>
 
-	<hr class="m-t-0 m-b-0">
-
 	<ul class="nav nav-pills nav-stacked">
 
 	  <li role="presentation"

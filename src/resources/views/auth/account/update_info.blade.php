@@ -46,7 +46,7 @@
 
             {!! csrf_field() !!}
 
-            <div class="box">
+            <div class="box padding-10">
 
                 <div class="box-body backpack-profile-form">
 
@@ -84,12 +84,10 @@
                         <input required class="form-control" type="{{ backpack_authentication_column()=='email'?'email':'text' }}" name="{{ $field }}" value="{{ old($field) ? old($field) : $user->$field }}">
                     </div>
 
-                </div>
-
-                <div class="box-footer">
-
-                    <button type="submit" class="btn btn-success"><span class="ladda-label"><i class="fa fa-save"></i> {{ trans('backpack::base.save') }}</span></button>
-                    <a href="{{ backpack_url() }}" class="btn btn-default"><span class="ladda-label">{{ trans('backpack::base.cancel') }}</span></a>
+                    <div class="form-group m-b-0">
+                        <button type="submit" class="btn btn-success"><span class="ladda-label"><i class="fa fa-save"></i> {{ trans('backpack::base.save') }}</span></button>
+                        <a href="{{ backpack_url() }}" class="btn btn-default"><span class="ladda-label">{{ trans('backpack::base.cancel') }}</span></a>
+                    </div>
 
                 </div>
             </div>

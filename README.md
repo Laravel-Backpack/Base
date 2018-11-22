@@ -20,7 +20,7 @@ Laravel BackPack's central package, which includes:
 
 ![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
-## Install on Laravel 5.6 or 5.5
+## Install on Laravel 5.7, 5.6 or 5.5
 
 1) Run in your terminal:
 
