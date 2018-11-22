@@ -23,7 +23,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
-## [1.0.0] - 2018-10-xx
+## [1.0.0] - 2018-11-22
 
 ### Added
 - ```BackpackUser``` model now picks up relationships from its parent model, ```App\User``` - see [PR #323](https://github.com/Laravel-Backpack/Base/pull/323);
