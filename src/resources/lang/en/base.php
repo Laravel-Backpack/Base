@@ -61,6 +61,5 @@ return [
     'step'                 => 'Step',
     'confirm_email'        => 'Confirm Email',
     'choose_new_password'  => 'Choose New Password',
-    'new_password'         => 'New password',
     'confirm_new_password' => 'Confirm new password',
 ];
