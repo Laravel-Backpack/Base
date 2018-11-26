@@ -21,8 +21,11 @@
                     <div class="box-title">{{ trans('backpack::base.login_status') }}</div>
                 </div>
 
-                <div class="box-body">{{ trans('backpack::base.logged_in') }}</div>
+                <div class="box-body">
+                  {{ trans('backpack::base.logged_in') }}
+                </div>
             </div>
         </div>
     </div>
+
 @endsection

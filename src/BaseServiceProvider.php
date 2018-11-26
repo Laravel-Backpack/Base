@@ -72,6 +72,8 @@ class BaseServiceProvider extends ServiceProvider
             'root'   => base_path(),
         ];
 
+
+        $this->allowCustomGuardDefinitionInRouteGroups();
         $this->addCustomAuthConfigurationValues();
         $this->registerMiddlewareGroup($this->app->router);
         $this->setupRoutes($this->app->router);
@@ -86,6 +88,26 @@ class BaseServiceProvider extends ServiceProvider
     public function loadHelpers()
     {
         require_once __DIR__.'/helpers.php';
+    }
+
+    /**
+     * In route groups you should be able to define 'guard' just like middleware,
+     * namespace, prefix and what not. When specified, Auth will use that guard instead
+     * of the default Laravel guard in config/auth.php
+     */
+    public function allowCustomGuardDefinitionInRouteGroups()
+    {
+        $this->app['router']->matched(function (\Illuminate\Routing\Events\RouteMatched $e) {
+            $route = $e->route;
+            if (!array_has($route->getAction(), 'guard')) {
+                return;
+            }
+            $routeGuard = array_get($route->getAction(), 'guard');
+            $this->app['auth']->resolveUsersUsing(function ($guard = null) use ($routeGuard) {
+                return $this->app['auth']->guard($routeGuard)->user();
+            });
+            $this->app['auth']->setDefaultDriver($routeGuard);
+        });
     }
 
     /**

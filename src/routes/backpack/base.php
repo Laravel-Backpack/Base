@@ -14,6 +14,7 @@ Route::group(
 [
     'namespace'  => 'Backpack\Base\app\Http\Controllers',
     'middleware' => 'web',
+    'guard'      => config('backpack.base.guard'),
     'prefix'     => config('backpack.base.route_prefix'),
 ],
 function () {
