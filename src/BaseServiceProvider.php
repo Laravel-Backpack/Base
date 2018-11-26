@@ -72,7 +72,6 @@ class BaseServiceProvider extends ServiceProvider
             'root'   => base_path(),
         ];
 
-
         $this->allowCustomGuardDefinitionInRouteGroups();
         $this->addCustomAuthConfigurationValues();
         $this->registerMiddlewareGroup($this->app->router);
@@ -93,7 +92,7 @@ class BaseServiceProvider extends ServiceProvider
     /**
      * In route groups you should be able to define 'guard' just like middleware,
      * namespace, prefix and what not. When specified, Auth will use that guard instead
-     * of the default Laravel guard in config/auth.php
+     * of the default Laravel guard in config/auth.php.
      */
     public function allowCustomGuardDefinitionInRouteGroups()
     {
