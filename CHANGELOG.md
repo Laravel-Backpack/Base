@@ -22,6 +22,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 -------
+## [1.0.1] - 2018-11-26
+
+### Added
+- LV translation fixes thanks to [tomsb](https://github.com/tomsb);
+
 
 ## [1.0.0] - 2018-11-22
 
