@@ -22,6 +22,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 -------
+
+## [1.0.2] - 2018-11-29
+
+### Added
+- #345 - ```UseBackpackAuthGuardInsteadOfDefaultAuthGuard``` middleware, which allows developer to use ```@can``` statements inside backpack routes;
+
+
+
 ## [1.0.1] - 2018-11-26
 
 ### Added
