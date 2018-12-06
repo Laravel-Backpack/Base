@@ -39,7 +39,7 @@
       </div>
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer text-sm">
+      <footer class="main-footer text-sm clearfix">
         @include('backpack::inc.footer')
       </footer>
     </div>
