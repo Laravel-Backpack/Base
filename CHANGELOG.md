@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+
+## [1.0.3] - 2018-12-06
+
+### Added
+- merged #348 fixes #342  - ability to hide both developer name and powered by in footer;
+
+
 ## [1.0.2] - 2018-11-29
 
 ### Added
