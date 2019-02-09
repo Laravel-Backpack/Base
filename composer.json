@@ -22,7 +22,7 @@
         "prologue/alerts": "^0.4.1",
         "jenssegers/date": "^3.2",
         "creativeorange/gravatar": "~1.0",
-        "tightenco/parental": "0.5"
+        "tightenco/parental": "0.6"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
