@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "almasaeed2010/AdminLTE" : "2.4.*",
+        "almasaeed2010/AdminLTE" : "2.4.9^",
         "laravel/framework": "5.6.*|5.7.*|5.8.*",
         "prologue/alerts": "^0.4.1",
         "creativeorange/gravatar": "~1.0"
