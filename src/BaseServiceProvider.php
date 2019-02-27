@@ -175,15 +175,6 @@ class BaseServiceProvider extends ServiceProvider
         // register the helper functions
         $this->loadHelpers();
 
-        // register its dependencies
-        $this->app->register(\Prologue\Alerts\AlertsServiceProvider::class);
-        $this->app->register(\Creativeorange\Gravatar\GravatarServiceProvider::class);
-
-        // register their aliases
-        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-        $loader->alias('Alert', \Prologue\Alerts\Facades\Alert::class);
-        $loader->alias('Gravatar', \Creativeorange\Gravatar\Facades\Gravatar::class);
-
         // register the services that are only used for development
         if ($this->app->environment() == 'local') {
             if (class_exists('Laracasts\Generators\GeneratorsServiceProvider')) {
