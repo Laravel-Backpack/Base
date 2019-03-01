@@ -48,12 +48,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Portuguese translation;
 
 
-## [1.0.4] - 2018-12-10
-
-### Fixed
-- Portuguese translation;
-
-
 ## [1.0.3] - 2018-12-06
 
 ### Added
