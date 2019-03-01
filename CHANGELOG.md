@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.2] - 2019-03-01
+
+### Fixed
+- Carbon dependency;
+
+
 ## [1.1.1] - 2019-03-01
 
 ### Added
