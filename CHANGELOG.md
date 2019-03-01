@@ -23,7 +23,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
-## [1.1.0] - 2019-03-01
+## [1.1.1] - 2019-03-01
 
 ### Added
 - Laravel 5.8 support;
