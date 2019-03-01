@@ -23,6 +23,30 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.0] - 2019-03-01
+
+### Added
+- Laravel 5.8 support;
+
+### Fixed
+- Bootstrap was forced to upgrade to 3.4.1 by using a CDN, so that everyone gets the new XSS security vulnerability fix, and the upgrade process is smooth;
+
+### Removed
+- ```Tightenco\Parental``` dependency; the trait we were using is now included as ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel;```;
+
+**Upgrade guide:**
+- Upgrade to Laravel 5.8 or do ```composer require backpack/base:"1.1.*"
+- in your ```App\Models\BackpackUser``` instead of ```Tightenco\Parental\HasParent```, please use ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel```; [here's the diff](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-f075b83ebb2b1ef3ba84dec14b395607);
+- if you've overwritten ```inc/head.blade.php``` or ```inc/scripts.blade.php```, please make sure you [use the newest version of Bootstrap](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-96ac3ea4d0cb85053acf44e3772eb5f1); they've fixed a security vulnerability (XSS);
+
+
+----
+
+## [1.0.4] - 2018-12-10
+
+### Fixed
+- Portuguese translation;
+
 
 ## [1.0.4] - 2018-12-10
 
