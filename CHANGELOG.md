@@ -32,11 +32,15 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Bootstrap was forced to upgrade to 3.4.1 by using a CDN, so that everyone gets the new XSS security vulnerability fix, and the upgrade process is smooth;
 
 ### Removed
+- ```jenssegers/date``` dependency since ```nesbot/carbon``` v2 can now do the same thing;
 - ```Tightenco\Parental``` dependency; the trait we were using is now included as ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel;```;
+- Laravel 5.7 support;
+- Laravel 5.6 support;
 
 **Upgrade guide:**
-- Upgrade to Laravel 5.8 or do ```composer require backpack/base:"1.1.*"
+- Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
 - in your ```App\Models\BackpackUser``` instead of ```Tightenco\Parental\HasParent```, please use ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel```; [here's the diff](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-f075b83ebb2b1ef3ba84dec14b395607);
+- in your ```app/config/backpack/base.php``` please change your ```default_date_format``` and ```default_datetime_format``` to ```Do MMMM YYYY``` and ```Do MMMM YYYY, HH:mm``` respectively;
 - if you've overwritten ```inc/head.blade.php``` or ```inc/scripts.blade.php```, please make sure you [use the newest version of Bootstrap](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-96ac3ea4d0cb85053acf44e3772eb5f1); they've fixed a security vulnerability (XSS);
 
 
