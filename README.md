@@ -73,18 +73,6 @@ If you need to modify how this works in a project:
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Todos
-
-// TODO - instruct developer on how to modify/extend the AuthController and PasswordController and/or provide example
-
-## Testing
-
-// TODO
-
-``` bash
-$ composer test
-```
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
