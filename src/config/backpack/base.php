@@ -31,9 +31,9 @@ return [
     'skin' => 'skin-purple',
     // Options: skin-black, skin-blue, skin-purple, skin-red, skin-yellow, skin-green, skin-blue-light, skin-black-light, skin-purple-light, skin-green-light, skin-red-light, skin-yellow-light
 
-    // Date & Datetime default formats (in ISO format, same as Carbon and Moment.js)
-    'default_date_format'     => 'Do MMMM YYYY',
-    'default_datetime_format' => 'Do MMMM YYYY, HH:mm',
+    // Date & Datetime Format Syntax: https://github.com/jenssegers/date#usage
+    'default_date_format'     => 'j F Y',
+    'default_datetime_format' => 'j F Y H:i',
 
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
