@@ -1,0 +1,61 @@
+/* ------------------------------------------ */
+/* ------- Backpack Bold Overlay ------------ */
+/* ------------------------------------------ */
+/* 	This file brings some subjective improvements to the AdminLTE style. Use this file or not - it's a matter of preference. */
+
+.sidebar-menu>li>a>.fa,
+.sidebar-menu>li>a>.glyphicon,
+.sidebar-menu>li>a>.ion {
+	margin-right: 5px;
+}
+
+body[class^='skin-'] .sidebar-menu>li>a {
+	border-left: 2px solid transparent;
+}
+
+.skin-purple .sidebar-menu>li.header {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.content-header {
+	padding: 35px 15px 0px 15px;
+}
+.content-header>h1 {
+	font-size: 32px;
+	font-weight: 200;
+}
+.content-header>.breadcrumb {
+	top: 5px;
+}
+.user-panel {
+	padding: 20px 10px 20px 10px;
+}
+
+.btn {
+	font-weight: 300;
+}
+
+body {
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.logo-lg b {
+	font-weight: 400;
+}
+
+.pace .pace-activity {
+	display: none;
+}
+
+.nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
+	background: #f7f7f7;
+	border: none;
+}
+
+
+.nav-stacked>li.active>a, .nav-stacked>li.active>a:hover {
+	background: #f7f7f7;
+	border: none;
+}

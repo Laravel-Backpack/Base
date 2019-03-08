@@ -21,6 +21,336 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+-------
+
+## [1.1.2] - 2019-03-01
+
+### Fixed
+- Carbon dependency;
+
+
+## [1.1.1] - 2019-03-01
+
+### Added
+- Laravel 5.8 support;
+
+### Fixed
+- Bootstrap was forced to upgrade to 3.4.1 by using a CDN, so that everyone gets the new XSS security vulnerability fix, and the upgrade process is smooth;
+
+### Removed
+- ```jenssegers/date``` dependency since ```nesbot/carbon``` v2 can now do the same thing;
+- ```Tightenco\Parental``` dependency; the trait we were using is now included as ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel;```;
+- Laravel 5.7 support;
+- Laravel 5.6 support;
+
+**Upgrade guide:**
+- Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
+- in your ```App\Models\BackpackUser``` instead of ```Tightenco\Parental\HasParent```, please use ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel```; [here's the diff](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-f075b83ebb2b1ef3ba84dec14b395607);
+- in your ```app/config/backpack/base.php``` please change your ```default_date_format``` and ```default_datetime_format``` to ```Do MMMM YYYY``` and ```Do MMMM YYYY, HH:mm``` respectively;
+- if you've overwritten ```inc/head.blade.php``` or ```inc/scripts.blade.php```, please make sure you [use the newest version of Bootstrap](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-96ac3ea4d0cb85053acf44e3772eb5f1); they've fixed a security vulnerability (XSS);
+
+
+----
+
+## [1.0.4] - 2018-12-10
+
+### Fixed
+- Portuguese translation;
+
+
+## [1.0.3] - 2018-12-06
+
+### Added
+- merged #348 fixes #342  - ability to hide both developer name and powered by in footer;
+
+
+## [1.0.2] - 2018-11-29
+
+### Added
+- #345 - ```UseBackpackAuthGuardInsteadOfDefaultAuthGuard``` middleware, which allows developer to use ```@can``` statements inside backpack routes;
+
+
+
+## [1.0.1] - 2018-11-26
+
+### Added
+- LV translation fixes thanks to [tomsb](https://github.com/tomsb);
+
+
+## [1.0.0] - 2018-11-22
+
+### Added
+- ```BackpackUser``` model now picks up relationships from its parent model, ```App\User``` - see [PR #323](https://github.com/Laravel-Backpack/Base/pull/323);
+- two separate files: ```inc/topbar_left_content.blade.php``` and ```inc/topbar_right_content.blade.php``` where the user can specify additional content for the top menu;
+- added a layout_guest which has no sidebar and no top menu;
+
+### Fixed
+- Error views now use a layout, so it's easier to customize the design for all error pages.
+- Error views have a background, font and color consistent with the default AdminLTE design.
+- When putting custom routes, we now use ```file()``` instead of ```preg_split()```.
+- default CSS file now uses body.skin-purple as a selector, to fix the paint glitch, where buttons and other things were shown blue, then changed to purple, when using the purple skin;
+- now using jquery and font-awesome from adminlte package instead of CDN;
+- language folders like da_DK, fr_CA and pt_br have been duplicated into their standardized form (da-DK, fr-CA and pt-BR); introduced notice that the old folders will be deprecated;
+- password reset page now pre-populates the email field;
+- the standard footer is now transparent, it is not a primary piece of content, it shouldn’t stand out;
+- auth views are now prettier (see #330);
+- backpack_url() can now take parameters, just like url();
+- auth view (login, register, reset password) use this new layout with no sidebar;
+- split layout into multiple views, so it’s easier to customize just one part of it;
+
+### Removed
+- Laravel 5.5 support;
+- PHP 7.0 support and Travis testing (Laravel 5.6 no longer supports it);
+
+
+## [0.9.12] - 2018-10-26
+
+### Fixed
+- merged #326 - using primary key instead of ID for updating account info;
+
+
+## [0.9.11] - 2018-10-18
+
+### Fixed
+- missing translation on password reset emails;
+
+
+## [0.9.10] - 2018-10-15
+
+### Fixed
+- loading the custom views folder is now done only if it exists, this way fixing conflicts with the ```php artisan view:cache``` command;
+
+
+## [0.9.9] - 2018-09-20
+
+### Added
+- merged #315 - added robots meta and config for it;
+- merged #310 - added ```backpack:base:user``` command that creates a new user from the command line;
+- merged #317 - added customizable CSS overlays;
+
+### Fixed
+- splitting files by new line using preg_split instead of explode; hopefully fixes #299;
+
+## [0.9.8] - 2018-09-05
+
+### Added
+- Laravel 5.7 compatiblity;
+
+### Removed
+- replaced ```or``` blade operator with ```??```;
+
+## [0.9.7] - 2018-08-06
+
+### Added
+- French Canadian language, thanks to @khoude24;
+- ```php artisan backpack:base:version``` command;
+- version constant on the BaseServiceProvider;
+- ```mb_ucfirst()``` helper;
+
+### Fixed
+- #303 - custom route command;
+- #305 - ```backpack_url()``` helper did not work properly with a starting slash;
+- #295 - spaces added to My Account form inputs by accident;
+
+
+## [0.9.6] - 2018-06-04
+
+### Added
+- Arabic language, thanks to @allam2002;
+
+### Fixed
+- #288 and #284 - moved check license method to boot instead of register;
+
+
+## [0.9.5] - 2018-05-02
+
+### Fixed
+- helpers are now loaded in the register function, to avoid undefined function errors in subsequent Backpack packages, where they're loaded before Base;
+
+
+## [0.9.4] - 2018-05-02
+
+### Fixed
+- ```backpack_avatar_url()``` helper had a wrong function name existence declaration; merges #280;
+- ```backpack_avatar_url()``` helper now uses a custom function if it exists, otherwise an accessor; merges #281;
+
+## [0.9.3] - 2018-04-17
+
+### Fixed
+- ```login.php``` view now uses ```$username``` instead of helper, to allow developers to overwrite this in their LoginController; fixes #276;
+
+
+## [0.9.2] - 2018-03-29
+
+### Fixed
+- ```custom.php``` route now uses the ```web``` middleware by default; merges #268; fixes #271;
+
+
+## [0.9.1] - 2018-03-22
+
+### Fixed
+- config file was using a translation item, which is not possible;
+
+
+## [0.9.0] - 2018-03-22
+
+### Added
+- flexbox css helper class;
+- support for HTML messages inside Alert bubbles, when triggered from PHP;
+- added publish lang command;
+- added command to publish only the minimum amount of files needed for Backpack to work;
+- ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
+- ```php artisan backpack:base:add-sidebar-content``` command;
+- ```php artisan backpack:base:add-custom-route``` command;
+- ability for developer to use a custom auth guard;
+- ability for developer to rename the ```admin``` middleware;
+- ```before_styles```, ```after_styles```, ```before_scripts```, ```after_scripts``` stacks, to which developers can ```@push```;
+
+### Fixed
+- the installation command now only publishes the minimum amount of files, by default;
+- AdminLTE now uses the latest version;
+
+-------
+
+## [0.8.9] - 2018-02-08
+
+## Fixed
+- NL translation;
+- ES translation;
+- Security issue #240 - user insert new fields and change restricted info about him;
+
+
+## [0.8.8] - 2018-02-08
+
+## Added
+- Laravel 5.6 support;
+
+
+## [0.8.7] - 2018-01-18
+
+## Added
+- progress bar to installer;
+- debug option to installer;
+- configurable timeout option to installer;
+
+## Fixed
+- hide secondary pace loader to avoid CRUD list page three-separate-loaders syndrome;
+
+
+## [0.8.6] - 2018-01-10
+
+## Fixed
+- ajax datatable loading screen;
+
+
+## [0.8.5] - 2018-01-03
+
+## Added
+- user image to My Account side menu;
+- link on general sidebar user image;
+- link on general sidebar user name;
+
+## Fixed
+- Greek translation;
+- French translation;
+
+
+## [0.8.4] - 2017-12-12
+
+## Fixed
+- Chinese translation;
+- Upon installation, vendor path is calculated instead of relying on base_path() - merged #223, fixes #222;
+
+## Added
+- BACKPACK_REGISTRATION_OPEN environment variable;
+
+## [0.8.3] - 2017-12-02
+
+## Fixed
+-  ensure the installer publishes files correctly on all OSs - refs #216;
+-  Using guard() method to access the current guard in MyAccountController - merged #215;
+-  updated LV translation;
+-  added zh-hant translation;
+-  updated German translation;
+-  updated Italian translation;
+-  user avatar uses customized guard;
+
+
+## [0.8.2] - 2017-11-07
+
+## Fixed
+- command-line installer namespace;
+
+
+## [0.8.1] - 2017-11-06
+
+## Added
+- command-line installer: ```php artisan backpack:base:install```;
+
+
+## [0.8.0] - 2017-11-06
+
+## Added
+- backpack_url() helper that returns the URL prefixed by the configured string;
+- by default, gravatar instead of placehold image;
+- design facelift (introducing overlays that make the admin panel customizable and designs shareable; first overlay is called "Bold");
+- backpack_avatar_url() helper;
+- views and logic for logged in user to change his account info;
+- views and logic for logged in user to change his password;
+
+## Fixed
+- using Mix instead of Elixir, since we only support L5.5 now;
+- select2 clear button;
+- prefixed auth route names;
+
+## Removed
+- Laravel 5.4 and 5.3 support;
+- PHP 5.x support (Laravel constraint);
+
+
+## [0.7.25] - 2017-08-30
+
+## Added
+- Package Autodiscovery support - no longer needed to register service provider in Laravel 5.5;
+
+
+## [0.7.24] - 2017-08-30
+
+## Added
+- Laravel 5.5 support;
+
+
+## [0.7.23] - 2017-08-22
+
+## Fixed
+- active tab not working in some use cases;
+
+## Added
+- license code in the base config file;
+
+
+## [0.7.22] - 2017-08-11
+
+## Added
+- Danish (da_DK) language files, thanks to [Frederik Rabøl](https://github.com/Xayer);
+
+
+## [0.7.21] - 2017-07-18
+
+## Added
+- language pointer files for pagemanager;
+
+
+## [0.7.20] - 2017-07-06
+
+## Added
+- overwritable routes file;
+- Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
+- Remember collapsed/open sidebar state, when loading the page (thanks to [MarcosBL](https://github.com/MarcosBL));
+
+### Fixed
+- Support query string when setting active menu item;
+
 
 ## [0.7.19] - 2017-04-25
 

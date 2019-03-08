@@ -5,7 +5,7 @@ namespace Backpack\Base\app\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class Admin
+class UseBackpackAuthGuardInsteadOfDefaultAuthGuard
 {
     /**
      * Handle an incoming request.
@@ -18,13 +18,7 @@ class Admin
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->guest()) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return response(trans('backpack::base.unauthorized'), 401);
-            } else {
-                return redirect()->guest(config('backpack.base.route_prefix', 'admin').'/login');
-            }
-        }
+        app('auth')->setDefaultDriver(config('backpack.base.guard'));
 
         return $next($request);
     }

@@ -30,7 +30,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $guard = backpack_guard_name();
+
+        $this->middleware("guest:$guard");
 
         // Where to redirect users after login / registration.
         $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
@@ -49,11 +51,12 @@ class RegisterController extends Controller
         $user_model_fqn = config('backpack.base.user_model_fqn');
         $user = new $user_model_fqn();
         $users_table = $user->getTable();
+        $email_validation = backpack_authentication_column() == 'email' ? 'email|' : '';
 
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:'.$users_table,
-            'password' => 'required|min:6|confirmed',
+            'name'                             => 'required|max:255',
+            backpack_authentication_column()   => 'required|'.$email_validation.'max:255|unique:'.$users_table,
+            'password'                         => 'required|min:6|confirmed',
         ]);
     }
 
@@ -70,9 +73,9 @@ class RegisterController extends Controller
         $user = new $user_model_fqn();
 
         return $user->create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'                             => $data['name'],
+            backpack_authentication_column()   => $data[backpack_authentication_column()],
+            'password'                         => bcrypt($data['password']),
         ]);
     }
 
@@ -112,5 +115,15 @@ class RegisterController extends Controller
         $this->guard()->login($this->create($request->all()));
 
         return redirect($this->redirectPath());
+    }
+
+    /**
+     * Get the guard to be used during registration.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return backpack_auth();
     }
 }

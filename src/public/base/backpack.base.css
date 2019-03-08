@@ -6,11 +6,6 @@
 
 
 /*  AdminLTE Overwrites  */
-
-.pace .pace-activity {
-  display: none;
-}
-
 .box {
   border-radius: 0;
   border-top: 1px solid #d2d6de;
@@ -20,89 +15,91 @@ body[class^='skin-'] .sidebar-menu>li>a {
   border-left: 1px solid transparent;
 }
 
-body.sidebar-collapse .sidebar-menu>li:hover>a>span {
-  margin-left: -1px!important;
+body.skin-purple .nav-tabs-custom>.nav-tabs>li.active {
+  border-top-color: #57549C;
 }
 
-body[class^='skin-purple'] .btn-primary {
+body.skin-purple .btn-primary {
   color: #fff;
   background-color: #605ca8;
   border-color: #57549C;
 }
-body[class^='skin-purple'] .btn-primary:focus,
-body[class^='skin-purple'] .btn-primary.focus {
+body.skin-purple .btn-primary:focus,
+body.skin-purple .btn-primary.focus {
   color: #fff;
   background-color: #7673BD;
   border-color: #122b40;
 }
-body[class^='skin-purple'] .btn-primary:hover {
+body.skin-purple .btn-primary:hover {
   color: #fff;
   background-color: #7673BD;
   border-color: #57549C;
 }
-body[class^='skin-purple'] .btn-primary:active,
-body[class^='skin-purple'] .btn-primary.active,
-body[class^='skin-purple'] .open > .dropdown-toggle.btn-primary {
+body.skin-purple .btn-primary:active,
+body.skin-purple .btn-primary.active,
+body.skin-purple .open > .dropdown-toggle.btn-primary {
   color: #fff;
   background-color: #7673BD;
   border-color: #57549C;
 }
-body[class^='skin-purple'] .btn-primary:active:hover,
-body[class^='skin-purple'] .btn-primary.active:hover,
-body[class^='skin-purple'] .open > .dropdown-toggle.btn-primary:hover,
-body[class^='skin-purple'] .btn-primary:active:focus,
-body[class^='skin-purple'] .btn-primary.active:focus,
-body[class^='skin-purple'] .open > .dropdown-toggle.btn-primary:focus,
-body[class^='skin-purple'] .btn-primary:active.focus,
-body[class^='skin-purple'] .btn-primary.active.focus,
-body[class^='skin-purple'] .open > .dropdown-toggle.btn-primary.focus {
+body.skin-purple .btn-primary:active:hover,
+body.skin-purple .btn-primary.active:hover,
+body.skin-purple .open > .dropdown-toggle.btn-primary:hover,
+body.skin-purple .btn-primary:active:focus,
+body.skin-purple .btn-primary.active:focus,
+body.skin-purple .open > .dropdown-toggle.btn-primary:focus,
+body.skin-purple .btn-primary:active.focus,
+body.skin-purple .btn-primary.active.focus,
+body.skin-purple .open > .dropdown-toggle.btn-primary.focus {
   color: #fff;
   background-color: #57549C;
   border-color: #122b40;
 }
-body[class^='skin-purple'] .btn-primary:active,
-body[class^='skin-purple'] .btn-primary.active,
-body[class^='skin-purple'] .open > .dropdown-toggle.btn-primary {
+body.skin-purple .btn-primary:active,
+body.skin-purple .btn-primary.active,
+body.skin-purple .open > .dropdown-toggle.btn-primary {
   background-image: none;
 }
-body[class^='skin-purple'] .btn-primary.disabled,
-body[class^='skin-purple'] .btn-primary[disabled],
-body[class^='skin-purple'] fieldset[disabled] .btn-primary,
-body[class^='skin-purple'] .btn-primary.disabled:hover,
-body[class^='skin-purple'] .btn-primary[disabled]:hover,
-body[class^='skin-purple'] fieldset[disabled] .btn-primary:hover,
-body[class^='skin-purple'] .btn-primary.disabled:focus,
-body[class^='skin-purple'] .btn-primary[disabled]:focus,
-body[class^='skin-purple'] fieldset[disabled] .btn-primary:focus,
-body[class^='skin-purple'] .btn-primary.disabled.focus,
-body[class^='skin-purple'] .btn-primary[disabled].focus,
-body[class^='skin-purple'] fieldset[disabled] .btn-primary.focus,
-body[class^='skin-purple'] .btn-primary.disabled:active,
-body[class^='skin-purple'] .btn-primary[disabled]:active,
-body[class^='skin-purple'] fieldset[disabled] .btn-primary:active,
-body[class^='skin-purple'] .btn-primary.disabled.active,
-body[class^='skin-purple'] .btn-primary[disabled].active,
-body[class^='skin-purple'] fieldset[disabled] .btn-primary.active {
+body.skin-purple .btn-primary.disabled,
+body.skin-purple .btn-primary[disabled],
+body.skin-purple fieldset[disabled] .btn-primary,
+body.skin-purple .btn-primary.disabled:hover,
+body.skin-purple .btn-primary[disabled]:hover,
+body.skin-purple fieldset[disabled] .btn-primary:hover,
+body.skin-purple .btn-primary.disabled:focus,
+body.skin-purple .btn-primary[disabled]:focus,
+body.skin-purple fieldset[disabled] .btn-primary:focus,
+body.skin-purple .btn-primary.disabled.focus,
+body.skin-purple .btn-primary[disabled].focus,
+body.skin-purple fieldset[disabled] .btn-primary.focus,
+body.skin-purple .btn-primary.disabled:active,
+body.skin-purple .btn-primary[disabled]:active,
+body.skin-purple fieldset[disabled] .btn-primary:active,
+body.skin-purple .btn-primary.disabled.active,
+body.skin-purple .btn-primary[disabled].active,
+body.skin-purple fieldset[disabled] .btn-primary.active {
   background-color: #605ca8;
   border-color: #57549C;
 }
-body[class^='skin-purple'] .btn-primary .badge {
+body.skin-purple .btn-primary .badge {
   color: #605ca8;
   background-color: #fff;
 }
 
-body[class^='skin-purple'] .pagination>.active>a,
-body[class^='skin-purple'] .pagination>.active>a:focus,
-body[class^='skin-purple'] .pagination>.active>a:hover,
-body[class^='skin-purple'] .pagination>.active>span,
-body[class^='skin-purple'] .pagination>.active>span:focus,
-body[class^='skin-purple'] .pagination>.active>span:hover {
+body.skin-purple .pagination>.active>a,
+body.skin-purple .pagination>.active>a:focus,
+body.skin-purple .pagination>.active>a:hover,
+body.skin-purple .pagination>.active>span,
+body.skin-purple .pagination>.active>span:focus,
+body.skin-purple .pagination>.active>span:hover {
     background-color: #605ca8;
     border-color: #57549C;
 }
 
-
-
+.main-footer {
+  background: #ecf0f5;
+  border: none;
+}
 
 
 
@@ -846,6 +843,13 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     border-color: #f8d053;
   }
 
+  /*    FLEXBOX HELPERS */
+
+  .display-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   /*    BORDER RADIUS HELPERS */
 
   .b-rad-sm {
@@ -881,3 +885,60 @@ body[class^='skin-purple'] .pagination>.active>span:hover {
     box-shadow: none!important;
     border-radius: 0!important;
   }
+
+
+.nav-steps-wrapper {
+  display: table;
+  margin: 0 auto;
+}
+
+.nav-steps {
+  background: #ecf0f5;
+  border-bottom: 1px solid #f4f4f4;
+ }
+
+.nav-steps>li>a,
+.nav-steps>li>a:hover,
+.nav-steps>li>a:focus
+.nav-steps>li.active>a:hover,
+.nav-steps>li.active>a:focus {
+   background: transparent!important;
+   border: none!important;
+   color: inherit;
+ }
+
+.nav-steps li a strong {
+    background: #f4f4f4;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    text-align: center;
+    line-height: 75px;
+    vertical-align: middle;
+    border-radius: 45px;
+ }
+
+.nav-steps li.active a strong {
+    background: #3c8dbc;
+    color: white;
+}
+
+body.skin-purple .nav-steps li.active a strong {
+  background: #57549C;
+}
+
+.nav-steps li.active a {
+    background-color: #ecf0f5;
+    border: none;
+    box-shadow: none;
+}
+
+.nav-steps li {
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+}

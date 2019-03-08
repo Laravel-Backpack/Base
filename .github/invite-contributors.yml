@@ -1,0 +1,4 @@
+# invite-contributors is a GitHub App built with probot that automatically invites new contributors to your repository's organization once they get a Pull Request merged.
+
+# team name
+team: Community Members

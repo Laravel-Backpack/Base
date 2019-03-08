@@ -13,7 +13,7 @@
             $(function(){
               new PNotify({
                 // title: 'Regular Notice',
-                text: "{{ $message }}",
+                text: "{!! str_replace('"', "'", $message) !!}",
                 type: "{{ $type }}",
                 icon: false
               });
