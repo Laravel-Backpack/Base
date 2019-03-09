@@ -67,8 +67,7 @@
         });
 
         // Set active state on menu element
-        var current_url = "{{ Request::fullUrl() }}";
-        var full_url = current_url+location.search;
+        var full_url = "{{ Request::fullUrl() }}";
         var $navLinks = $("ul.sidebar-menu li a");
         // First look for an exact match including the search string
         var $curentPageLink = $navLinks.filter(
@@ -77,7 +76,7 @@
         // If not found, look for the link that starts with the url
         if(!$curentPageLink.length > 0){
             $curentPageLink = $navLinks.filter(
-                function() { return $(this).attr('href').startsWith(current_url) || current_url.startsWith($(this).attr('href')); }
+                function() { return $(this).attr('href').startsWith(full_url) || full_url.startsWith($(this).attr('href')); }
             );
         }
 
