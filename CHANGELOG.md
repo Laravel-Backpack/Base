@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.3] - 2019-03-12
+
+### Fixed
+- merged #363 - sidebar active when duplicating string;
+
+
 ## [1.1.2] - 2019-03-01
 
 ### Fixed
