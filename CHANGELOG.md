@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.4] - 2019-03-19
+
+### Fixed
+- merged #364 - shorter default date and datetime format;
+
+
 ## [1.1.3] - 2019-03-12
 
 ### Fixed
