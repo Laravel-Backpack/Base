@@ -1,22 +1,17 @@
-<div class="box">
-    <div class="box-body box-profile">
-	    <img class="profile-user-img img-responsive img-circle" src="{{ backpack_avatar_url(backpack_auth()->user()) }}">
-	    <h3 class="profile-username text-center">{{ backpack_auth()->user()->name }}</h3>
-	</div>
-
-	<ul class="nav nav-pills nav-stacked">
-
-	  <li role="presentation"
+<div class="list-group list-group-transparent mb-0">
+	  <a href="{{ route('backpack.account.info') }}"
 		@if (Request::route()->getName() == 'backpack.account.info')
-	  	class="active"
+	  	class="active list-group-item list-group-item-action"
+	  	@else
+	  	class="list-group-item list-group-item-action"
 	  	@endif
-	  	><a href="{{ route('backpack.account.info') }}">{{ trans('backpack::base.update_account_info') }}</a></li>
+	  	><span class="icon mr-3"><i class="fe fe-user"></i></span>{{ trans('backpack::base.update_account_info') }}</a>
 
-	  <li role="presentation"
+	  <a href="{{ route('backpack.account.password') }}"
 		@if (Request::route()->getName() == 'backpack.account.password')
-	  	class="active"
+	  	class="active list-group-item list-group-item-action"
+	  	@else
+	  	class="list-group-item list-group-item-action"
 	  	@endif
-	  	><a href="{{ route('backpack.account.password') }}">{{ trans('backpack::base.change_password') }}</a></li>
-
-	</ul>
+	  	><span class="icon mr-3"><i class="fe fe-settings"></i></span>{{ trans('backpack::base.change_password') }}</a>
 </div>

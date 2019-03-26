@@ -1,28 +1,30 @@
 @extends('backpack::layout')
 
 @section('header')
-    <section class="content-header">
-      <h1>
-        {{ trans('backpack::base.dashboard') }}<small>{{ trans('backpack::base.first_page_you_see') }}</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a></li>
-        <li class="active">{{ trans('backpack::base.dashboard') }}</li>
-      </ol>
-    </section>
 @endsection
 
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box">
-                <div class="box-header with-border">
-                    <div class="box-title">{{ trans('backpack::base.login_status') }}</div>
-                </div>
+<div class="container">
 
-                <div class="box-body">{{ trans('backpack::base.logged_in') }}</div>
-            </div>
-        </div>
+  <div class="page-header">
+    <h1 class="page-title">
+      Dashboard
+    </h1>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">{{ trans('backpack::base.login_status') }}</h3>
+      <div class="card-options">
+        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+      </div>
     </div>
+    <div class="card-body">
+      {{ trans('backpack::base.logged_in') }}
+    </div>
+  </div>
+
+</div>
 @endsection
