@@ -7,6 +7,8 @@
     @yield('header')
     @yield('content')
 
+    @include('backpack::inc.footer')
+
     @yield('before_scripts')
     @stack('before_scripts')
 

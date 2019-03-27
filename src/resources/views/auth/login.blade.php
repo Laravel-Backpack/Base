@@ -7,14 +7,14 @@
           <div class="row">
             <div class="col col-login mx-auto">
               <div class="text-center mb-6">
-                <h4>{{ trans('backpack::base.login') }}</h4>
+                <h3>{{ trans('backpack::base.login') }}</h3>
               </div>
               <form class="card" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                 {!! csrf_field() !!}
                 <div class="card-body p-6">
                   <div class="form-group {{ $errors->has($username) ? ' has-error' : '' }}">
-                    <label class="form-label">{{ config('backpack.base.authentication_column_name') }}</label>
-                    <input type="text" name="{{ $username }}" value="{{ old($username) }}" class="form-control" placeholder="{{ config('backpack.base.authentication_column_name') }}">
+                    <label class="form-label" for="name_input">{{ config('backpack.base.authentication_column_name') }} <span class="form-required">*</span></label>
+                    <input type="text" name="{{ $username }}" value="{{ old($username) }}" class="form-control" id="name_input">
 
                     @if ($errors->has($username))
                         <span class="help-block text-muted text-red">
@@ -24,13 +24,8 @@
                   </div>
 
                   <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label class="form-label">
-                      {{ trans('backpack::base.password') }}
-                      @if (backpack_users_have_email())
-                      <a href="{{ route('backpack.auth.password.reset') }}" class="float-right small">{{ trans('backpack::base.forgot_your_password') }}</a>
-                      @endif
-                    </label>
-                    <input type="password" name="password" class="form-control" placeholder="{{ trans('backpack::base.password') }}">
+                    <label class="form-label" for="password_input">{{ trans('backpack::base.password') }} <span class="form-required">*</span></label>
+                    <input type="password" name="password" class="form-control" id="password_input">
 
                     @if ($errors->has('password'))
                         <span class="help-block text-muted text-red">
@@ -53,6 +48,9 @@
                 </div>
               </form>
               <div class="text-center text-muted">
+                @if (backpack_users_have_email())
+                  <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
+                @endif
                 @if (config('backpack.base.registration_open'))
                     <div class="text-center m-t-10"><a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></div>
                 @endif

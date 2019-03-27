@@ -12,8 +12,9 @@
         @yield('content')
       </div>
 
+      @include('backpack::inc.footer')
+
     </div>
-    @include('backpack::inc.footer')
 
     @yield('before_scripts')
     @stack('before_scripts')

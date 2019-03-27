@@ -1,14 +1,5 @@
 @extends('backpack::layout')
 
-@section('after_styles')
-<style media="screen">
-    .backpack-profile-form .required::after {
-        content: ' *';
-        color: red;
-    }
-</style>
-@endsection
-
 @section('header')
 <div class="container">
     <div class="page-header">
@@ -47,7 +38,7 @@
 
                                 @if ($errors->count())
                                     <div class="alert alert-danger">
-                                        <ul>
+                                        <ul class="mb-0">
                                             @foreach ($errors->all() as $e)
                                             <li>{{ $e }}</li>
                                             @endforeach
@@ -60,7 +51,7 @@
                                         $label = trans('backpack::base.name');
                                         $field = 'name';
                                     @endphp
-                                    <label class="required">{{ $label }}</label>
+                                    <label class="form-label">{{ $label }} <span class="form-required">*</span></label>
                                     <input required class="form-control" type="text" name="{{ $field }}" value="{{ old($field) ? old($field) : $user->$field }}">
                                 </div>
 
@@ -69,13 +60,13 @@
                                         $label = config('backpack.base.authentication_column_name');
                                         $field = backpack_authentication_column();
                                     @endphp
-                                    <label class="required">{{ $label }}</label>
+                                    <label class="form-label">{{ $label }} <span class="form-required">*</span></label>
                                     <input required class="form-control" type="{{ backpack_authentication_column()=='email'?'email':'text' }}" name="{{ $field }}" value="{{ old($field) ? old($field) : $user->$field }}">
                                 </div>
 
                                 <div class="form-group m-b-0">
-                                    <button type="submit" class="btn btn-success"><span class="ladda-label"><i class="fa fa-save"></i> {{ trans('backpack::base.save') }}</span></button>
-                                    <a href="{{ backpack_url() }}" class="btn btn-default"><span class="ladda-label">{{ trans('backpack::base.cancel') }}</span></a>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> {{ trans('backpack::base.save') }}</button>
+                                    <a href="{{ backpack_url() }}" class="btn btn-default">{{ trans('backpack::base.cancel') }}</a>
                                 </div>
 
                             </div>

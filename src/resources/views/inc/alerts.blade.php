@@ -1,11 +1,9 @@
-{{-- <script src="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.js') }}"></script> --}}
-
 {{-- Bootstrap Notifications using Prologue Alerts --}}
-{{-- <script type="text/javascript">
-  require(['jquery'], function($) {
+<script type="text/javascript">
+  require(['jquery', 'pnotify'], function($, PNotify) {
     jQuery(document).ready(function($) {
 
-      PNotify.prototype.options.styling = "bootstrap3";
+      PNotify.prototype.options.styling = "bootstrap4";
       PNotify.prototype.options.styling = "fontawesome";
 
       @foreach (Alert::getMessages() as $type => $messages)
@@ -24,4 +22,4 @@
       @endforeach
     });
   });
-</script> --}}
+</script>
