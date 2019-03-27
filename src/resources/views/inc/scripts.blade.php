@@ -4,7 +4,6 @@
     // $(document).ajaxStart(function() { Pace.restart(); });
 
     require(['jquery'], function($) {
-        $(document).ready(function(){
 
             // ------
             // Ajax calls should always have the CSRF token attached to them, otherwise they won't work
@@ -44,8 +43,6 @@
 
             $curentPageLink.addClass('active');
             $curentPageLink.parents('.nav-item').children('a').addClass('active');
-
-        });
 
     });
 </script>

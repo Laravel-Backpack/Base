@@ -1,7 +1,6 @@
 {{-- Bootstrap Notifications using Prologue Alerts --}}
 <script type="text/javascript">
   require(['jquery', 'pnotify'], function($, PNotify) {
-    jQuery(document).ready(function($) {
 
       PNotify.prototype.options.styling = "bootstrap4";
       PNotify.prototype.options.styling = "fontawesome";
@@ -20,6 +19,6 @@
 
           @endforeach
       @endforeach
-    });
+
   });
 </script>
