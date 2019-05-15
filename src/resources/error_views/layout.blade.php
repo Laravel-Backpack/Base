@@ -5,56 +5,20 @@
   $title = 'Error '.$error_number;
 @endphp
 
-@section('after_styles')
-  <style>
-    .error_number {
-      font-size: 156px;
-      font-weight: 600;
-      color: #dd4b39;
-      line-height: 100px;
-    }
-    .error_number small {
-      font-size: 56px;
-      font-weight: 700;
-    }
-
-    .error_number hr {
-      margin-top: 60px;
-      margin-bottom: 0;
-      border-top: 5px solid #dd4b39;
-      width: 50px;
-    }
-
-    .error_title {
-      margin-top: 40px;
-      font-size: 36px;
-      color: #B0BEC5;
-      font-weight: 400;
-    }
-
-    .error_description {
-      font-size: 24px;
-      color: #B0BEC5;
-      font-weight: 400;
-    }
-  </style>
-@endsection
-
 @section('content')
-<div class="row">
-  <div class="col-md-12 text-center">
-    <div class="error_number m-t-80">
-      <small>ERROR</small><br>
-      {{ $error_number }}
-      <hr>
-    </div>
-    <div class="error_title">
-      @yield('title')
-    </div>
-    <div class="error_description">
-      <small>
+<div class="page">
+  <div class="page-content">
+    <div class="container text-center">
+      <div class="display-1 text-muted mb-5"><i class="si si-exclamation"></i> {{ $error_number }}</div>
+      <h1 class="h2 mb-3">
+        @yield('title')
+      </h1>
+      <p class="h4 text-muted font-weight-normal mb-7">
         @yield('description')
-     </small>
+      </p>
+      <a class="btn btn-primary" href="javascript:history.back()">
+        <i class="fe fe-arrow-left mr-2"></i>Go back
+      </a>
     </div>
   </div>
 </div>

@@ -1,39 +1,21 @@
-<div class="navbar-custom-menu pull-left">
-    <ul class="nav navbar-nav">
-        <!-- =================================================== -->
-        <!-- ========== Top menu items (ordered left) ========== -->
-        <!-- =================================================== -->
+<div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-3 ml-auto">
+        <form class="input-icon my-3 my-lg-0">
+          <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+          <div class="input-icon-addon">
+            <i class="fe fe-search"></i>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg order-lg-first">
+        <ul id="bpMainMenu" class="nav nav-tabs border-0 flex-column flex-lg-row">
 
-        @if (backpack_auth()->check())
-            <!-- Topbar. Contains the left part -->
-            @include('backpack::inc.topbar_left_content')
-        @endif
+          @include('backpack::inc.menu_content')
 
-    <!-- ========== End of top menu left items ========== -->
-    </ul>
-</div>
-
-
-<div class="navbar-custom-menu pull-right">
-    <ul class="nav navbar-nav">
-        <!-- ========================================================= -->
-        <!-- ========= Top menu right items (ordered right) ========== -->
-        <!-- ========================================================= -->
-
-        @if (config('backpack.base.setup_auth_routes'))
-            @if (backpack_auth()->guest())
-                <li>
-                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/login') }}">{{ trans('backpack::base.login') }}</a>
-                </li>
-                @if (config('backpack.base.registration_open'))
-                    <li><a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></li>
-                @endif
-            @else
-                <!-- Topbar. Contains the right part -->
-                @include('backpack::inc.topbar_right_content')
-                <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
-            @endif
-        @endif
-        <!-- ========== End of top menu right items ========== -->
-    </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
