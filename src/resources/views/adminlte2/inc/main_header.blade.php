@@ -16,6 +16,6 @@
       <span class="icon-bar"></span>
     </a>
 
-    @include('backpack::inc.menu')
+    @include(backpack_view('inc.menu'))
   </nav>
 </header>

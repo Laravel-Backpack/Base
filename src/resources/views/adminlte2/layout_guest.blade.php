@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    @include('backpack::inc.head')
+    @include(backpack_view('inc.head'))
 </head>
 <body class="hold-transition {{ config('backpack.base.skin') }} fixed">
     <!-- Site wrapper -->
@@ -23,7 +23,7 @@
       <!-- /.content-wrapper -->
 
       <footer class="main-footer m-l-0 text-sm">
-        @include('backpack::inc.footer')
+        @include(backpack_view('inc.footer'))
       </footer>
     </div>
     <!-- ./wrapper -->
@@ -32,8 +32,8 @@
     @yield('before_scripts')
     @stack('before_scripts')
 
-    @include('backpack::inc.scripts')
-    @include('backpack::inc.alerts')
+    @include(backpack_view('inc.scripts'))
+    @include(backpack_view('inc.alerts'))
 
     @yield('after_scripts')
     @stack('after_scripts')

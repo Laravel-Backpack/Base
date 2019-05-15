@@ -6,7 +6,7 @@
 
         @if (backpack_auth()->check())
             <!-- Topbar. Contains the left part -->
-            @include('backpack::inc.topbar_left_content')
+            @include(backpack_view('inc.topbar_left_content'))
         @endif
 
     <!-- ========== End of top menu left items ========== -->
@@ -30,7 +30,7 @@
                 @endif
             @else
                 <!-- Topbar. Contains the right part -->
-                @include('backpack::inc.topbar_right_content')
+                @include(backpack_view('inc.topbar_right_content'))
                 <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
             @endif
         @endif
