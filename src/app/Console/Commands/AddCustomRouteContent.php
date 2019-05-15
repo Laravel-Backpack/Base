@@ -47,13 +47,13 @@ class AddCustomRouteContent extends Command
         $code = $this->argument('code');
 
         if ($disk->exists($path)) {
-            $old_file_content = Storage::disk($disk_name)->get($path);
+            $old_file_path = $disk->path($path);
 
             // insert the given code before the file's last line
-            $file_lines = explode(PHP_EOL, $old_file_content);
-            $number_of_lines = count($file_lines);
-            $file_lines[$number_of_lines] = $file_lines[$number_of_lines - 1];
-            $file_lines[$number_of_lines - 1] = '    '.$code;
+            $file_lines = file($old_file_path, FILE_IGNORE_NEW_LINES);
+            $end_line_number = $this->customRoutesFileEndLine($file_lines);
+            $file_lines[$end_line_number + 1] = $file_lines[$end_line_number];
+            $file_lines[$end_line_number] = '    '.$code;
             $new_file_content = implode(PHP_EOL, $file_lines);
 
             if ($disk->put($path, $new_file_content)) {
@@ -80,6 +80,29 @@ class AddCustomRouteContent extends Command
             }
 
             $this->handle();
+        }
+    }
+
+    private function customRoutesFileEndLine($file_lines)
+    {
+        // in case the last line has not been modified at all
+        $end_line_number = array_search('}); // this should be the absolute last line of this file', $file_lines);
+
+        if ($end_line_number) {
+            return $end_line_number;
+        }
+
+        // otherwise, in case the last line HAS been modified
+        // return the last line that has an ending in it
+        $possible_end_lines = array_filter($file_lines, function ($k) {
+            return strpos($k, '});') === 0;
+        });
+
+        if ($possible_end_lines) {
+            end($possible_end_lines);
+            $end_line_number = key($possible_end_lines);
+
+            return $end_line_number;
         }
     }
 }

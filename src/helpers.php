@@ -9,11 +9,11 @@ if (!function_exists('backpack_url')) {
      *
      * @return string
      */
-    function backpack_url($path = null)
+    function backpack_url($path = null, $parameters = [], $secure = null)
     {
-        $path = !$path || (substr($path, 1, 1) == '/') ? $path : '/'.$path;
+        $path = !$path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
 
-        return url(config('backpack.base.route_prefix', 'admin').$path);
+        return url(config('backpack.base.route_prefix', 'admin').$path, $parameters = [], $secure = null);
     }
 }
 
@@ -127,6 +127,28 @@ if (!function_exists('backpack_user')) {
     }
 }
 
+if (!function_exists('mb_ucfirst')) {
+    /**
+     * Capitalize the first letter of a string,
+     * even if that string is multi-byte (non-latin alphabet).
+     *
+     * @param string   $string   String to have its first letter capitalized.
+     * @param encoding $encoding Character encoding
+     *
+     * @return string String with first letter capitalized.
+     */
+    function mb_ucfirst($string, $encoding = false)
+    {
+        $encoding = $encoding ? $encoding : mb_internal_encoding();
+
+        $strlen = mb_strlen($string, $encoding);
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, $strlen - 1, $encoding);
+
+        return mb_strtoupper($firstChar, $encoding).$then;
+    }
+}
+
 if (!function_exists('backpack_view')) {
     /**
      * Returns a new displayable view based on the current configured backpack.
@@ -135,39 +157,21 @@ if (!function_exists('backpack_view')) {
      *
      * @return string
      */
-    function backpack_view($view, $package = 'backpack')
+    function backpack_view($view)
     {
-        $theme = config('backpack.base.theme');
+        $theme = config('backpack.base.view_namespace');
+        $originalTheme = 'backpack::';
 
         if (is_null($theme)) {
-            $theme = 'adminlte';
+            $theme = $originalTheme;
         }
 
-        $returnView = "{$package}::{$theme}.{$view}";
+        $returnView = $theme.$view;
+
         if (!view()->exists($returnView)) {
-            $returnView = "{$package}::{$view}";
+            $returnView = $originalTheme.$view;
         }
 
         return $returnView;
-    }
-}
-
-if (!function_exists('backpack_theme')) {
-    /**
-     * Set the path of an extended/included view based on the configured backpack.
-     *
-     * @param string (see config/backpack/base.php)
-     *
-     * @return string
-     */
-    function backpack_theme($view, $package = 'backpack')
-    {
-        $theme = config('backpack.base.theme');
-
-        if (is_null($theme)) {
-            $theme = 'adminlte';
-        }
-
-        return "{$package}::{$theme}.{$view}";
     }
 }
