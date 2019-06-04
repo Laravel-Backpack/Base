@@ -1,13 +1,10 @@
 @if (backpack_auth()->check())
     <!-- Left side column. contains the sidebar -->
-    <aside class="main-sidebar">
+    <div class="sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-        <!-- Sidebar user panel -->
-        @include('backpack::inc.sidebar_user_panel')
-
+      <nav class="sidebar-nav overflow-hidden">
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu" data-widget="tree">
+        <ul class="nav">
           {{-- <li class="header">{{ trans('backpack::base.administration') }}</li> --}}
           <!-- ================================================ -->
           <!-- ==== Recommended place for admin menu items ==== -->
@@ -18,7 +15,7 @@
           <!-- ======================================= -->
           {{-- <li class="header">Other menus</li> --}}
         </ul>
-      </section>
+      </nav>
       <!-- /.sidebar -->
-    </aside>
+    </div>
 @endif

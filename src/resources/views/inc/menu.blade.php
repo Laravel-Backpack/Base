@@ -1,39 +1,35 @@
-<div class="navbar-custom-menu pull-left">
-    <ul class="nav navbar-nav">
-        <!-- =================================================== -->
-        <!-- ========== Top menu items (ordered left) ========== -->
-        <!-- =================================================== -->
+<!-- =================================================== -->
+<!-- ========== Top menu items (ordered left) ========== -->
+<!-- =================================================== -->
+<ul class="nav navbar-nav d-md-down-none">
 
-        @if (backpack_auth()->check())
-            <!-- Topbar. Contains the left part -->
-            @include('backpack::inc.topbar_left_content')
-        @endif
+    @if (backpack_auth()->check())
+        <!-- Topbar. Contains the left part -->
+        @include('backpack::inc.topbar_left_content')
+    @endif
 
-    <!-- ========== End of top menu left items ========== -->
-    </ul>
-</div>
+</ul>
+<!-- ========== End of top menu left items ========== -->
 
 
-<div class="navbar-custom-menu pull-right">
-    <ul class="nav navbar-nav">
-        <!-- ========================================================= -->
-        <!-- ========= Top menu right items (ordered right) ========== -->
-        <!-- ========================================================= -->
 
-        @if (config('backpack.base.setup_auth_routes'))
-            @if (backpack_auth()->guest())
-                <li>
-                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/login') }}">{{ trans('backpack::base.login') }}</a>
-                </li>
-                @if (config('backpack.base.registration_open'))
-                    <li><a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></li>
-                @endif
-            @else
-                <!-- Topbar. Contains the right part -->
-                @include('backpack::inc.topbar_right_content')
-                <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
+<!-- ========================================================= -->
+<!-- ========= Top menu right items (ordered right) ========== -->
+<!-- ========================================================= -->
+<ul class="nav navbar-nav ml-auto">
+
+    @if (config('backpack.base.setup_auth_routes'))
+        @if (backpack_auth()->guest())
+            <li class="nav-item"><a class="nav-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/login') }}">{{ trans('backpack::base.login') }}</a>
+            </li>
+            @if (config('backpack.base.registration_open'))
+                <li class="nav-item"><a class="nav-link" href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></li>
             @endif
+        @else
+            <!-- Topbar. Contains the right part -->
+            @include('backpack::inc.topbar_right_content')
+            @include('backpack::inc.menu_user_dropdown')
         @endif
-        <!-- ========== End of top menu right items ========== -->
-    </ul>
-</div>
+    @endif
+</ul>
+<!-- ========== End of top menu right items ========== -->

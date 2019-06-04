@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 @if (config('backpack.base.meta_robots_content'))
 <meta name="robots" content="{{ config('backpack.base.meta_robots_content', 'noindex, nofollow') }}">
 @endif
@@ -15,28 +15,52 @@
 @yield('before_styles')
 @stack('before_styles')
 
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<!-- Bootstrap 3.4.1 -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/bower_components/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Icons-->
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css">
 
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/dist/css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/dist/css/skins/_all-skins.min.css">
 
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/plugins/pace/pace.min.css">
-<link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
+    <!-- Main styles for this application-->
+    <link href="{{ asset('packages/backpack-ui/css/backpackui.css') }}" rel="stylesheet">
+    <style>
+    	.pace {
+		  -webkit-pointer-events: none;
+		  pointer-events: none;
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  user-select: none;
+		}
+
+		.pace-inactive {
+		  display: none;
+		}
+
+		.pace .pace-progress {
+		  background: #29d;
+		  position: fixed;
+		  z-index: 2000;
+		  top: 0;
+		  right: 100%;
+		  width: 100%;
+		  height: 2px;
+		}
+    </style>
+
+	<!-- Bootstrap 3.4.1 -->
+	<link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
+
+	<!-- Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 <!-- BackPack Base CSS -->
-<link rel="stylesheet" href="{{ asset('vendor/backpack/base/backpack.base.css') }}?v=3">
-@if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
+{{-- <link rel="stylesheet" href="{{ asset('vendor/backpack/base/backpack.base.css') }}?v=3"> --}}
+{{-- @if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
     @foreach (config('backpack.base.overlays') as $overlay)
     <link rel="stylesheet" href="{{ asset($overlay) }}">
     @endforeach
-@endif
+@endif --}}
 
 
 @yield('after_styles')

@@ -3,7 +3,7 @@
 <head>
     @include('backpack::inc.head')
 </head>
-<body class="hold-transition {{ config('backpack.base.skin') }} sidebar-mini">
+<body class="app aside-menu-fixed sidebar-lg-show">
 	<script type="text/javascript">
 		/* Recover sidebar state */
 		(function () {
@@ -14,36 +14,34 @@
 		})();
 	</script>
     <!-- Site wrapper -->
-    <div class="wrapper">
+    @include('backpack::inc.main_header')
+    <!-- ./app-header -->
 
-      @include('backpack::inc.main_header')
-
-      <!-- =============================================== -->
+    <div class="app-body">
 
       @include('backpack::inc.sidebar')
 
-      <!-- =============================================== -->
-
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
+      <main class="main">
         <!-- Content Header (Page header) -->
          @yield('header')
 
         <!-- Main content -->
-        <section class="content">
+        <div class="container-fluid animated fadeIn">
 
           @yield('content')
 
-        </section>
+        </div>
         <!-- /.content -->
-      </div>
+      </main>
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer text-sm clearfix">
-        @include('backpack::inc.footer')
-      </footer>
     </div>
-    <!-- ./wrapper -->
+    <!-- ./app-body -->
+
+    <footer class="app-footer">
+      @include('backpack::inc.footer')
+    </footer>
 
 
     @yield('before_scripts')

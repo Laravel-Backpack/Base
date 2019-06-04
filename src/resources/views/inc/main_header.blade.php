@@ -1,21 +1,14 @@
-<header class="main-header">
+<header class="app-header navbar">
   <!-- Logo -->
-  <a href="{{ url('') }}" class="logo">
-    <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini">{!! config('backpack.base.logo_mini') !!}</span>
-    <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg">{!! config('backpack.base.logo_lg') !!}</span>
+  <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="{{ url('') }}">
+    {!! config('backpack.base.logo_lg') !!}
   </a>
-  <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top" role="navigation">
-    <!-- Sidebar toggle button-->
-    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-      <span class="sr-only">{{ trans('backpack::base.toggle_navigation') }}</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </a>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    @include('backpack::inc.menu')
-  </nav>
+  @include('backpack::inc.menu')
 </header>
