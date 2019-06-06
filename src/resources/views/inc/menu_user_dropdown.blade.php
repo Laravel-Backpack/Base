@@ -1,4 +1,4 @@
-<li class="nav-item dropdown">
+<li class="nav-item dropdown pr-4">
   <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
     <img class="img-avatar" src="{{ backpack_avatar_url(backpack_auth()->user()) }}" alt="{{ backpack_auth()->user()->name }}">
   </a>
