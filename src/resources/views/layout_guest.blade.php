@@ -3,31 +3,34 @@
 <head>
     @include('backpack::inc.head')
 </head>
-<body class="hold-transition {{ config('backpack.base.skin') }} fixed">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper no-margin no-padding">
+<body class="app flex-row align-items-center">
+    {{-- <div class="app-body"> --}}
 
+      {{-- @include('backpack::inc.sidebar') --}}
+
+      <!-- Content Wrapper. Contains page content -->
+      {{-- <main class="main"> --}}
         <!-- Content Header (Page header) -->
          @yield('header')
 
         <!-- Main content -->
-        <section class="content">
+        {{-- <div class="container-fluid animated fadeIn"> --}}
 
+          <div class="container">
           @yield('content')
+          </div>
 
-        </section>
+        {{-- </div> --}}
         <!-- /.content -->
-      </div>
+      {{-- </main> --}}
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer m-l-0 text-sm">
-        @include('backpack::inc.footer')
-      </footer>
-    </div>
-    <!-- ./wrapper -->
+    {{-- </div> --}}
+    <!-- ./app-body -->
 
+    <footer class="app-footer sticky-footer">
+      @include('backpack::inc.footer')
+    </footer>
 
     @yield('before_scripts')
     @stack('before_scripts')
