@@ -12,25 +12,15 @@
 @section('header')
 <section class="content-header">
 
-    <h1>
-        {{ trans('backpack::base.my_account') }}
-    </h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('backpack.account.info') }}">{{ trans('backpack::base.my_account') }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ trans('backpack::base.update_account_info') }}</li>
+      </ol>
+    </nav>
 
-    <ol class="breadcrumb">
-
-        <li>
-            <a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a>
-        </li>
-
-        <li>
-            <a href="{{ route('backpack.account.info') }}">{{ trans('backpack::base.my_account') }}</a>
-        </li>
-
-        <li class="active">
-            {{ trans('backpack::base.update_account_info') }}
-        </li>
-
-    </ol>
+    <div class="container-fluid"><h1>{{ trans('backpack::base.my_account') }}</h1></div>
 
 </section>
 @endsection
@@ -46,9 +36,9 @@
 
             {!! csrf_field() !!}
 
-            <div class="box padding-10">
+            <div class="card padding-10">
 
-                <div class="box-body backpack-profile-form">
+                <div class="card-body backpack-profile-form">
 
                     @if (session('success'))
                         <div class="alert alert-success">
