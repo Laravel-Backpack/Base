@@ -3,7 +3,6 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Alert;
-use Auth;
 use Backpack\Base\app\Http\Controllers\Controller;
 use Backpack\Base\app\Http\Requests\AccountInfoRequest;
 use Backpack\Base\app\Http\Requests\ChangePasswordRequest;
