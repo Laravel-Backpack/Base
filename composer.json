@@ -1,10 +1,14 @@
 {
     "name": "backpack/base",
     "type": "library",
-    "description": "Laravel Backpack's base package, which offers admin authentication and a blank admin panel using AdminLTE",
+    "description": "Laravel Backpack's base package, which offers admin authentication and a blank admin panel using Bootstrap 4, thanks to CoreUI",
     "keywords": [
         "backpack",
-        "base"
+        "base",
+        "admin panel for laravel",
+        "coreui for laravel",
+        "bootstrap 4 admin panel laravel",
+        "laravel admin auth"
     ],
     "homepage": "https://github.com/laravel-backpack/base",
     "license": "proprietary",
@@ -13,11 +17,10 @@
             "name": "Cristian Tabacitu",
             "email": "hello@tabacitu.ro",
             "homepage": "http://www.tabacitu.ro",
-            "role": "Chief Architect & Developer"
+            "role": "Owner & Lead Developer"
         }
     ],
     "require": {
-        "almasaeed2010/adminlte" : "2.4.*",
         "laravel/framework": "5.8.*",
         "prologue/alerts": "^0.4.1",
         "creativeorange/gravatar": "~1.0",

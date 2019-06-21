@@ -14,7 +14,7 @@
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ url(config('backpack.base.route_prefix'), 'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
         <li class="breadcrumb-item"><a href="{{ route('backpack.account.info') }}">{{ trans('backpack::base.my_account') }}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ trans('backpack::base.update_account_info') }}</li>
       </ol>

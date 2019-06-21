@@ -22,7 +22,7 @@
 
 
     <!-- Main styles for this application-->
-    <link href="{{ asset('packages/backpack-ui/css/backpackui.css') }}" rel="stylesheet">
+    <link href="{{ asset('packages/backpack/backpackui/css/backpackui.css') }}" rel="stylesheet">
     <style>
     	.pace {
 		  -webkit-pointer-events: none;

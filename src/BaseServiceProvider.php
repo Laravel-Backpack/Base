@@ -209,7 +209,7 @@ class BaseServiceProvider extends ServiceProvider
     {
         $error_views = [__DIR__.'/resources/error_views' => resource_path('views/errors')];
         $backpack_base_views = [__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')];
-        $backpack_public_assets = [__DIR__.'/public' => public_path('vendor/backpack')];
+        $backpack_public_assets = [__DIR__.'/public' => public_path('packages')];
         $backpack_lang_files = [__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')];
         $backpack_config_files = [__DIR__.'/config' => config_path()];
 
@@ -223,7 +223,6 @@ class BaseServiceProvider extends ServiceProvider
 
         // calculate the path from current directory to get the vendor path
         $vendorPath = dirname(__DIR__, 3);
-        $adminlte_assets = [$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')];
         $gravatar_assets = [$vendorPath.'/creativeorange/gravatar/config' => config_path()];
 
         // establish the minimum amount of files that need to be published, for Backpack to work; there are the files that will be published by the install command
@@ -235,7 +234,6 @@ class BaseServiceProvider extends ServiceProvider
             $backpack_config_files,
             $backpack_menu_contents_view,
             $backpack_custom_routes_file,
-            $adminlte_assets,
             $gravatar_assets
         );
 
@@ -247,7 +245,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes($error_views, 'errors');
         $this->publishes($backpack_public_assets, 'public');
         $this->publishes($backpack_custom_routes_file, 'custom_routes');
-        $this->publishes($adminlte_assets, 'adminlte');
         $this->publishes($gravatar_assets, 'gravatar');
         $this->publishes($minimum, 'minimum');
     }
