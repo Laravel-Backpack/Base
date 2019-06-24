@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.5] - 2019-06-24
+
+### Fixed
+- fixes #379 - error when username is empty;
+
+
+
 ## [1.1.4] - 2019-03-19
 
 ### Fixed
