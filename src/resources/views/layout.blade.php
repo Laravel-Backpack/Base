@@ -3,7 +3,7 @@
 <head>
     @include('backpack::inc.head')
 </head>
-<body class="app aside-menu-fixed sidebar-lg-show">
+<body class="{{ config('backpack.base.body_class') }}">
 	<script type="text/javascript">
 		/* Recover sidebar state */
 		(function () {

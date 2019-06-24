@@ -27,9 +27,14 @@ return [
     // Show powered by Laravel Backpack in the footer?
     'show_powered_by' => true,
 
-    // The AdminLTE skin. Affects menu color and primary/secondary colors used throughout the application.
-    'skin' => 'skin-purple',
-    // Options: skin-black, skin-blue, skin-purple, skin-red, skin-yellow, skin-green, skin-blue-light, skin-black-light, skin-purple-light, skin-green-light, skin-red-light, skin-yellow-light
+    // CSS Classes
+    'body_class' => 'app aside-menu-fixed sidebar-lg-show',
+        // Try sidebar-hidden, sidebar-fixed, sidebar-compact, sidebar-lg-show
+    'header_class' => 'app-header bg-transparent border-0 navbar',
+        // Try adding bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
+        // You might need to add "navbar-dark" too if the background color is a dark one.
+    'sidebar_class' => 'sidebar sidebar-pills sidebar-bg-transparent',
+        // Try removing our sidebar-pills class and adding a background class like bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
 
     // Date & Datetime Format Syntax: https://carbon.nesbot.com/docs/#api-localization
     'default_date_format'     => 'D MMM YYYY',
