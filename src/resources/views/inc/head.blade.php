@@ -20,9 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 
-
     <!-- Main styles for this application-->
-    <link href="{{ asset('packages/backpack/backpackui/css/backpackui.css') }}" rel="stylesheet">
     <style>
     	.pace {
 		  -webkit-pointer-events: none;
@@ -56,11 +54,11 @@
 
 <!-- BackPack Base CSS -->
 {{-- <link rel="stylesheet" href="{{ asset('vendor/backpack/base/backpack.base.css') }}?v=3"> --}}
-{{-- @if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
+@if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
     @foreach (config('backpack.base.overlays') as $overlay)
     <link rel="stylesheet" href="{{ asset($overlay) }}">
     @endforeach
-@endif --}}
+@endif
 
 
 @yield('after_styles')
