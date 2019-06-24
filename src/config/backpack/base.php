@@ -31,6 +31,10 @@ return [
     'skin' => 'skin-purple',
     // Options: skin-black, skin-blue, skin-purple, skin-red, skin-yellow, skin-green, skin-blue-light, skin-black-light, skin-purple-light, skin-green-light, skin-red-light, skin-yellow-light
 
+    // Breadcrumbs
+    // Show / hide breadcrumbs on admin panel pages.
+    'breadcrumbs' => true,
+
     // Date & Datetime Format Syntax: https://carbon.nesbot.com/docs/#api-localization
     'default_date_format'     => 'D MMM YYYY',
     'default_datetime_format' => 'D MMM YYYY, HH:mm',
