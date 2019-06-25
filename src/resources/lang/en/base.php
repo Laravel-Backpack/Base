@@ -48,6 +48,8 @@ return [
     'account_updated'        => 'Account updated successfully.',
     'unknown_error'          => 'An unknown error has occured. Please try again.',
     'error_saving'           => 'Error while saving. Please try again.',
+    'welcome'                => 'Welcome!',
+    'use_sidebar'            => 'Use the sidebar to the left to create, edit or delete content.',
 
     'password_reset' => [
         'greeting' => 'Hello!',

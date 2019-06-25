@@ -7,23 +7,19 @@
         <li class="breadcrumb-item active" aria-current="page">{{ trans('backpack::base.dashboard') }}</li>
       </ol>
     </nav>
-    <section class="container-fluid">
+{{--     <section class="container-fluid">
       <h1>
         <span class="text-capitalize">{{ trans('backpack::base.dashboard') }}</small>
       </h1>
-    </section>
+    </section> --}}
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="box-title">{{ trans('backpack::base.login_status') }}</div>
-                </div>
-
-                <div class="card-body">{{ trans('backpack::base.logged_in') }}</div>
-            </div>
-        </div>
+    <div class="jumbotron">
+      <h1 class="display-3">{{ trans('backpack::base.welcome') }}</h1>
+      <p>{{ trans('backpack::base.use_sidebar') }}</p>
+      <p class="lead">
+        <a class="btn btn-primary" href="{{ backpack_url('logout') }}" role="button">{{ trans('backpack::base.logout') }}</a>
+      </p>
     </div>
 @endsection
