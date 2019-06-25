@@ -7,11 +7,6 @@
         <li class="breadcrumb-item active" aria-current="page">{{ trans('backpack::base.dashboard') }}</li>
       </ol>
     </nav>
-{{--     <section class="container-fluid">
-      <h1>
-        <span class="text-capitalize">{{ trans('backpack::base.dashboard') }}</small>
-      </h1>
-    </section> --}}
 @endsection
 
 @section('content')
