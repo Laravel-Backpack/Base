@@ -42,7 +42,6 @@ return [
         // Try adding bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
         // You might need to add "navbar-dark" too if the background color is a dark one.
 
-
     // ----
     // BODY
     // ----
