@@ -11,34 +11,16 @@ return [
     |
     */
 
-    // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'Backpack',
-
-    // Menu logos
-    'logo_lg'   => '<b>Back</b>pack',
-    'logo_mini' => '<b>B</b>p',
-
-    // Developer or company name. Shown in footer.
-    'developer_name' => 'Cristian Tabacitu',
-
-    // Developer website. Link in footer.
-    'developer_link' => 'http://tabacitu.ro',
-
-    // Show powered by Laravel Backpack in the footer?
-    'show_powered_by' => true,
-
-    // CSS Classes
-    'body_class' => 'app aside-menu-fixed sidebar-lg-show',
-        // Try sidebar-hidden, sidebar-fixed, sidebar-compact, sidebar-lg-show
-    'header_class' => 'app-header bg-transparent border-0 navbar',
-        // Try adding bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
-        // You might need to add "navbar-dark" too if the background color is a dark one.
-    'sidebar_class' => 'sidebar sidebar-pills sidebar-bg-transparent',
-        // Try removing our sidebar-pills class and adding a background class like bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
-
     // Date & Datetime Format Syntax: https://carbon.nesbot.com/docs/#api-localization
     'default_date_format'     => 'D MMM YYYY',
     'default_datetime_format' => 'D MMM YYYY, HH:mm',
+
+    // ----
+    // HEAD
+    // ----
+
+    // Project name. Shown in the window title.
+    'project_name' => 'Backpack Admin Panel',
 
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
@@ -48,13 +30,51 @@ return [
         'packages/backpack/backpackui/css/backpackui.css',
     ],
 
+    // ------
+    // HEADER
+    // ------
+
+    // Menu logo. You can replace this with an <img> tag if you have a logo.
+    'project_logo'   => '<b>Back</b>pack',
+
+    // Horizontal navbar classes. Helps make the admin panel look similar to your project's design.
+    'header_class' => 'app-header bg-transparent border-0 navbar',
+        // Try adding bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
+        // You might need to add "navbar-dark" too if the background color is a dark one.
+
+
+    // ----
+    // BODY
+    // ----
+
+    // Body element classes.
+    'body_class' => 'app aside-menu-fixed sidebar-lg-show',
+        // Try sidebar-hidden, sidebar-fixed, sidebar-compact, sidebar-lg-show
+
+    // Sidebar element classes.
+    'sidebar_class' => 'sidebar sidebar-pills sidebar-bg-transparent',
+        // Try removing our sidebar-pills class and adding a background class like bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan
+
+    // ------
+    // FOOTER
+    // ------
+
+    // Developer or company name. Shown in footer.
+    'developer_name' => 'Cristian Tabacitu',
+
+    // Developer website. Link in footer. Type false if you want to hide it.
+    'developer_link' => 'http://tabacitu.ro',
+
+    // Show powered by Laravel Backpack in the footer? true/false
+    'show_powered_by' => true,
+
     /*
     |--------------------------------------------------------------------------
     | Registration Open
     |--------------------------------------------------------------------------
     |
     | Choose whether new users/admins are allowed to register.
-    | This will show up the Register button in the menu and allow access to the
+    | This will show the Register button on the login page and allow access to the
     | Register functions in AuthController.
     |
     | By default the registration is open only on localhost.
