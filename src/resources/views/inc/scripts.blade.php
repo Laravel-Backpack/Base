@@ -6,7 +6,7 @@
 {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> --}}
 {{-- <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script> --}}
-<script type="text/javascript" src="{{ asset('packages/backpack/base/js/bundle.js') }}"></script>
+<script type="text/javascript" src="{{ asset('packages/backpack/base/js/bundle.js').'?v='.\Backpack\Base\BaseServiceProvider::VERSION }}"></script>
 
 <!-- page script -->
 <script type="text/javascript">

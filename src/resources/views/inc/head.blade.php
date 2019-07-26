@@ -15,7 +15,7 @@
 @yield('before_styles')
 @stack('before_styles')
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('packages/backpack/base/css/bundle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('packages/backpack/base/css/bundle.css').'?v='.\Backpack\Base\BaseServiceProvider::VERSION }}">
 
     {{-- BUNDLE CONTENTS --}}
     {{-- uncomment if you want to load assets from CDN --}}
