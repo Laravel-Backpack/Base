@@ -1,4 +1,4 @@
-<script src="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.js') }}"></script>
+{{-- <script src="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.js') }}"></script> --}}
 
 {{-- Bootstrap Notifications using Prologue Alerts --}}
 <script type="text/javascript">

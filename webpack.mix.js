@@ -11,4 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('src/resources/js/backpack.base.js', 'src/public/packages/backpack/base/js');
+// create bundle files inside Base's public folder
+mix.js('src/resources/assets/js/bundle.js', 'src/public/packages/backpack/base/js/')
+	.sass('src/resources/assets/scss/bundle.scss', 'src/public/packages/backpack/base/css/');
+
+// copy fonts to Base's public folder
+mix.copy('node_modules/line-awesome/fonts', 'src/public/fonts/vendor/line-awesome')
+	.copy('node_modules/source-sans-pro', 'src/public/fonts/vendor/source-sans-pro');
+
+// copy asset files from Base's public folder the main app's public folder
+mix.copyDirectory('src/public', '../../../public')
