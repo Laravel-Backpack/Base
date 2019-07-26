@@ -27,7 +27,7 @@ return [
 
     // Overlays - CSS files that change the look and feel of the admin panel
     'overlays' => [
-        'packages/digitallyhappy/css/backstrap.css',
+        'packages/digitallyhappy/backstrap/css/backstrap.css',
     ],
 
     // ------
