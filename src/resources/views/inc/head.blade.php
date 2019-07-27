@@ -8,7 +8,19 @@
 
     @yield('before_styles')
     @stack('before_styles')
-    @include('backpack::inc.styles')
+    
+    @if (config('backpack.base.styles') && count(config('backpack.base.styles')))
+        @foreach (config('backpack.base.styles') as $path)
+        <link rel="stylesheet" type="text/css" href="{{ asset($path) }}">
+        @endforeach
+    @endif
+
+    @if (config('backpack.base.mix_styles') && count(config('backpack.base.mix_styles')))
+        @foreach (config('backpack.base.mix_styles') as $path)
+        <link rel="stylesheet" type="text/css" href="{{ mix($path) }}">
+        @endforeach
+    @endif
+
     @yield('after_styles')
     @stack('after_styles')
 
