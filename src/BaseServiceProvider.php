@@ -8,8 +8,6 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
-    const VERSION = '1.0.1';
-
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
         \Backpack\Base\app\Console\Commands\AddSidebarContent::class,
@@ -48,7 +46,6 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot(\Illuminate\Routing\Router $router)
     {
-        $_SERVER['BACKPACK_BASE_VERSION'] = $this::VERSION;
         $customViewsFolder = resource_path('views/vendor/backpack/base');
 
         // LOAD THE VIEWS
