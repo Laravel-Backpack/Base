@@ -4,6 +4,7 @@
 
 <head>
   @include('backpack::inc.head')
+  
 </head>
 
 <body class="{{ config('backpack.base.body_class') }}">
