@@ -4,44 +4,24 @@
     @include('backpack::inc.head')
 </head>
 <body class="app flex-row align-items-center">
-    {{-- <div class="app-body"> --}}
 
-      {{-- @include('backpack::inc.sidebar') --}}
+  @yield('header')
 
-      <!-- Content Wrapper. Contains page content -->
-      {{-- <main class="main"> --}}
-        <!-- Content Header (Page header) -->
-         @yield('header')
+  <div class="container">
+  @yield('content')
+  </div>
 
-        <!-- Main content -->
-        {{-- <div class="container-fluid animated fadeIn"> --}}
+  <footer class="app-footer sticky-footer">
+    @include('backpack::inc.footer')
+  </footer>
 
-          <div class="container">
-          @yield('content')
-          </div>
+  @yield('before_scripts')
+  @stack('before_scripts')
 
-        {{-- </div> --}}
-        <!-- /.content -->
-      {{-- </main> --}}
-      <!-- /.content-wrapper -->
+  @include('backpack::inc.scripts')
 
-    {{-- </div> --}}
-    <!-- ./app-body -->
+  @yield('after_scripts')
+  @stack('after_scripts')
 
-    <footer class="app-footer sticky-footer">
-      @include('backpack::inc.footer')
-    </footer>
-
-    @yield('before_scripts')
-    @stack('before_scripts')
-
-    @include('backpack::inc.scripts')
-    @include('backpack::inc.alerts')
-
-    @yield('after_scripts')
-    @stack('after_scripts')
-
-    <!-- JavaScripts -->
-    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 </body>
 </html>
