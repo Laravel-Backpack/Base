@@ -28,8 +28,8 @@ return [
     // ------
     // STYLES
     // ------
-    
-    // CSS files that are loaded in all pages, using Laravel's asset() helper 
+
+    // CSS files that are loaded in all pages, using Laravel's asset() helper
     'styles' => [
         'packages/backpack/base/css/bundle.css', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
         //
@@ -38,12 +38,12 @@ return [
         // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',
         // 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic',
         // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/PNotifyBrightTheme.css',
-        // 
+        //
         // overlays (design layers on top of CoreUI)
         'packages/@digitallyhappy/backstrap/css/overlay.css', // Backpack's default design
     ],
 
-    // CSS files that are loaded in all pages, using Laravel's mix() helper 
+    // CSS files that are loaded in all pages, using Laravel's mix() helper
     'mix_styles' => [
         // 'css/app.css',
     ],
@@ -88,8 +88,8 @@ return [
     // -------
     // SCRIPTS
     // -------
-    
-    // JS files that are loaded in all pages, using Laravel's asset() helper 
+
+    // JS files that are loaded in all pages, using Laravel's asset() helper
     'scripts' => [
         'packages/backpack/base/js/bundle.js', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
 
@@ -108,7 +108,7 @@ return [
         // 'https://unpkg.com/react-dom@16/umd/react-dom.production.min.js',
     ],
 
-    // JS files that are loaded in all pages, using Laravel's mix() helper 
+    // JS files that are loaded in all pages, using Laravel's mix() helper
     'mix_scripts' => [
        //  'js/app.js',
     ],
