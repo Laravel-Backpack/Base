@@ -15,7 +15,6 @@
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "pace": "0.0.4",
-        "pnotify": "^4.0.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
@@ -28,6 +27,7 @@
         "line-awesome": "^1.0.2",
         "pace-js": "^1.0.2",
         "perfect-scrollbar": "^1.4.0",
+        "pnotify": "^4.0.0",
         "popper.js": "^1.12",
         "simple-line-icons": "^2.4.1",
         "source-sans-pro": "^2.45"

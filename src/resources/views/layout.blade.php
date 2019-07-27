@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="{{ app()->getLocale() }}">
+
 <head>
-    @include('backpack::inc.head')
+  @include('backpack::inc.head')
 </head>
+
 <body class="{{ config('backpack.base.body_class') }}">
+
 	<script type="text/javascript">
 		/* Recover sidebar state */
 		(function () {
@@ -13,6 +17,7 @@
 			}
 		})();
 	</script>
+
     <!-- Site wrapper -->
     @include('backpack::inc.main_header')
     <!-- ./app-header -->
