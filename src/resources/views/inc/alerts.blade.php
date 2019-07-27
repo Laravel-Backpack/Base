@@ -1,5 +1,3 @@
-{{-- <script src="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.js') }}"></script> --}}
-
 {{-- Bootstrap Notifications using Prologue Alerts --}}
 <script type="text/javascript">
   PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
