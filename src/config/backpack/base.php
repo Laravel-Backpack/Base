@@ -25,9 +25,27 @@ return [
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
 
-    // Overlays - CSS files that change the look and feel of the admin panel
-    'overlays' => [
-        'packages/@digitallyhappy/backstrap/css/overlay.css',
+    // ------
+    // STYLES
+    // ------
+    
+    // CSS files that are loaded in all pages, using Laravel's asset() helper 
+    'styles' => [
+        'packages/backpack/base/css/bundle.css', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
+        //
+        // examples (everything inside the bundle, loaded from CDN)
+        // 'https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css',
+        // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',
+        // 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic',
+        // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/PNotifyBrightTheme.css',
+        // 
+        // overlays (design layers on top of CoreUI)
+        'packages/@digitallyhappy/backstrap/css/overlay.css', // Backpack's default design
+    ],
+
+    // CSS files that are loaded in all pages, using Laravel's mix() helper 
+    'mix_styles' => [
+        // 'css/app.css',
     ],
 
     // ------
@@ -66,6 +84,34 @@ return [
 
     // Show powered by Laravel Backpack in the footer? true/false
     'show_powered_by' => true,
+
+    // -------
+    // SCRIPTS
+    // -------
+    
+    // JS files that are loaded in all pages, using Laravel's asset() helper 
+    'scripts' => [
+        'packages/backpack/base/js/bundle.js', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
+
+        // examples (everything inside the bundle, loaded from CDN)
+        // 'https://code.jquery.com/jquery-3.4.1.min.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
+        // 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
+        // 'https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+        // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/iife/PNotify.js',
+        // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/iife/PNotifyButtons.js',
+
+        // examples (VueJS or React)
+        // 'https://unpkg.com/vue@2.4.4/dist/vue.min.js',
+        // 'https://unpkg.com/react@16/umd/react.production.min.js',
+        // 'https://unpkg.com/react-dom@16/umd/react-dom.production.min.js',
+    ],
+
+    // JS files that are loaded in all pages, using Laravel's mix() helper 
+    'mix_scripts' => [
+       //  'js/app.js',
+    ],
 
     /*
     |--------------------------------------------------------------------------
