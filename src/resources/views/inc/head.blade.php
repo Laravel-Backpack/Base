@@ -17,7 +17,7 @@
 
     @if (config('backpack.base.mix_styles') && count(config('backpack.base.mix_styles')))
         @foreach (config('backpack.base.mix_styles') as $path)
-        <link rel="stylesheet" type="text/css" href="{{ asset($path) }}">
+        <link rel="stylesheet" type="text/css" href="{{ mix($path) }}">
         @endforeach
     @endif
 
