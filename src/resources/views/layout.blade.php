@@ -18,11 +18,17 @@
     <main class="main">
 
        @includeWhen(isset($breadcrumbs), 'backpack::inc.breadcrumbs')
-       
+
        @yield('header')
 
         <div class="container-fluid animated fadeIn">
-        @yield('content')
+          
+          @includeWhen(isset($cards), 'backpack::inc.cards', ['section' => 'before_content'])
+          
+          @yield('content')
+          
+          @includeWhen(isset($cards), 'backpack::inc.cards', ['section' => 'after_content'])
+
         </div>
 
     </main>
