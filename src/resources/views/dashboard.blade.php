@@ -1,15 +1,11 @@
 @extends('backpack::layout')
 
-@section('header')
-    @if (config('backpack.base.breadcrumbs'))
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ url(config('backpack.base.route_prefix'), 'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ trans('backpack::base.dashboard') }}</li>
-      </ol>
-    </nav>
-    @endif
-@endsection
+@php
+  $breadcrumbs = [
+      trans('backpack::crud.admin') => url(config('backpack.base.route_prefix'), 'dashboard'),
+      trans('backpack::base.dashboard') => false,
+  ];
+@endphp
 
 @section('content')
     <div class="jumbotron">

@@ -17,6 +17,8 @@
 
     <main class="main">
 
+       @includeWhen(isset($breadcrumbs), 'backpack::inc.breadcrumbs')
+       
        @yield('header')
 
         <div class="container-fluid animated fadeIn">
