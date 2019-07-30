@@ -3,9 +3,9 @@
 	  <ol class="breadcrumb">
 	  	@foreach ($breadcrumbs as $label => $link)
 	  		@if ($link)
-			    <li class="breadcrumb-item"><a href="{{ $link }}">{{ $label }}</a></li>
+			    <li class="breadcrumb-item text-capitalize"><a href="{{ $link }}">{{ $label }}</a></li>
 	  		@else
-			    <li class="breadcrumb-item active" aria-current="page">{{ $label }}</li>
+			    <li class="breadcrumb-item text-capitalize active" aria-current="page">{{ $label }}</li>
 	  		@endif
 	  	@endforeach
 	  </ol>
