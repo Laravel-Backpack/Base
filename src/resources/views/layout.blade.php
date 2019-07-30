@@ -23,11 +23,11 @@
 
         <div class="container-fluid animated fadeIn">
           
-          @includeWhen(isset($cards), 'backpack::inc.cards', ['section' => 'before_content'])
+          @includeWhen(isset($widgets), 'backpack::inc.widgets', ['section' => 'before_content'])
           
           @yield('content')
           
-          @includeWhen(isset($cards), 'backpack::inc.cards', ['section' => 'after_content'])
+          @includeWhen(isset($widgets), 'backpack::inc.widgets', ['section' => 'after_content'])
 
         </div>
 
