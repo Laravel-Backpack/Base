@@ -24,7 +24,8 @@
         "laravel/framework": "5.8.*",
         "prologue/alerts": "^0.4.1",
         "creativeorange/gravatar": "~1.0",
-        "nesbot/carbon": "^2.14.0"
+        "nesbot/carbon": "^2.14.0",
+        "ocramius/package-versions": "^1.4"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
