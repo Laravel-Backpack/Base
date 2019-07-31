@@ -31,7 +31,7 @@ return [
 
     // CSS files that are loaded in all pages, using Laravel's asset() helper
     'styles' => [
-        'packages/backpack/base/css/bundle.css', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
+        'packages/backpack/base/css/bundle.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
         //
         // examples (everything inside the bundle, loaded from CDN)
         // 'https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css',
@@ -40,7 +40,7 @@ return [
         // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/PNotifyBrightTheme.css',
         //
         // overlays (design layers on top of CoreUI)
-        'packages/@digitallyhappy/backstrap/css/overlay.css', // Backpack's default design
+        'packages/@digitallyhappy/backstrap/css/overlay.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), // Backpack's default design
     ],
 
     // CSS files that are loaded in all pages, using Laravel's mix() helper
@@ -91,7 +91,7 @@ return [
 
     // JS files that are loaded in all pages, using Laravel's asset() helper
     'scripts' => [
-        'packages/backpack/base/js/bundle.js', // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
+        'packages/backpack/base/js/bundle.js?v='.\PackageVersions\Versions::getVersion('backpack/base'), // includes jQuery, Bootstrap, CoreUI, PNotify, Popper
 
         // examples (everything inside the bundle, loaded from CDN)
         // 'https://code.jquery.com/jquery-3.4.1.min.js',
