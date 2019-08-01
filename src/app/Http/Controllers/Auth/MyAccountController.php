@@ -18,14 +18,14 @@ class MyAccountController extends Controller
     }
 
     /**
-     * Show the user a form to change his personal information.
+     * Show the user a form to change his personal information & password.
      */
     public function getAccountInfoForm()
     {
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = $this->guard()->user();
 
-        return view('backpack::auth.account.update_info', $this->data);
+        return view('backpack::auth.account.my_account', $this->data);
     }
 
     /**
@@ -42,17 +42,6 @@ class MyAccountController extends Controller
         }
 
         return redirect()->back();
-    }
-
-    /**
-     * Show the user a form to change his login password.
-     */
-    public function getChangePasswordForm()
-    {
-        $this->data['title'] = trans('backpack::base.my_account');
-        $this->data['user'] = $this->guard()->user();
-
-        return view('backpack::auth.account.change_password', $this->data);
     }
 
     /**

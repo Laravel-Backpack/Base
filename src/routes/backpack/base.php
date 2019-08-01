@@ -46,7 +46,6 @@ function () {
     if (config('backpack.base.setup_my_account_routes')) {
         Route::get('edit-account-info', 'Auth\MyAccountController@getAccountInfoForm')->name('backpack.account.info');
         Route::post('edit-account-info', 'Auth\MyAccountController@postAccountInfoForm');
-        Route::get('change-password', 'Auth\MyAccountController@getChangePasswordForm')->name('backpack.account.password');
-        Route::post('change-password', 'Auth\MyAccountController@postChangePasswordForm');
+        Route::post('change-password', 'Auth\MyAccountController@postChangePasswordForm')->name('backpack.account.password');
     }
 });

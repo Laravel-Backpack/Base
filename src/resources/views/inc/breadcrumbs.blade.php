@@ -1,6 +1,6 @@
 @if (config('backpack.base.breadcrumbs') && isset($breadcrumbs) && is_array($breadcrumbs) && count($breadcrumbs))
 	<nav aria-label="breadcrumb">
-	  <ol class="breadcrumb">
+	  <ol class="breadcrumb bg-transparent justify-content-end p-0">
 	  	@foreach ($breadcrumbs as $label => $link)
 	  		@if ($link)
 			    <li class="breadcrumb-item text-capitalize"><a href="{{ $link }}">{{ $label }}</a></li>
