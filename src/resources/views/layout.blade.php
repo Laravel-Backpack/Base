@@ -21,7 +21,7 @@
        
        @yield('header')
 
-        <div class="container-fluid animated fadeIn">
+        <div class="container-fluid animated fadeIn pt-3 pb-3">
         @yield('content')
         </div>
 
