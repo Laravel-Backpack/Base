@@ -1,4 +1,4 @@
-@extends('backpack::layout_guest')
+@extends('backpack::layouts.plain')
 
 <!-- Main Content -->
 @section('content')

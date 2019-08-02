@@ -2,7 +2,9 @@
 
 namespace Backpack\Base\app\Http\Controllers;
 
-class AdminController extends Controller
+use Backpack\Base\app\Http\Controllers\BaseController;
+
+class AdminController extends BaseController
 {
     protected $data = []; // the information we send to the view
 

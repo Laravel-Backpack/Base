@@ -1,14 +1,14 @@
 <?php
 
-namespace Backpack\Base\app\Http\Controllers\Auth;
+namespace Backpack\Base\app\Http\Controllers;
 
 use Alert;
-use Backpack\Base\app\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Controllers\BaseController;
 use Backpack\Base\app\Http\Requests\AccountInfoRequest;
 use Backpack\Base\app\Http\Requests\ChangePasswordRequest;
 use Illuminate\Support\Facades\Hash;
 
-class MyAccountController extends Controller
+class MyAccountController extends BaseController
 {
     protected $data = [];
 
@@ -25,7 +25,7 @@ class MyAccountController extends Controller
         $this->data['title'] = trans('backpack::base.my_account');
         $this->data['user'] = $this->guard()->user();
 
-        return view('backpack::auth.account.my_account', $this->data);
+        return view('backpack::my_account', $this->data);
     }
 
     /**
