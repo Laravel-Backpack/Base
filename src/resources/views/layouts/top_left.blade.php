@@ -18,15 +18,24 @@
     <main class="main">
 
        @includeWhen(isset($breadcrumbs), 'backpack::inc.breadcrumbs')
-       
+
        @yield('header')
 
-        <div class="container-fluid animated fadeIn pt-3 pb-3">
-        @yield('content')
+        <div class="container-fluid animated fadeIn">
+          
+          @if (isset($widgets['before_content']))
+            @include('backpack::inc.widgets', [ 'widgets' => $widgets['before_content'] ])
+          @endif
+          
+          @yield('content')
+          
+          @if (isset($widgets['after_content']))
+            @include('backpack::inc.widgets', [ 'widgets' => $widgets['after_content'] ])
+          @endif
+
         </div>
 
     </main>
-
 
   </div><!-- ./app-body -->
 
