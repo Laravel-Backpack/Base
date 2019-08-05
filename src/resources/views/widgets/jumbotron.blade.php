@@ -2,11 +2,11 @@
 	<div class="jumbotron">
 
 	  @if (isset($widget['heading']))
-	  <h1 class="display-3">{{ $widget['heading'] }}</h1>
+	  <h1 class="display-3">{!! $widget['heading'] !!}</h1>
 	  @endif
 
 	  @if (isset($widget['content']))
-	  <p>{{ $widget['content'] }}</p>
+	  <p>{!! $widget['content'] !!}</p>
 	  @endif
 
 	  @if (isset($widget['button_link']))
