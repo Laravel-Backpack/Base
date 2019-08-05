@@ -22,8 +22,19 @@ class AdminController extends Controller
     public function dashboard()
     {
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
+        $this->data['breadcrumbs'] = [
+            trans('backpack::crud.admin') => url(config('backpack.base.route_prefix'), 'dashboard'),
+            trans('backpack::base.dashboard') => false,
+        ];
+        $this->data['widgets']['before_content'][] = [
+            'type' => 'jumbotron',
+            'heading' => trans('backpack::base.welcome'),
+            'content' => trans('backpack::base.use_sidebar'),
+            'button_link' => backpack_url('logout'),
+            'button_text' => trans('backpack::base.logout'),
+        ];
 
-        return view('backpack::dashboard', $this->data);
+        return view('backpack::blank', $this->data);
     }
 
     /**
