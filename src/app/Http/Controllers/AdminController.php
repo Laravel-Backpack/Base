@@ -23,7 +23,7 @@ class AdminController extends Controller
     {
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
         $this->data['breadcrumbs'] = [
-            trans('backpack::crud.admin')     => url(config('backpack.base.route_prefix'), 'dashboard'),
+            trans('backpack::crud.admin')     => backpack_url('dashboard'),
             trans('backpack::base.dashboard') => false,
         ];
         $this->data['widgets']['before_content'][] = [
