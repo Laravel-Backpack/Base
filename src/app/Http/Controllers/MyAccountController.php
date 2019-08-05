@@ -3,7 +3,6 @@
 namespace Backpack\Base\app\Http\Controllers;
 
 use Alert;
-use Backpack\Base\app\Http\Controllers\BaseController;
 use Backpack\Base\app\Http\Requests\AccountInfoRequest;
 use Backpack\Base\app\Http\Requests\ChangePasswordRequest;
 use Illuminate\Support\Facades\Hash;
