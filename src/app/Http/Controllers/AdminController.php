@@ -23,13 +23,13 @@ class AdminController extends Controller
     {
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
         $this->data['breadcrumbs'] = [
-            trans('backpack::crud.admin') => url(config('backpack.base.route_prefix'), 'dashboard'),
+            trans('backpack::crud.admin')     => url(config('backpack.base.route_prefix'), 'dashboard'),
             trans('backpack::base.dashboard') => false,
         ];
         $this->data['widgets']['before_content'][] = [
-            'type' => 'jumbotron',
-            'heading' => trans('backpack::base.welcome'),
-            'content' => trans('backpack::base.use_sidebar'),
+            'type'        => 'jumbotron',
+            'heading'     => trans('backpack::base.welcome'),
+            'content'     => trans('backpack::base.use_sidebar'),
             'button_link' => backpack_url('logout'),
             'button_text' => trans('backpack::base.logout'),
         ];
