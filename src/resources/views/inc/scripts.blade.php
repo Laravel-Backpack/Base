@@ -10,6 +10,8 @@
     @endforeach
 @endif
 
+@include('backpack::inc.alerts')
+
 <!-- page script -->
 <script type="text/javascript">
     // To make Pace works on Ajax calls
@@ -29,5 +31,3 @@
         location.hash = e.target.hash.replace("#tab_", "#");
     });
 </script>
-
-@include('backpack::inc.alerts')

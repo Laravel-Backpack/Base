@@ -2,9 +2,7 @@
 <script type="text/javascript">
   PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
   PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
-  // Pnotify.defaults.animate.animate = 'true';
-  // Pnotify.defaults.animate.inClass = 'bounceIn';
-  // Pnotify.defaults.animate.outClass = 'bounceOut';
+  PNotify.defaults.icon = false;
 
   @foreach (Alert::getMessages() as $type => $messages)
 

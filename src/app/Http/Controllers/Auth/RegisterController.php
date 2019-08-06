@@ -2,12 +2,12 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use Backpack\Base\app\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Controllers\BaseController;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Validator;
 
-class RegisterController extends Controller
+class RegisterController extends BaseController
 {
     protected $data = []; // the information we send to the view
 
