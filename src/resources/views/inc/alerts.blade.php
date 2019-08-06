@@ -4,7 +4,7 @@
   PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
   PNotify.defaults.icon = false;
 
-  @foreach (Alert::getMessages() as $type => $messages)
+  @foreach (\Alert::getMessages() as $type => $messages)
 
       @php
         switch ($type) {
