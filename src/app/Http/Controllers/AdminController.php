@@ -34,7 +34,6 @@ class AdminController extends BaseController
             'button_text' => trans('backpack::base.logout'),
         ];
 
-
         return view('backpack::blank', $this->data);
     }
 
