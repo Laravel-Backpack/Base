@@ -2,6 +2,9 @@
 <script type="text/javascript">
   PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
   PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
+  // Pnotify.defaults.animate.animate = 'true';
+  // Pnotify.defaults.animate.inClass = 'bounceIn';
+  // Pnotify.defaults.animate.outClass = 'bounceOut';
 
   @foreach (Alert::getMessages() as $type => $messages)
 
@@ -44,6 +47,13 @@
           text: "{!! str_replace('"', "'", $message) !!}",
           textTrusted: true,
           type: "{{ $type }}",
+          modules: {
+            Animate: {
+              animate: true,
+              inClass: 'bounceIn',
+              outClass: 'bounceOut'
+            }
+          }
         });
 
       @endforeach

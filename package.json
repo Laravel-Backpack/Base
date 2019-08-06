@@ -23,9 +23,11 @@
     "dependencies": {
         "@coreui/coreui": "^2.1.12",
         "@digitallyhappy/backstrap": "^0.2.2",
+        "animate.css": "^3.7.2",
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
         "line-awesome": "^1.0.2",
+        "nonblockjs": "^1.0.8",
         "pace-js": "^1.0.2",
         "perfect-scrollbar": "^1.4.0",
         "pnotify": "^4.0.0",
