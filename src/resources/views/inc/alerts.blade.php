@@ -1,4 +1,4 @@
-{{-- Bootstrap Notifications using Prologue Alerts --}}
+{{-- Bootstrap Notifications using Prologue Alerts & PNotify JS --}}
 <script type="text/javascript">
   PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
   PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
@@ -44,14 +44,7 @@
           // title: 'Regular Notice',
           text: "{!! str_replace('"', "'", $message) !!}",
           textTrusted: true,
-          type: "{{ $type }}",
-          modules: {
-            Animate: {
-              animate: true,
-              inClass: 'bounceIn',
-              outClass: 'bounceOut'
-            }
-          }
+          type: "{{ $type }}"
         });
 
       @endforeach
