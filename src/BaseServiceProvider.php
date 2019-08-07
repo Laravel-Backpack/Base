@@ -255,7 +255,7 @@ class BaseServiceProvider extends ServiceProvider
     private function checkLicenseCodeExists()
     {
         if ($this->app->environment() != 'local' && !config('backpack.base.license_code')) {
-            \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
+            \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' class='alert-link' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
         }
     }
 }
