@@ -31,11 +31,11 @@ return [
 
     // CSS files that are loaded in all pages, using Laravel's asset() helper
     'styles' => [
-        'packages/@digitallyhappy/backstrap/css/style.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
-        'packages/source-sans-pro/source-sans-pro.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
-        'packages/line-awesome/css/line-awesome.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
-        'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
-        
+        'packages/@digitallyhappy/backstrap/css/style.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+        'packages/source-sans-pro/source-sans-pro.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+        'packages/line-awesome/css/line-awesome.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+        'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+
         // Examples (the fonts above, loaded from CDN instead)
         // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',
         // 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic',
