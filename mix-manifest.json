@@ -1,6 +1,4 @@
 {
     "/src/public/packages/backpack/base/js/bundle.js": "/src/public/packages/backpack/base/js/bundle.js",
-    "/src/public/packages/backpack/base/css/bundle.css": "/src/public/packages/backpack/base/css/bundle.css",
-    "/src/public/packages/@digitallyhappy/backstrap/css/overlay.css": "/src/public/packages/@digitallyhappy/backstrap/css/overlay.css",
-    "/src/public/packages/@digitallyhappy/backstrap/css/overlay.css.map": "/src/public/packages/@digitallyhappy/backstrap/css/overlay.css.map"
+    "/src/public/packages/animate.css/animate.min.css": "/src/public/packages/animate.css/animate.min.css"
 }

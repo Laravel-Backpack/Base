@@ -28,7 +28,7 @@
     <div class="row">
 
         @if (session('success'))
-        <div class="col-md-12">
+        <div class="col-lg-8">
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
@@ -36,9 +36,9 @@
         @endif
 
         @if ($errors->count())
-        <div class="col-md-12">
+        <div class="col-lg-8">
             <div class="alert alert-danger">
-                <ul>
+                <ul class="mb-1">
                     @foreach ($errors->all() as $e)
                     <li>{{ $e }}</li>
                     @endforeach
