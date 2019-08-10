@@ -103,8 +103,7 @@ return [
         // 'https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js',
         // 'https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
         // 'https://unpkg.com/sweetalert/dist/sweetalert.min.js',
-        // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/iife/PNotify.js',
-        // 'https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/iife/PNotifyButtons.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js'
 
         // examples (VueJS or React)
         // 'https://unpkg.com/vue@2.4.4/dist/vue.min.js',
