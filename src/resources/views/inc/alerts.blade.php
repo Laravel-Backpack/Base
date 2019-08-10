@@ -1,8 +1,19 @@
 {{-- Bootstrap Notifications using Prologue Alerts & PNotify JS --}}
 <script type="text/javascript">
-  PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
-  PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
-  PNotify.defaults.icon = false;
+  Noty.overrideDefaults({
+    layout   : 'topRight',
+    theme    : 'backstrap',
+    timeout  : 2500, 
+    closeWith: ['click', 'button'],
+    // animation: {
+    //     open : 'animated bounceInRight',
+    //     close: 'animated bounceOutRight'
+    // }
+  });
+
+  // PNotify.defaults.styling = 'bootstrap4'; // Bootstrap version 4
+  // PNotify.defaults.icons = 'fontawesome4'; // Font Awesome 4
+  // PNotify.defaults.icon = false;
 
   @foreach (\Alert::getMessages() as $type => $messages)
 
@@ -11,7 +22,7 @@
           case 'warning':
           case 'notice':
           case 'notice':
-            $type = 'notice';
+            $type = 'warning';
             break;
           
           case 'info':
@@ -40,12 +51,10 @@
 
       @foreach ($messages as $message)
 
-        PNotify.alert({
-          // title: 'Regular Notice',
-          text: "{!! str_replace('"', "'", $message) !!}",
-          textTrusted: true,
-          type: "{{ $type }}"
-        });
+        new Noty({
+          type: "{{ $type }}",
+          text: "{!! str_replace('"', "'", $message) !!}"
+        }).show();
 
       @endforeach
   @endforeach

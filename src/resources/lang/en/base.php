@@ -41,6 +41,8 @@ return [
     'cancel'                 => 'Cancel',
     'error'                  => 'Error',
     'success'                => 'Success',
+    'warning'                => 'Warning',
+    'notice'                 => 'Notice',
     'old_password_incorrect' => 'Old password is incorrect.',
     'password_dont_match'    => 'Passwords do not match.',
     'password_empty'         => 'Make sure both password fields are filled out.',
@@ -64,4 +66,5 @@ return [
     'confirm_email'        => 'Confirm Email',
     'choose_new_password'  => 'Choose New Password',
     'confirm_new_password' => 'Confirm new password',
+
 ];
