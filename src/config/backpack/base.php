@@ -36,7 +36,6 @@ return [
         'packages/line-awesome/css/line-awesome.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
         'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
         'packages/noty/noty.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/noty/themes/bootstrap-v4.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
 
         // Examples (the fonts above, loaded from CDN instead)
         // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',

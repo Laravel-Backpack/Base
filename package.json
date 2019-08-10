@@ -11,18 +11,18 @@
     },
     "devDependencies": {
         "cross-env": "^5.1",
-        "css-loader": "^3.1.0",
+        "css-loader": "^3.2.0",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "pace": "0.0.4",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
+        "sass": "^1.22.9",
+        "sass-loader": "^7.2.0",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "@coreui/coreui": "^2.1.12",
-        "@digitallyhappy/backstrap": "^0.2.4",
+        "@digitallyhappy/backstrap": "^0.2.7",
         "animate.css": "^3.7.2",
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
