@@ -1,4 +1,4 @@
-@extends('backpack::layouts.top_left')
+@extends(backpack_view('layouts.top_left'))
 
 @section('content')
 @endsection

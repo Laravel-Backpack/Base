@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    @include('backpack::inc.head')
+    @include(backpack_view('inc.head'))
 </head>
 <body class="app flex-row align-items-center">
 
@@ -18,7 +18,7 @@
   @yield('before_scripts')
   @stack('before_scripts')
 
-  @include('backpack::inc.scripts')
+  @include(backpack_view('inc.scripts'))
 
   @yield('after_scripts')
   @stack('after_scripts')

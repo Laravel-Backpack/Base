@@ -3,34 +3,34 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-  @include('backpack::inc.head')
+  @include(backpack_view('inc.head'))
 
 </head>
 
 <body class="{{ config('backpack.base.body_class') }}">
 
-  @include('backpack::inc.main_header')
+  @include(backpack_view('inc.main_header'))
 
   <div class="app-body">
 
-    @include('backpack::inc.sidebar')
+    @include(backpack_view('inc.sidebar'))
 
     <main class="main">
 
-       @includeWhen(isset($breadcrumbs), 'backpack::inc.breadcrumbs')
+       @includeWhen(isset($breadcrumbs), backpack_view('inc.breadcrumbs'))
 
        @yield('header')
 
         <div class="container-fluid animated fadeIn">
           
           @if (isset($widgets['before_content']))
-            @include('backpack::inc.widgets', [ 'widgets' => $widgets['before_content'] ])
+            @include(backpack_view('inc.widgets'), [ 'widgets' => $widgets['before_content'] ])
           @endif
           
           @yield('content')
           
           @if (isset($widgets['after_content']))
-            @include('backpack::inc.widgets', [ 'widgets' => $widgets['after_content'] ])
+            @include(backpack_view('inc.widgets'), [ 'widgets' => $widgets['after_content'] ])
           @endif
 
         </div>
@@ -40,13 +40,13 @@
   </div><!-- ./app-body -->
 
   <footer class="app-footer">
-    @include('backpack::inc.footer')
+    @include(backpack_view('inc.footer'))
   </footer>
 
   @yield('before_scripts')
   @stack('before_scripts')
 
-  @include('backpack::inc.scripts')
+  @include(backpack_view('inc.scripts'))
 
   @yield('after_scripts')
   @stack('after_scripts')

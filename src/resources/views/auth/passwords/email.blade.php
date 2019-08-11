@@ -1,4 +1,4 @@
-@extends('backpack::layouts.plain')
+@extends(backpack_view('layouts.plain'))
 
 <!-- Main Content -->
 @section('content')
