@@ -23,6 +23,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+
+## [1.1.6] - 2019-08-11
+
+### Fixed
+- fixes #393, merges #394 - placehold avatar always had the A letter;
+
+
 ## [1.1.5] - 2019-06-24
 
 ### Fixed
