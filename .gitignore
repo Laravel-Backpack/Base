@@ -1,2 +1,4 @@
 .idea/
 vendor/
+node_modules/
+fonts/

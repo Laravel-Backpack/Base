@@ -8,8 +8,6 @@ use Route;
 
 class BaseServiceProvider extends ServiceProvider
 {
-    const VERSION = '1.0.0';
-
     protected $commands = [
         \Backpack\Base\app\Console\Commands\Install::class,
         \Backpack\Base\app\Console\Commands\AddSidebarContent::class,
@@ -48,7 +46,6 @@ class BaseServiceProvider extends ServiceProvider
      */
     public function boot(\Illuminate\Routing\Router $router)
     {
-        $_SERVER['BACKPACK_BASE_VERSION'] = $this::VERSION;
         $customViewsFolder = resource_path('views/vendor/backpack/base');
 
         // LOAD THE VIEWS
@@ -209,7 +206,7 @@ class BaseServiceProvider extends ServiceProvider
     {
         $error_views = [__DIR__.'/resources/error_views' => resource_path('views/errors')];
         $backpack_base_views = [__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')];
-        $backpack_public_assets = [__DIR__.'/public' => public_path('vendor/backpack')];
+        $backpack_public_assets = [__DIR__.'/public' => public_path('packages')];
         $backpack_lang_files = [__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')];
         $backpack_config_files = [__DIR__.'/config' => config_path()];
 
@@ -223,7 +220,6 @@ class BaseServiceProvider extends ServiceProvider
 
         // calculate the path from current directory to get the vendor path
         $vendorPath = dirname(__DIR__, 3);
-        $adminlte_assets = [$vendorPath.'/almasaeed2010/adminlte' => public_path('vendor/adminlte')];
         $gravatar_assets = [$vendorPath.'/creativeorange/gravatar/config' => config_path()];
 
         // establish the minimum amount of files that need to be published, for Backpack to work; there are the files that will be published by the install command
@@ -235,7 +231,6 @@ class BaseServiceProvider extends ServiceProvider
             $backpack_config_files,
             $backpack_menu_contents_view,
             $backpack_custom_routes_file,
-            $adminlte_assets,
             $gravatar_assets
         );
 
@@ -247,7 +242,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes($error_views, 'errors');
         $this->publishes($backpack_public_assets, 'public');
         $this->publishes($backpack_custom_routes_file, 'custom_routes');
-        $this->publishes($adminlte_assets, 'adminlte');
         $this->publishes($gravatar_assets, 'gravatar');
         $this->publishes($minimum, 'minimum');
     }
@@ -261,7 +255,7 @@ class BaseServiceProvider extends ServiceProvider
     private function checkLicenseCodeExists()
     {
         if ($this->app->environment() != 'local' && !config('backpack.base.license_code')) {
-            \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
+            \Alert::add('warning', "<strong>You're using unlicensed software.</strong> Please ask your web developer to <a target='_blank' class='alert-link' href='http://backpackforlaravel.com'>purchase a license code</a> to hide this message.");
         }
     }
 }

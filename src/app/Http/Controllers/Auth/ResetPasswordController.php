@@ -2,12 +2,12 @@
 
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
-use Backpack\Base\app\Http\Controllers\Controller;
+use Backpack\Base\app\Http\Controllers\BaseController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
-class ResetPasswordController extends Controller
+class ResetPasswordController extends BaseController
 {
     protected $data = []; // the information we send to the view
 
@@ -52,7 +52,7 @@ class ResetPasswordController extends Controller
         }
 
         // where to redirect after password was reset
-        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'admin').'/dashboard';
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : backpack_url('dashboard';
     }
 
     // -------------------------------------------------------
@@ -73,7 +73,7 @@ class ResetPasswordController extends Controller
     {
         $this->data['title'] = trans('backpack::base.reset_password'); // set the page title
 
-        return view(backpack_view('auth.account.passwords.reset'), $this->data)->with(
+        return view(backpack_view('auth.passwords.reset'), $this->data)->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

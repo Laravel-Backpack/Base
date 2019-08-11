@@ -23,6 +23,19 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [2.0.0] - 2019-xx-xx
+
+### Added
+- #384 - Ability to toggle breadcrumbs on/off;
+- #385 - NPM and Laravel Mix for CSS & JS dependencies;
+- #385 - By default Backpack\Base no longer loads anything from CDNs;
+- #387 - Easily add scripts/style to all admin panes, using asset() or mix();
+- #387 - Easily remove the bundled js and css and use CDNs if you want to;
+- #380 - New design - Backstrap, based on CoreUI;
+
+### Removed
+- AdminLTE dependency;
+
 ## [1.1.7] - 2019-08-11
 
 ### Fixed
@@ -39,7 +52,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - fixes #379 - error when username is empty;
-
 
 
 ## [1.1.4] - 2019-03-19

@@ -1,0 +1,39 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "cross-env": "^5.1",
+        "css-loader": "^3.2.0",
+        "laravel-mix": "^4.0.7",
+        "lodash": "^4.17.13",
+        "pace": "0.0.4",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.22.9",
+        "sass-loader": "^7.2.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@coreui/coreui": "^2.1.12",
+        "@digitallyhappy/backstrap": "^0.2.7",
+        "animate.css": "^3.7.2",
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.4.1",
+        "line-awesome": "^1.0.2",
+        "nonblockjs": "^1.0.8",
+        "noty": "^3.2.0-beta",
+        "pace-js": "^1.0.2",
+        "perfect-scrollbar": "^1.4.0",
+        "popper.js": "^1.12",
+        "simple-line-icons": "^2.4.1",
+        "source-sans-pro": "^2.45",
+        "sweetalert": "^2.1.2"
+    }
+}
