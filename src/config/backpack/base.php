@@ -194,7 +194,6 @@ return [
     // - example_method_name (specify the method on the User model that returns the URL)
     'avatar_type' => 'gravatar',
 
-
     /*
     |--------------------------------------------------------------------------
     | Theme (User Interface)
@@ -204,12 +203,12 @@ return [
     // You can create child themes yourself, by creating a view folder anywhere in your resources/views
     // and choosing that view_namespace instead of the default one. Backpack will load a file from there
     // if it exists, otherwise it will load it from the default namespace ("backpack::").
-    
+
     'view_namespace' => 'backpack::',
 
-    // EXAMPLE: if you create a new folder in resources/views/vendor/myname/mypackage, 
+    // EXAMPLE: if you create a new folder in resources/views/vendor/myname/mypackage,
     // your namespace would be the one below. IMPORTANT: in this case the namespace ends with a dot.
-    // 'view_namespace' => 'vendor.myname.mypackage.', 
+    // 'view_namespace' => 'vendor.myname.mypackage.',
 
     /*
     |--------------------------------------------------------------------------
