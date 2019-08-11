@@ -55,7 +55,7 @@ if (!function_exists('backpack_avatar_url')) {
      */
     function backpack_avatar_url($user)
     {
-        $firstLetter = property_exists($user, 'name') ? $user->name[0] : 'A';
+        $firstLetter = $user->getAttribute('name') ? $user->name[0] : 'A';
         $placeholder = 'https://placehold.it/160x160/00a65a/ffffff/&text='.$firstLetter;
 
         switch (config('backpack.base.avatar_type')) {
