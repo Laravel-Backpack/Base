@@ -23,6 +23,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.7] - 2019-08-11
+
+### Fixed
+- merges #392 - updates to InheritsRelationsFromParentModel trait from tightenco/parental;
+
 
 ## [1.1.6] - 2019-08-11
 
