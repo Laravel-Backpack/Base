@@ -34,7 +34,7 @@ return [
         'packages/@digitallyhappy/backstrap/css/style.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
         'packages/source-sans-pro/source-sans-pro.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
         'packages/line-awesome/css/line-awesome.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'), 
+        'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
         'packages/noty/noty.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
 
         // Examples (the fonts above, loaded from CDN instead)
