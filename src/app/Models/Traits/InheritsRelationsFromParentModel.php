@@ -10,8 +10,7 @@ use ReflectionClass;
  * Laravel by default doesn't do that, so packages like Backpack\PermissionManager can't see relationships
  * on the BackpackUser model, because they haven't been inherited from User.
  *
- * The code below has been copy-pasted from https://github.com/tightenco/parental on Feb 27th 2019.
- * When they provide support for Laravel 5.8, this entire trait could go away (or load their trait).
+ * The code below has been copy-pasted from https://github.com/tightenco/parental on Jul 19th 2019.
  */
 trait InheritsRelationsFromParentModel
 {
@@ -29,7 +28,7 @@ trait InheritsRelationsFromParentModel
         static::addGlobalScope(function ($query) {
             $instance = new static();
             if ($instance->parentHasHasChildrenTrait()) {
-                $query->where($instance->getInheritanceColumn(), $instance->classToAlias(get_class($instance)));
+                $query->where($instance->getTable().'.'.$instance->getInheritanceColumn(), $instance->classToAlias(get_class($instance)));
             }
         });
     }
