@@ -1,6 +1,6 @@
 @if (config('backpack.base.scripts') && count(config('backpack.base.scripts')))
     @foreach (config('backpack.base.scripts') as $path)
-    <script type="text/javascript" src="{{ asset($path) }}"></script>
+    <script type="text/javascript" src="{{ asset($path).'?v='.config('backpack.base.cachebusting_string') }}"></script>
     @endforeach
 @endif
 

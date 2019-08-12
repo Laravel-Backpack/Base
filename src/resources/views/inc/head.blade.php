@@ -11,7 +11,7 @@
     
     @if (config('backpack.base.styles') && count(config('backpack.base.styles')))
         @foreach (config('backpack.base.styles') as $path)
-        <link rel="stylesheet" type="text/css" href="{{ asset($path) }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset($path).'?v='.config('backpack.base.cachebusting_string') }}">
         @endforeach
     @endif
 

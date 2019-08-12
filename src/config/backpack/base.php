@@ -31,11 +31,11 @@ return [
 
     // CSS files that are loaded in all pages, using Laravel's asset() helper
     'styles' => [
-        'packages/@digitallyhappy/backstrap/css/style.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/source-sans-pro/source-sans-pro.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/line-awesome/css/line-awesome.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/animate.css/animate.min.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
-        'packages/noty/noty.css?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+        'packages/@digitallyhappy/backstrap/css/style.min.css',
+        'packages/source-sans-pro/source-sans-pro.css',
+        'packages/line-awesome/css/line-awesome.min.css',
+        'packages/animate.css/animate.min.css',
+        'packages/noty/noty.css',
 
         // Examples (the fonts above, loaded from CDN instead)
         // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',
@@ -94,7 +94,7 @@ return [
     // JS files that are loaded in all pages, using Laravel's asset() helper
     'scripts' => [
         // Backstrap includes jQuery, Bootstrap, CoreUI, PNotify, Popper
-        'packages/backpack/base/js/bundle.js?v='.\PackageVersions\Versions::getVersion('backpack/base'),
+        'packages/backpack/base/js/bundle.js',
 
         // examples (everything inside the bundle, loaded from CDN)
         // 'https://code.jquery.com/jquery-3.4.1.min.js',
@@ -115,6 +115,15 @@ return [
     'mix_scripts' => [// file_path => manifest_directory_path
         // 'js/app.js' => '',
     ],
+
+    // -------------
+    // CACHE-BUSTING
+    // -------------
+    
+    // All JS and CSS assets defined above have this string appended as query string (?v=string).
+    // If you want to manually trigger cachebusting for all styles and scripts,
+    // append or prepent something to the string below, so that it's different. 
+    'cachebusting_string' => \PackageVersions\Versions::getVersion('backpack/base'),
 
     /*
     |--------------------------------------------------------------------------
