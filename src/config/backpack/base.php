@@ -119,10 +119,10 @@ return [
     // -------------
     // CACHE-BUSTING
     // -------------
-    
+
     // All JS and CSS assets defined above have this string appended as query string (?v=string).
     // If you want to manually trigger cachebusting for all styles and scripts,
-    // append or prepent something to the string below, so that it's different. 
+    // append or prepent something to the string below, so that it's different.
     'cachebusting_string' => \PackageVersions\Versions::getVersion('backpack/base'),
 
     /*
