@@ -26,15 +26,8 @@ class AdminController extends BaseController
             trans('backpack::crud.admin')     => backpack_url('dashboard'),
             trans('backpack::base.dashboard') => false,
         ];
-        $this->data['widgets']['before_content'][] = [
-            'type'        => 'jumbotron',
-            'heading'     => trans('backpack::base.welcome'),
-            'content'     => trans('backpack::base.use_sidebar'),
-            'button_link' => backpack_url('logout'),
-            'button_text' => trans('backpack::base.logout'),
-        ];
 
-        return view(backpack_view('blank'), $this->data);
+        return view(backpack_view('dashboard'), $this->data);
     }
 
     /**
