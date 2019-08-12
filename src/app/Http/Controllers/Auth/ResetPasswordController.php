@@ -52,7 +52,7 @@ class ResetPasswordController extends BaseController
         }
 
         // where to redirect after password was reset
-        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : backpack_url('dashboard';
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : backpack_url('dashboard');
     }
 
     // -------------------------------------------------------
