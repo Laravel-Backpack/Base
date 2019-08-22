@@ -48,11 +48,8 @@ class Install extends Command
         $this->info(" Backpack\Base installation started. Please wait...");
         $this->progressBar->advance();
 
-        $this->line(' Installing backpack/generators');
-        $this->executeProcess('composer require backpack/generators --dev');
-
-        $this->line(' Installing laracasts/generators');
-        $this->executeProcess('composer require laracasts/generators:dev-master --dev');
+        $this->line(' Installing webfactor/laravel-generators');
+        $this->executeProcess('composer require --dev webfactor/laravel-generators');
 
         $this->line(' Publishing configs, langs, views and AdminLTE files');
         $this->executeProcess('php artisan vendor:publish --provider="Backpack\Base\BaseServiceProvider" --tag=minimum');

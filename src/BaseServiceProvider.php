@@ -206,7 +206,7 @@ class BaseServiceProvider extends ServiceProvider
     {
         $error_views = [__DIR__.'/resources/error_views' => resource_path('views/errors')];
         $backpack_base_views = [__DIR__.'/resources/views' => resource_path('views/vendor/backpack/base')];
-        $backpack_public_assets = [__DIR__.'/public' => public_path('packages')];
+        $backpack_public_assets = [__DIR__.'/public' => public_path()];
         $backpack_lang_files = [__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')];
         $backpack_config_files = [__DIR__.'/config' => config_path()];
 
