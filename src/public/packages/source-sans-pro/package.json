@@ -1,10 +1,4 @@
 {
-  "_args": [
-    [
-      "source-sans-pro@2.45.0",
-      "/Users/tabacitu/Sites/v4/vendor/backpack/base"
-    ]
-  ],
   "_from": "source-sans-pro@2.45.0",
   "_id": "source-sans-pro@2.45.0",
   "_inBundle": false,
@@ -22,22 +16,26 @@
     "fetchSpec": "2.45.0"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.45.0.tgz",
-  "_spec": "2.45.0",
-  "_where": "/Users/tabacitu/Sites/v4/vendor/backpack/base",
+  "_shasum": "1c013c404dfa48ed18ceaf3e904be21b5a0a124e",
+  "_spec": "source-sans-pro@2.45.0",
+  "_where": "/Users/tabacitu/Sites/v4fresh/vendor/backpack/base",
   "author": {
     "name": "Paul D. Hunt"
   },
   "bugs": {
     "url": "https://github.com/adobe-fonts/source-sans-pro/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Miguel Sousa"
     }
   ],
+  "deprecated": false,
   "description": "Source Sans Pro is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.",
   "homepage": "https://adobe-fonts.github.io/source-sans-pro",
   "keywords": [

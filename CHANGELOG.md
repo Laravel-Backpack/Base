@@ -32,7 +32,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - #387 - Easily add scripts/style to all admin panes, using asset() or mix();
 - #387 - Easily remove the bundled js and css and use CDNs if you want to;
 - #380 - New design - Backstrap, based on CoreUI;
-- [Webfactor/Laravel-Generators](https://github.com/webfactor/laravel-generators) to the installation command;
+- [Webfactor/Laravel-Generators](https://github.com/webfactor/laravel-generatorssu) to the installation command;
 
 ### Removed
 - AdminLTE dependency;
