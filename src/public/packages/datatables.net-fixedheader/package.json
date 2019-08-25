@@ -1,0 +1,60 @@
+{
+  "_from": "datatables.net-fixedheader",
+  "_id": "datatables.net-fixedheader@3.1.5",
+  "_inBundle": false,
+  "_integrity": "sha512-k5Hdj9uDe9iodr/F5Upq7D3rkO6Cw6XpnPRlfk38B0Imb+Fqe7aB3Jn88A4D79Rbla3sqO3ifQOwWoO9qlHetA==",
+  "_location": "/datatables.net-fixedheader",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "datatables.net-fixedheader",
+    "name": "datatables.net-fixedheader",
+    "escapedName": "datatables.net-fixedheader",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/datatables.net-fixedheader/-/datatables.net-fixedheader-3.1.5.tgz",
+  "_shasum": "4b6051a877e2c625604f0847b4b7227faddcccea",
+  "_spec": "datatables.net-fixedheader",
+  "_where": "/Users/tabacitu/Sites/v4fresh/vendor/backpack/base",
+  "author": {
+    "name": "SpryMedia Ltd",
+    "url": "http://datatables.net"
+  },
+  "bugs": {
+    "url": "https://datatables.net/forums"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "datatables.net": "^1.10.15",
+    "jquery": ">=1.7"
+  },
+  "deprecated": false,
+  "description": "FixedHeader for DataTables ",
+  "files": [
+    "js/**/*.js"
+  ],
+  "homepage": "https://datatables.net",
+  "keywords": [
+    "fixed headers",
+    "sticky",
+    "DataTables",
+    "jQuery",
+    "table",
+    "DataTables"
+  ],
+  "license": "MIT",
+  "main": "js/dataTables.fixedHeader.js",
+  "name": "datatables.net-fixedheader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DataTables/Dist-DataTables-FixedHeader.git"
+  },
+  "version": "3.1.5"
+}

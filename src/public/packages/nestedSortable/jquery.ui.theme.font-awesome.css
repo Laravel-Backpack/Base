@@ -1,0 +1,322 @@
+/*!
+ * jQuery UI Bootstrap 0.2.5
+ * Created by @gustavohenke.
+ * Licensed under MIT.
+ *
+ * --------------------------
+ *
+ * To be able to make use of this FontAwesome compatibility layer, you must include the
+ * FontAwesome @font-face somewhere in your CSS. Don't forget it, it's important!
+ */
+.ui-icon {
+  display: inline-block;
+  line-height: 1em;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  text-decoration: inherit;
+  text-align: center;
+  text-indent: 0;
+  background-image: none !important;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  cursor: default;
+}
+
+li .ui-icon {
+  float: left;
+}
+
+a .ui-icon {
+  cursor: pointer;
+}
+
+.ui-icon:before {
+  display: inline-block;
+}
+
+/* 1st, 2nd & 3rd line, all together */
+/* "Carat" directionals */
+.ui-icon-carat-1-ne:before,
+.ui-icon-carat-1-n:before           { content: "\f106"; }
+
+.ui-icon-carat-1-se:before,
+.ui-icon-carat-1-e:before           { content: "\f105"; }
+
+.ui-icon-carat-1-sw:before,
+.ui-icon-carat-1-s:before           { content: "\f107"; }
+
+.ui-icon-carat-1-nw:before,
+.ui-icon-carat-1-w:before           { content: "\f104"; }
+/* Missing: .ui-icon-carat-2-n-s */
+/* Missing: .ui-icon-carat-2-e-w */
+
+/* "Triangle" directionals */
+.ui-icon-triangle-1-ne:before,
+.ui-icon-circle-triangle-n:before,
+.ui-icon-triangle-1-n:before        { content: "\f0d8"; }
+
+.ui-icon-triangle-1-se:before,
+.ui-icon-circle-triangle-e:before,
+.ui-icon-triangle-1-e:before        { content: "\f0da"; }
+
+.ui-icon-triangle-1-sw:before,
+.ui-icon-circle-triangle-s:before,
+.ui-icon-triangle-1-s:before        { content: "\f0d7"; }
+
+.ui-icon-triangle-1-nw:before,
+.ui-icon-circle-triangle-w:before,
+.ui-icon-triangle-1-w:before        { content: "\f0d9"; }
+
+.ui-icon-triangle-2-e-w:before,
+.ui-icon-triangle-2-n-s:before      { content: "\f0dc"; }
+
+/* "Arrow" directionals */
+.ui-icon-arrowthick-1-n:before,
+.ui-icon-arrowthick-1-ne:before,
+.ui-icon-arrow-1-ne:before,
+.ui-icon-arrow-1-n:before           { content: "\f062"; }
+
+.ui-icon-arrowthick-1-e:before,
+.ui-icon-arrowthick-1-se:before,
+.ui-icon-arrow-1-se:before,
+.ui-icon-arrow-1-e:before           { content: "\f061"; }
+
+.ui-icon-arrowthick-1-s:before,
+.ui-icon-arrowthick-1-sw:before,
+.ui-icon-arrow-1-sw:before,
+.ui-icon-arrow-1-s:before           { content: "\f063"; }
+
+.ui-icon-arrowthick-1-w:before,
+.ui-icon-arrowthick-1-nw:before,
+.ui-icon-arrow-1-nw:before,
+.ui-icon-arrow-1-w:before           { content: "\f060"; }
+
+.ui-icon-arrow-2-n-s:before,
+.ui-icon-arrowthick-2-n-s:before    { content: "\f07d"; }
+
+.ui-icon-arrow-2-e-w:before,
+.ui-icon-arrowthick-2-e-w:before    { content: "\f07e"; }
+
+.ui-icon-arrow-2-ne-sw:before,
+.ui-icon-arrow-2-se-nw:before,
+.ui-icon-arrowthick-2-se-nw:before,
+.ui-icon-arrowthick-2-ne-sw:before  { content: "\f065"; }
+
+.ui-icon-arrow-4:before             { content: "\f047"; }
+.ui-icon-arrow-4-diag:before        { content: "\f0b2"; }
+
+/* "Arrow return" directionals */
+.ui-icon-arrowreturnthick-1-w:before,
+.ui-icon-arrowreturnthick-1-n:before,
+.ui-icon-arrowreturnthick-1-e:before,
+.ui-icon-arrowreturnthick-1-s:before,
+.ui-icon-arrowreturn-1-w:before,
+.ui-icon-arrowreturn-1-n:before,
+.ui-icon-arrowreturn-1-e:before,
+.ui-icon-arrowreturn-1-s:before     { content: "\f112"; }
+
+/* 4th line */
+.ui-icon-extlink:before             { content: "\f08e"; }
+/* Missing: .ui-icon-newwin */
+.ui-icon-refresh:before             { content: "\f021"; }
+.ui-icon-shuffle:before             { content: "\f074"; }
+.ui-icon-transfer-e-w:before        { content: "\f0ec"; }
+.ui-icon-transferthick-e-w:before   { content: "\f0ec"; }
+.ui-icon-folder-collapsed:before    { content: "\f07b"; }
+.ui-icon-folder-open:before         { content: "\f07c"; }
+.ui-icon-document:before            { content: "\f016"; }
+.ui-icon-document-b:before          { content: "\f0f6"; }
+/* Missing: .ui-icon-note */
+.ui-icon-mail-closed:before         { content: "\f003"; }
+/* Missing: .ui-icon-mail-open */
+.ui-icon-suitcase:before            { content: "\f0f2"; }
+.ui-icon-comment:before             { content: "\f075"; }
+.ui-icon-person:before              { content: "\f007"; }
+.ui-icon-print:before               { content: "\f02f"; }
+.ui-icon-trash:before               { content: "\f014"; }
+.ui-icon-locked:before              { content: "\f023"; }
+.ui-icon-unlocked:before            { content: "\f09c"; }
+.ui-icon-bookmark:before            { content: "\f02e"; }
+.ui-icon-tag:before                 { content: "\f02b"; }
+
+/* 5th line */
+.ui-icon-home:before                { content: "\f015"; }
+.ui-icon-flag:before                { content: "\f024"; }
+/* Missing: .ui-icon-calculator */
+.ui-icon-cart:before                { content: "\f07a"; }
+.ui-icon-pencil:before              { content: "\f040"; }
+.ui-icon-clock:before               { content: "\f017"; }
+.ui-icon-disk:before                { content: "\f0c7"; }
+.ui-icon-calendar:before            { content: "\f073"; }
+.ui-icon-zoomin:before              { content: "\f00e"; }
+.ui-icon-zoomout:before             { content: "\f010"; }
+.ui-icon-search:before              { content: "\f002"; }
+.ui-icon-wrench:before              { content: "\f0ad"; }
+.ui-icon-gear:before                { content: "\f013"; }
+.ui-icon-heart:before               { content: "\f004"; }
+.ui-icon-star:before                { content: "\f005"; }
+.ui-icon-link:before                { content: "\f0c1"; }
+.ui-icon-cancel:before              { content: "\f05e"; }
+.ui-icon-plus:before                { content: "\f067"; }
+.ui-icon-plusthick:before           { content: "\f067"; }
+.ui-icon-minus:before               { content: "\f068"; }
+.ui-icon-minusthick:before          { content: "\f068"; }
+.ui-icon-close:before               { content: "\f00d"; }
+
+/* 6th line */
+.ui-icon-closethick:before          { content: "\f00d"; }
+.ui-icon-key:before                 { content: "\f084"; }
+.ui-icon-lightbulb:before           { content: "\f0eb"; }
+.ui-icon-scissors:before            { content: "\f0c4"; }
+.ui-icon-copy:before                { content: "\f0c5"; }
+.ui-icon-clipboard:before           { content: "\f0ea"; }
+/* Missing: .ui-icon-contact */
+.ui-icon-image:before               { content: "\f03e"; }
+.ui-icon-video:before               { content: "\f008"; }
+/* Missing: .ui-icon-script */
+.ui-icon-alert:before               { content: "\f071"; }
+.ui-icon-info:before                { content: "\f05a"; }
+.ui-icon-notice:before              { content: "\f06a"; }
+.ui-icon-help:before                { content: "\f059"; }
+.ui-icon-check:before               { content: "\f00c"; }
+.ui-icon-bullet:before              { content: "\f111"; }
+.ui-icon-radio-on:before            { content: "\f046"; }
+.ui-icon-radio-off:before           { content: "\f096"; }
+/* Missing: .ui-icon-pin-w */
+.ui-icon-pin-s:before               { content: "\f08d"; }
+.ui-icon-play:before                { content: "\f04b"; }
+.ui-icon-pause:before               { content: "\f04c"; }
+
+/* 7th line */
+.ui-icon-seek-next:before           { content: "\f04e"; }
+.ui-icon-seek-prev:before           { content: "\f04a"; }
+.ui-icon-seek-end:before            { content: "\f051"; }
+.ui-icon-seek-first:before          { content: "\f048"; }
+.ui-icon-stop:before                { content: "\f04d"; }
+.ui-icon-eject:before               { content: "\f052"; }
+.ui-icon-volume-off:before          { content: "\f026"; }
+.ui-icon-volume-on:before           { content: "\f028"; }
+.ui-icon-power:before               { content: "\f011"; }
+.ui-icon-signal-diag:before         { content: "\f09e"; }
+.ui-icon-signal:before              { content: "\f012"; }
+/* Missing: .ui-icon-battery-0 */
+/* Missing: .ui-icon-battery-1 */
+/* Missing: .ui-icon-battery-2 */
+/* Missing: .ui-icon-battery-3 */
+.ui-icon-circle-plus:before         { content: "\f055"; }
+.ui-icon-circle-minus:before        { content: "\f056"; }
+.ui-icon-circle-close:before        { content: "\f057"; }
+/* Missing: .ui-icon-circle-triangle-e */
+/* Missing: .ui-icon-circle-triangle-s */
+/* Missing: .ui-icon-circle-triangle-w */
+/* Missing: .ui-icon-circle-triangle-n */
+
+/* 8th line */
+.ui-icon-circle-arrow-e:before      { content: "\f0a9"; }
+.ui-icon-circle-arrow-s:before      { content: "\f0ab"; }
+.ui-icon-circle-arrow-w:before      { content: "\f0a8"; }
+.ui-icon-circle-arrow-n:before      { content: "\f0aa"; }
+/* Missing: .ui-icon-circle-zoomin */
+/* Missing: .ui-icon-circle-zoomout */
+.ui-icon-circle-check:before        { content: "\f058"; }
+/* Missing: .ui-icon-circlesmall-plus */
+/* Missing: .ui-icon-circlesmall-minus */
+/* Missing: .ui-icon-circlesmall-close */
+/* Missing: .ui-icon-squaresmall-plus */
+/* Missing: .ui-icon-squaresmall-minus */
+/* Missing: .ui-icon-squaresmall-close */
+/* Missing: .ui-icon-grip-dotted-vertical */
+/* Missing: .ui-icon-grip-dotted-horizontal */
+/* Missing: .ui-icon-grip-solid-vertical */
+/* Missing: .ui-icon-grip-solid-horizontal */
+/* Missing: .ui-icon-gripsmall-diagonal-se */
+/* Missing: .ui-icon-grip-diagonal-se */
+
+/* Rotated icons
+----------------- */
+.ui-icon-carat-1-ne,
+.ui-icon-carat-1-se,
+.ui-icon-carat-1-sw,
+.ui-icon-carat-1-nw,
+.ui-icon-triangle-1-ne,
+.ui-icon-triangle-1-se,
+.ui-icon-triangle-1-sw,
+.ui-icon-triangle-1-nw,
+.ui-icon-arrowthick-1-ne,
+.ui-icon-arrowthick-1-se,
+.ui-icon-arrowthick-1-sw,
+.ui-icon-arrowthick-1-nw,
+.ui-icon-arrow-1-ne,
+.ui-icon-arrow-1-se,
+.ui-icon-arrow-1-sw,
+.ui-icon-arrow-1-nw {
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.ui-icon-arrowreturnthick-1-n,
+.ui-icon-arrowreturn-1-n,
+.ui-icon-arrow-2-se-nw,
+.ui-icon-arrowthick-2-se-nw,
+.ui-icon-triangle-2-e-w {
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.ui-icon-arrowreturnthick-1-e,
+.ui-icon-arrowreturn-1-e {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.ui-icon-arrowreturnthick-1-s,
+.ui-icon-arrowreturn-1-s {
+  -webkit-transform: rotate(270deg);
+     -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+       -o-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+/* Hover state */
+.ui-state-hover .ui-icon {
+  color: #454545;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  border: 1px solid #bbb;
+  background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  color: #555;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
+}
+
+.ui-datepicker .ui-datepicker-prev-hover, 
+.ui-datepicker .ui-datepicker-next-hover {
+  border: 1px solid #999999;
+  background-position: 0 -15px;
+  font-weight: normal;
+  -webkit-transition: 0.1s linear background-position;
+     -moz-transition: 0.1s linear background-position;
+      -ms-transition: 0.1s linear background-position;
+       -o-transition: 0.1s linear background-position;
+          transition: 0.1s linear background-position;
+}

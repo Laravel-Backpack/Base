@@ -51,8 +51,15 @@ mix.copy('node_modules/bootstrap-datepicker/dist', 'src/public/packages/bootstra
 	.copy('node_modules/simplemde/dist', 'src/public/packages/simplemde/dist')
 	.copy('node_modules/summernote/dist', 'src/public/packages/summernote/dist')
 	.copy('node_modules/tinymce', 'src/public/packages/tinymce')
+	.copy('node_modules/nestedSortable', 'src/public/packages/nestedSortable')
 	.copy('node_modules/angular', 'src/public/packages/angular')
 	.copy('node_modules/angular-ui-sortable/dist', 'src/public/packages/angular-ui-sortable/dist')
+	.copy('node_modules/datatables.net', 'src/public/packages/datatables.net')
+	.copy('node_modules/datatables.net-bs4', 'src/public/packages/datatables.net-bs4')
+	.copy('node_modules/datatables.net-fixedheader', 'src/public/packages/datatables.net-fixedheader')
+	.copy('node_modules/datatables.net-fixedheader-bs4', 'src/public/packages/datatables.net-fixedheader-bs4')
+	.copy('node_modules/datatables.net-responsive', 'src/public/packages/datatables.net-responsive')
+	.copy('node_modules/datatables.net-responsive-bs4', 'src/public/packages/datatables.net-responsive-bs4')
 	.copy('node_modules/places.js/dist', 'src/public/packages/places.js/dist');
 
 // FOR MAINTAINERS

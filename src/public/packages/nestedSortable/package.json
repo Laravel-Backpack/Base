@@ -1,0 +1,44 @@
+{
+  "_from": "nestedSortable",
+  "_id": "nestedSortable@1.3.4",
+  "_inBundle": false,
+  "_integrity": "sha1-I7zUKURiuhF8F1HvVw3tFMuuM1Q=",
+  "_location": "/nestedSortable",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nestedSortable",
+    "name": "nestedSortable",
+    "escapedName": "nestedSortable",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nestedSortable/-/nestedSortable-1.3.4.tgz",
+  "_shasum": "23bcd4294462ba117c1751ef570ded14cbae3354",
+  "_spec": "nestedSortable",
+  "_where": "/Users/tabacitu/Sites/v4fresh/vendor/backpack/base",
+  "author": {
+    "name": "Manuele J Sarfatti",
+    "email": "manuele@mjsarfatti.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ilikenwf/nestedSortable/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "NestedSortable is a jQuery plugin that extends jQuery Sortable UI functionalities to nested lists.",
+  "homepage": "https://github.com/ilikenwf/nestedSortable#readme",
+  "main": "jquery.mjs.nestedSortable.js",
+  "name": "nestedSortable",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilikenwf/nestedSortable.git"
+  },
+  "version": "1.3.4"
+}

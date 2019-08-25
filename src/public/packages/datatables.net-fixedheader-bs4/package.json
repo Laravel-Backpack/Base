@@ -1,0 +1,59 @@
+{
+  "_from": "datatables.net-fixedheader-bs4",
+  "_id": "datatables.net-fixedheader-bs4@3.1.5",
+  "_inBundle": false,
+  "_integrity": "sha512-3hOgUNaYxloUMQUq/GyNFlJ6Ug5hehcggsELJcRkC3KH5C5VkQXJyu0TCMePHoWxUEFbQr+PpfTLpNB5YuD/HA==",
+  "_location": "/datatables.net-fixedheader-bs4",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "datatables.net-fixedheader-bs4",
+    "name": "datatables.net-fixedheader-bs4",
+    "escapedName": "datatables.net-fixedheader-bs4",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/datatables.net-fixedheader-bs4/-/datatables.net-fixedheader-bs4-3.1.5.tgz",
+  "_shasum": "60e060b721f46690a85e1acde634e75cc14e3cba",
+  "_spec": "datatables.net-fixedheader-bs4",
+  "_where": "/Users/tabacitu/Sites/v4fresh/vendor/backpack/base",
+  "author": {
+    "name": "SpryMedia Ltd",
+    "url": "http://datatables.net"
+  },
+  "bugs": {
+    "url": "https://datatables.net/forums"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "datatables.net-bs4": "^1.10.15",
+    "datatables.net-fixedheader": "3.1.5",
+    "jquery": ">=1.7"
+  },
+  "deprecated": false,
+  "description": "FixedHeader for DataTables with styling for [Bootstrap 4](http://getbootstrap.com/)",
+  "files": [
+    "css/**/*.css",
+    "js/**/*.js"
+  ],
+  "homepage": "https://datatables.net",
+  "keywords": [
+    "fixed headers",
+    "sticky",
+    "DataTables",
+    "jQuery",
+    "table",
+    "Bootstrap 4"
+  ],
+  "license": "MIT",
+  "main": "js/fixedHeader.bootstrap4.js",
+  "name": "datatables.net-fixedheader-bs4",
+  "style": "css/fixedHeader.bootstrap4.css",
+  "version": "3.1.5"
+}

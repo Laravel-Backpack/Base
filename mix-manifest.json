@@ -2,5 +2,11 @@
     "/src/public/packages/backpack/base/js/bundle.js": "/src/public/packages/backpack/base/js/bundle.js",
     "/src/public/packages/animate.css/animate.min.css": "/src/public/packages/animate.css/animate.min.css",
     "/src/public/packages/bootstrap-daterangepicker/daterangepicker.css": "/src/public/packages/bootstrap-daterangepicker/daterangepicker.css",
-    "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js": "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js"
+    "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js": "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js",
+    "/src/public/packages/datatables.net": "/src/public/packages/datatables.net",
+    "/src/public/packages/datatables.net-bs4": "/src/public/packages/datatables.net-bs4",
+    "/src/public/packages/datatables.net-fixedheader": "/src/public/packages/datatables.net-fixedheader",
+    "/src/public/packages/datatables.net-fixedheader-bs4": "/src/public/packages/datatables.net-fixedheader-bs4",
+    "/src/public/packages/datatables.net-responsive": "/src/public/packages/datatables.net-responsive",
+    "/src/public/packages/datatables.net-responsive-bs4": "/src/public/packages/datatables.net-responsive-bs4"
 }
