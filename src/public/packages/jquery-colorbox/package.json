@@ -1,0 +1,58 @@
+{
+  "_from": "jquery-colorbox",
+  "_id": "jquery-colorbox@1.6.4",
+  "_inBundle": false,
+  "_integrity": "sha1-eZRSUjpsSUg5Ik73AugH3rnAbMU=",
+  "_location": "/jquery-colorbox",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "jquery-colorbox",
+    "name": "jquery-colorbox",
+    "escapedName": "jquery-colorbox",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-colorbox/-/jquery-colorbox-1.6.4.tgz",
+  "_shasum": "799452523a6c494839224ef702e807deb9c06cc5",
+  "_spec": "jquery-colorbox",
+  "_where": "/Users/tabacitu/Sites/v4fresh/vendor/backpack/base",
+  "author": {
+    "name": "Jack Moore",
+    "email": "hello@jacklmoore.com",
+    "url": "http://www.jacklmoore.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jackmoore/colorbox/issues"
+  },
+  "bundleDependencies": false,
+  "demo": "http://www.jacklmoore.com/colorbox",
+  "dependencies": {
+    "jquery": ">=1.3.2"
+  },
+  "deprecated": false,
+  "description": "jQuery lightbox and modal window plugin.",
+  "homepage": "http://www.jacklmoore.com/colorbox",
+  "keywords": [
+    "modal",
+    "lightbox",
+    "gallery",
+    "popup",
+    "ui",
+    "jquery-plugin"
+  ],
+  "license": "MIT",
+  "main": "jquery.colorbox.js",
+  "name": "jquery-colorbox",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jackmoore/colorbox.git"
+  },
+  "version": "1.6.4"
+}

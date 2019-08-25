@@ -1,4 +1,6 @@
 {
     "/src/public/packages/backpack/base/js/bundle.js": "/src/public/packages/backpack/base/js/bundle.js",
-    "/src/public/packages/animate.css/animate.min.css": "/src/public/packages/animate.css/animate.min.css"
+    "/src/public/packages/animate.css/animate.min.css": "/src/public/packages/animate.css/animate.min.css",
+    "/src/public/packages/bootstrap-daterangepicker/daterangepicker.css": "/src/public/packages/bootstrap-daterangepicker/daterangepicker.css",
+    "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js": "/src/public/packages/bootstrap-daterangepicker/daterangepicker.js"
 }
