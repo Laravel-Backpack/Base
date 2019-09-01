@@ -3,9 +3,9 @@
 namespace Backpack\Base\app\Http\Controllers\Auth;
 
 use Backpack\Base\app\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Auth\Events\Registered;
 use Validator;
 
 class RegisterController extends Controller
