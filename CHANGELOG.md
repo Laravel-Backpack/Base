@@ -23,10 +23,22 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
-## [1.1.6] - 2019-09-01
+## [1.1.8] - 2019-09-01
 
 ### Fixed
 - fixes #401 - Register event now triggered when registering;
+
+
+## [1.1.7] - 2019-08-11
+
+### Fixed
+- merges #392 - updates to InheritsRelationsFromParentModel trait from tightenco/parental;
+
+
+## [1.1.6] - 2019-08-11
+
+### Fixed
+- fixes #393, merges #394 - placehold avatar always had the A letter;
 
 
 ## [1.1.5] - 2019-06-24
