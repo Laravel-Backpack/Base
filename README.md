@@ -20,7 +20,7 @@ Laravel BackPack's central package, which includes:
 
 ![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
-## Install on Laravel 5.8, 5.7, 5.6 or 5.5
+## Install on Laravel 6, 5.8, 5.7, 5.6 or 5.5
 
 1) Run in your terminal:
 
@@ -46,6 +46,10 @@ php artisan backpack:base:install
 ```
 
 3) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
+
+
+## Upgrading from Laravel 5.8 to Laravel 6
+- completely backwards-compatible; just upgrade your Laravel version and make sure you're running Backpack/Base 1.1.9
 
 ## Upgrading from Laravel 5.7 to Laravel 5.8 (or from Base 1.0 to Base 1.1)
 - Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
