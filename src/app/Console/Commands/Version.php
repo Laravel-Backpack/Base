@@ -23,16 +23,6 @@ class Version extends Command
     protected $description = 'Show the version of PHP and Backpack packages.';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -56,7 +46,7 @@ class Version extends Command
      *
      * @return void
      */
-    private function runCommand($command)
+    protected function runCommand($command)
     {
         $process = new Process($command, null, null, null, 60, null);
         $process->run(function ($type, $buffer) {
