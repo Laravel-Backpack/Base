@@ -23,7 +23,7 @@ class AccountInfoRequest extends FormRequest
      *
      * @return array
      */
-    protected function validationData()
+    public function validationData()
     {
         return $this->only(backpack_authentication_column(), 'name');
     }

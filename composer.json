@@ -13,12 +13,12 @@
             "name": "Cristian Tabacitu",
             "email": "hello@tabacitu.ro",
             "homepage": "http://www.tabacitu.ro",
-            "role": "Chief Architect & Developer"
+            "role": "Creator & Maintainer"
         }
     ],
     "require": {
         "almasaeed2010/adminlte" : "2.4.*",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "5.8.*|^6.0",
         "prologue/alerts": "^0.4.1",
         "creativeorange/gravatar": "~1.0",
         "nesbot/carbon": "^2.14.0"
