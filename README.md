@@ -49,7 +49,8 @@ php artisan backpack:base:install
 
 
 ## Upgrading from Laravel 5.8 to Laravel 6
-- completely backwards-compatible; just upgrade your Laravel version and make sure you're running Backpack/Base 1.1.9
+- just upgrade your Laravel version and make sure you're running Backpack/Base 1.1.9 or higher;
+
 
 ## Upgrading from Laravel 5.7 to Laravel 5.8 (or from Base 1.0 to Base 1.1)
 - Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
