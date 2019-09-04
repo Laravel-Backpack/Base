@@ -30,13 +30,13 @@ class Version extends Command
     public function handle()
     {
         $this->comment('### PHP VERSION:');
-        $this->runCommand('php -v');
+        $this->runConsoleCommand('php -v');
 
         $this->comment('### BACKPACK PACKAGES VERSION:');
-        $this->runCommand('composer show | grep "backpack\|laravel/framework"');
+        $this->runConsoleCommand('composer show | grep "backpack\|laravel/framework"');
 
         $this->comment('### MYSQL VERSION:');
-        $this->runCommand('mysql --version');
+        $this->runConsoleCommand('mysql --version');
     }
 
     /**
@@ -46,7 +46,7 @@ class Version extends Command
      *
      * @return void
      */
-    protected function runCommand($command)
+    private function runConsoleCommand($command)
     {
         $process = new Process($command, null, null, null, 60, null);
         $process->run(function ($type, $buffer) {
