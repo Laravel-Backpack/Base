@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.9] - 2019-09-04
+
+### Added
+- merged #403 - support for Laravel 6;
+
+
 ## [1.1.8] - 2019-09-01
 
 ### Fixed
