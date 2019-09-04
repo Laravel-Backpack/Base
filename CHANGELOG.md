@@ -39,6 +39,25 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Backpack/Generators from the installation command;
 - Laracasts/Laravel-Generators from the installation command;
 
+
+## [1.1.10] - 2019-09-04
+
+### Fixed
+- required laravel/helpers;
+
+
+## [1.1.9] - 2019-09-04
+
+### Added
+- merged #403 - support for Laravel 6;
+
+
+## [1.1.8] - 2019-09-01
+
+### Fixed
+- fixes #401 - Register event now triggered when registering;
+
+
 ## [1.1.7] - 2019-08-11
 
 ### Fixed
@@ -55,6 +74,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - fixes #379 - error when username is empty;
+
 
 
 ## [1.1.4] - 2019-03-19

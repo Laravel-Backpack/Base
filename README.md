@@ -20,7 +20,7 @@ Laravel BackPack's central package, which includes:
 
 ![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
-## Install on Laravel 5.8, 5.7, 5.6 or 5.5
+## Install on Laravel 6, 5.8, 5.7, 5.6 or 5.5
 
 1) Run in your terminal:
 
@@ -47,12 +47,16 @@ php artisan backpack:base:install
 
 3) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
 
-## TODO: Upgrading from Base 1.1 to Base 2.0
-- Make sure you're running Base 1.1 and CRUD 3.6; If not, follow the upgrade guides to reach those versions;
-- Upgrade to Laravel 6.0; 
-- Change your ```backpack/crud``` dependency to ```4.*``` in your ```composer.json```;
-- more
-- even more
+
+## Upgrading from Laravel 5.8 to Laravel 6
+- just upgrade your Laravel version and make sure you're running Backpack/Base 1.1.9 or higher;
+
+
+## Upgrading from Laravel 5.7 to Laravel 5.8 (or from Base 1.0 to Base 1.1)
+- Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
+- in your ```App\Models\BackpackUser``` instead of ```Tightenco\Parental\HasParent```, please use ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel```; [here's the diff](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-f075b83ebb2b1ef3ba84dec14b395607);
+- in your ```app/config/backpack/base.php``` please change your ```default_date_format``` and ```default_datetime_format``` to ```Do MMMM YYYY``` and ```Do MMMM YYYY, HH:mm``` respectively;
+- if you've overwritten ```inc/head.blade.php``` or ```inc/scripts.blade.php```, please make sure you [use the newest version of Bootstrap](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-96ac3ea4d0cb85053acf44e3772eb5f1); they've fixed a security vulnerability (XSS);
 
 
 ## Usage 

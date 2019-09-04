@@ -17,15 +17,16 @@
             "name": "Cristian Tabacitu",
             "email": "hello@tabacitu.ro",
             "homepage": "http://www.tabacitu.ro",
-            "role": "Owner & Lead Developer"
+            "role": "Creator & Maintainer"
         }
     ],
     "require": {
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "5.8.*|^6.0",
         "prologue/alerts": "^0.4.1",
         "creativeorange/gravatar": "~1.0",
         "nesbot/carbon": "^2.14.0",
-        "ocramius/package-versions": "^1.4"
+        "ocramius/package-versions": "^1.4",
+        "laravel/helpers": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
