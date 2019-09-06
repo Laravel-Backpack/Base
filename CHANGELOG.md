@@ -24,6 +24,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 -------
 
 
+## [1.1.11] - 2019-09-06
+
+### Fixed
+- inc.topbar_right_content.blade.php wasn't loaded when the auth routes were turned off;
+
+
 ## [1.1.10] - 2019-09-04
 
 ### Fixed
