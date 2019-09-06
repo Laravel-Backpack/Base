@@ -33,6 +33,8 @@
                 @include('backpack::inc.topbar_right_content')
                 <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
             @endif
+        @else
+        @include('backpack::inc.topbar_right_content')
         @endif
         <!-- ========== End of top menu right items ========== -->
     </ul>
