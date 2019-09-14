@@ -23,6 +23,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.12] - 2019-09-14
+
+### Fixed
+- install a specific version of backpack/generators - 1.2.x, otherwise composer might fail to fall back to it;
+
 
 ## [1.1.11] - 2019-09-06
 

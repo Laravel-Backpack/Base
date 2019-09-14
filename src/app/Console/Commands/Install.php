@@ -49,7 +49,7 @@ class Install extends Command
         $this->progressBar->advance();
 
         $this->line(' Installing backpack/generators');
-        $this->executeProcess('composer require backpack/generators --dev');
+        $this->executeProcess('composer require backpack/generators:"1.2.*" --dev');
 
         $this->line(' Installing laracasts/generators');
         $this->executeProcess('composer require laracasts/generators:dev-master --dev');
