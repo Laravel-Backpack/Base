@@ -23,6 +23,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------
 
+## [1.1.13] - 2019-09-17
+
+### Added
+- japanese translation;
+
+
 ## [1.1.12] - 2019-09-14
 
 ### Fixed
