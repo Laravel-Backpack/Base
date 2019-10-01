@@ -9,6 +9,7 @@ return [
     */
 
     'registration_closed'    => 'Novos registros estão desabiltados.',
+    'no_email_column'        => 'Usuários não possuem um endereço de email associado.',
     'first_page_you_see'     => 'A primeira página que você vê depois de logar',
     'login_status'           => 'Status do login',
     'logged_in'              => 'Você está logado!',
@@ -40,6 +41,8 @@ return [
     'cancel'                 => 'Cancelar',
     'error'                  => 'Erro',
     'success'                => 'Sucesso',
+    'warning'                => 'Atenção',
+    'notice'                 => 'Aviso',
     'old_password_incorrect' => 'A senha antiga está incorreta.',
     'password_dont_match'    => 'Senhas não são iguais.',
     'password_empty'         => 'Certifique-se que ambos os campos de senha estão preenchidos.',
@@ -47,4 +50,18 @@ return [
     'account_updated'        => 'Conta atualizada com sucesso.',
     'unknown_error'          => 'Um erro desconhecido aconteceu. Por favor, tente novamente.',
     'error_saving'           => 'Erro ao salvar. Por favor, tente novamente.',
+    'welcome'                => 'Bem vindo!',
+    'use_sidebar'            => 'Use a barra de menu à esquerda para criar, editar ou excluir conteúdo.',
+    'password_reset'         => [
+        'greeting' => 'Olá!',
+        'subject'  => 'Notificação de redefinição de senha',
+        'line_1'   => 'Você está recendo este e-mail porque nós recebemos um solicitação de redefinição de senha para sua conta.',
+        'line_2'   => 'Clique no botão abaixo para redefinir sua senha:',
+        'button'   => 'Redefinir Senha',
+        'notice'   => 'Se você não solicitou uma redefinição de senha, nenhuma ação adicional é necessária.',
+    ],
+    'step'                   => 'Passo',
+    'confirm_email'          => 'Confirmar E-mail',
+    'choose_new_password'    => 'Escolher Nova Senha',
+    'confirm_new_password'   => 'Confirmar Nova senha',
 ];
