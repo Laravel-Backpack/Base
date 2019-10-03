@@ -12,7 +12,7 @@ newIssueWelcomeComment: >
 
   Backpack communication mediums:
    - Bug Reports, Feature Requests - Github Issues (here);
-   - Quick help (_How do I do X_) - [Gitter Chatroom](gitter.im/BackpackForLaravel/Lobby);
+   - Quick help (_How do I do X_) - [Gitter Chatroom](https://gitter.im/BackpackForLaravel/Lobby);
    - Long questions (_I have done X and Y and it won't do Z wtf_) - [Stackoverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel), using the ```backpack-for-laravel``` tag;
 
 
@@ -67,7 +67,7 @@ firstPRMergeComment: >
 
   If you want to help out the community in other ways, you can:
    - **give your opinion on other Github Issues & PRs**;
-   - **chat with others** in the [Gitter Chatroom](gitter.im/BackpackForLaravel/Lobby) (usually for quick help: _How do I do X_);
+   - **chat with others** in the [Gitter Chatroom](https://gitter.im/BackpackForLaravel/Lobby) (usually for quick help: _How do I do X_);
    - **answer Backpack questions on [Stackoverflow](https://stackoverflow.com/questions/tagged/backpack-for-laravel)**; you get points, people get help; you can subscribe to the ```backpack-for-laravel``` tag by [adding a new filter](https://stackexchange.com/filters/256210/my-filter-3); that will send you emails when new questions come up with our tag;
 
 
