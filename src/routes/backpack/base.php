@@ -13,7 +13,7 @@
 Route::group(
 [
     'namespace'  => 'Backpack\Base\app\Http\Controllers',
-    'middleware' => 'web',
+    'middleware' => config('backpack.base.route_middleware'),
     'prefix'     => config('backpack.base.route_prefix'),
 ],
 function () {
