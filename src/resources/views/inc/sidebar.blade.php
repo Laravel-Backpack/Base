@@ -48,7 +48,7 @@
   <script>
       // Set active state on menu element
       var full_url = "{{ Request::fullUrl() }}";
-      var $navLinks = $("ul.sidebar-menu li a");
+	  var $navLinks = $("nav.sidebar-nav ul.nav li a");
       // First look for an exact match including the search string
       var $curentPageLink = $navLinks.filter(
           function() { return $(this).attr('href') === full_url; }
@@ -60,6 +60,6 @@
           );
       }
 
-      $curentPageLink.parents('li').addClass('active');
+	  $curentPageLink.addClass('active').parents('li').addClass('active open');
   </script>
 @endpush
