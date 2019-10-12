@@ -1,4 +1,4 @@
-# Backpack\Base
+# Backpack\Base (for Backpack 3.x)
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -8,11 +8,13 @@
 [![Style CI](https://styleci.io/repos/52384487/shield)](https://styleci.io/repos/52384487)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Laravel BackPack's central package, which includes:
+Laravel Backpack v3.x's central package, which includes:
 - admin login interface, using AdminLTE;
 - basic menu;
 - pretty error pages;
 - alerts system (notification bubbles);
+
+**Note: This package is only used by Backpack v3. Starting with Backpack v4, everything this package does is included in Backpack/CRUD - one package to rule them all.**
 
 
 > ### Security updates and breaking changes
