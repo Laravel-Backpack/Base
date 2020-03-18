@@ -61,7 +61,7 @@ class MyAccountController extends Controller
     public function postChangePasswordForm(ChangePasswordRequest $request)
     {
         $user = $this->guard()->user();
-        $user->password = Hash::make($request->new_password);
+        $user->password = bcrypt($request->new_password);
 
         if ($user->save()) {
             Alert::success(trans('backpack::base.account_updated'))->flash();
