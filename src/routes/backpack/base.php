@@ -11,12 +11,12 @@
 */
 
 Route::group(
-[
-    'namespace'  => 'Backpack\Base\app\Http\Controllers',
-    'middleware' => 'web',
-    'prefix'     => config('backpack.base.route_prefix'),
-],
-function () {
+    [
+        'namespace'  => 'Backpack\Base\app\Http\Controllers',
+        'middleware' => 'web',
+        'prefix'     => config('backpack.base.route_prefix'),
+    ],
+    function () {
     // if not otherwise configured, setup the auth routes
     if (config('backpack.base.setup_auth_routes')) {
         // Authentication Routes...
@@ -49,4 +49,5 @@ function () {
         Route::get('change-password', 'Auth\MyAccountController@getChangePasswordForm')->name('backpack.account.password');
         Route::post('change-password', 'Auth\MyAccountController@postChangePasswordForm');
     }
-});
+}
+);
