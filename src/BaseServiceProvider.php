@@ -60,7 +60,8 @@ class BaseServiceProvider extends ServiceProvider
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/base.php', 'backpack.base'
+            __DIR__.'/config/backpack/base.php',
+            'backpack.base'
         );
 
         // add the root disk to filesystem configuration
