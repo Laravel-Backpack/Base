@@ -1,12 +1,11 @@
-# Backpack\Base (for Backpack 3.x)
-
+[![Maintained](https://img.shields.io/badge/maintained-no-red)](https://github.com/Laravel-Backpack/Base/pull/435#issuecomment-708341325)
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/Laravel-Backpack/base/master.svg?style=flat-square)](https://travis-ci.org/Laravel-Backpack/base)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/laravel-backpack/base.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-backpack/crud/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-backpack/base.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-backpack/crud)
 [![Style CI](https://styleci.io/repos/52384487/shield)](https://styleci.io/repos/52384487)
 [![Total Downloads][ico-downloads]][link-downloads]
+
+**Note: This package is only used by Backpack v3. Starting with Backpack v4, everything this package does is included in [Backpack/CRUD](https://github.com/laravel-backpack/crud) - one package to rule them all.**
 
 Laravel Backpack v3.x's central package, which includes:
 - admin login interface, using AdminLTE;
@@ -14,13 +13,11 @@ Laravel Backpack v3.x's central package, which includes:
 - pretty error pages;
 - alerts system (notification bubbles);
 
-**Note: This package is only used by Backpack v3. Starting with Backpack v4, everything this package does is included in Backpack/CRUD - one package to rule them all.**
 
+## Install on Laravel 7.x, 8.x and up
 
-> ### Security updates and breaking changes
-> Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
+Since September 2019, when we released Backpack 4.x, this package is no longer used. Only Backpack 3.x uses Backpack\Base, and Backpack 3.x will not receive support for Laravel 7.x, 8.x and above. We do encourage you to use Backpack + Laravel 7/8/up, but to do that please use the latest major version of Backpack.
 
-![Example generated CRUD interface](https://backpackforlaravel.com/uploads/screenshots/base_login.png)
 
 ## Install on Laravel 6, 5.8, 5.7, 5.6 or 5.5
 
@@ -50,11 +47,13 @@ php artisan backpack:base:install
 3) [optional] Change values in config/backpack/base.php to make the admin panel your own. Change menu color, project name, developer name etc.
 
 
-## Upgrading from Laravel 5.8 to Laravel 6
+## Upgrades
+
+### Upgrading from Laravel 5.8 to Laravel 6
 - just upgrade your Laravel version and make sure you're running Backpack/Base 1.1.9 or higher;
 
 
-## Upgrading from Laravel 5.7 to Laravel 5.8 (or from Base 1.0 to Base 1.1)
+### Upgrading from Laravel 5.7 to Laravel 5.8 (or from Base 1.0 to Base 1.1)
 - Upgrade to Laravel 5.8; you might need to change your ```backpack/crud``` dependency to ```3.6.*``` in your ```composer.json```;
 - in your ```App\Models\BackpackUser``` instead of ```Tightenco\Parental\HasParent```, please use ```Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel```; [here's the diff](https://github.com/Laravel-Backpack/Base/pull/362/files#diff-f075b83ebb2b1ef3ba84dec14b395607);
 - in your ```app/config/backpack/base.php``` please change your ```default_date_format``` and ```default_datetime_format``` to ```Do MMMM YYYY``` and ```Do MMMM YYYY, HH:mm``` respectively;
@@ -87,7 +86,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email hello@tabacitu.ro instead of using the issue tracker.
+_Officially_ this package has:
+- stopped receiving updates in Sep 2019;
+- stopped receiving _security_ updates in Sep 2020;
+
+However, if you discover any security related issues, please email hello@tabacitu.ro and we'll probably push an update nonetheless. Or at least inform people who are still using this version of the vulnerability. We take security seriously, so we'll go above and beyond to make sure our users' admin panels are safe.
 
 Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
 
@@ -98,7 +101,7 @@ Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/ne
 
 ## License
 
-Backpack is free for non-commercial use and 49 EUR/project for commercial use. Please see [License File](LICENSE.md) and [backpackforlaravel.com](https://backpackforlaravel.com/#pricing) for more information.
+Backpack is free for non-commercial use and 69 EUR/project for commercial use. Please see [License File](LICENSE.md) and [backpackforlaravel.com](https://backpackforlaravel.com/#pricing) for more information.
 
 ## Hire us
 
