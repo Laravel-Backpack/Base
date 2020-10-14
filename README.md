@@ -15,7 +15,7 @@ Laravel Backpack v3.x's central package, which includes:
 
 ## Install on Laravel 7.x, 8.x and up
 
-Since September 2019, when we released Backpack 4.x, this package is no longer used. Only Backpack 3.x uses Backpack\Base, and Backpack 3.x will not receive support for Laravel 7.x, 8.x and above. We do encourage you to use Backpack + Laravel 7/8/up, but to do that please use the latest major version of Backpack.
+Since September 2019, when we released Backpack 4.x, this package is no longer used. Only Backpack 3.x uses Backpack\Base, and Backpack 3.x will not receive support for Laravel 7.x, 8.x and above. We do encourage you to use Backpack + Laravel 7/8/up, but to do that please use [the latest major version of Backpack](https://backpackforlaravel.com/docs).
 
 
 ## Install on Laravel 6, 5.8, 5.7, 5.6 or 5.5
